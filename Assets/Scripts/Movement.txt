@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Movement : MonoBehaviour
+{
+    [SerializeField] float thrust = 30f;
+    [SerializeField] float rotationSpeed = 1f;
+    [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainThruster;
+    [SerializeField] ParticleSystem leftThruster;
+    [SerializeField] ParticleSystem rightThruster;
+    Rigidbody rb;
+    AudioSource audioSource;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void FixedUpdate()
+    {
+        ProcessThrust();
+        ProcessRotation();
+    }
+
+    void ProcessThrust()
+    {
+        if ( Input.GetKey("w") ) {
+            rb.AddRelativeForce(Vector3.up * thrust * Time.deltaTime);
+
+            if (!audioSource.isPlaying) {
+                audioSource.PlayOneShot(mainEngine);
+            }
+            mainThruster.Play();
+        }
+        else {
+            audioSource.Stop();
+            mainThruster.Stop();
+        }
+    }
+
+    void ProcessRotation() {
+        if ( Input.GetKey("a") ) {
+            leftThruster.Play();
+            ApplyRotation(rotationSpeed);
+        }
+        else {
+            leftThruster.Stop();
+        }
+
+        if ( Input.GetKey("d") ) {
+            rightThruster.Play();
+            ApplyRotation(-rotationSpeed);
+        }
+        else{
+            rightThruster.Stop();
+        }
+    }
+
+    void ApplyRotation (float rotateSpeed) {
+        rb.freezeRotation = true;
+        transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
+        rb.freezeRotation = false;
+    }
+}
