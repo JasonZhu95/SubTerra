@@ -73,6 +73,8 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Set Functions
+
+    // Function that sets the X velocity of the player
     public void SetVelocityX(float velocity)
     {
         workspace.Set(velocity, CurrentVelocity.y);
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour
         CurrentVelocity = workspace;
     }
 
+    // Function that sets the Y velocity of the player
     public void SetVelocityY(float velocity)
     {
         workspace.Set(CurrentVelocity.x, velocity);
@@ -89,11 +92,14 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Check Functions
+
+    // Function that checks if the player is grounded
     public bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
     }
 
+    // Function that checks if the player needs to be flipped
     public void CheckIfShouldFlip(int xInput)
     {
         if (xInput != 0 && xInput != FacingDirection)
@@ -104,6 +110,11 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Other Functions
+    private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
+
+    private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+
+    // Flips the character model
     private void Flip()
     {
         FacingDirection *= -1;

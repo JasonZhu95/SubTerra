@@ -9,6 +9,8 @@ public class PlayerState
     protected PlayerStateMachine stateMachine;
     protected PlayerData playerData;
 
+    protected bool isAnimationFinished;         // Checks Unity Animation completion
+
     protected float startTime;                  // Keeps track of time as we enter a state
 
     private string animBoolName;                // String that feeds state into the animator
@@ -28,6 +30,7 @@ public class PlayerState
         DoChecks();
         player.Anim.SetBool(animBoolName, true);
         startTime = Time.time;
+        isAnimationFinished = false;
     }
 
     // Function that occurs when a state is exited
@@ -53,4 +56,13 @@ public class PlayerState
     {
 
     }
+
+    // Function that 
+    public virtual void AnimationTrigger()
+    {
+
+    }
+
+    // Function that changes the animation completion bool is accessed through a unity Animation event
+    public virtual void AnimationFinishTrigger() => isAnimationFinished = true;
 }
