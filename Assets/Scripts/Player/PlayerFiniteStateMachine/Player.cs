@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     public PlayerJumpState JumpState { get; private set; }
     public PlayerInAirState InAirState { get; private set; }
     public PlayerLandState LandState { get; private set; }
+    public PlayerWallSlideState WallSlideState { get; private set; }
+    public PlayerWallGrabState WallGrabState { get; private set; }
+    public PlayerWallClimbState WallClimbState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
@@ -47,6 +50,9 @@ public class Player : MonoBehaviour
         JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
         LandState = new PlayerLandState(this, StateMachine, playerData, "land");
+        WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
+        WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
+        WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
     }
 
     private void Start()

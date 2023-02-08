@@ -39,7 +39,7 @@ public class PlayerState
         player.Anim.SetBool(animBoolName, false);
     }
 
-    // FUNCTION: mirrors Unity Update()
+    // FUNCTION: Mirrors Unity Update()
     public virtual void LogicUpdate()
     {
 
@@ -51,7 +51,7 @@ public class PlayerState
         DoChecks();
     }
 
-    // FUNCTION: continually looks for ground or enemies etc
+    // FUNCTION: Continually looks for ground or enemies etc
     public virtual void DoChecks()
     {
 
@@ -63,6 +63,6 @@ public class PlayerState
 
     }
 
-    // FUNCTION: changes the animation completion bool is accessed through a unity Animation event
+    // FUNCTION: Changes the animation completion bool is accessed through a unity Animation event
     public virtual void AnimationFinishTrigger() => isAnimationFinished = true;
 }
