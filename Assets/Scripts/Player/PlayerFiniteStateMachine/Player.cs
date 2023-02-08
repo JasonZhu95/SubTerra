@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     #region Check Transforms
     [SerializeField]
     private Transform groundCheck;
+    [SerializeField]
+    private Transform wallCheck;
     #endregion
 
     #region Other Variables
@@ -98,6 +100,12 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Check Functions
+
+    // FUNCTION: Checks if the player is touching wall
+    public bool CheckIfTouchingWall()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+    }
 
     // FUNCTION: Checks if the player is grounded
     public bool CheckIfGrounded()
