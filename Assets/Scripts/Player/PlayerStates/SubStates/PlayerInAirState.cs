@@ -8,6 +8,8 @@ public class PlayerInAirState : PlayerState
     private bool isGrounded;
     private bool jumpInput;
     private bool coyoteTime;
+    private bool isJumping;
+    private bool jumpInputStop;
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -36,9 +38,14 @@ public class PlayerInAirState : PlayerState
 
         CheckCoyoteTime();
 
+        // Local variables accessing Jump input
         xInput = player.InputHandler.NormInputX;
         jumpInput = player.InputHandler.JumpInput;
+        jumpInputStop = player.InputHandler.JumpInputStop;
 
+        CheckJumpMultiplier();
+
+        // Checks to change state based off conditions
         if(isGrounded && player.CurrentVelocity.y < 0.01f)
         {
             stateMachine.ChangeState(player.LandState);
@@ -57,11 +64,29 @@ public class PlayerInAirState : PlayerState
         }
     }
 
+    // FUNCTION: Manages variable jump height
+    private void CheckJumpMultiplier()
+    {
+        if (isJumping)
+        {
+            if (jumpInputStop)
+            {
+                player.SetVelocityY(player.CurrentVelocity.y * playerData.variableJumpHeightMultiplier);
+                isJumping = false;
+            }
+            else if (player.CurrentVelocity.y <= 0f)
+            {
+                isJumping = false;
+            }
+        }
+    }
+
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
 
+    // FUNCTION: checks if the player can jump after falling off platform
     private void CheckCoyoteTime()
     {
         if (coyoteTime && Time.time > startTime + playerData.coyoteTime)
@@ -72,4 +97,5 @@ public class PlayerInAirState : PlayerState
     }
 
     public void StartCoyoteTime() => coyoteTime = true;
+    public void SetIsJumping() => isJumping = true;
 }

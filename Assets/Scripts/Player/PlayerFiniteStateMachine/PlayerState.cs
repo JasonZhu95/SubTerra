@@ -24,7 +24,7 @@ public class PlayerState
         this.animBoolName = animBoolName;
     }
 
-    // Function that occurs when a state is entered
+    // FUNCTION: occurs when a state is entered
     public virtual void Enter()
     {
         DoChecks();
@@ -39,30 +39,30 @@ public class PlayerState
         player.Anim.SetBool(animBoolName, false);
     }
 
-    // Function that mirrors Unity Update()
+    // FUNCTION: mirrors Unity Update()
     public virtual void LogicUpdate()
     {
 
     }
 
-    // Function that mirrors Unity FixedUpdate()
+    // FUNCTION: Mirrors Unity FixedUpdate()
     public virtual void PhysicsUpdate()
     {
         DoChecks();
     }
 
-    // Function that continually looks for ground or enemies etc
+    // FUNCTION: continually looks for ground or enemies etc
     public virtual void DoChecks()
     {
 
     }
 
-    // Function that 
+    // FUNCTION:
     public virtual void AnimationTrigger()
     {
 
     }
 
-    // Function that changes the animation completion bool is accessed through a unity Animation event
+    // FUNCTION: changes the animation completion bool is accessed through a unity Animation event
     public virtual void AnimationFinishTrigger() => isAnimationFinished = true;
 }
