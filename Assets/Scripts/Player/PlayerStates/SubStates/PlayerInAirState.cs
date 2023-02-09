@@ -17,6 +17,7 @@ public class PlayerInAirState : PlayerState
     private bool isJumping;
     private bool jumpInputStop;
     private bool grabInput;
+    private bool isTouchingLedge;
 
     private float startWallJumpCoyoteTime;
     #endregion
@@ -30,13 +31,21 @@ public class PlayerInAirState : PlayerState
     {
         base.DoChecks();
 
+        // Set Local Booleans based off updated checks
         lastFrameIsTouchingWall = isTouchingWall;
         lastFrameTouchingWallBack = isTouchingWallBack;
-
         isGrounded = player.CheckIfGrounded();
         isTouchingWall = player.CheckIfTouchingWall();
         isTouchingWallBack = player.CheckIfTouchingWallBack();
+        isTouchingLedge = player.CheckIfTouchingLedge();
 
+        // Ledge Climb Logic
+        if (isTouchingWall && !isTouchingLedge)
+        {
+            player.LedgeClimbState.SetDetectedPosition(player.transform.position);
+        }
+
+        // Walljump Logic
         if (!wallJumpCoyoteTime && !isTouchingWall && !isTouchingWallBack && (lastFrameIsTouchingWall || lastFrameTouchingWallBack))
         {
             StartWallJumpCoyoteTime();
@@ -51,12 +60,18 @@ public class PlayerInAirState : PlayerState
     public override void Exit()
     {
         base.Exit();
+
+        lastFrameIsTouchingWall = false;
+        lastFrameTouchingWallBack = false;
+        isTouchingWall = false;
+        isTouchingWallBack = false;
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
+        // Setup Coyote Times
         CheckCoyoteTime();
         CheckWallJumpCoyoteTime();
 
@@ -68,10 +83,14 @@ public class PlayerInAirState : PlayerState
 
         CheckJumpMultiplier();
 
-        // Checks to change state based off conditions
+        // State Changes based off relevant logic
         if (isGrounded && player.CurrentVelocity.y < 0.01f)
         {
             stateMachine.ChangeState(player.LandState);
+        }
+        else if(isTouchingLedge && !isTouchingLedge)
+        {
+            stateMachine.ChangeState(player.LedgeClimbState);
         }
         else if (jumpInput && (isTouchingWall || isTouchingWallBack || wallJumpCoyoteTime))
         {
@@ -147,6 +166,8 @@ public class PlayerInAirState : PlayerState
     #endregion
 
     #region Set Functions
+
+    // FUNCTION: Setup Wall Jump coyote Time
     public void StartWallJumpCoyoteTime()
     {
         wallJumpCoyoteTime = true;

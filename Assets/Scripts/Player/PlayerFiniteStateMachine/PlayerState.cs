@@ -35,7 +35,7 @@ public class PlayerState
         isExitingState = false;
     }
 
-    // Function that occurs when a state is exited
+    // FUNCTION: occurs when a state is exited
     public virtual void Exit()
     {
         player.Anim.SetBool(animBoolName, false);

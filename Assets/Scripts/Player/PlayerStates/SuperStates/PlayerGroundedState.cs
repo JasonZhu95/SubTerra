@@ -38,10 +38,13 @@ public class PlayerGroundedState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        // Setup Local Booleans based off of Input Handler
         xInput = player.InputHandler.NormInputX;
         JumpInput = player.InputHandler.JumpInput;
         grabInput = player.InputHandler.GrabInput;
 
+        // Change states based off of needed logic
         if (JumpInput && player.JumpState.CanJump())
         {
             stateMachine.ChangeState(player.JumpState);
