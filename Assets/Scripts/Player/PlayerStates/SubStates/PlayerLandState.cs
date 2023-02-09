@@ -13,13 +13,16 @@ public class PlayerLandState : PlayerGroundedState
         base.LogicUpdate();
 
         // Conditions to check if we are still moving or are idle for animation
-        if (xInput != 0)
+        if (!isExitingState)
         {
-            stateMachine.ChangeState(player.MoveState);
-        }
-        else if(isAnimationFinished)
-        {
-            stateMachine.ChangeState(player.IdleState);
+            if (xInput != 0)
+            {
+                stateMachine.ChangeState(player.MoveState);
+            }
+            else if (isAnimationFinished)
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
         }
     }
 }

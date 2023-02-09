@@ -10,6 +10,7 @@ public class PlayerState
     protected PlayerData playerData;
 
     protected bool isAnimationFinished;         // Checks Unity Animation completion
+    protected bool isExitingState;
 
     protected float startTime;                  // Keeps track of time as we enter a state
 
@@ -31,12 +32,14 @@ public class PlayerState
         player.Anim.SetBool(animBoolName, true);
         startTime = Time.time;
         isAnimationFinished = false;
+        isExitingState = false;
     }
 
     // Function that occurs when a state is exited
     public virtual void Exit()
     {
         player.Anim.SetBool(animBoolName, false);
+        isExitingState = true;
     }
 
     // FUNCTION: Mirrors Unity Update()
