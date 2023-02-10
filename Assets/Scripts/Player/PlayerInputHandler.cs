@@ -11,15 +11,19 @@ public class PlayerInputHandler : MonoBehaviour
     public bool JumpInput { get; private set; }
     public bool JumpInputStop { get; private set; }
     public bool GrabInput { get; private set; }
+    public bool DashInput { get; private set; }
+    public bool DashInputStop { get; private set; }
 
     [SerializeField]
-    private float InputHoldTime = 0.2f;
+    private float inputHoldTime = 0.2f;
 
     private float jumpInputStartTime;
+    private float dashInputStartTime;
 
     private void Update()
     {
         CheckJumpInputHoldTime();
+        CheckDashInputHoldTime();
     }
 
     // FUNCTION: Normalize player input as a vector 2
@@ -46,7 +50,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    // FUNCTION: Check when a player presses jump button and releases it
+    // FUNCTION: Check when a player presses jump input
     public void OnJumpInput(InputAction.CallbackContext context)
     {
         if(context.started)
@@ -62,6 +66,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    // FUNCTION: Check when a player presses grab input
     public void OnGrabInput(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -74,15 +79,41 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    // FUNCTION: Set a player jumpinput to false when called
+    // FUNCTION: Check when a player presses dash input
+    public void OnDashInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            DashInput = true;
+            DashInputStop = false;
+            dashInputStartTime = Time.time;
+        }
+
+        if (context.canceled)
+        {
+            DashInputStop = true;
+        }
+    }
+
     public void UseJumpInput() => JumpInput = false;
 
-    // FUNCTION: Manages Variable Jump Height
+    public void UseDashInput() => DashInput = false;
+
+    // FUNCTION: Manages Variable Jump Heig t
     private void CheckJumpInputHoldTime()
     {
-        if (Time.time >= jumpInputStartTime + InputHoldTime)
+        if (Time.time >= jumpInputStartTime + inputHoldTime)
         {
             JumpInput = false;
+        }
+    }
+
+    // FUNCTION: Stop Dash Input after a certain amount of time
+    private void CheckDashInputHoldTime()
+    {
+        if (Time.time >= dashInputStartTime + inputHoldTime)
+        {
+            DashInput = false;
         }
     }
 }

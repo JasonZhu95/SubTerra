@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public PlayerWallClimbState WallClimbState { get; private set; }
     public PlayerWallJumpState WallJumpState { get; private set; }
     public PlayerLedgeClimbState LedgeClimbState { get; private set; }
+    public PlayerDashState DashState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour
         WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
         LedgeClimbState = new PlayerLedgeClimbState(this, StateMachine, playerData, "ledgeClimbState");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
     }
 
     private void Start()
@@ -111,7 +113,7 @@ public class Player : MonoBehaviour
         CurrentVelocity = workspace;
     }
 
-    // FUNCTION: Sets the Y velocity of the player
+    // FUNCTION: Sets the Vector2D velocity of the player
     public void SetVelocity(float velocity, Vector2 angle, int direction)
     {
         angle.Normalize();
@@ -123,7 +125,6 @@ public class Player : MonoBehaviour
 
     #region Check Functions
 
-    // FUNCTION: Checks if the player is touching wall
     public bool CheckIfTouchingWall()
     {
         return Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
@@ -139,7 +140,6 @@ public class Player : MonoBehaviour
         return Physics2D.Raycast(ledgeCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
     }
 
-    // FUNCTION: Checks if the player is grounded
     public bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
@@ -167,6 +167,7 @@ public class Player : MonoBehaviour
         transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
+    // FUNCTION: Sets up raycasts to determine where platform corners are
     public Vector2 DetermineCornerPosition()
     {
         RaycastHit2D xHit = Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
