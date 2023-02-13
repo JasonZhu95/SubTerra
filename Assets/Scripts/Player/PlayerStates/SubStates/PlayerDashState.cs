@@ -8,10 +8,13 @@ public class PlayerDashState : PlayerAbilityState
 
     private bool isHolding;
     private bool dashInputStop;
+    private bool isTouchingGround;
+    private int yInput;
 
     private Vector2 dashDirection;
     private Vector2 dashDirectionInput;
     private Vector2 lastAfterImagePosition;
+    private Vector2 workspace;
 
     private float lastDashTime;
 
@@ -31,6 +34,7 @@ public class PlayerDashState : PlayerAbilityState
 
         Time.timeScale = playerData.holdTimeScale;
         startTime = Time.unscaledTime;
+        workspace = Vector2.right * player.FacingDirection;
     }
 
     public override void Exit()
@@ -46,6 +50,8 @@ public class PlayerDashState : PlayerAbilityState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+        isTouchingGround = player.CheckIfGrounded();
+        yInput = player.InputHandler.NormInputY;
 
         if (!isExitingState)
         {
@@ -73,6 +79,10 @@ public class PlayerDashState : PlayerAbilityState
                     startTime = Time.time;
                     player.CheckIfShouldFlip(Mathf.RoundToInt(dashDirection.x));
                     player.RB.drag = playerData.drag;
+                    if (isTouchingGround && yInput == -1)
+                    {
+                        dashDirection = workspace;
+                    }
                     player.SetVelocity(playerData.dashVelocity, dashDirection);
                     PlaceAfterImage();
                 }
