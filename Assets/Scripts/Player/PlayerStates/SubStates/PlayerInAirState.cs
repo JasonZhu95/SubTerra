@@ -20,6 +20,7 @@ public class PlayerInAirState : PlayerState
     private bool lastFrameTouchingWallBack;
     private bool isTouchingLedge;
     private bool isJumping;
+    private bool isTouchingTrampoline;
 
     // Other Variables
     private bool jumpInputStop;
@@ -46,6 +47,7 @@ public class PlayerInAirState : PlayerState
         isTouchingWall = player.CheckIfTouchingWall();
         isTouchingWallBack = player.CheckIfTouchingWallBack();
         isTouchingLedge = player.CheckIfTouchingLedge();
+        isTouchingTrampoline = player.DashState.DashTrampolineCheck;
 
         // Ledge Climb Logic
         if (isTouchingWall && !isTouchingLedge)
@@ -127,7 +129,15 @@ public class PlayerInAirState : PlayerState
         else
         {
             player.CheckIfShouldFlip(xInput);
-            player.SetVelocityX(playerData.movementVelocity * xInput);
+            if (player.DashState.DashTrampolineCheck)
+            {
+                player.SetVelocityY(playerData.trampolineVelocity);
+                player.DashState.DashTrampolineSetFalse();
+            }
+            else
+            {
+                player.SetVelocityX(playerData.movementVelocity * xInput);
+            }
 
             player.Anim.SetFloat("yVelocity", player.CurrentVelocity.y);
             player.Anim.SetFloat("xVelocity", Mathf.Abs(player.CurrentVelocity.x));

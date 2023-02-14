@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public PlayerInputHandler InputHandler { get; private set; }
     public Rigidbody2D RB { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
+    public PlayerObstacleCollision playerObstacleCollision { get; private set; }
     #endregion
 
     #region Check Transforms
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
         MovementCollider = GetComponent<BoxCollider2D>();
+        playerObstacleCollision = GetComponent<PlayerObstacleCollision>();
 
         FacingDirection = 1;
 

@@ -84,13 +84,31 @@ public class PlayerDashState : PlayerAbilityState
                     {
                         dashDirection = workspace;
                     }
-                    player.SetVelocity(playerData.dashVelocity, dashDirection);
+                    if (!trampolineDetected)
+                    {
+                        player.SetVelocity(playerData.dashVelocity, dashDirection);
+                    }
+                    else
+                    {
+                        player.RB.drag = 0f;
+                        DashTrampolineSet();
+                        isAbilityDone = true;
+                    }
                     PlaceAfterImage();
                 }
             }
             else
             {
-                player.SetVelocity(playerData.dashVelocity, dashDirection);
+                if (!trampolineDetected)
+                {
+                    player.SetVelocity(playerData.dashVelocity, dashDirection);
+                }
+                else
+                {
+                    player.RB.drag = 0f;
+                    DashTrampolineSet();
+                    isAbilityDone = true;
+                }
                 CheckIfShouldPlaceAfterImage();
                 if (Time.time >= startTime + playerData.dashTime)
                 {

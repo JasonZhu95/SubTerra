@@ -16,7 +16,15 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.SetVelocityX(0f);
+        if (player.DashState.DashTrampolineCheck)
+        {
+            player.SetVelocityY(20f);
+            player.DashState.DashTrampolineSetFalse();
+        }
+        else
+        {
+            player.SetVelocityX(0f);
+        }
     }
 
     public override void Exit()

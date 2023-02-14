@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAbilityState : PlayerState
 {
     protected bool isAbilityDone;
+    protected bool trampolineDetected;
+    public bool DashTrampolineCheck { get; private set; }
 
     private bool isGrounded;
 
@@ -35,6 +37,8 @@ public class PlayerAbilityState : PlayerState
     {
         base.LogicUpdate();
 
+        trampolineDetected = player.playerObstacleCollision.trampolineDetected;
+
         if (isAbilityDone)
         {
             if (isGrounded && player.CurrentVelocity.y < 0.01f)
@@ -52,4 +56,7 @@ public class PlayerAbilityState : PlayerState
     {
         base.PhysicsUpdate();
     }
+
+    public bool DashTrampolineSet() => DashTrampolineCheck = true;
+    public bool DashTrampolineSetFalse() => DashTrampolineCheck = false;
 }

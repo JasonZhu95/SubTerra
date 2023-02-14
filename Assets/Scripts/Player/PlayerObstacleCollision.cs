@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerObstacleCollision : MonoBehaviour
 {
     [SerializeField]
-    private PlayerObstacleData playerObstacleData;
+    private PlayerData playerData;
 
     #region Components
     private Rigidbody2D playerRB;
     private BoxCollider2D playerCollider;
     #endregion
 
-    #region Other Variables
+    #region Local Variables
+    public bool trampolineDetected;
+
     private Vector2 currentVelocity;
     private Vector2 workspace;
     #endregion
@@ -29,7 +31,16 @@ public class PlayerObstacleCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trampoline"))
         {
-            SetVelocityY(playerObstacleData.trampolineVelocity);
+            trampolineDetected = true;
+            SetVelocityY(playerData.trampolineVelocity);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trampoline"))
+        {
+            trampolineDetected = false;
         }
     }
 

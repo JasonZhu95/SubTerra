@@ -590,7 +590,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ce2dca3b899a34a8f663453724ec40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObstacleData: {fileID: 11400000, guid: 46454f5376094cc4990a3b58b0744612, type: 2}
+  playerData: {fileID: 11400000, guid: 8472a7e87ad25aa458da56b2ab5db6f8, type: 2}
+  trampolineDetected: 0
 --- !u!1 &433050168
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,4 +54,7 @@ public class PlayerData : ScriptableObject
     public float wallCheckDistance = 0.5f;
     public LayerMask whatIsGround;
     public float ceilingCheckDistance = 0.5f;
+
+    [Header ("Obstacle Data")]
+    public float trampolineVelocity = 20f;
 }
