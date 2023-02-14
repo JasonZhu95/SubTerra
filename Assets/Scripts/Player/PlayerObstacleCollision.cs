@@ -31,7 +31,7 @@ public class PlayerObstacleCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trampoline"))
         {
-            trampolineDetected = true;
+            trampolineDetected = true; 
             SetVelocityY(playerData.trampolineVelocity);
         }
     }

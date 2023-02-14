@@ -43,3 +43,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   ceilingCheckDistance: 0.5
+  whatIsTrampoline:
+    serializedVersion: 2
+    m_Bits: 128
+  trampolineVelocity: 20

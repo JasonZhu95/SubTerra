@@ -91,6 +91,10 @@ public class Player : MonoBehaviour
     {
         CurrentVelocity = RB.velocity;
         StateMachine.CurrentState.LogicUpdate();
+        if (CheckIfTouchingTrampoline())
+        {
+            DashState.ResetCanDash();
+        }
     }
 
     private void FixedUpdate()
@@ -165,6 +169,11 @@ public class Player : MonoBehaviour
     public bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+    }
+
+    public bool CheckIfTouchingTrampoline()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsTrampoline);
     }
 
     public bool CheckIfTouchingCeiling()
