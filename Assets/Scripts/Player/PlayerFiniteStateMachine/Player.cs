@@ -217,10 +217,5 @@ public class Player : MonoBehaviour
         MovementCollider.size = workspace;
         MovementCollider.offset = center;
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(groundCheck.position, playerData.groundCheckRadius);
-    }
     #endregion
 }
