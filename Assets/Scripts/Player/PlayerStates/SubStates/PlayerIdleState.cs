@@ -20,6 +20,7 @@ public class PlayerIdleState : PlayerGroundedState
         {
             player.SetVelocityY(20f);
             player.DashState.DashTrampolineSetFalse();
+            player.DashState.ResetCanDash();
         }
         else
         {

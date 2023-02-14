@@ -132,6 +132,7 @@ public class PlayerInAirState : PlayerState
             if (player.DashState.DashTrampolineCheck)
             {
                 player.SetVelocityY(playerData.trampolineVelocity);
+                player.DashState.ResetCanDash();
                 player.DashState.DashTrampolineSetFalse();
             }
             else
