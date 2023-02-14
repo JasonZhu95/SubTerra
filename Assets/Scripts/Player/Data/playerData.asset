@@ -18,6 +18,8 @@ MonoBehaviour:
   wallJumpVelocity: 20
   wallJumpTime: 0.4
   wallJumpAngle: {x: 1, y: 2}
+  wallJumpUpVelocity: 15
+  wallJumpUpTime: 0.2
   coyoteTime: 0.2
   variableJumpHeightMultiplier: 0.5
   wallSlideVelocity: 2
@@ -32,8 +34,12 @@ MonoBehaviour:
   drag: 10
   dashEndYMultiplier: 0.2
   distBetweenAfterImages: 0.5
+  crouchMovementVelocity: 5
+  crouchColliderHeight: 0.8
+  standColliderHeight: 1.6
   groundCheckRadius: 0.3
   wallCheckDistance: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  ceilingCheckDistance: 0.5
