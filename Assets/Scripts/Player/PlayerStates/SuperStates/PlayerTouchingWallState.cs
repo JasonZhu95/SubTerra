@@ -63,6 +63,10 @@ public class PlayerTouchingWallState : PlayerState
         // State Changes
         if(jumpInput)
         {
+            if (grabInput && yInput == 1)
+            {
+                player.SetWallJumpCheck();
+            }
             player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
             stateMachine.ChangeState(player.WallJumpState);
         }

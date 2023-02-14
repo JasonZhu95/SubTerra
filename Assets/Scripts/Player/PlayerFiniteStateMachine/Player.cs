@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     #region Other Variables
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
+    public bool WallJumpUpCheck { get; private set; }
 
     private Vector2 workspace;
     #endregion
@@ -136,6 +137,10 @@ public class Player : MonoBehaviour
         RB.velocity = workspace;
         CurrentVelocity = workspace;
     }
+
+    public void SetWallJumpCheck() => WallJumpUpCheck = true;
+
+    public void SetWallJumpCheckFalse() => WallJumpUpCheck = false;
     #endregion
 
     #region Check Functions
@@ -213,5 +218,9 @@ public class Player : MonoBehaviour
         MovementCollider.offset = center;
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, playerData.groundCheckRadius);
+    }
     #endregion
 }

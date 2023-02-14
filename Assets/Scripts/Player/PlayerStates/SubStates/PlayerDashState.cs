@@ -50,6 +50,7 @@ public class PlayerDashState : PlayerAbilityState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
         isTouchingGround = player.CheckIfGrounded();
         yInput = player.InputHandler.NormInputY;
 
