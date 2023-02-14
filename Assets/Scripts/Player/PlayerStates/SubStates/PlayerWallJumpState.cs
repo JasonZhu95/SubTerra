@@ -6,6 +6,7 @@ public class PlayerWallJumpState : PlayerAbilityState
 {
     private int wallJumpDirection;
     private bool dashInput;
+    private int xInput;
 
     public PlayerWallJumpState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -14,14 +15,16 @@ public class PlayerWallJumpState : PlayerAbilityState
     public override void Enter()
     {
         base.Enter();
+        xInput = player.InputHandler.NormInputX;
         player.InputHandler.UseJumpInput();
         player.JumpState.ResetAmountOfJumpsLeft();
-        if (player.WallJumpUpCheck)
+        if (player.WallJumpUpCheck && xInput == 0)
         {
             player.SetVelocityY(playerData.wallJumpUpVelocity);
         }
         else
         {
+            player.SetWallJumpCheckFalse();
             player.SetVelocity(playerData.wallJumpVelocity, playerData.wallJumpAngle, wallJumpDirection);
             player.CheckIfShouldFlip(wallJumpDirection);
         }
@@ -32,6 +35,7 @@ public class PlayerWallJumpState : PlayerAbilityState
     {
         base.LogicUpdate();
 
+        xInput = player.InputHandler.NormInputX;
         dashInput = player.InputHandler.DashInput;
         player.Anim.SetFloat("yVelocity", player.CurrentVelocity.y);
         player.Anim.SetFloat("xVelocity", Mathf.Abs(player.CurrentVelocity.x));

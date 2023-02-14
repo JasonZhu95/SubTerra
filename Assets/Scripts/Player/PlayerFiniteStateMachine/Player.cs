@@ -95,6 +95,8 @@ public class Player : MonoBehaviour
         {
             DashState.ResetCanDash();
         }
+
+        Debug.Log(WallJumpUpCheck);
     }
 
     private void FixedUpdate()

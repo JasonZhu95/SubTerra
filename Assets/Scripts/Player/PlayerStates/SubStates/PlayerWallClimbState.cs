@@ -14,15 +14,22 @@ public class PlayerWallClimbState : PlayerTouchingWallState
 
         if (!isExitingState)
         {
-            player.SetVelocityY(playerData.wallClimbVelocity);
+            if (yInput == 1)
+            {
+                player.SetVelocityY(playerData.wallClimbVelocity);
+            }
+            else if (yInput == -1)
+            {
+                player.SetVelocityY(-playerData.wallClimbVelocityDown);
+            }
+            else if (yInput == 0)
+            {
+                player.StateMachine.ChangeState(player.WallGrabState);
+            }
 
             if (!grabInput)
             {
                 stateMachine.ChangeState(player.InAirState);
-            }
-            else if (yInput != 1)
-            {
-                stateMachine.ChangeState(player.WallGrabState);
             }
         }
     }
