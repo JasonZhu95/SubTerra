@@ -12,6 +12,8 @@ public class PlayerData : ScriptableObject
     [Header("Jump State")]
     public float jumpVelocity = 15f;
     public int amountOfJumps = 1;
+    public float halfGravityThresholdMin = -3.0f;
+    public float halfGravityThresholdMax = 4.0f;
 
     [Header("Wall Jump State")]
     public float wallJumpVelocity = 20f;

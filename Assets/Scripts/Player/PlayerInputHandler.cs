@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+    #region Variables
     private PlayerInput playerInput;
     private Camera cam;
 
@@ -19,15 +21,23 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
 
+    public bool[] AttackInputs { get; private set; }
+
     [SerializeField]
     private float inputHoldTime = 0.2f;
 
     private float jumpInputStartTime;
     private float dashInputStartTime;
+    #endregion
 
+    #region Unity Callback Functions
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
+
+        int count = Enum.GetValues(typeof(CombatInputs)).Length;
+        AttackInputs = new bool[count];
+
         cam = Camera.main;
     }
 
@@ -36,7 +46,9 @@ public class PlayerInputHandler : MonoBehaviour
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
     }
+    #endregion
 
+    #region Input Functions
     // FUNCTION: Normalize player input as a vector 2
     public void OnMoveInput(InputAction.CallbackContext context)
     {
@@ -112,9 +124,38 @@ public class PlayerInputHandler : MonoBehaviour
         RawDashDirectionInput = context.ReadValue<Vector2>();
 
         DashDirectionInput = Vector2Int.RoundToInt(RawDashDirectionInput.normalized);
-
     }
 
+    // FUNCTION: Checks primary attack button
+    public void OnPrimaryAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AttackInputs[(int)CombatInputs.primary] = true;
+        }
+
+        if (context.canceled)
+        {
+            AttackInputs[(int)CombatInputs.primary] = false;
+        }
+    }
+
+    // FUNCTION: Checks secondary attack button
+    public void OnSecondaryAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AttackInputs[(int)CombatInputs.secondary] = true;
+        }
+
+        if (context.canceled)
+        {
+            AttackInputs[(int)CombatInputs.secondary] = false;
+        }
+    }
+    #endregion
+
+    #region Other Functions
     public void UseJumpInput() => JumpInput = false;
 
     public void UseDashInput() => DashInput = false;
@@ -136,4 +177,11 @@ public class PlayerInputHandler : MonoBehaviour
             DashInput = false;
         }
     }
+    #endregion
+}
+
+public enum CombatInputs
+{
+    primary,
+    secondary
 }

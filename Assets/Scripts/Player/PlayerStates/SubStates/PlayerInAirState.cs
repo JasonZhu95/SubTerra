@@ -158,13 +158,19 @@ public class PlayerInAirState : PlayerState
     {
         if (isJumping)
         {
+            if (player.CurrentVelocity.y < playerData.halfGravityThresholdMax && player.CurrentVelocity.y > playerData.halfGravityThresholdMin)
+            {
+                player.RB.gravityScale = 2.5f;
+            }
             if (jumpInputStop)
             {
                 player.SetVelocityY(player.CurrentVelocity.y * playerData.variableJumpHeightMultiplier);
+                player.RB.gravityScale = 5.0f;
                 isJumping = false;
             }
             else if (player.CurrentVelocity.y <= 0f)
             {
+                player.RB.gravityScale = 5.0f;
                 isJumping = false;
             }
         }
