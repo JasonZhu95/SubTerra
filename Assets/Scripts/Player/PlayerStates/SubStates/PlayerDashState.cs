@@ -9,6 +9,7 @@ public class PlayerDashState : PlayerAbilityState
     private bool isHolding;
     private bool dashInputStop;
     private bool isTouchingGround;
+    private bool cornerDashCorrection;
     private int yInput;
 
     private Vector2 dashDirection;
@@ -53,10 +54,16 @@ public class PlayerDashState : PlayerAbilityState
 
         isTouchingGround = player.CheckIfGrounded();
         yInput = player.InputHandler.NormInputY;
+        cornerDashCorrection = player.CheckForCornerDashCorrection();
 
         if (!isExitingState)
         {
-
+            if (cornerDashCorrection)
+            {
+                player.transform.position = player.transform.position + new Vector3(0.0f, playerData.dashCorrectionHeight, 0.0f);
+                Debug.Log("Corrected");
+                cornerDashCorrection = false;
+            }
             player.Anim.SetFloat("yVelocity", player.CurrentVelocity.y);
             player.Anim.SetFloat("xVelocity", Mathf.Abs(player.CurrentVelocity.x));
 

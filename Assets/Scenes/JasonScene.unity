@@ -316,6 +316,7 @@ Transform:
   - {fileID: 898857021}
   - {fileID: 1019584345}
   - {fileID: 943789623}
+  - {fileID: 727607614}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -435,6 +436,7 @@ MonoBehaviour:
   wallCheck: {fileID: 898857021}
   ledgeCheck: {fileID: 1019584345}
   ceilingCheck: {fileID: 943789623}
+  cornerCorrectionCheck: {fileID: 727607614}
 --- !u!114 &264109752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +737,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.2900554}
   m_EdgeRadius: 0
+--- !u!1 &727607613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727607614}
+  m_Layer: 6
+  m_Name: CornerCorrectionCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &727607614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727607613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 264109747}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796321396
 GameObject:
   m_ObjectHideFlags: 0

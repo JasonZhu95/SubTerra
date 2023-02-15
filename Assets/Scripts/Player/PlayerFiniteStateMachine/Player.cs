@@ -46,6 +46,8 @@ public class Player : MonoBehaviour
     private Transform ledgeCheck;
     [SerializeField]
     private Transform ceilingCheck;
+    [SerializeField]
+    private Transform cornerCorrectionCheck;
     #endregion
 
     #region Other Variables
@@ -151,6 +153,18 @@ public class Player : MonoBehaviour
     public void SetWallJumpCheck() => WallJumpUpCheck = true;
 
     public void SetWallJumpCheckFalse() => WallJumpUpCheck = false;
+
+    // FUNCTION: Changes player collider height during crouch
+    public void SetColliderHeight(float height)
+    {
+        Vector2 center = MovementCollider.offset;
+        workspace.Set(MovementCollider.size.x, height);
+
+        center.y += (height - MovementCollider.size.y) / 2;
+
+        MovementCollider.size = workspace;
+        MovementCollider.offset = center;
+    }
     #endregion
 
     #region Check Functions
@@ -183,6 +197,13 @@ public class Player : MonoBehaviour
     public bool CheckIfTouchingCeiling()
     {
         return Physics2D.OverlapCircle(ceilingCheck.position, playerData.ceilingCheckDistance, playerData.whatIsGround);
+    }
+
+    public bool CheckForCornerDashCorrection()
+    {
+        return !Physics2D.Raycast(cornerCorrectionCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround) &&
+            Physics2D.Raycast(groundCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+
     }
 
     // FUNCTION: Checks if the player needs to be flipped
@@ -221,16 +242,11 @@ public class Player : MonoBehaviour
         return workspace;
     }
 
-    // FUNCTION: Changes player collider height during crouch
-    public void SetColliderHeight(float height)
+    void OnDrawGizmos()
     {
-        Vector2 center = MovementCollider.offset;
-        workspace.Set(MovementCollider.size.x, height);
+        Gizmos.DrawWireSphere(groundCheck.position, playerData.groundCheckRadius);
 
-        center.y += (height - MovementCollider.size.y) / 2;
-
-        MovementCollider.size = workspace;
-        MovementCollider.offset = center;
-    }
+        Gizmos.DrawLine(cornerCorrectionCheck.position, new Vector3(cornerCorrectionCheck.position.x + playerData.wallCheckDistance, cornerCorrectionCheck.position.y, cornerCorrectionCheck.position.z));
+    } 
     #endregion
 }
