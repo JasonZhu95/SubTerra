@@ -54,23 +54,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         RawMovementInput = context.ReadValue<Vector2>();
 
-        if (Mathf.Abs(RawMovementInput.x) > 0.5f)
-        {
-            NormInputX = (int)(RawMovementInput * Vector2.right).normalized.x;
-        }
-        else
-        {
-            NormInputX = 0;
-        }
-
-        if (Mathf.Abs(RawMovementInput.y) > 0.5f)
-        {
-            NormInputY = (int)(RawMovementInput * Vector2.up).normalized.y;
-        }
-        else
-        {
-            NormInputY = 0;
-        }
+        NormInputX = Mathf.RoundToInt(RawMovementInput.x);
+        NormInputY = Mathf.RoundToInt(RawMovementInput.y);
     }
 
     // FUNCTION: Check when a player presses jump input

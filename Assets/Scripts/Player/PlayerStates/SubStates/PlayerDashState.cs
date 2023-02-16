@@ -61,7 +61,6 @@ public class PlayerDashState : PlayerAbilityState
             if (cornerDashCorrection)
             {
                 player.transform.position = player.transform.position + new Vector3(0.0f, playerData.dashCorrectionHeight, 0.0f);
-                Debug.Log("Corrected");
                 cornerDashCorrection = false;
             }
             player.Anim.SetFloat("yVelocity", player.CurrentVelocity.y);

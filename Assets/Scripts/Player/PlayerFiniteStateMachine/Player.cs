@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
     public PlayerObstacleCollision playerObstacleCollision { get; private set; }
+    public PlayerInventory Inventory { get; private set; }
     #endregion
 
     #region Check Transforms
@@ -87,8 +88,13 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         MovementCollider = GetComponent<BoxCollider2D>();
         playerObstacleCollision = GetComponent<PlayerObstacleCollision>();
+        Inventory = GetComponent<PlayerInventory>();
 
         FacingDirection = 1;
+
+        PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
+        //SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
+
 
         StateMachine.Initialize(IdleState);
     }
