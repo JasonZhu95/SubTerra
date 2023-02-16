@@ -139,6 +139,7 @@ public class PlayerInAirState : PlayerState
             player.CheckIfShouldFlip(xInput);
             if (player.DashState.DashTrampolineCheck)
             {
+                player.JumpState.DecreaseAmountOfJumpsLeft();
                 player.SetVelocityY(playerData.trampolineVelocity);
                 player.DashState.ResetCanDash();
                 player.DashState.DashTrampolineSetFalse();

@@ -7,6 +7,8 @@ public class PlayerObstacleCollision : MonoBehaviour
     [SerializeField]
     private PlayerData playerData;
 
+    private GameObject player;
+
     #region Components
     private Rigidbody2D playerRB;
     private BoxCollider2D playerCollider;
@@ -24,6 +26,7 @@ public class PlayerObstacleCollision : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
+        player = GameObject.Find("Player");
     }
     #endregion
 
@@ -33,6 +36,11 @@ public class PlayerObstacleCollision : MonoBehaviour
         {
             trampolineDetected = true; 
             SetVelocityY(playerData.trampolineVelocity);
+        }
+
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            Destroy(player);
         }
     }
 
