@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     #region Variables
+
     private PlayerInput playerInput;
     private Camera cam;
 
@@ -28,9 +29,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     private float jumpInputStartTime;
     private float dashInputStartTime;
+
     #endregion
 
     #region Unity Callback Functions
+
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -46,9 +49,11 @@ public class PlayerInputHandler : MonoBehaviour
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
     }
+
     #endregion
 
     #region Input Functions
+
     // FUNCTION: Normalize player input as a vector 2
     public void OnMoveInput(InputAction.CallbackContext context)
     {
@@ -138,9 +143,11 @@ public class PlayerInputHandler : MonoBehaviour
             AttackInputs[(int)CombatInputs.secondary] = false;
         }
     }
+
     #endregion
 
     #region Other Functions
+
     public void UseJumpInput() => JumpInput = false;
 
     public void UseDashInput() => DashInput = false;
@@ -162,6 +169,7 @@ public class PlayerInputHandler : MonoBehaviour
             DashInput = false;
         }
     }
+
     #endregion
 }
 

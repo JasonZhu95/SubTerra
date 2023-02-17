@@ -5,6 +5,8 @@ using UnityEngine;
 // Base class where each player state will inherit from
 public class PlayerState
 {
+    protected Core core;
+
     protected Player player;
     protected PlayerStateMachine stateMachine;
     protected PlayerData playerData;
@@ -23,6 +25,7 @@ public class PlayerState
         this.stateMachine = stateMachine;
         this.playerData = playerData;
         this.animBoolName = animBoolName;
+        core = player.Core;
     }
 
     // FUNCTION: occurs when a state is entered

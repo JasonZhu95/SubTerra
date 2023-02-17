@@ -43,10 +43,10 @@ public class PlayerInAirState : PlayerState
         // Set Local Booleans based off updated checks
         lastFrameIsTouchingWall = isTouchingWall;
         lastFrameTouchingWallBack = isTouchingWallBack;
-        isGrounded = player.CheckIfGrounded();
-        isTouchingWall = player.CheckIfTouchingWall();
-        isTouchingWallBack = player.CheckIfTouchingWallBack();
-        isTouchingLedge = player.CheckIfTouchingLedge();
+        isGrounded = core.CollisionSenses.Ground;
+        isTouchingWall = core.CollisionSenses.WallFront;
+        isTouchingWallBack = core.CollisionSenses.WallBack;
+        isTouchingLedge = core.CollisionSenses.Ledge;
         isTouchingTrampoline = player.DashState.DashTrampolineCheck;
 
         // Ledge Climb Logic
@@ -103,7 +103,7 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.SecondaryAttackState);
         }
-        else if (isGrounded && player.CurrentVelocity.y < 0.01f)
+        else if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f)
         {
             stateMachine.ChangeState(player.LandState);
         }
@@ -114,7 +114,7 @@ public class PlayerInAirState : PlayerState
         else if (jumpInput && (isTouchingWall || isTouchingWallBack || wallJumpCoyoteTime))
         {
             StopWallJumpCoyoteTime();
-            isTouchingWall = player.CheckIfTouchingWall();
+            isTouchingWall = core.CollisionSenses.WallFront;
             player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
             stateMachine.ChangeState(player.WallJumpState);
         }
@@ -126,7 +126,7 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.WallGrabState);
         }
-        else if (isTouchingWall && xInput == player.FacingDirection)
+        else if (isTouchingWall && xInput == core.Movement.FacingDirection)
         {
             stateMachine.ChangeState(player.WallSlideState);
         }
@@ -136,21 +136,21 @@ public class PlayerInAirState : PlayerState
         }
         else
         {
-            player.CheckIfShouldFlip(xInput);
+            core.Movement.CheckIfShouldFlip(xInput);
             if (player.DashState.DashTrampolineCheck)
             {
                 player.JumpState.DecreaseAmountOfJumpsLeft();
-                player.SetVelocityY(playerData.trampolineVelocity);
+                core.Movement.SetVelocityY(playerData.trampolineVelocity);
                 player.DashState.ResetCanDash();
                 player.DashState.DashTrampolineSetFalse();
             }
             else
             {
-                player.SetVelocityX(playerData.movementVelocity * xInput);
+                core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
             }
 
-            player.Anim.SetFloat("yVelocity", player.CurrentVelocity.y);
-            player.Anim.SetFloat("xVelocity", Mathf.Abs(player.CurrentVelocity.x));
+            player.Anim.SetFloat("yVelocity", core.Movement.CurrentVelocity.y);
+            player.Anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.CurrentVelocity.x));
         }
     }
 
@@ -167,17 +167,17 @@ public class PlayerInAirState : PlayerState
     {
         if (isJumping)
         {
-            if (player.CurrentVelocity.y < playerData.halfGravityThresholdMax && player.CurrentVelocity.y > playerData.halfGravityThresholdMin)
+            if (core.Movement.CurrentVelocity.y < playerData.halfGravityThresholdMax && core.Movement.CurrentVelocity.y > playerData.halfGravityThresholdMin)
             {
                 player.RB.gravityScale = 2.5f;
             }
             if (jumpInputStop)
             {
-                player.SetVelocityY(player.CurrentVelocity.y * playerData.variableJumpHeightMultiplier);
+                core.Movement.SetVelocityY(core.Movement.CurrentVelocity.y * playerData.variableJumpHeightMultiplier);
                 player.RB.gravityScale = 5.0f;
                 isJumping = false;
             }
-            else if (player.CurrentVelocity.y <= 0f)
+            else if (core.Movement.CurrentVelocity.y <= 0f)
             {
                 player.RB.gravityScale = 5.0f;
                 isJumping = false;
