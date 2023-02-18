@@ -12,6 +12,5 @@ public class CoreComponent : MonoBehaviour
 
         if (core == null){ Debug.LogError("No Core on Parent"); }
 
-
     }
 }

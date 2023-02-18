@@ -31,7 +31,7 @@ public class CollisionSenses : CoreComponent
 
     #endregion
 
-    #region Check Functions
+    #region Check Properties
     public bool WallFront
     {
         get => Physics2D.Raycast(wallCheck.position, Vector2.right * core.Movement.FacingDirection, wallCheckDistance, whatIsGround);
