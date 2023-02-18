@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trampoline
   - Spike
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Player
   - Trampoline
   - Spike
-  - 
-  - 
+  - Damageable
+  - Weapon
   - 
   - 
   - 
