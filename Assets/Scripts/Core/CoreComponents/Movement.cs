@@ -76,7 +76,7 @@ public class Movement : CoreComponent
     }
 
     // FUNCTION: Flips the character model
-    private void Flip()
+    public void Flip()
     {
         FacingDirection *= -1;
         RB.transform.Rotate(0.0f, 180.0f, 0.0f);

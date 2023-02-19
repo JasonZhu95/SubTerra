@@ -46,7 +46,7 @@ public class PlayerInAirState : PlayerState
         isGrounded = core.CollisionSenses.Ground;
         isTouchingWall = core.CollisionSenses.WallFront;
         isTouchingWallBack = core.CollisionSenses.WallBack;
-        isTouchingLedge = core.CollisionSenses.Ledge;
+        isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
         isTouchingTrampoline = player.DashState.DashTrampolineCheck;
 
         // Ledge Climb Logic
@@ -170,6 +170,10 @@ public class PlayerInAirState : PlayerState
             if (core.Movement.CurrentVelocity.y < playerData.halfGravityThresholdMax && core.Movement.CurrentVelocity.y > playerData.halfGravityThresholdMin)
             {
                 player.RB.gravityScale = 2.5f;
+            }
+            if (isTouchingWall)
+            {
+                player.RB.gravityScale = 5.0f;
             }
             if (jumpInputStop)
             {
