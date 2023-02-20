@@ -16,11 +16,11 @@ public class PlayerWallClimbState : PlayerTouchingWallState
         {
             if (yInput == 1)
             {
-                core.Movement.SetVelocityY(playerData.wallClimbVelocity);
+                Movement?.SetVelocityY(playerData.wallClimbVelocity);
             }
             else if (yInput == -1)
             {
-                core.Movement.SetVelocityY(-playerData.wallClimbVelocityDown);
+                Movement?.SetVelocityY(-playerData.wallClimbVelocityDown);
             }
             else if (yInput == 0)
             {

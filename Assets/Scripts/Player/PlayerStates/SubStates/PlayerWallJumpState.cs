@@ -20,13 +20,13 @@ public class PlayerWallJumpState : PlayerAbilityState
         player.JumpState.ResetAmountOfJumpsLeft();
         if (player.WallJumpUpCheck && xInput == 0)
         {
-            core.Movement.SetVelocityY(playerData.wallJumpUpVelocity);
+            Movement?.SetVelocityY(playerData.wallJumpUpVelocity);
         }
         else
         {
             player.SetWallJumpCheckFalse();
-            core.Movement.SetVelocity(playerData.wallJumpVelocity, playerData.wallJumpAngle, wallJumpDirection);
-            core.Movement.CheckIfShouldFlip(wallJumpDirection);
+            Movement?.SetVelocity(playerData.wallJumpVelocity, playerData.wallJumpAngle, wallJumpDirection);
+            Movement?.CheckIfShouldFlip(wallJumpDirection);
         }
         player.JumpState.DecreaseAmountOfJumpsLeft();
     }
@@ -37,8 +37,8 @@ public class PlayerWallJumpState : PlayerAbilityState
 
         xInput = player.InputHandler.NormInputX;
         dashInput = player.InputHandler.DashInput;
-        player.Anim.SetFloat("yVelocity", core.Movement.CurrentVelocity.y);
-        player.Anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.CurrentVelocity.x));
+        player.Anim.SetFloat("yVelocity", Movement.CurrentVelocity.y);
+        player.Anim.SetFloat("xVelocity", Mathf.Abs(Movement.CurrentVelocity.x));
 
         if (dashInput && player.DashState.CanDash)
         {
@@ -62,11 +62,11 @@ public class PlayerWallJumpState : PlayerAbilityState
     {
         if (isTouchingWall)
         {
-            wallJumpDirection = -core.Movement.FacingDirection;
+            wallJumpDirection = -Movement.FacingDirection;
         }
         else
         {
-            wallJumpDirection = core.Movement.FacingDirection;
+            wallJumpDirection = Movement.FacingDirection;
         }
     }
 

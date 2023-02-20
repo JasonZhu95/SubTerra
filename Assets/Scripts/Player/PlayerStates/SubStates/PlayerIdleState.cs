@@ -18,13 +18,13 @@ public class PlayerIdleState : PlayerGroundedState
         base.Enter();
         if (player.DashState.DashTrampolineCheck)
         {
-            core.Movement.SetVelocityY(20f);
+            Movement?.SetVelocityY(20f);
             player.DashState.DashTrampolineSetFalse();
             player.DashState.ResetCanDash();
         }
         else
         {
-            core.Movement.SetVelocityX(0f);
+            Movement?.SetVelocityX(0f);
         }
     }
 

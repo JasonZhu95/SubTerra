@@ -5,6 +5,9 @@ using UnityEngine;
 // Class that creates state objects
 public class Player : MonoBehaviour
 {
+    private CollisionSenses CollisionSenses { get => collisionSenses ?? Core.GetCoreComponent(ref collisionSenses); }
+    private CollisionSenses collisionSenses;
+
     #region State Variables
     public PlayerStateMachine StateMachine { get; private set; }
 
@@ -92,7 +95,7 @@ public class Player : MonoBehaviour
     {
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
-        if (Core.CollisionSenses.Trampoline)
+        if (CollisionSenses.Trampoline)
         {
             DashState.ResetCanDash();
         }
