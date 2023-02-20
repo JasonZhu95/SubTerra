@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerDetectedState : State
 {
-    protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+    protected Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
 
     private Movement movement;
     private CollisionSenses collisionSenses;

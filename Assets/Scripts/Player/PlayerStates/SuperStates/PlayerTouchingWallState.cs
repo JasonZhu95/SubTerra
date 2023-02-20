@@ -12,10 +12,10 @@ public class PlayerTouchingWallState : PlayerState
     protected int xInput;
     protected int yInput;
 
-    protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-    private Movement movement;
+    protected Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
 
-    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+    private Movement movement;
     private CollisionSenses collisionSenses;
 
     public PlayerTouchingWallState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)

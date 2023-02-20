@@ -31,8 +31,8 @@ public class PlayerInAirState : PlayerState
 
     #endregion
 
-    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
 
     private Movement movement;
     private CollisionSenses collisionSenses;

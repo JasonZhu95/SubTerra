@@ -10,8 +10,8 @@ public class PlayerAbilityState : PlayerState
 
     private bool isGrounded;
 
-    protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-    protected CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+    protected Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    protected CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
 
     private Movement movement;
     private CollisionSenses collisionSenses;

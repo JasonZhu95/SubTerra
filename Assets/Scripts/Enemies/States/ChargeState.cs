@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChargeState : State
 {
     private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
 
     private Movement movement;
     private CollisionSenses collisionSenses;
