@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats : MonoBehaviour
+public class Stats : CoreComponent
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float maxHealth;
+    private float currentHealth;
+
+    protected override void Awake()
     {
-        
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DecreaseHealth(float amount)
     {
+        currentHealth -= amount;
         
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Health is 0");
+            currentHealth = 0;
+        }
+    }
+
+    public void IncreaseHealth(float amount)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
 }

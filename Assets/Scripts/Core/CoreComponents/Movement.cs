@@ -24,7 +24,7 @@ public class Movement : CoreComponent
 
     }
 
-    public void LogicUpdate()
+    public override void LogicUpdate()
     {
         CurrentVelocity = RB.velocity;
     }
