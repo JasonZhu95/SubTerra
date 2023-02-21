@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class WeaponSprite : WeaponComponent
+public class WeaponSprite : WeaponComponent<WeaponSpriteData, AttackSprites>
 {
     private SpriteRenderer baseSpriteRenderer;
     private SpriteRenderer weaponSpriteRenderer;
-
-    [SerializeField] private WeaponSprites[] weaponSprites;
 
     private int currentWeaponSpriteIndex;
 
@@ -27,7 +25,7 @@ public class WeaponSprite : WeaponComponent
             return;
         }
 
-        var currentAttackSprite = weaponSprites[weapon.CurrentAttackCounter].Sprites;
+        var currentAttackSprite = currentAttackData.Sprites;
         if (currentWeaponSpriteIndex >= currentAttackSprite.Length)
         {
             Debug.LogWarning($"{weapon.name} Weapon Sprith Array Length Error");
@@ -66,10 +64,4 @@ public class WeaponSprite : WeaponComponent
         weapon.OnEnter -= HandleEnter;
     }
 
-}
-
-[Serializable]
-public class WeaponSprites
-{
-    [field: SerializeField] public Sprite[] Sprites { get; private set; }
 }

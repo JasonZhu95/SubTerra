@@ -5,28 +5,28 @@ using System;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private int numberOfAttacks;
+    #region Variables
+    [field: SerializeField] public WeaponDataSO Data {get; private set;}
     [SerializeField] private float attackCounterResetCooldown;
-
-    public int CurrentAttackCounter
-    {
-        get => currentAttackCounter;
-        private set => currentAttackCounter = value >= numberOfAttacks ? 0 : value; 
-    }
 
     public event Action OnExit;
     public event Action OnEnter;
 
     private Animator anim;
-    private AnimationEventHandler eventHandler;
+    public AnimationEventHandler EventHandler { get; private set; }
 
     public GameObject BaseGameObject { get; private set; }
     public GameObject WeaponSpriteGameObject { get; private set; }
+
+    public Core Core { get; private set; }
 
     private int currentAttackCounter;
 
     private Timer attackCounterResetTimer;
 
+    #endregion
+
+    #region State Functions
     public void Enter()
     {
         Debug.Log($"{transform.name}: Entered");
@@ -46,14 +46,16 @@ public class Weapon : MonoBehaviour
 
         OnExit?.Invoke();
     }
+    #endregion
 
+    #region Unity Callback Functions
     private void Awake()
     {
         BaseGameObject = transform.Find("Base").gameObject;
         WeaponSpriteGameObject = transform.Find("WeaponSprite").gameObject;
 
         anim = BaseGameObject.GetComponent<Animator>();
-        eventHandler = BaseGameObject.GetComponent<AnimationEventHandler>();
+        EventHandler = BaseGameObject.GetComponent<AnimationEventHandler>();
 
         attackCounterResetTimer = new Timer(attackCounterResetCooldown);
     }
@@ -63,17 +65,31 @@ public class Weapon : MonoBehaviour
         attackCounterResetTimer.Tick();
     }
 
-    private void ResetAttackCounter() => CurrentAttackCounter = 0;
-
     private void OnEnable()
     {
-        eventHandler.OnFinish += Exit;
+        EventHandler.OnFinish += Exit;
         attackCounterResetTimer.OnTimerDone += ResetAttackCounter;
     }
 
     private void OnDisable()
     {
-        eventHandler.OnFinish -= Exit;
+        EventHandler.OnFinish -= Exit;
         attackCounterResetTimer.OnTimerDone -= ResetAttackCounter;
     }
+    #endregion
+
+    #region Other Functions
+    public void SetCore(Core core)
+    {
+        Core = core;
+    }
+
+    public int CurrentAttackCounter
+    {
+        get => currentAttackCounter;
+        private set => currentAttackCounter = value >= Data.NumberOfAttacks ? 0 : value;
+    }
+
+    private void ResetAttackCounter() => CurrentAttackCounter = 0;
+    #endregion
 }

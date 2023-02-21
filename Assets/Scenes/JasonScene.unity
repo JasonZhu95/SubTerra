@@ -712,11 +712,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!1 &236816057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 485315161633681474, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
+  m_PrefabInstance: {fileID: 485315161735100155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &236816058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485315161633681473, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
   m_PrefabInstance: {fileID: 485315161735100155}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &236816061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236816057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d5f6d3dbbae1c4abff26ceb0f9e426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &251121801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,6 +1601,11 @@ Transform:
   m_Father: {fileID: 1461723264}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &461714361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 485315161633681474, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
+  m_PrefabInstance: {fileID: 785733318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &530971994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondaryWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 2500025065065616571, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
+      propertyPath: <Data>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: b5be3b9e032b3e44e8a8b9c2ac0b4902, type: 2}
     - target: {fileID: 8016444553124087917, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
@@ -2095,6 +2121,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 485315161633681473, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
   m_PrefabInstance: {fileID: 785733318}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &785733322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461714361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d5f6d3dbbae1c4abff26ceb0f9e426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796321396
 GameObject:
   m_ObjectHideFlags: 0
@@ -14885,6 +14923,14 @@ PrefabInstance:
     - target: {fileID: 485315161633681474, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
       propertyPath: m_Name
       value: PrimaryWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500025065065616571, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
+      propertyPath: <Data>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 21d9f628027d2e040aad76a599a7e9eb, type: 2}
+    - target: {fileID: 8016444553124087917, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 993c5c16b6e1dc24faae27696bf32c32, type: 3}
