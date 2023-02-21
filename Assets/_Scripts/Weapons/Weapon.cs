@@ -29,7 +29,6 @@ public class Weapon : MonoBehaviour
     #region State Functions
     public void Enter()
     {
-        Debug.Log($"{transform.name}: Entered");
 
         anim.SetBool("active", true);
         anim.SetInteger("counter", CurrentAttackCounter);

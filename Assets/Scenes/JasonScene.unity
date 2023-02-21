@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 218752}
   - component: {fileID: 218754}
   - component: {fileID: 218753}
+  - component: {fileID: 218755}
   m_Layer: 6
   m_Name: Combat
   m_TagString: Untagged
@@ -195,6 +196,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxKnockbackTime: 0.2
+--- !u!114 &218755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d82c2b2c3eebb349a222f5bdfd8d012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damageParticles: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
 --- !u!1 &90706464
 GameObject:
@@ -732,6 +745,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15d5f6d3dbbae1c4abff26ceb0f9e426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &236816062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236816057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0350ba12884dfe74895978eee3921b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &236816063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236816057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7056fa2b996459459d0d7a0f1e75fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &251121801
@@ -1723,6 +1760,7 @@ GameObject:
   - component: {fileID: 655757614}
   - component: {fileID: 655757616}
   - component: {fileID: 655757615}
+  - component: {fileID: 655757617}
   m_Layer: 9
   m_Name: Combat
   m_TagString: Untagged
@@ -1784,6 +1822,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxKnockbackTime: 0.2
+--- !u!114 &655757617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655757613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d82c2b2c3eebb349a222f5bdfd8d012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damageParticles: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
 --- !u!1 &712670721
 GameObject:
@@ -2133,6 +2183,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d5f6d3dbbae1c4abff26ceb0f9e426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &785733323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461714361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0350ba12884dfe74895978eee3921b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &785733324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461714361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7056fa2b996459459d0d7a0f1e75fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &796321396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,6 +2544,7 @@ GameObject:
   - component: {fileID: 1125408726}
   - component: {fileID: 1125408728}
   - component: {fileID: 1125408727}
+  - component: {fileID: 1125408729}
   m_Layer: 9
   m_Name: Combat
   m_TagString: Untagged
@@ -2531,6 +2606,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxKnockbackTime: 0.2
+--- !u!114 &1125408729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125408725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d82c2b2c3eebb349a222f5bdfd8d012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damageParticles: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
 --- !u!1 &1155135706
 GameObject:
