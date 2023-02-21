@@ -17,6 +17,7 @@ public class WeaponMovement : WeaponComponent<MovementData, AttackMovement>
         CoreMovement.SetVelocityZero();
     }
 
+    //This is a comment
     protected override void OnEnable()
     {
         base.OnEnable();
