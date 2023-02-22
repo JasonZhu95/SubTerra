@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "newProjectileData", menuName = "Data/Projectile Data")]
 public class ProjectileDataSO : ScriptableObject
 {
     [field: SerializeField] public GameObject ProjectilePrefab { get; private set; }
