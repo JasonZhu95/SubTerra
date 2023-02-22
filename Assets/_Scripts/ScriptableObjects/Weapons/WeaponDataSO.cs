@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(fileName = "newWeaponData", menuName = "Data/Weapon Data/Basic Weapon Data")]
 public class WeaponDataSO : ScriptableObject
@@ -23,5 +24,10 @@ public class WeaponDataSO : ScriptableObject
         }
 
         ComponentDataList.Add(data);
+    }
+
+    public List<Type> GetAllDependencies()
+    {
+        return ComponentDataList.Select(component => component.ComponentDependency).ToList();
     }
 }

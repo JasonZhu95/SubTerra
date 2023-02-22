@@ -6,10 +6,20 @@ public class WeaponMovement : WeaponComponent<MovementData, AttackMovement>
 {
     private Movement coreMovement;
     private Movement CoreMovement => coreMovement ? coreMovement : Core.GetCoreComponent(ref coreMovement);
+    private CollisionSenses collisionSenses;
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : Core.GetCoreComponent(ref collisionSenses);
 
     private void HandleStartMovement()
     {
-        CoreMovement.SetVelocity(currentAttackData.Velocity, currentAttackData.Direction, CoreMovement.FacingDirection);
+        if (CollisionSenses.Ground)
+        {
+            Debug.Log("Grounded");
+            CoreMovement.SetVelocity(currentAttackData.Velocity, currentAttackData.Direction, CoreMovement.FacingDirection);
+        }
+        else
+        {
+            CoreMovement.SetVelocityX(0f);
+        }
     }
 
     private void HandleStopMovement()
@@ -17,18 +27,17 @@ public class WeaponMovement : WeaponComponent<MovementData, AttackMovement>
         CoreMovement.SetVelocityZero();
     }
 
-    //This is a comment
-    protected override void OnEnable()
+    protected override void Start()
     {
-        base.OnEnable();
+        base.Start();
 
         eventHandler.OnStartMovement += HandleStartMovement;
         eventHandler.OnStopMovement += HandleStartMovement;
     }
 
-    protected override void OnDisable()
+    protected override void OnDestroy()
     {
-        base.OnDisable();
+        base.OnDestroy();
 
         eventHandler.OnStartMovement -= HandleStartMovement;
         eventHandler.OnStopMovement -= HandleStartMovement;

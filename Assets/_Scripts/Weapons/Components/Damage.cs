@@ -17,23 +17,17 @@ public class Damage : WeaponComponent<DamageData, AttackDamage>
         }
     }
 
-    protected override void Awake()
+    protected override void Start()
     {
-        base.Awake();
+        base.Start();
 
         hitbox = GetComponent<ActionHitbox>();
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-
         hitbox.OnDetectedCollider2D += HandleDetectCollider2D;
     }
 
-    protected override void OnDisable()
+    protected override void OnDestroy()
     {
-        base.OnDisable();
+        base.OnDestroy();
 
         hitbox.OnDetectedCollider2D -= HandleDetectCollider2D;
     }

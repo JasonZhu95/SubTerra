@@ -6,9 +6,9 @@ using System;
 public class Weapon : MonoBehaviour
 {
     #region Variables
-    [field: SerializeField] public WeaponDataSO Data {get; private set;}
     [SerializeField] private float attackCounterResetCooldown;
 
+    public WeaponDataSO Data {get; private set;}
     public event Action OnExit;
     public event Action OnEnter;
 
@@ -81,6 +81,11 @@ public class Weapon : MonoBehaviour
     public void SetCore(Core core)
     {
         Core = core;
+    }
+
+    public void SetData(WeaponDataSO data)
+    {
+        Data = data;
     }
 
     public int CurrentAttackCounter

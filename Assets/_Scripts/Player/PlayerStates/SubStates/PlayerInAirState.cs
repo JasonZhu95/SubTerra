@@ -181,7 +181,7 @@ public class PlayerInAirState : PlayerState
             {
                 player.RB.gravityScale = 2.5f;
             }
-            if (isTouchingWall)
+            if (isTouchingWall || player.InputHandler.AttackInputs[(int)CombatInputs.primary] || player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
             {
                 player.RB.gravityScale = 5.0f;
             }

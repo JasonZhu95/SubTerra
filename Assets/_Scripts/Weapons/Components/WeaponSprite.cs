@@ -37,31 +37,22 @@ public class WeaponSprite : WeaponComponent<WeaponSpriteData, AttackSprites>
         currentWeaponSpriteIndex++;
     }
 
-    protected override void Awake()
+    protected override void Start()
     {
-        base.Awake();
+        base.Start();
 
-        baseSpriteRenderer = transform.Find("Base").GetComponent<SpriteRenderer>();
-        weaponSpriteRenderer = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
+        baseSpriteRenderer = weapon.BaseGameObject.GetComponent<SpriteRenderer>();
+        weaponSpriteRenderer = weapon.WeaponSpriteGameObject.GetComponent<SpriteRenderer>();
 
-        //baseSpriteRenderer = weapon.BaseGameObject.GetComponent<SpriteRenderer>();
-        //weaponSpriteRenderer = weapon.WeaponSpriteGameObject.GetComponent<SpriteRenderer>();
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-
+        data = weapon.Data.GetData<WeaponSpriteData>();
         baseSpriteRenderer.RegisterSpriteChangeCallback(HandleBaseSpriteChange);
-        weapon.OnEnter += HandleEnter;
     }
 
-    protected override void OnDisable()
+    protected override void OnDestroy()
     {
-        base.OnDisable();
+        base.OnDestroy();
 
         baseSpriteRenderer.UnregisterSpriteChangeCallback(HandleBaseSpriteChange);
-        weapon.OnEnter -= HandleEnter;
     }
 
 }
