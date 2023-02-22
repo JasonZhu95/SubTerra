@@ -7,7 +7,7 @@ public class RangedAttackState : AttackState
     protected D_RangedAttackState stateData;
 
     protected GameObject projectile;
-    protected Projectile projectileScript;
+    protected ProjectileOld projectileScript;
 
     public RangedAttackState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_RangedAttackState stateData) : base(etity, stateMachine, animBoolName, attackPosition)
     {
@@ -49,7 +49,7 @@ public class RangedAttackState : AttackState
         base.TriggerAttack();
 
         projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
-        projectileScript = projectile.GetComponent<Projectile>();
+        projectileScript = projectile.GetComponent<ProjectileOld>();
         projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
     }
 }

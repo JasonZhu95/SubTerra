@@ -8,6 +8,7 @@ TagManager:
   - Spike
   - Enemy
   - ParticleContainer
+  - ProjectileContainer
   layers:
   - Default
   - TransparentFX

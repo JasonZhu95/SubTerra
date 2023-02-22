@@ -1,96 +1,46 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Projectile : MonoBehaviour
 {
-    //private AttackDetails attackDetails;
+    [field: SerializeField] public ProjectileDataSO Data { get; private set; }
 
-    private float speed;
-    private float travelDistance;
-    private float xStartPos;
+    public Rigidbody2D RB { get; private set; }
+    public GameObject SpawningEntity { get; private set; }
+    public Vector3 SpawningEntityPos { get; private set; }
 
-    [SerializeField]
-    private float gravity;
-    [SerializeField]
-    private float damageRadius;
+    public event Action OnInit;
+    public event Action OnBeforeDisable;
 
-    private Rigidbody2D rb;
+    public bool CanDamage { get; private set; }
 
-    private bool isGravityOn;
-    private bool hasHitGround;
-
-    [SerializeField]
-    private LayerMask whatIsGround;
-    [SerializeField]
-    private LayerMask whatIsPlayer;
-    [SerializeField]
-    private Transform damagePosition;
-
-    private void Start()
+    public void CreateProjectile(ProjectileDataSO data)
     {
-        rb = GetComponent<Rigidbody2D>();
-
-        rb.gravityScale = 0.0f;
-        rb.velocity = transform.right * speed;
-
-        isGravityOn = false;
-
-        xStartPos = transform.position.x;
+        Data = data;
+        var comps = gameObject.AddDependenciesToGO<ProjectileComponent>(Data.GetAllDependencies());
+        comps.ForEach(item => item.SetReferences());
     }
 
-    private void Update()
+    public void Init(GameObject spawningEntity)
     {
-        if (!hasHitGround)
-        {
-            //attackDetails.position = transform.position;
-
-            if (isGravityOn)
-            {
-                float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            }
-        }
+        SpawningEntity = spawningEntity;
+        SpawningEntityPos = spawningEntity.transform.position;
+        SetCanDamage(true);
+        OnInit?.Invoke();
     }
 
-    private void FixedUpdate()
+    public void Disable()
     {
-        if (!hasHitGround)
-        {
-            Collider2D damageHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsPlayer);
-            Collider2D groundHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsGround);
-
-            if (damageHit)
-            {
-                //damageHit.transform.SendMessage("Damage", attackDetails);
-                Destroy(gameObject);
-            }
-
-            if (groundHit)
-            {
-                hasHitGround = true;
-                rb.gravityScale = 0f;
-                rb.velocity = Vector2.zero;
-            }
-
-
-            if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
-            {
-                isGravityOn = true;
-                rb.gravityScale = gravity;
-            }
-        }        
+        OnBeforeDisable?.Invoke();
+        Destroy(gameObject);
     }
 
-    public void FireProjectile(float speed, float travelDistance, float damage)
+    private void Awake()
     {
-        this.speed = speed;
-        this.travelDistance = travelDistance;
-        //attackDetails.damageAmount = damage;
+        RB = GetComponent<Rigidbody2D>();
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
-    }
+    public void SetCanDamage(bool value) => CanDamage = value;
 }
