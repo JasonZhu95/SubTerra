@@ -12,11 +12,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc82cbee14fc31c4f9bc8eb4436a00d7, type: 3}
   m_Name: Arrow_1
   m_EditorClassIdentifier: 
-  <ProjectilePrefab>k__BackingField: {fileID: 0}
+  <ProjectilePrefab>k__BackingField: {fileID: 6568436293777649578, guid: a23562d6e30c5224480d073309e4da62, type: 3}
   <interactableLayers>k__BackingField:
     serializedVersion: 2
-    m_Bits: 0
-  <ComponentDatas>k__BackingField: []
+    m_Bits: 512
+  <ComponentDatas>k__BackingField:
+  - rid: 3813184907910840320
+  - rid: 3813184907910840321
+  - rid: 3813184907910840322
+  - rid: 3813184907910840323
+  - rid: 3813184907910840324
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3813184907910840320
+      type: {class: ProjectileHitboxData, ns: , asm: Assembly-CSharp}
+      data:
+        name: ProjectileHitboxData
+        ProjectileHitbox:
+          serializedVersion: 2
+          x: -1.1
+          y: -0.15625
+          width: 1.4
+          height: 0.3125
+        CompensateForVelocity: 1
+        LayerMask:
+          serializedVersion: 2
+          m_Bits: 512
+        DoInitialCheck: 1
+    - rid: 3813184907910840321
+      type: {class: ProjectileMovementData, ns: , asm: Assembly-CSharp}
+      data:
+        name: ProjectileMovementData
+        ApplyContinuously: 0
+        Velocity: 25
+    - rid: 3813184907910840322
+      type: {class: ProjectileHitlineData, ns: , asm: Assembly-CSharp}
+      data:
+        name: ProjectileHitlineData
+        LayerMask:
+          serializedVersion: 2
+          m_Bits: 8
+        DoInitialCheck: 1
+    - rid: 3813184907910840323
+      type: {class: ProjectileGraphicsControllerData, ns: , asm: Assembly-CSharp}
+      data:
+        name: ProjectileGraphicsControllerData
+        projectileSprite: {fileID: 896870338, guid: 410404cfa8727e941b1e7d720b3f3fd1, type: 3}
+    - rid: 3813184907910840324
+      type: {class: DespawnOnTouchLayerData, ns: , asm: Assembly-CSharp}
+      data:
+        name: DespawnOnTouchLayerData
+        <Layer>k__BackingField:
+          serializedVersion: 2
+          m_Bits: 0

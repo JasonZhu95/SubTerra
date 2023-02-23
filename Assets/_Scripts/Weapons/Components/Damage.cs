@@ -6,6 +6,7 @@ public class Damage : WeaponComponent<DamageData, AttackDamage>
 {
     private ActionHitbox hitbox;
 
+
     private void HandleDetectCollider2D(Collider2D[] colliders)
     {
         foreach (var item in colliders)
