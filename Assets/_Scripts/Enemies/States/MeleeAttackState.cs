@@ -9,6 +9,8 @@ public class MeleeAttackState : AttackState
 
     protected D_MeleeAttack stateData;
 
+    private DamageData damageData;
+
     public MeleeAttackState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData) : base(etity, stateMachine, animBoolName, attackPosition)
     {
         this.stateData = stateData;
@@ -55,13 +57,16 @@ public class MeleeAttackState : AttackState
             IDamageable damageable = collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                damageable.Damage(stateData.attackDamage);
+                damageData.SetData(core.Parent, stateData.attackDamage);
+                damageable.Damage(damageData);
             }
 
             IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
             if (knockbackable != null)
             {
-                knockbackable.Knockback(stateData.knockbackAngle, stateData.knockbackStrength, Movement.FacingDirection);
+                var data = new KnockbackData(stateData.knockbackAngle, stateData.knockbackStrength,
+                    Movement.FacingDirection, core.transform.parent.gameObject);
+                knockbackable.Knockback(data);
             }
         }
     }

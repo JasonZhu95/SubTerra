@@ -5,34 +5,49 @@ using UnityEngine;
 
 public class Stats : CoreComponent
 {
-    public event Action OnHealthZero;
-
-    [SerializeField] private float maxHealth;
-    private float currentHealth;
+    [field: SerializeField] public Stat Health { get; private set; }
 
     protected override void Awake()
     {
         base.Awake();
 
-        currentHealth = maxHealth;
+        Health.Init();
     }
 
-    public void DecreaseHealth(float amount)
+    private void Update()
     {
-        currentHealth -= amount;
-        
-        if (currentHealth <= 0)
+
+    }
+}
+
+[System.Serializable]
+public class Stat
+{
+    private float currentValue;
+    [field: SerializeField] public float MaxValue { get; private set; }
+
+    public float CurrentValue
+    {
+        get => currentValue;
+        private set
         {
-            currentHealth = 0;
+            currentValue = Mathf.Clamp(value, 0f, MaxValue);
+            OnCurrentValueChange?.Invoke(currentValue);
 
-            OnHealthZero?.Invoke();
-
-            Debug.Log("Health is 0");
+            if (currentValue <= 0f)
+            {
+                OnCurrentValueZero?.Invoke();
+            }
         }
     }
 
-    public void IncreaseHealth(float amount)
-    {
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-    }
+    public event Action<float> OnMaxValueChange;
+    public event Action<float> OnCurrentValueChange;
+
+    public event Action OnCurrentValueZero;
+
+    public void Init() => CurrentValue = MaxValue;
+
+    public void Increase(float amount) => CurrentValue += amount;
+    public void Decrease(float amount) => CurrentValue -= amount;
 }

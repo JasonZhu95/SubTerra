@@ -5,11 +5,26 @@ using System.Linq;
 
 public class Core : MonoBehaviour
 {
+    public Transform EntityTransform { get; private set; }
     private readonly List<CoreComponent> CoreComponents = new List<CoreComponent>();
+
+    [field: SerializeField] public GameObject Parent { get; private set; }
 
     private void Awake()
     {
+        EntityTransform = transform.parent.transform;
 
+        var comps = GetComponentsInChildren<CoreComponent>();
+
+        foreach (var component in comps)
+        {
+            AddComponent(component);
+        }
+
+        foreach (var component in CoreComponents)
+        {
+            component.Init(this);
+        }
     }
 
     public void LogicUpdate()
@@ -31,18 +46,16 @@ public class Core : MonoBehaviour
     // FUNCTION: Accesses the List of Core Components and returns the type of component.
     public T GetCoreComponent<T>() where T : CoreComponent
     {
-        var comp = CoreComponents.OfType<T>().FirstOrDefault();
-        if (comp)
-            return comp;
+        var comp = CoreComponents
+            .OfType<T>()
+            .FirstOrDefault();
 
-        comp = GetComponentInChildren<T>();
+        if (comp == null)
+        {
+            Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
+        }
 
-        if (comp)
-            return comp;
-
-        Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
-
-        return null;
+        return comp;
     }
 
     public T GetCoreComponent<T>(ref T value) where T : CoreComponent

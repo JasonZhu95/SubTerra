@@ -5,6 +5,7 @@ using UnityEngine;
 // Class that creates state objects
 public class Player : MonoBehaviour
 {
+
     #region State Variables
     public PlayerStateMachine StateMachine { get; private set; }
 
@@ -59,9 +60,6 @@ public class Player : MonoBehaviour
 
         primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
         secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
-
-        primaryWeapon.SetCore(Core);
-        secondaryWeapon.SetCore(Core);
 
         StateMachine = new PlayerStateMachine();
 

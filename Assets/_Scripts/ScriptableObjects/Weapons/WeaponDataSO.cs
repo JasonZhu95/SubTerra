@@ -8,26 +8,54 @@ using System;
 public class WeaponDataSO : ScriptableObject
 {
     [field: SerializeField] public int NumberOfAttacks { get; private set; }
-    
-    [field: SerializeReference] public List<ComponentData> ComponentDataList { get; private set; }
+    [field: SerializeField] public string WeaponName { get; private set; }
+    [field: SerializeField, TextArea(3,10)] public string WeaponDescription { get; private set; }
+    [field: SerializeField] public Sprite PickupSprite { get; private set; }
+    [field: SerializeField] public RuntimeAnimatorController AnimatorController { get; private set; }
 
-    public T GetData<T>()
+    [SerializeField] private List<WeaponComponentData> componentDatas = new List<WeaponComponentData>();
+    public List<WeaponComponentData> ComponentDatas => componentDatas;
+
+    private void Awake()
     {
-        return ComponentDataList.OfType<T>().FirstOrDefault();
+        #if UNITY_EDITOR
+        AddDataComponent(new WeaponSpriteData());
+        #endif
     }
 
-    public void AddData(ComponentData data)
+    private void OnValidate()
     {
-        if (ComponentDataList.FirstOrDefault(t => t.GetType() == data.GetType()) != null)
-        {
-            return;
-        }
-
-        ComponentDataList.Add(data);
+        ComponentDatas.ForEach(item => item.OnValidate());
     }
 
     public List<Type> GetAllDependencies()
     {
-        return ComponentDataList.Select(component => component.ComponentDependency).ToList();
+        List<Type> dependencies = new List<Type>();
+
+        foreach (var item in componentDatas)
+        {
+            foreach (var dependency in item.ComponentDependencies)
+            {
+                if (dependencies.FirstOrDefault(e => e.GetType() == dependency) == null)
+                {
+                    dependencies.Add(dependency);
+                }
+            }
+        }
+        return dependencies;
     }
+
+    public T GetComponentData<T>() where T : WeaponComponentData
+    {
+        return ComponentDatas.OfType<T>().FirstOrDefault();
+    }
+
+#if UNITY_EDITOR
+    public void AddDataComponent<T>(T data) where T : WeaponComponentData
+    {
+        if (ComponentDatas.Where(item => item.GetType() == data.GetType()).FirstOrDefault() != null) return;
+        ComponentDatas.Add(data);
+        ComponentDatas.Sort((a, b) => string.Compare(a.ComponentName, b.ComponentName));
+    }
+#endif
 }

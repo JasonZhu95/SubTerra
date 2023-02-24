@@ -6,13 +6,12 @@ public class CoreComponent : MonoBehaviour, ILogicUpdate
 {
     protected Core core;
 
-    protected virtual void Awake()
+    public virtual void Init(Core core)
     {
-        core = transform.parent.GetComponent<Core>();
-
-        if (core == null){ Debug.LogError("No Core on Parent"); }
-        core.AddComponent(this);
+        this.core = core;
     }
+
+    protected virtual void Awake() { }
 
     public virtual void LogicUpdate() { }
 }

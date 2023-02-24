@@ -132,9 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 218752}
-  - component: {fileID: 218754}
   - component: {fileID: 218753}
   - component: {fileID: 218755}
+  - component: {fileID: 218754}
   m_Layer: 6
   m_Name: Combat
   m_TagString: Untagged
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 218751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0887908aab883724c8f625d4c3ec07c8, type: 3}
+  m_Script: {fileID: 11500000, guid: f3bc3b5fab6df2e4aa6f83b964004eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxKnockbackTime: 0.2
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 218751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d82c2b2c3eebb349a222f5bdfd8d012, type: 3}
+  m_Script: {fileID: 11500000, guid: ce90e6204b84d734e974c0414ad42c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageParticles: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
@@ -1979,6 +1979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4e74c3f14f01445bf99ced71d44d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Parent>k__BackingField: {fileID: 0}
 --- !u!1001 &785733318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5233,6 +5234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4e74c3f14f01445bf99ced71d44d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Parent>k__BackingField: {fileID: 0}
 --- !u!1 &1461723263
 GameObject:
   m_ObjectHideFlags: 0
@@ -14714,6 +14716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4e74c3f14f01445bf99ced71d44d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Parent>k__BackingField: {fileID: 264109746}
 --- !u!1 &2101681170
 GameObject:
   m_ObjectHideFlags: 0
