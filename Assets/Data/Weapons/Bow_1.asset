@@ -7,7 +7,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e8cbf04f051c8140ad3f2ed1afb6407, type: 3}
   m_Name: Bow_1
@@ -18,22 +18,20 @@ MonoBehaviour:
   <PickupSprite>k__BackingField: {fileID: -1299135722, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 9c1c4757ecd7d1c45a9be7fea74526ea, type: 2}
   componentDatas:
-  - rid: 3813184951238262786
-  - rid: 3813184951238262788
-  - rid: 3813184951238262787
-  - rid: 3813184951238262785
+  - rid: 3813184974850359299
+  - rid: 3813184974850359298
+  - rid: 3813184974850359297
+  - rid: 3813184974850359296
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 3813184951238262785
-      type: {class: WeaponSpriteData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359296
+      type: {class: WeaponSpriteData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
         <ComponentName>k__BackingField: WeaponSpriteData
         repeatData: 0
         data:
-        - AttackName: 
+        - AttackName: Attack 1
           AttackPhases:
           - Name: Anticipation
             Phase: 0
@@ -51,28 +49,18 @@ MonoBehaviour:
             - {fileID: 1936006429, guid: a7cc60042aafc8546b0de2e03fcf3274, type: 3}
             - {fileID: 1534256520, guid: a7cc60042aafc8546b0de2e03fcf3274, type: 3}
             - {fileID: 150444741, guid: a7cc60042aafc8546b0de2e03fcf3274, type: 3}
-    - rid: 3813184951238262786
-      type: {class: AttackRangedData, ns: , asm: Assembly-CSharp}
-      data:
-        <ComponentName>k__BackingField: AttackRangedData
-        repeatData: 0
-        data:
-        - AttackName: 
-          debug: 0
-          AttackData:
-          - offset: {x: 0.92, y: 0.2}
-            direction: {x: 1, y: 0}
-            projectileData: {fileID: 11400000, guid: dbca23d1df6b36d4c8fb48481a5b4903, type: 2}
-    - rid: 3813184951238262787
-      type: {class: WeaponDrawData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359297
+      type: {class: WeaponDrawData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
         <ComponentName>k__BackingField: WeaponDrawData
         repeatData: 0
         data:
-        - Name: 
+        - Name: Attack 1
           curve:
+            serializedVersion: 2
             m_Curve:
-            - time: 0
+            - serializedVersion: 3
+              time: 0
               value: 0
               inSlope: 0
               outSlope: 0
@@ -80,7 +68,8 @@ MonoBehaviour:
               weightedMode: 0
               inWeight: 0
               outWeight: 0
-            - time: 1
+            - serializedVersion: 3
+              time: 1
               value: 1
               inSlope: 2
               outSlope: 2
@@ -90,14 +79,26 @@ MonoBehaviour:
               outWeight: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 0
+            m_RotationOrder: 4
           drawTime: 0.2666667
-    - rid: 3813184951238262788
-      type: {class: OptionalAttachmentPointData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359298
+      type: {class: OptionalAttachmentPointData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
         <ComponentName>k__BackingField: OptionalAttachmentPointData
         repeatData: 0
         data:
-        - AttackName: 
+        - AttackName: Attack 1
           Sprite: {fileID: 896870338, guid: 410404cfa8727e941b1e7d720b3f3fd1, type: 3}
           UseSprite: 1
+    - rid: 3813184974850359299
+      type: {class: AttackRangedData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: AttackRangedData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          debug: 0
+          AttackData:
+          - offset: {x: 0.92, y: 0.2}
+            direction: {x: 1, y: 0}
+            projectileData: {fileID: 11400000, guid: dbca23d1df6b36d4c8fb48481a5b4903, type: 2}

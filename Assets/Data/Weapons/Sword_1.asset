@@ -21,6 +21,7 @@ MonoBehaviour:
   - rid: 3813184956623486981
   - rid: 3813184956623486980
   - rid: 3813184956623486979
+  - rid: 3813184974850359318
   - rid: 3813184956623486978
   - rid: 3813184956623486976
   references:
@@ -118,3 +119,15 @@ MonoBehaviour:
           Velocity: 4
         - AttackName: Attack 3
           Velocity: 2
+    - rid: 3813184974850359318
+      type: {class: PoiseDamageOnHitboxActionData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: PoiseDamageOnHitboxActionData
+        repeatData: 0
+        data:
+        - attackName: 
+          <PoiseDamageAmount>k__BackingField: 12.5
+        - attackName: 
+          <PoiseDamageAmount>k__BackingField: 25
+        - attackName: 
+          <PoiseDamageAmount>k__BackingField: 50

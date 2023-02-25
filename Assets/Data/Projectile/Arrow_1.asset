@@ -17,47 +17,47 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   <ComponentDatas>k__BackingField:
-  - rid: 3813184949633417216
-  - rid: 3813184949633417217
-  - rid: 3813184949633417218
-  - rid: 3813184949633417219
-  - rid: 3813184949633417220
-  - rid: 3813184949633417221
-  - rid: 3813184949633417222
-  - rid: 3813184949633417223
-  - rid: 3813184949633417224
-  - rid: 3813184949633417225
-  - rid: 3813184949633417226
+  - rid: 3813184974850359306
+  - rid: 3813184974850359307
+  - rid: 3813184974850359308
+  - rid: 3813184974850359309
+  - rid: 3813184974850359310
+  - rid: 3813184974850359311
+  - rid: 3813184974850359312
+  - rid: 3813184974850359313
+  - rid: 3813184974850359314
+  - rid: 3813184974850359315
+  - rid: 3813184974850359316
   references:
     version: 2
     RefIds:
-    - rid: 3813184949633417216
-      type: {class: ProjectileMovementData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359306
+      type: {class: ProjectileMovementData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: ProjectileMovementData
         ApplyContinuously: 0
         Velocity: 25
-    - rid: 3813184949633417217
-      type: {class: DelayedGravityData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359307
+      type: {class: DelayedGravityData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: DelayedGravityData
         Gravity: 4
         DistanceDelay: 7
         TimeDelay: -1
-    - rid: 3813184949633417218
-      type: {class: ProjectileGraphicsControllerData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359308
+      type: {class: ProjectileGraphicsControllerData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: ProjectileGraphicsControllerData
         projectileSprite: {fileID: 896870338, guid: 410404cfa8727e941b1e7d720b3f3fd1, type: 3}
-    - rid: 3813184949633417219
+    - rid: 3813184974850359309
       type: {class: RotateTowardsMovementData, ns: , asm: Assembly-CSharp}
       data:
         name: RotateTowardsMovementData
-    - rid: 3813184949633417220
-      type: {class: ProjectileHitboxData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359310
+      type: {class: HitboxData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
-        name: ProjectileHitboxData
-        ProjectileHitbox:
+        name: HitboxData
+        Hitbox:
           serializedVersion: 2
           x: -1.1
           y: -0.15625
@@ -68,39 +68,39 @@ MonoBehaviour:
           serializedVersion: 2
           m_Bits: 512
         DoInitialCheck: 1
-    - rid: 3813184949633417221
-      type: {class: StickInEnvironmentData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359311
+      type: {class: StickInEnvironmentData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: StickInEnvironmentData
         LayerMask:
           serializedVersion: 2
           m_Bits: 8
-    - rid: 3813184949633417222
-      type: {class: ProjectileHitlineData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359312
+      type: {class: HitLineData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
-        name: ProjectileHitlineData
+        name: HitLineData
         LayerMask:
           serializedVersion: 2
           m_Bits: 8
         DoInitialCheck: 1
-    - rid: 3813184949633417223
-      type: {class: ProjectileDamageData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359313
+      type: {class: ProjectileDamageData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: ProjectileDamageData
         DamageAmount: 10
         LayerMask:
           serializedVersion: 2
           m_Bits: 512
-    - rid: 3813184949633417224
-      type: {class: GravityDelayDrawModifierData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359314
+      type: {class: GravityDelayDrawModifierData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: GravityDelayDrawModifierData
-    - rid: 3813184949633417225
-      type: {class: DisableDamageOnStickData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359315
+      type: {class: DisableDamageOnStickData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: DisableDamageOnStickData
-    - rid: 3813184949633417226
-      type: {class: DespawnProjectileOnStickData, ns: , asm: Assembly-CSharp}
+    - rid: 3813184974850359316
+      type: {class: DespawnProjectileOnStickData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: DespawnProjectileOnStickData
         <DespawnTime>k__BackingField: 5

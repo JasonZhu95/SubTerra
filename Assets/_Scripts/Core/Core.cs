@@ -57,7 +57,6 @@ public class Core : MonoBehaviour
     {
         if (!CoreComponents.Contains(component))
         {
-            Debug.Log($"{component} was added");
             CoreComponents.Add(component);
         }
     }
