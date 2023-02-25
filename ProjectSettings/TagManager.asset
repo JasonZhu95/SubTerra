@@ -22,9 +22,9 @@ TagManager:
   - Damageable
   - Weapon
   - Enemies
-  - 
-  - 
-  - 
+  - Parryable
+  - Interactable
+  - PlayerDamageable
   - 
   - 
   - 

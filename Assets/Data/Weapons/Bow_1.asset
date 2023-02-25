@@ -18,6 +18,7 @@ MonoBehaviour:
   <PickupSprite>k__BackingField: {fileID: -1299135722, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 9c1c4757ecd7d1c45a9be7fea74526ea, type: 2}
   componentDatas:
+  - rid: 3813184976568188933
   - rid: 3813184974850359299
   - rid: 3813184974850359298
   - rid: 3813184974850359297
@@ -102,3 +103,11 @@ MonoBehaviour:
           - offset: {x: 0.92, y: 0.2}
             direction: {x: 1, y: 0}
             projectileData: {fileID: 11400000, guid: dbca23d1df6b36d4c8fb48481a5b4903, type: 2}
+    - rid: 3813184976568188933
+      type: {class: AttackMovementData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: AttackMovementData
+        repeatData: 0
+        data:
+        - AttackName: 
+          Velocity: 0
