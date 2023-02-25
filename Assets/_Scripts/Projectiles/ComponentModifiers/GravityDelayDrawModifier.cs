@@ -1,51 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GravityDelayDrawModifier : ComponentModifier<GravityDelayDrawModifierData>
+namespace Project.Projectiles
 {
-    private DelayedGravity delayedGravity;
-    private DrawModifier modifier;
-
-    public override void SetReferences()
+    public class GravityDelayDrawModifier : ComponentModifier<GravityDelayDrawModifierData>
     {
-        base.SetReferences();
+        private DelayedGravity delayedGravity;
+        private DrawModifier modifier;
 
-        if (TryGetComponent(out delayedGravity))
+        public override void SetReferences()
         {
+            base.SetReferences();
+
+            if (TryGetComponent(out delayedGravity))
+            {
+                delayedGravity.OnSetDelay += ModifyDelay;
+            }
+        }
+
+        private float ModifyDelay(float delay)
+        {
+            if (!isActive) return delay;
+
+            if (modifiers.TryGetModifier(out modifier))
+            {
+                return delay * modifier.ModifierValue;
+            }
+
+            return delay;
+        }
+
+        protected override void OnEnable()
+        {
+            if (!delayedGravity) return;
             delayedGravity.OnSetDelay += ModifyDelay;
         }
-    }
 
-    private float ModifyDelay(float delay)
-    {
-        if (!isActive) return delay;
-
-        if (modifiers.TryGetModifier(out modifier))
+        protected override void OnDisable()
         {
-            return delay * modifier.ModifierValue;
+            if (!delayedGravity) return;
+            delayedGravity.OnSetDelay -= ModifyDelay;
         }
-
-        return delay;
     }
 
-    protected override void OnEnable()
+    public class GravityDelayDrawModifierData : ProjectileComponentData
     {
-        if (!delayedGravity) return;
-        delayedGravity.OnSetDelay += ModifyDelay;
-    }
-
-    protected override void OnDisable()
-    {
-        if (!delayedGravity) return;
-        delayedGravity.OnSetDelay -= ModifyDelay;
-    }
-}
-
-public class GravityDelayDrawModifierData : ProjectileComponentData
-{
-    public GravityDelayDrawModifierData()
-    {
-        ComponentDependencies.Add(typeof(GravityDelayDrawModifier));
+        public GravityDelayDrawModifierData()
+        {
+            ComponentDependencies.Add(typeof(GravityDelayDrawModifier));
+        }
     }
 }

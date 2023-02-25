@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Project.CoreComponents;
 using UnityEngine;
 
 public class Enemy1 : Entity
@@ -30,9 +29,14 @@ public class Enemy1 : Entity
     [SerializeField]
     private D_DeadState deadStateData;
 
-
     [SerializeField]
     private Transform meleeAttackPosition;
+
+    private Stats stats;
+    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
+
+    private ParryComponent ParryComponent => parryComponent ? parryComponent : Core.GetCoreComponent(ref parryComponent);
+    private ParryComponent parryComponent;
 
     public override void Awake()
     {
@@ -52,6 +56,9 @@ public class Enemy1 : Entity
     private void Start()
     {
         stateMachine.Initialize(moveState);
+
+        Stats.Poise.OnCurrentValueZero += () => stateMachine.ChangeState(stunState);
+        ParryComponent.OnParried += () => stateMachine.ChangeState(stunState);
     }
 
     public override void OnDrawGizmos()

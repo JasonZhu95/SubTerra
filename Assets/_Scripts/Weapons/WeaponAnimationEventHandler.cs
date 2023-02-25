@@ -3,73 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class WeaponAnimationEventHandler : MonoBehaviour
+namespace Project.Weapons
 {
-    public event Action OnFinish;
-    public event Action OnStartMovement;
-    public event Action OnStopMovement;
-    public event Action OnAttackAction;
-    public event Action OnEnableFlip;
-    public event Action OnDisableFlip;
-    public event Action OnEnableOptionalSprite;
-    public event Action OnDisableOptionalSprite;
-    public event Action OnMinHold;
-    public event Action OnEnableInterrupt;
-
-    public event Action<WeaponAttackPhases> OnEnterAttackPhase;
-
-    private void EnterAttackPhaseTrigger(WeaponAttackPhases phase)
+    public class WeaponAnimationEventHandler : MonoBehaviour
     {
-        OnEnterAttackPhase?.Invoke(phase);
-    }
+        public event Action OnFinish;
+        public event Action OnStartMovement;
+        public event Action OnStopMovement;
+        public event Action OnAttackAction;
+        public event Action OnEnableFlip;
+        public event Action OnDisableFlip;
+        public event Action OnEnableOptionalSprite;
+        public event Action OnDisableOptionalSprite;
+        public event Action OnMinHold;
+        public event Action OnEnableInterrupt;
 
-    private void DisableFlipTrigger()
-    {
-        OnDisableFlip?.Invoke();
-    }
+        public event Action<WeaponAttackPhases> OnEnterAttackPhase;
 
-    private void EnableFlipTrigger()
-    {
-        OnEnableFlip?.Invoke();
-    }
+        private void EnterAttackPhaseTrigger(WeaponAttackPhases phase)
+        {
+            OnEnterAttackPhase?.Invoke(phase);
+        }
 
-    private void AttackActionTrigger()
-    {
-        OnAttackAction?.Invoke();
-    }
+        private void DisableFlipTrigger()
+        {
+            OnDisableFlip?.Invoke();
+        }
 
-    private void AnimationFinishTrigger()
-    {
-        OnFinish?.Invoke();
-    }
+        private void EnableFlipTrigger()
+        {
+            OnEnableFlip?.Invoke();
+        }
 
-    private void StartMovementTrigger()
-    {
-        OnStartMovement?.Invoke();
-    }
+        private void AttackActionTrigger()
+        {
+            OnAttackAction?.Invoke();
+        }
 
-    private void StopMovementTrigger()
-    {
-        OnStopMovement?.Invoke();
-    }
+        private void AnimationFinishTrigger()
+        {
+            OnFinish?.Invoke();
+        }
 
-    private void EnableOptionalSpriteTrigger()
-    {
-        OnEnableOptionalSprite?.Invoke();
-    }
+        private void StartMovementTrigger()
+        {
+            OnStartMovement?.Invoke();
+        }
 
-    private void DisableOptionalSpriteTrigger()
-    {
-        OnDisableOptionalSprite?.Invoke();
-    }
+        private void StopMovementTrigger()
+        {
+            OnStopMovement?.Invoke();
+        }
 
-    private void MinHoldTrigger()
-    {
-        OnMinHold?.Invoke();
-    }
+        private void EnableOptionalSpriteTrigger()
+        {
+            OnEnableOptionalSprite?.Invoke();
+        }
 
-    private void EnableInterruptTrigger()
-    {
-        OnEnableInterrupt?.Invoke();
+        private void DisableOptionalSpriteTrigger()
+        {
+            OnDisableOptionalSprite?.Invoke();
+        }
+
+        private void MinHoldTrigger()
+        {
+            OnMinHold?.Invoke();
+        }
+
+        private void EnableInterruptTrigger()
+        {
+            OnEnableInterrupt?.Invoke();
+        }
     }
 }

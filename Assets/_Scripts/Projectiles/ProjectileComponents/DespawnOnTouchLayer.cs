@@ -1,51 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Project.Utilities;
+using Project.Combat.Interfaces;
 
-public class DespawnOnTouchLayer : ProjectileComponent<DespawnOnTouchLayerData>
+namespace Project.Projectiles
 {
-    private IHitbox[] hitboxes;
-
-    public override void SetReferences()
+    public class DespawnOnTouchLayer : ProjectileComponent<DespawnOnTouchLayerData>
     {
-        base.SetReferences();
+        private IHitbox[] hitboxes;
 
-        hitboxes = GetComponents<IHitbox>();
-
-        foreach (IHitbox hitbox in hitboxes)
+        public override void SetReferences()
         {
-            hitbox.OnDetected += HandleDetected;
-        }
-    }
+            base.SetReferences();
 
-    private void HandleDetected(RaycastHit2D[] hits)
-    {
-        foreach (RaycastHit2D hit in hits)
-        {
-            if (LayerMaskUtilities.IsLayerInLayerMask(hit.collider.gameObject.layer, Data.Layer))
+            hitboxes = GetComponents<IHitbox>();
+
+            foreach (IHitbox hitbox in hitboxes)
             {
-                Projectile.Disable();
+                hitbox.OnDetected += HandleDetected;
+            }
+        }
+
+        private void HandleDetected(RaycastHit2D[] hits)
+        {
+            foreach (RaycastHit2D hit in hits)
+            {
+                if (LayerMaskUtilities.IsLayerInLayerMask(hit.collider.gameObject.layer, Data.Layer))
+                {
+                    Projectile.Disable();
+                }
+            }
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            foreach (IHitbox hitbox in hitboxes)
+            {
+                hitbox.OnDetected -= HandleDetected;
             }
         }
     }
 
-    protected override void OnDisable()
+    public class DespawnOnTouchLayerData : ProjectileComponentData
     {
-        base.OnDisable();
+        [field: SerializeField] public LayerMask Layer { get; private set; }
 
-        foreach (IHitbox hitbox in hitboxes)
+        public DespawnOnTouchLayerData()
         {
-            hitbox.OnDetected -= HandleDetected;
+            ComponentDependencies.Add(typeof(DespawnOnTouchLayer));
         }
-    }
-}
-
-public class DespawnOnTouchLayerData : ProjectileComponentData
-{
-    [field: SerializeField] public LayerMask Layer { get; private set; }
-
-    public DespawnOnTouchLayerData()
-    {
-        ComponentDependencies.Add(typeof(DespawnOnTouchLayer));
     }
 }

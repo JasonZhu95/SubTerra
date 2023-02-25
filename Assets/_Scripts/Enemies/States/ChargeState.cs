@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class ChargeState : State
 {
-    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
-
-    private Movement movement;
-    private CollisionSenses collisionSenses;
-
     protected D_ChargeState stateData;
 
     protected bool isPlayerInMinAgroRange;
@@ -17,6 +11,12 @@ public class ChargeState : State
     protected bool isDetectingWall;
     protected bool isChargeTimeOver;
     protected bool performCloseRangeAction;
+
+    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
+    private CollisionSenses collisionSenses;
 
     public ChargeState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_ChargeState stateData) : base(etity, stateMachine, animBoolName)
     {

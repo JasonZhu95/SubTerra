@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponComponentModifier<T> : WeaponComponent<T> where T: WeaponComponentData
+namespace Project.Weapons
 {
-    protected WeaponModifiers modifiers;
-
-    public override void SetReferences()
+    public class WeaponComponentModifier<T> : WeaponComponent<T> where T: WeaponComponentData
     {
-        base.SetReferences();
-        modifiers = GetComponent<WeaponModifiers>();
+        protected WeaponModifiers modifiers;
+
+        public override void SetReferences()
+        {
+            base.SetReferences();
+            modifiers = GetComponent<WeaponModifiers>();
+        }
     }
 }

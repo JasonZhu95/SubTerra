@@ -2,63 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackMovement : WeaponComponent<AttackMovementData>
+namespace Project.Weapons
 {
-    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-
-    private Movement movement;
-
-    private float velocity;
-
-    public void StartMovement()
+    public class AttackMovement : WeaponComponent<AttackMovementData>
     {
-        velocity = data.GetAttackData(counter).Velocity;
+        private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
 
-        Movement.SetVelocityX(velocity * Movement.FacingDirection);
+        private Movement movement;
+
+        private float velocity;
+
+        public void StartMovement()
+        {
+            velocity = data.GetAttackData(counter).Velocity;
+
+            Movement.SetVelocityX(velocity * Movement.FacingDirection);
+        }
+
+        private void FixedUpdate()
+        {
+            Movement.SetVelocityX(velocity * Movement.FacingDirection);
+        }
+
+        public void StopMovement()
+        {
+            velocity = 0f;
+            Movement.SetVelocityX(0f);
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+
+            eventHandler.OnStartMovement += StartMovement;
+            eventHandler.OnStopMovement += StopMovement;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            eventHandler.OnStartMovement -= StartMovement;
+            eventHandler.OnStopMovement -= StopMovement;
+        }
     }
 
-    private void FixedUpdate()
+    [System.Serializable]
+    public class AttackMovementData : WeaponComponentData<MovementData>
     {
-        Movement.SetVelocityX(velocity * Movement.FacingDirection);
+        public AttackMovementData()
+        {
+            ComponentDependencies.Add(typeof(AttackMovement));
+        }
     }
 
-    public void StopMovement()
+    [System.Serializable]
+    public struct MovementData : INameable
     {
-        velocity = 0f;
-        Movement.SetVelocityX(0f);
+        [HideInInspector]
+        public string AttackName;
+        public float Velocity;
+
+        public void SetName(string value) => AttackName = value;
     }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-
-        eventHandler.OnStartMovement += StartMovement;
-        eventHandler.OnStopMovement += StopMovement;
-    }
-
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-
-        eventHandler.OnStartMovement -= StartMovement;
-        eventHandler.OnStopMovement -= StopMovement;
-    }
-}
-
-[System.Serializable]
-public class AttackMovementData : WeaponComponentData<MovementData>
-{
-    public AttackMovementData()
-    {
-        ComponentDependencies.Add(typeof(AttackMovement));
-    }
-}
-
-public struct MovementData : INameable
-{
-    [HideInInspector]
-    public string AttackName;
-    public float Velocity;
-
-    public void SetName(string value) => AttackName = value;
 }

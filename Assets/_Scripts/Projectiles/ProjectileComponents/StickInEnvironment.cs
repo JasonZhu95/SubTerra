@@ -1,101 +1,104 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 using UnityEngine.Tilemaps;
+using Project.Combat.Interfaces;
+using Project.Utilities;
 
-public class StickInEnvironment : ProjectileComponent<StickInEnvironmentData>
+namespace Project.Projectiles
 {
-    private Rigidbody2D rb;
-    private SpriteRenderer sr;
-
-    private bool isStuck;
-
-    private IHitbox[] hitboxes;
-
-    public event Action OnStick;
-
-    public override void SetReferences()
+    public class StickInEnvironment : ProjectileComponent<StickInEnvironmentData>
     {
-        base.SetReferences();
+        private Rigidbody2D rb;
+        private SpriteRenderer sr;
 
-        hitboxes = GetComponents<IHitbox>();
+        private bool isStuck;
 
-        Data = Projectile.Data.GetComponentData<StickInEnvironmentData>();
+        private IHitbox[] hitboxes;
 
-        foreach (IHitbox hitbox in hitboxes)
+        public event Action OnStick;
+
+        public override void SetReferences()
         {
-            hitbox.OnDetected += CheckHits;
-        }
-    }
+            base.SetReferences();
 
-    protected override void OnDisable()
-    {
-        base.OnDisable();
+            hitboxes = GetComponents<IHitbox>();
 
-        foreach (IHitbox hitbox in hitboxes)
-        {
-            hitbox.OnDetected -= CheckHits;
-        }
-    }
+            Data = Projectile.Data.GetComponentData<StickInEnvironmentData>();
 
-    private void CheckHits(RaycastHit2D[] hits)
-    {
-        if (isStuck)
-            return;
-
-        foreach (var hit in hits)
-        {
-            if (!LayerMaskUtilities.IsLayerInLayerMask(hit, Data.LayerMask))
-                continue;
-
-            if (hit.collider.TryGetComponent(out TilemapRenderer hitSR))
+            foreach (IHitbox hitbox in hitboxes)
             {
-                sr.sortingLayerID = hitSR.sortingLayerID;
-                sr.sortingOrder = -1;
+                hitbox.OnDetected += CheckHits;
             }
+        }
 
-            var position = transform.position;
-            var xDiff = position.x - position.x;
-            var yDiff = position.y - position.y;
+        protected override void OnDisable()
+        {
+            base.OnDisable();
 
-            Vector3 stickPos = new Vector3(hit.point.x - xDiff, hit.point.y - yDiff, 0f);
+            foreach (IHitbox hitbox in hitboxes)
+            {
+                hitbox.OnDetected -= CheckHits;
+            }
+        }
 
-            rb.velocity = Vector2.zero;
-            rb.bodyType = RigidbodyType2D.Static;
+        private void CheckHits(RaycastHit2D[] hits)
+        {
+            if (isStuck)
+                return;
 
-            position = stickPos;
+            foreach (var hit in hits)
+            {
+                if (!LayerMaskUtilities.IsLayerInLayerMask(hit, Data.LayerMask))
+                    continue;
 
-            Debug.DrawRay(stickPos, Vector3.left, Color.red, 5f);
+                if (hit.collider.TryGetComponent(out TilemapRenderer hitSR))
+                {
+                    sr.sortingLayerID = hitSR.sortingLayerID;
+                    sr.sortingOrder = -1;
+                }
 
-            transform.position = position;
+                var position = transform.position;
+                var xDiff = position.x - position.x;
+                var yDiff = position.y - position.y;
 
-            var currentRot = transform.rotation.eulerAngles.z;
-            var randomRot = Quaternion.Euler(0f, 0f, UnityEngine.Random.Range(currentRot - 10f, currentRot + 10f));
+                Vector3 stickPos = new Vector3(hit.point.x - xDiff, hit.point.y - yDiff, 0f);
 
-            transform.rotation = randomRot;
+                rb.velocity = Vector2.zero;
+                rb.bodyType = RigidbodyType2D.Static;
 
-            isStuck = true;
+                position = stickPos;
 
-            OnStick?.Invoke();
+                Debug.DrawRay(stickPos, Vector3.left, Color.red, 5f);
+
+                transform.position = position;
+
+                var currentRot = transform.rotation.eulerAngles.z;
+                var randomRot = Quaternion.Euler(0f, 0f, UnityEngine.Random.Range(currentRot - 10f, currentRot + 10f));
+
+                transform.rotation = randomRot;
+
+                isStuck = true;
+
+                OnStick?.Invoke();
+            }
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            rb = GetComponent<Rigidbody2D>();
+            sr = GetComponentInChildren<SpriteRenderer>();
         }
     }
 
-    protected override void Awake()
+    public class StickInEnvironmentData : ProjectileComponentData
     {
-        base.Awake();
+        public LayerMask LayerMask;
 
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponentInChildren<SpriteRenderer>();
-    }
-}
-
-public class StickInEnvironmentData : ProjectileComponentData
-{
-    public LayerMask LayerMask;
-
-    public StickInEnvironmentData()
-    {
-        ComponentDependencies.Add(typeof(StickInEnvironment));
+        public StickInEnvironmentData()
+        {
+            ComponentDependencies.Add(typeof(StickInEnvironment));
+        }
     }
 }

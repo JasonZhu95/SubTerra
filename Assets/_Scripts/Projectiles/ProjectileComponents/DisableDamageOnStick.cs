@@ -1,42 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class DisableDamageOnStick : ProjectileComponent<DisableDamageOnStickData>
+namespace Project.Projectiles
 {
-    private StickInEnvironment stickInEnvironment;
-    private bool stickInEnvironmentFound;
-
-    public override void SetReferences()
+    public class DisableDamageOnStick : ProjectileComponent<DisableDamageOnStickData>
     {
-        base.SetReferences();
+        private StickInEnvironment stickInEnvironment;
+        private bool stickInEnvironmentFound;
 
-        if (stickInEnvironmentFound = TryGetComponent(out stickInEnvironment))
+        public override void SetReferences()
         {
-            stickInEnvironment.OnStick += HandleStick;
+            base.SetReferences();
+
+            if (stickInEnvironmentFound = TryGetComponent(out stickInEnvironment))
+            {
+                stickInEnvironment.OnStick += HandleStick;
+            }
+        }
+
+        private void HandleStick()
+        {
+            Projectile.SetCanDamage(false);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            if (stickInEnvironmentFound)
+            {
+                stickInEnvironment.OnStick -= HandleStick;
+            }    
         }
     }
 
-    private void HandleStick()
+    public class DisableDamageOnStickData : ProjectileComponentData
     {
-        Projectile.SetCanDamage(false);
-    }
-
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-
-        if (stickInEnvironmentFound)
+        public DisableDamageOnStickData()
         {
-            stickInEnvironment.OnStick -= HandleStick;
-        }    
-    }
-}
-
-public class DisableDamageOnStickData : ProjectileComponentData
-{
-    public DisableDamageOnStickData()
-    {
-        ComponentDependencies.Add(typeof(DisableDamageOnStick));
+            ComponentDependencies.Add(typeof(DisableDamageOnStick));
+        }
     }
 }

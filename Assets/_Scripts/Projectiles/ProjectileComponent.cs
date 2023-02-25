@@ -2,57 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ProjectileComponent : MonoBehaviour
+namespace Project.Projectiles
 {
-    private Projectile projectile;
-
-    protected Projectile Projectile
+    public abstract class ProjectileComponent : MonoBehaviour
     {
-        get => projectile ? projectile : (projectile = GetComponent<Projectile>());
-        private set => projectile = value;
+        private Projectile projectile;
+
+        protected Projectile Projectile
+        {
+            get => projectile ? projectile : (projectile = GetComponent<Projectile>());
+            private set => projectile = value;
+        }
+
+        protected virtual void Awake()
+        {
+
+        }
+
+        public virtual void SetReferences()
+        {
+            Projectile = GetComponent<Projectile>();
+        }
+
+        protected virtual void Init()
+        {
+
+        }
+
+        protected virtual void OnEnable()
+        {
+            Projectile.OnInit += Init;
+        }
+
+        protected virtual void OnDisable()
+        {
+            Projectile.OnInit -= Init;
+        }
     }
 
-    protected virtual void Awake()
+    public class ProjectileComponent<T> : ProjectileComponent where T : ProjectileComponentData
     {
+        protected T Data;
 
-    }
+        public override void SetReferences()
+        {
+            base.SetReferences();
 
-    public virtual void SetReferences()
-    {
-        Projectile = GetComponent<Projectile>();
-    }
+            Data = Projectile.Data.GetComponentData<T>();
+        }
 
-    protected virtual void Init()
-    {
+        protected override void OnEnable()
+        {
+            base.OnEnable();
 
-    }
-
-    protected virtual void OnEnable()
-    {
-        Projectile.OnInit += Init;
-    }
-
-    protected virtual void OnDisable()
-    {
-        Projectile.OnInit -= Init;
-    }
-}
-
-public class ProjectileComponent<T> : ProjectileComponent where T : ProjectileComponentData
-{
-    protected T Data;
-
-    public override void SetReferences()
-    {
-        base.SetReferences();
-
-        Data = Projectile.Data.GetComponentData<T>();
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-
-        Data = Projectile.Data.GetComponentData<T>();
+            Data = Projectile.Data.GetComponentData<T>();
+        }
     }
 }

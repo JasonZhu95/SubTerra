@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CoreComponent : MonoBehaviour, ILogicUpdate
 {
-    protected Core core;
+  protected Core core;
 
-    public virtual void Init(Core core)
-    {
-        this.core = core;
-    }
+  public virtual void Init(Core core){
+    this.core = core;
+  }
 
-    protected virtual void Awake() { }
+  protected virtual void Awake() { }
 
-    public virtual void LogicUpdate() { }
+  public virtual void LogicUpdate() { }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private Movement movement;
     protected D_IdleState stateData;
 
     protected bool flipAfterIdle;
@@ -13,6 +11,9 @@ public class IdleState : State
     protected bool isPlayerInMinAgroRange;
 
     protected float idleTime;
+
+    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
 
     public IdleState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData) : base(etity, stateMachine, animBoolName)
     {

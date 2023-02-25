@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Project.EventChannels;
+using Project.Managers;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInputStop { get; private set; }
 
     public bool[] AttackInputs { get; private set; }
+    public bool[] AttackInputsHold { get; private set; }
 
     [SerializeField]
     private float inputHoldTime = 0.2f;
@@ -30,16 +33,26 @@ public class PlayerInputHandler : MonoBehaviour
     private float jumpInputStartTime;
     private float dashInputStartTime;
 
+    public event Action<bool> OnInteract;
+
+    [Header("Event Channels")] [SerializeField]
+    private GameStateEventChannel GameStateEventChannel;
+
     #endregion
 
     #region Unity Callback Functions
 
-    private void Start()
+    private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        GameStateEventChannel.OnAfterStateChange += HandleGameStateChange;
+    }
 
+    private void Start()
+    {
         int count = Enum.GetValues(typeof(CombatInputs)).Length;
         AttackInputs = new bool[count];
+        AttackInputsHold = new bool[count];
 
         cam = Camera.main;
     }
@@ -48,6 +61,36 @@ public class PlayerInputHandler : MonoBehaviour
     {
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
+    }
+
+    #endregion
+
+    #region Game State Functions
+
+    private void HandleGameStateChange(object sender, GameStateEventArgs context)
+    {
+        switch (context.State)
+        {
+            case GameState.UI:
+                playerInput.SwitchCurrentActionMap("UI");
+                break;
+            case GameState.Gameplay:
+                playerInput.SwitchCurrentActionMap("Gameplay");
+                break;
+        }
+    }
+
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnInteract?.Invoke(true);
+        }
+
+        if (context.canceled)
+        {
+            OnInteract?.Invoke(false);
+        }
     }
 
     #endregion
@@ -122,10 +165,12 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             AttackInputs[(int)CombatInputs.primary] = true;
+            AttackInputsHold[(int)CombatInputs.primary] = true;
         }
 
         if (context.canceled)
         {
+            AttackInputsHold[(int)CombatInputs.primary] = false;
             AttackInputs[(int)CombatInputs.primary] = false;
         }
     }
@@ -136,11 +181,13 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             AttackInputs[(int)CombatInputs.secondary] = true;
+            AttackInputsHold[(int)CombatInputs.secondary] = true;
         }
 
         if (context.canceled)
         {
             AttackInputs[(int)CombatInputs.secondary] = false;
+            AttackInputsHold[(int)CombatInputs.secondary] = false;
         }
     }
 
@@ -151,6 +198,8 @@ public class PlayerInputHandler : MonoBehaviour
     public void UseJumpInput() => JumpInput = false;
 
     public void UseDashInput() => DashInput = false;
+
+    public void UseAttackInput(CombatInputs input) => AttackInputs[(int)input] = false;
 
     // FUNCTION: Manages Variable Jump Heig t
     private void CheckJumpInputHoldTime()

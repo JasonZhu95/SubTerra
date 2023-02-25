@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Project.CoreComponents;
 
 public class Enemy2 : Entity
 {   
@@ -38,6 +39,12 @@ public class Enemy2 : Entity
     [SerializeField]
     private Transform rangedAttackPosition;
 
+    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
+    private Stats stats;
+
+    private ParryComponent ParryComponent => parryComponent ? parryComponent : Core.GetCoreComponent(ref parryComponent);
+    private ParryComponent parryComponent;
+
     public override void Awake()
     {
         base.Awake();
@@ -57,6 +64,9 @@ public class Enemy2 : Entity
     private void Start()
     {
         stateMachine.Initialize(moveState);
+
+        Stats.Poise.OnCurrentValueZero += () => stateMachine.ChangeState(stunState);
+        ParryComponent.OnParried += () => stateMachine.ChangeState(stunState);
     }
 
     public override void OnDrawGizmos()

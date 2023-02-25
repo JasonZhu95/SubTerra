@@ -1,112 +1,115 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Project.Projectiles;
+using Project.Utilities;
 using System;
 
-public class AttackRanged : WeaponComponent<AttackRangedData>
+namespace Project.Weapons
 {
-    public event Action<GameObject> OnProjectileSpawned;
-
-    public event Func<int, int> OnSetNumberOfProjectiles;
-    public event Func<Vector2, Vector2[]> OnSetProjectileDirection;
-
-    private Vector2 offset;
-    private Vector2 direction;
-
-    private Movement Movement => movement ?? core.GetCoreComponent(ref movement);
-    private Movement movement;
-
-    private Transform projectileContainer;
-
-    private int numberToSpawn = 1;
-
-    private void SpawnProjectiles()
+    public class AttackRanged : WeaponComponent<AttackRangedData>
     {
-        var curAtkData = data.GetAttackData(counter);
+        public event Action<GameObject> OnProjectileSpawned;
 
-        foreach (var point in curAtkData.AttackData)
+        public event Func<int, int> OnSetNumberOfProjectiles;
+        public event Func<Vector2, Vector2[]> OnSetProjectileDirection;
+
+        private Vector2 offset;
+        private Vector2 direction;
+
+        private Movement Movement => movement ?? core.GetCoreComponent(ref movement);
+        private Movement movement;
+
+        private Transform projectileContainer;
+
+        private int numberToSpawn = 1;
+
+        private void SpawnProjectiles()
         {
-            int numToSpawn = OnSetNumberOfProjectiles?.Invoke(numberToSpawn) ?? numberToSpawn;
-            var position = transform.position;
+            var curAtkData = data.GetAttackData(counter);
 
-            offset.Set(
-                position.x + point.offset.x * Movement.FacingDirection,
-                position.y + point.offset.y
-            );
-
-            direction.Set(point.direction.x * Movement.FacingDirection, point.direction.y);
-
-            var directions = OnSetProjectileDirection?.Invoke(direction) ?? new Vector2[] { direction };
-
-            for (int i = 0; (i < numToSpawn) || (i < directions.Length); i++)
+            foreach (var point in curAtkData.AttackData)
             {
-                var projectile = Instantiate(
-                    point.projectileData.ProjectilePrefab,
-                    offset,
-                    Quaternion.Euler(0f, 0f, VectorUtilities.AngleFromVector2(directions[i])),
-                    projectileContainer
+                int numToSpawn = OnSetNumberOfProjectiles?.Invoke(numberToSpawn) ?? numberToSpawn;
+                var position = transform.position;
+
+                offset.Set(
+                    position.x + point.offset.x * Movement.FacingDirection,
+                    position.y + point.offset.y
                 );
 
-                var projectileScript = projectile.GetComponent<Projectile>();
-                projectileScript.CreateProjectile(point.projectileData);
+                direction.Set(point.direction.x * Movement.FacingDirection, point.direction.y);
 
-                OnProjectileSpawned?.Invoke(projectile);
+                var directions = OnSetProjectileDirection?.Invoke(direction) ?? new Vector2[] { direction };
 
-                projectileScript.Init(core.Parent);
+                for (int i = 0; (i < numToSpawn) || (i < directions.Length); i++)
+                {
+                    var projectile = Instantiate(
+                        point.projectileData.ProjectilePrefab,
+                        offset,
+                        Quaternion.Euler(0f, 0f, VectorUtilities.AngleFromVector2(directions[i])),
+                        projectileContainer
+                    );
+
+                    var projectileScript = projectile.GetComponent<Projectile>();
+                    projectileScript.CreateProjectile(point.projectileData);
+
+                    OnProjectileSpawned?.Invoke(projectile);
+
+                    projectileScript.Init(core.Parent);
+                }
             }
         }
-    }
 
-    public override void SetReferences()
-    {
-        base.SetReferences();
-        projectileContainer = GameObject.FindGameObjectWithTag("ProjectileContainer").transform;
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-
-        eventHandler.OnAttackAction += SpawnProjectiles;
-    }
-
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-
-        eventHandler.OnAttackAction -= SpawnProjectiles;
-    }
-
-    private void OnDrawGizmos()
-    {
-        var weaponScript = GetComponent<Weapon>();
-        if (weaponScript == null) return;
-
-        var allData = weaponScript.WeaponData.GetComponentData<AttackRangedData>().GetAllData();
-
-        if (allData == null) return;
-
-        foreach (var item in allData)
+        public override void SetReferences()
         {
-            if (!item.debug) continue;
-            foreach (var point in item.AttackData)
-            {
-                var pos = transform.position + (Vector3)point.offset;
+            base.SetReferences();
+            projectileContainer = GameObject.FindGameObjectWithTag("ProjectileContainer").transform;
+        }
 
-                Gizmos.DrawWireSphere(pos, 0.2f);
-                Gizmos.color = Color.red;
-                Gizmos.DrawLine(pos, pos + (Vector3)point.direction.normalized);
-                Gizmos.color = Color.white;
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+
+            eventHandler.OnAttackAction += SpawnProjectiles;
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            eventHandler.OnAttackAction -= SpawnProjectiles;
+        }
+
+        private void OnDrawGizmos()
+        {
+            var weaponScript = GetComponent<Weapon>();
+            if (weaponScript == null) return;
+
+            var allData = weaponScript.WeaponData.GetComponentData<AttackRangedData>().GetAllData();
+
+            if (allData == null) return;
+
+            foreach (var item in allData)
+            {
+                if (!item.debug) continue;
+                foreach (var point in item.AttackData)
+                {
+                    var pos = transform.position + (Vector3)point.offset;
+
+                    Gizmos.DrawWireSphere(pos, 0.2f);
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawLine(pos, pos + (Vector3)point.direction.normalized);
+                    Gizmos.color = Color.white;
+                }
             }
         }
     }
-}
 
-[Serializable]
-public class AttackRangedData : WeaponComponentData<RangedData>
-{
-    public AttackRangedData()
+    [Serializable]
+    public class AttackRangedData : WeaponComponentData<RangedData>
     {
-        ComponentDependencies.Add(typeof(AttackRanged));
+        public AttackRangedData()
+        {
+            ComponentDependencies.Add(typeof(AttackRanged));
+        }
     }
 }

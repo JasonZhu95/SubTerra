@@ -1,45 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using Project.Modifiers;
+using Project.Weapons;
 using UnityEngine;
 
-public class KnockbackComponent : CoreComponent, IKnockbackable
+namespace Project.CoreComponents
 {
-    [SerializeField] private float maxKnockbackTime = 0.2f;
-
-    private Movement Movement => movement ?? core.GetCoreComponent(ref movement);
-    private Movement movement;
-
-    private CollisionSenses collisionSenses;
-    private CollisionSenses CollisionSenses => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
-
-    private bool isKnockbackActive;
-    private float knockbackStartTime;
-
-    public ModifierContainer<KnockbackModifiers, KnockbackData> KnockbackModifiers { get; private set; } =
-        new ModifierContainer<KnockbackModifiers, KnockbackData>();
-
-    public override void LogicUpdate()
+    public class KnockbackComponent : CoreComponent, IKnockbackable
     {
-        CheckKnockback();
-    }
+        [SerializeField] private float maxKnockbackTime = 0.2f;
 
-    public void Knockback(KnockbackData data)
-    {
-        var modifiedData = KnockbackModifiers.ApplyModifiers(data);
+        private Movement Movement => movement ?? core.GetCoreComponent(ref movement);
+        private Movement movement;
 
-        Movement?.SetVelocity(modifiedData.Strength, modifiedData.Angle.normalized, modifiedData.Direction);
-        Movement.CanSetVelocity = false;
-        isKnockbackActive = true;
-        knockbackStartTime = Time.time;
-    }
+        private CollisionSenses collisionSenses;
+        private CollisionSenses CollisionSenses => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
 
-    private void CheckKnockback()
-    {
-        if (isKnockbackActive && Movement.CurrentVelocity.y <= 0.01f &&
-            (CollisionSenses.Ground || Time.time >= knockbackStartTime + maxKnockbackTime))
+        private bool isKnockbackActive;
+        private float knockbackStartTime;
+
+        public ModifierContainer<KnockbackModifiers, KnockbackData> KnockbackModifiers { get; private set; } =
+            new ModifierContainer<KnockbackModifiers, KnockbackData>();
+
+        public override void LogicUpdate()
         {
-            isKnockbackActive = false;
-            Movement.CanSetVelocity = true;
+            CheckKnockback();
+        }
+
+        public void Knockback(KnockbackData data)
+        {
+            var modifiedData = KnockbackModifiers.ApplyModifiers(data);
+            
+            Movement?.SetVelocity(modifiedData.Strength, modifiedData.Angle.normalized, modifiedData.Direction);
+            Movement.CanSetVelocity = false;
+            isKnockbackActive = true;
+            knockbackStartTime = Time.time;
+        }
+
+        private void CheckKnockback()
+        {
+            if (isKnockbackActive && Movement.CurrentVelocity.y <= 0.01f &&
+                (CollisionSenses.Ground || Time.time >= knockbackStartTime + maxKnockbackTime))
+            {
+                isKnockbackActive = false;
+                Movement.CanSetVelocity = true;
+            }
         }
     }
 }

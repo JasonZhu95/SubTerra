@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[System.Serializable]
-public class ProjectileComponentData
+namespace Project.Projectiles
 {
-    private List<Type> componentDependencies = new List<Type>();
-    public List<Type> ComponentDependencies { get => componentDependencies; protected set => componentDependencies = value; }
-
-    public ProjectileComponentData()
+    [System.Serializable]
+    public class ProjectileComponentData
     {
-        this.name = this.GetType().Name;
-    }
+        private List<Type> componentDependencies = new List<Type>();
+        public List<Type> ComponentDependencies { get => componentDependencies; protected set => componentDependencies = value; }
 
-    [SerializeField, HideInInspector]
-    protected string name = "Test";
+        public ProjectileComponentData()
+        {
+            this.name = this.GetType().Name;
+        }
+
+        [SerializeField, HideInInspector]
+        protected string name = "Test";
+    }
 }

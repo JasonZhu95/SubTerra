@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Project.Projectiles;
 
-[System.Serializable]
-public struct WeaponProjectileSpawnPoint
+namespace Project.Weapons
 {
-    public Vector2 offset;
-    public Vector2 direction;
-    public ProjectileDataSO projectileData;
+    [System.Serializable]
+    public struct WeaponProjectileSpawnPoint
+    {
+        public Vector2 offset;
+        public Vector2 direction;
+        public ProjectileDataSO projectileData;
+    }
 }

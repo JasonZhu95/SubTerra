@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class LookForPlayerState : State
 {
-    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private Movement movement;
-
     protected D_LookForPlayer stateData;
 
     protected bool turnImmediately;
@@ -17,6 +14,9 @@ public class LookForPlayerState : State
     protected float lastTurnTime;
 
     protected int amountOfTurnsDone;
+
+    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
 
     public LookForPlayerState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_LookForPlayer stateData) : base(etity, stateMachine, animBoolName)
     {

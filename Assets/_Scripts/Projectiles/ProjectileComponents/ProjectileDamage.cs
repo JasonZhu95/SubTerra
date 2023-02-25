@@ -1,69 +1,73 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Project.Combat;
+using Project.Utilities;
+using Project.Combat.Interfaces;
 
-public class ProjectileDamage : ProjectileComponent<ProjectileDamageData>
+namespace Project.Projectiles
 {
-    private IHitbox[] hitboxes = new IHitbox[0];
-
-    private DamageData damageData;
-
-    public override void SetReferences()
+    public class ProjectileDamage : ProjectileComponent<ProjectileDamageData>
     {
-        base.SetReferences();
+        private IHitbox[] hitboxes = new IHitbox[0];
 
-        hitboxes = GetComponents<IHitbox>();
+        private DamageData damageData;
 
-        Data = Projectile.Data.GetComponentData<ProjectileDamageData>();
-
-        damageData.SetData(gameObject, Data.DamageAmount);
-
-        OnEnable();
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-
-        foreach (IHitbox hitbox in hitboxes)
+        public override void SetReferences()
         {
-            hitbox.OnDetected += CheckHits;
+            base.SetReferences();
+
+            hitboxes = GetComponents<IHitbox>();
+
+            Data = Projectile.Data.GetComponentData<ProjectileDamageData>();
+
+            damageData.SetData(gameObject, Data.DamageAmount);
+
+            OnEnable();
         }
-    }
 
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-
-        foreach (IHitbox hitbox in hitboxes)
+        protected override void OnEnable()
         {
-            hitbox.OnDetected -= CheckHits;
-        }
-    }
+            base.OnEnable();
 
-    private void CheckHits(RaycastHit2D[] hits)
-    {
-        print($"Found {hits.Length} hit(s)");
-        if (!Projectile.CanDamage) return;
-        foreach (var hit in hits)
-        {
-            print($"hit: {hit.transform.name}");
-            if (!LayerMaskUtilities.IsLayerInLayerMask(hit, Data.LayerMask)) continue;
-            if (CombatUtilities.CheckIfDamageable(hit, damageData, out _))
+            foreach (IHitbox hitbox in hitboxes)
             {
-                Projectile.Disable();
+                hitbox.OnDetected += CheckHits;
+            }
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            foreach (IHitbox hitbox in hitboxes)
+            {
+                hitbox.OnDetected -= CheckHits;
+            }
+        }
+
+        private void CheckHits(RaycastHit2D[] hits)
+        {
+            print($"Found {hits.Length} hit(s)");
+            if (!Projectile.CanDamage) return;
+            foreach (var hit in hits)
+            {
+                print($"hit: {hit.transform.name}");
+                if (!LayerMaskUtilities.IsLayerInLayerMask(hit, Data.LayerMask)) continue;
+                if (CombatUtilities.CheckIfDamageable(hit, damageData, out _))
+                {
+                    Projectile.Disable();
+                }
             }
         }
     }
-}
 
-public class ProjectileDamageData : ProjectileComponentData
-{
-    public float DamageAmount;
-    public LayerMask LayerMask;
-
-    public ProjectileDamageData()
+    public class ProjectileDamageData : ProjectileComponentData
     {
-        ComponentDependencies.Add(typeof(ProjectileDamage));
+        public float DamageAmount;
+        public LayerMask LayerMask;
+
+        public ProjectileDamageData()
+        {
+            ComponentDependencies.Add(typeof(ProjectileDamage));
+        }
     }
 }

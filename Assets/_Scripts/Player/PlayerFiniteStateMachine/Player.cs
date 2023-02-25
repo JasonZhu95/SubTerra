@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Project.Weapons;
+using Project.EventChannels;
+using Project.StateMachine;
 
 // Class that creates state objects
 public class Player : MonoBehaviour
@@ -25,9 +28,11 @@ public class Player : MonoBehaviour
     public PlayerCrouchMoveState CrouchMoveState { get; private set; }
     public PlayerAttackState PrimaryAttackState { get; private set; }
     public PlayerAttackState SecondaryAttackState { get; private set; }
+    public PlayerStunState StunState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
+    [SerializeField] private WeaponChangedEventChannel inventoryChannel;
     #endregion
 
     #region Components
@@ -38,8 +43,18 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
     public PlayerObstacleCollision playerObstacleCollision { get; private set; }
+
     private CollisionSenses CollisionSenses { get => collisionSenses ?? Core.GetCoreComponent(ref collisionSenses); }
     private CollisionSenses collisionSenses;
+
+    private PlayerInventory Inventory => inventory ? inventory : Core.GetCoreComponent(ref inventory);
+    private PlayerInventory inventory;
+
+    private Interaction Interaction => interaction ? interaction : Core.GetCoreComponent(ref interaction);
+    private Interaction interaction;
+
+    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
+    private Stats stats;
 
     #endregion
 
@@ -76,8 +91,12 @@ public class Player : MonoBehaviour
         DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
         CrouchIdleState = new PlayerCrouchIdleState(this, StateMachine, playerData, "crouchIdle");
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, playerData, "crouchMove");
-        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", primaryWeapon);
-        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", secondaryWeapon);
+        PrimaryAttackState =
+            new PlayerAttackState(this, StateMachine, playerData, "attack", CombatInputs.primary, primaryWeapon,
+                inventoryChannel);
+        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", CombatInputs.secondary,
+            secondaryWeapon, inventoryChannel);
+        StunState = new PlayerStunState(this, StateMachine, playerData, "stun");
     }
 
     private void Start()

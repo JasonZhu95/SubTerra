@@ -1,29 +1,50 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ParticleManager : CoreComponent
 {
-    private Transform particleContainer;
+  private Transform particleContainer;
 
-    protected override void Awake()
-    {
-        base.Awake();
+  private Movement movement;
+  public Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
 
-        particleContainer = GameObject.FindGameObjectWithTag("ParticleContainer").transform;
-    }
+  protected override void Awake()
+  {
+    base.Awake();
 
-    public GameObject StartParticles(GameObject particlePrefab, Vector2 position, Quaternion rotation)
-    {
-        return Instantiate(particlePrefab, position, rotation, particleContainer);
-    }
+    particleContainer = GameObject.FindGameObjectWithTag("ParticleContainer").transform;
+  }
 
-    public GameObject StartParticles(GameObject particlePrefab)
-    {
-        return StartParticles(particlePrefab, transform.position, Quaternion.identity);
-    }
+  public GameObject StartParticlesWithRandomRotation(GameObject particlesPrefab)
+  {
+    var randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+    return StartParticles(particlesPrefab, transform.position, randomRotation);
+  }
+  
+  public GameObject StartParticlesWithRandomRotation(GameObject particlesPrefab, Vector2 offset)
+  {
+    var randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+    return StartParticles(particlesPrefab, FindOffset(offset), randomRotation);
+  }
 
-    public GameObject StartParticlesWithRandomRotation(GameObject particlePrefab)
-    {
-        var randomRotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-        return StartParticles(particlePrefab, transform.position, randomRotation);
-    }
+  public GameObject StartParticles(GameObject particlesPrefab)
+  {
+    return StartParticles(particlesPrefab, transform.position, Quaternion.identity);
+  }
+
+  public GameObject StartParticles(GameObject particlesPrefab, Vector2 offset)
+  {
+    return StartParticles(particlesPrefab, FindOffset(offset), Quaternion.identity);
+  }
+
+  public GameObject StartParticles(GameObject particlesPrefab, Vector2 position, Quaternion rotation)
+  {
+    return Instantiate(particlesPrefab, position, rotation, particleContainer);
+  }
+
+  private Vector2 FindOffset(Vector2 offset)
+  {
+    offset.x *= Movement.FacingDirection;
+
+    return transform.position + (Vector3)offset;
+  }
 }

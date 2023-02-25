@@ -1,171 +1,178 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Project.Utilities.GO;
 
-public class Weapon : MonoBehaviour
+namespace Project.Weapons
 {
-    [SerializeField] private WeaponDataSO weaponData;
-
-    public WeaponDataSO WeaponData
+    public class Weapon : MonoBehaviour
     {
-        get => weaponData;
-        set
+        [SerializeField] private WeaponDataSO weaponData;
+
+        public WeaponDataSO WeaponData
         {
-            weaponData = value;
-            GenerateWeapon();
-        }
-    }
-
-    private bool currentInput;
-
-    public bool CurrentInput
-    {
-        get => currentInput;
-        private set
-        {
-            if (value != currentInput)
-                OnInputChange?.Invoke(value);
-
-            currentInput = value;
-        }
-    }
-
-    public Animator Anim { get; private set; }
-
-    private WeaponAnimationEventHandler animEventHandler;
-
-    public WeaponAnimationEventHandler AnimEventHandler
-    {
-        get => animEventHandler
-            ? animEventHandler
-            : (animEventHandler = GetComponentInChildren<WeaponAnimationEventHandler>());
-        private set => animEventHandler = value;
-    }
-
-    public event Action OnEnter;
-    public event Action OnExit;
-    public event Action OnGenerateWeapon;
-
-    public event Action<int> OnCounterChange;
-    public event Action<bool> OnInputChange;
-
-    private int currentAttackCounter;
-
-    public int CurrentAttackCounter
-    {
-        get => currentAttackCounter;
-        private set
-        {
-            if (value >= WeaponData.NumberOfAttacks)
+            get => weaponData;
+            set
             {
-                currentAttackCounter = 0;
+                weaponData = value;
+                GenerateWeapon();
             }
-            else
+        }
+
+        private bool currentInput;
+
+        public bool CurrentInput
+        {
+            get => currentInput;
+            private set
             {
-                currentAttackCounter = value;
+                if (value != currentInput)
+                    OnInputChange?.Invoke(value);
+                currentInput = value;
+            }
+        }
+
+        public Animator Anim { get; private set; }
+
+        private WeaponAnimationEventHandler animEventHandler;
+
+        public WeaponAnimationEventHandler AnimEventHandler
+        {
+            get => animEventHandler
+                ? animEventHandler
+                : (animEventHandler = GetComponentInChildren<WeaponAnimationEventHandler>());
+            private set => animEventHandler = value;
+        }
+
+        public event Action OnEnter;
+        public event Action OnExit;
+        public event Action OnGenerateWeapon;
+
+        public event Action<int> OnCounterChange;
+
+        public event Action<bool> OnInputChange;
+
+        private int currentAttackCounter;
+
+        public int CurrentAttackCounter
+        {
+            get => currentAttackCounter;
+            private set
+            {
+                if (value >= WeaponData.NumberOfAttacks)
+                {
+                    currentAttackCounter = 0;
+                }
+                else
+                {
+                    currentAttackCounter = value;
+                }
+
+                OnCounterChange?.Invoke(currentAttackCounter);
+            }
+        }
+
+        public Core Core { get; private set; }
+
+        public GameObject BaseGO { get; private set; }
+
+        private void Awake()
+        {
+            BaseGO = transform.Find("Base").gameObject;
+
+            Anim = GetComponentInChildren<Animator>();
+
+            AnimEventHandler = GetComponentInChildren<WeaponAnimationEventHandler>();
+
+            gameObject.SetActive(false);
+        }
+
+        private void Start()
+        {
+            AnimEventHandler.OnFinish += OnExit;
+        }
+
+        public void Init(Core core)
+        {
+            Core = core;
+        }
+
+        public static Component GetComp(Type compType, GameObject GO)
+        {
+            return GO.GetComponent(compType);
+        }
+
+        public void Enter()
+        {
+            gameObject.SetActive(true);
+            Anim.SetBool(WeaponBoolAnimParameters.active.ToString(), true);
+
+            Anim.SetInteger(WeaponIntAnimParameters.counter.ToString(), CurrentAttackCounter);
+
+            OnEnter?.Invoke();
+            OnInputChange?.Invoke(CurrentInput);
+        }
+
+        public void Exit()
+        {
+            OnExit?.Invoke();
+
+            CurrentAttackCounter++;
+            Anim.SetBool(WeaponBoolAnimParameters.active.ToString(), false);
+            gameObject.SetActive(false);
+        }
+
+        public void Tick()
+        {
+        }
+
+        public void SetInput(bool input) => CurrentInput = input;
+
+        public void GenerateWeapon()
+        {
+            CurrentAttackCounter = 0;
+
+            if (WeaponData == null)
+            {
+                Debug.LogError($"{this} has no associated data");
+                return;
             }
 
-            OnCounterChange?.Invoke(currentAttackCounter);
+            var addedComps = gameObject.AddDependenciesToGO<WeaponComponent>(weaponData.GetAllDependencies());
+
+            Anim.runtimeAnimatorController = WeaponData.AnimatorController;
+
+            foreach (var comp in addedComps)
+            {
+                comp.SetReferences();
+            }
         }
     }
 
-    public Core Core { get; private set; }
-
-    public GameObject BaseGO { get; private set; }
-
-    private void Awake()
+    public enum WeaponBoolAnimParameters
     {
-        BaseGO = transform.Find("Base").gameObject;
-
-        Anim = GetComponentInChildren<Animator>();
-
-        AnimEventHandler = GetComponentInChildren<WeaponAnimationEventHandler>();
-
-        gameObject.SetActive(false);
+        active,
+        hold,
+        cancel,
     }
 
-    public void Init(Core core)
+    public enum WeaponTriggerAnimParameters
     {
-        Core = core;
+        parry,
     }
 
-    public static Component GetComp(Type compType, GameObject GO)
+    public enum WeaponIntAnimParameters
     {
-        return GO.GetComponent(compType);
+        counter,
     }
 
-    public void Enter()
+    [System.Serializable]
+    public enum WeaponAttackPhases
     {
-        gameObject.SetActive(true);
-        Anim.SetBool(WeaponBoolAnimParameters.active.ToString(), true);
-
-        Anim.SetInteger(WeaponIntAnimParameters.counter.ToString(), CurrentAttackCounter);
-
-        OnEnter?.Invoke();
-        OnInputChange?.Invoke(CurrentInput);
+        Anticipation,
+        Idle,
+        Action,
+        Cancel,
+        Break,
+        Parry
     }
-
-    public void Exit()
-    {
-        OnExit?.Invoke();
-
-        CurrentAttackCounter++;
-        Anim.SetBool(WeaponBoolAnimParameters.active.ToString(), false);
-        gameObject.SetActive(false);
-    }
-
-    public void Tick()
-    {
-    }
-
-    public void SetInput(bool input) => CurrentInput = input;
-
-    public void GenerateWeapon()
-    {
-        CurrentAttackCounter = 0;
-
-        if (WeaponData == null)
-        {
-            Debug.LogError($"{this} has no data");
-            return;
-        }
-
-        var addedComps = gameObject.AddDependenciesToGO<WeaponComponent>(weaponData.GetAllDependencies());
-
-        Anim.runtimeAnimatorController = WeaponData.AnimatorController;
-
-        foreach (var comp in addedComps)
-        {
-            comp.SetReferences();
-        }
-    }
-}
-
-public enum WeaponBoolAnimParameters
-{
-    active,
-    hold,
-    cancel,
-}
-
-public enum WeaponTriggerAnimParameters
-{
-    parry,
-}
-
-public enum WeaponIntAnimParameters
-{
-    counter,
-}
-
-[System.Serializable]
-public enum WeaponAttackPhases
-{
-    Anticipation,
-    Idle,
-    Action,
-    Cancel,
-    Break,
-    Parry
 }

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Project.Projectiles;
 
 public class RotateTowardsMovement : ProjectileComponent<RotateTowardsMovementData>
 {
@@ -13,6 +12,13 @@ public class RotateTowardsMovement : ProjectileComponent<RotateTowardsMovementDa
 
         float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        rb = GetComponent<Rigidbody2D>();
     }
 }
 

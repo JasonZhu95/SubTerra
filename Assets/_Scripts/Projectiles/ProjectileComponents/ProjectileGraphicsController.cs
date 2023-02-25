@@ -1,27 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileGraphicsController : ProjectileComponent<ProjectileGraphicsControllerData>
+namespace Project.Projectiles
 {
-    private SpriteRenderer sr;
-
-    public override void SetReferences()
+    public class ProjectileGraphicsController : ProjectileComponent<ProjectileGraphicsControllerData>
     {
-        base.SetReferences();
+        private SpriteRenderer sr;
 
-        sr = transform.Find("Graphics").GetComponent<SpriteRenderer>();
-        Data = Projectile.Data.GetComponentData<ProjectileGraphicsControllerData>();
-        sr.sprite = Data.projectileSprite;
-    }
-}
+        public override void SetReferences()
+        {
+            base.SetReferences();
 
-public class ProjectileGraphicsControllerData : ProjectileComponentData
-{
-    public ProjectileGraphicsControllerData()
-    {
-        ComponentDependencies.Add(typeof(ProjectileGraphicsController));
+            sr = transform.Find("Graphics").GetComponent<SpriteRenderer>();
+            Data = Projectile.Data.GetComponentData<ProjectileGraphicsControllerData>();
+            sr.sprite = Data.projectileSprite;
+        }
     }
 
-    public Sprite projectileSprite;
+    public class ProjectileGraphicsControllerData : ProjectileComponentData
+    {
+        public ProjectileGraphicsControllerData()
+        {
+            ComponentDependencies.Add(typeof(ProjectileGraphicsController));
+        }
+
+        public Sprite projectileSprite;
+    }
 }

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Project.Combat.Interfaces;
 
 public class CombatTestDummy : MonoBehaviour, IDamageable, IKnockbackable
 {

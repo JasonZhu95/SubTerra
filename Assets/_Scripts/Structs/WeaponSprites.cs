@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
-public struct WeaponSprites : INameable
+namespace Project.Weapons
 {
-    [HideInInspector] public string AttackName;
-
-    public AttackPhaseSprites[] AttackPhases;
-
-    public void SetName(string value)
+    [Serializable]
+    public struct WeaponSprites : INameable
     {
-        AttackName = value;
-    }
-}
+        [HideInInspector] public string AttackName;
 
-[Serializable]
-public struct AttackPhaseSprites
-{
-    [HideInInspector] public string Name;
-    public WeaponAttackPhases Phase;
-    public Sprite[] Sprites;
+        public AttackPhaseSprites[] AttackPhases;
+
+        public void SetName(string value)
+        {
+            AttackName = value;
+        }
+    }
+
+    [Serializable]
+    public struct AttackPhaseSprites
+    {
+        [HideInInspector] public string Name;
+        public WeaponAttackPhases Phase;
+        public Sprite[] Sprites;
+    }
 }

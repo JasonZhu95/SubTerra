@@ -1,40 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileMovement : ProjectileComponent<ProjectileMovementData>
+namespace Project.Projectiles
 {
-    private Rigidbody2D rb;
-
-    protected override void Init()
+    public class ProjectileMovement : ProjectileComponent<ProjectileMovementData>
     {
-        Data = Projectile.Data.GetComponentData<ProjectileMovementData>();
-        rb.velocity = Data.Velocity * transform.right;
-    }
+        private Rigidbody2D rb;
 
-    private void FixedUpdate()
-    {
-        if (Data.ApplyContinuously)
+        protected override void Init()
         {
+            Data = Projectile.Data.GetComponentData<ProjectileMovementData>();
             rb.velocity = Data.Velocity * transform.right;
+        }
+
+        private void FixedUpdate()
+        {
+            if (Data.ApplyContinuously)
+            {
+                rb.velocity = Data.Velocity * transform.right;
+            }
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            rb = GetComponent<Rigidbody2D>();
         }
     }
 
-    protected override void Awake()
+    public class ProjectileMovementData : ProjectileComponentData
     {
-        base.Awake();
+        public ProjectileMovementData() : base()
+        {
+            ComponentDependencies.Add(typeof(ProjectileMovement));
+        }
 
-        rb = GetComponent<Rigidbody2D>();
+        public bool ApplyContinuously;
+        public float Velocity;
     }
-}
-
-public class ProjectileMovementData : ProjectileComponentData
-{
-    public ProjectileMovementData() : base()
-    {
-        ComponentDependencies.Add(typeof(ProjectileMovement));
-    }
-
-    public bool ApplyContinuously;
-    public float Velocity;
 }

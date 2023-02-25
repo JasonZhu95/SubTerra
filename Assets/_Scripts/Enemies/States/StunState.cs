@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class StunState : State
 {
-    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
-
-    private Movement movement;
-    private CollisionSenses collisionSenses;
-
-    protected D_StunState stateData;
-
     protected bool isStunTimeOver;
     protected bool isGrounded;
     protected bool isMovementStopped;
     protected bool performCloseRangeAction;
     protected bool isPlayerInMinAgroRange;
+
+    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
+    private CollisionSenses collisionSenses;
+
+    protected D_StunState stateData;
 
     public StunState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_StunState stateData) : base(etity, stateMachine, animBoolName)
     {
@@ -38,8 +38,6 @@ public class StunState : State
 
         isStunTimeOver = false;
         isMovementStopped = false;
-        Movement?.SetVelocity(stateData.stunKnockbackSpeed, stateData.stunKnockbackAngle, entity.lastDamageDirection);
-        
     }
 
     public override void Exit()
@@ -62,10 +60,5 @@ public class StunState : State
             isMovementStopped = true;
             Movement?.SetVelocityX(0f);
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

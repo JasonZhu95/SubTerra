@@ -1,59 +1,61 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Project.Utilities.Notifiers;
 
-public class DespawnProjectileOnStick : ProjectileComponent<DespawnProjectileOnStickData>
+namespace Project.Projectiles
 {
-    private StickInEnvironment stickInEnvironment;
-    private bool stickInEnvironmentFound;
-
-    private TimerNotifier despawnTimer;
-
-    public override void SetReferences()
+    public class DespawnProjectileOnStick : ProjectileComponent<DespawnProjectileOnStickData>
     {
-        base.SetReferences();
+        private StickInEnvironment stickInEnvironment;
+        private bool stickInEnvironmentFound;
 
-        if (stickInEnvironmentFound = TryGetComponent(out stickInEnvironment))
+        private TimerNotifier despawnTimer;
+
+        public override void SetReferences()
         {
-            stickInEnvironment.OnStick += HandleStick;
+            base.SetReferences();
+
+            if (stickInEnvironmentFound = TryGetComponent(out stickInEnvironment))
+            {
+                stickInEnvironment.OnStick += HandleStick;
+            }
+        }
+
+        private void HandleStick()
+        {
+            despawnTimer = new TimerNotifier(Data.DespawnTime, false);
+            despawnTimer.OnTimerDone += Despawn;
+        }
+
+        private void Despawn()
+        {
+            Projectile.Disable();
+        }
+
+        private void Update()
+        {
+            despawnTimer?.Tick();
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            if (stickInEnvironmentFound) stickInEnvironment.OnStick -= HandleStick;
+
+            if (despawnTimer != null)
+            {
+                despawnTimer.OnTimerDone -= Despawn;
+            }
         }
     }
 
-    private void HandleStick()
+    public class DespawnProjectileOnStickData : ProjectileComponentData
     {
-        despawnTimer = new TimerNotifier(Data.DespawnTime, false);
-        despawnTimer.OnTimerDone += Despawn;
-    }
+        [field: SerializeField] public float DespawnTime { get; private set; }
 
-    private void Despawn()
-    {
-        Projectile.Disable();
-    }
-
-    private void Update()
-    {
-        despawnTimer?.Tick();
-    }
-
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-
-        if (stickInEnvironmentFound) stickInEnvironment.OnStick -= HandleStick;
-
-        if (despawnTimer != null)
+        public DespawnProjectileOnStickData()
         {
-            despawnTimer.OnTimerDone -= Despawn;
+            ComponentDependencies.Add(typeof(DespawnProjectileOnStick));
         }
-    }
-}
-
-public class DespawnProjectileOnStickData : ProjectileComponentData
-{
-    [field: SerializeField] public float DespawnTime { get; private set; }
-
-    public DespawnProjectileOnStickData()
-    {
-        ComponentDependencies.Add(typeof(DespawnProjectileOnStick));
     }
 }

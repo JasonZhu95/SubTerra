@@ -7,13 +7,8 @@ public class PlayerGroundedState : PlayerState
 {
     protected int xInput;
     protected int yInput;
+
     protected bool isTouchingCeiling;
-
-    protected Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
-
-    private Movement movement;
-    private CollisionSenses collisionSenses;
 
     private bool jumpInput;
     private bool grabInput;
@@ -21,6 +16,12 @@ public class PlayerGroundedState : PlayerState
     private bool isGrounded;
     private bool isTouchingWall;
     private bool isTouchingLedge;
+
+    protected Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
+    private CollisionSenses collisionSenses;
 
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -63,11 +64,13 @@ public class PlayerGroundedState : PlayerState
         grabInput = player.InputHandler.GrabInput;
         dashInput = player.InputHandler.DashInput;
 
-        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && !isTouchingCeiling)
+        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && !isTouchingCeiling &&
+            player.PrimaryAttackState.CheckIfCanAttack())
         {
             stateMachine.ChangeState(player.PrimaryAttackState);
         }
-        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] && !isTouchingCeiling)
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] && !isTouchingCeiling &&
+                 player.SecondaryAttackState.CheckIfCanAttack())
         {
             stateMachine.ChangeState(player.SecondaryAttackState);
         }

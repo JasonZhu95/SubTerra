@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ComponentModifier<T> : ProjectileComponent<T> where T : ProjectileComponentData
+namespace Project.Projectiles
 {
-    protected ProjectileModifiers modifiers;
-    protected bool isActive;
-
-    public override void SetReferences()
+    public class ComponentModifier<T> : ProjectileComponent<T> where T : ProjectileComponentData
     {
-        base.SetReferences();
+        protected ProjectileModifiers modifiers;
+        protected bool isActive;
 
-        isActive = TryGetComponent(out modifiers);
+        public override void SetReferences()
+        {
+            base.SetReferences();
+
+            isActive = TryGetComponent(out modifiers);
+        }
     }
 }

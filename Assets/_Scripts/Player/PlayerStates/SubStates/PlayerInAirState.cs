@@ -32,9 +32,9 @@ public class PlayerInAirState : PlayerState
     #endregion
 
     private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
-
     private Movement movement;
+
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
     private CollisionSenses collisionSenses;
 
     public PlayerInAirState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -105,11 +105,11 @@ public class PlayerInAirState : PlayerState
         CheckJumpMultiplier();
 
         // State Changes
-        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary])
+        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && player.PrimaryAttackState.CheckIfCanAttack())
         {
             stateMachine.ChangeState(player.PrimaryAttackState);
         }
-        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] && player.SecondaryAttackState.CheckIfCanAttack())
         {
             stateMachine.ChangeState(player.SecondaryAttackState);
         }

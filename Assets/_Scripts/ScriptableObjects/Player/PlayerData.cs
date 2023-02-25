@@ -55,4 +55,7 @@ public class PlayerData : ScriptableObject
 
     [Header ("Obstacle Data")]
     public float trampolineVelocity = 20f;
+
+    [Header("Stun State")]
+    public float stunTime = 2f;
 }

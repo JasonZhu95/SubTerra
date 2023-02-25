@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class PlayerDetectedState : State
 {
-    protected Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
-
-    private Movement movement;
-    private CollisionSenses collisionSenses;
-
     protected D_PlayerDetected stateData;
 
     protected bool isPlayerInMinAgroRange;
@@ -17,6 +11,12 @@ public class PlayerDetectedState : State
     protected bool performLongRangeAction;
     protected bool performCloseRangeAction;
     protected bool isDetectingLedge;
+
+    protected Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
+    private CollisionSenses collisionSenses;
 
     public PlayerDetectedState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(etity, stateMachine, animBoolName)
     {

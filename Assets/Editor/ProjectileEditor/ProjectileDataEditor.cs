@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Project.Projectiles;
 
 [CustomEditor(typeof(ProjectileDataSO))]
 public class ProjectileDataEditor : Editor

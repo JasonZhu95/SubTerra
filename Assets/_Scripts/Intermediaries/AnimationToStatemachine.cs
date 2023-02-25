@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 public class AnimationToStatemachine : MonoBehaviour
 {
@@ -11,8 +10,19 @@ public class AnimationToStatemachine : MonoBehaviour
         attackState.TriggerAttack();
     }
 
+    private void SetParryWindows(TrueFalse value)
+    {
+        attackState.SetParryWindowActive(Convert.ToBoolean(value));
+    }
+
     private void FinishAttack()
     {
         attackState.FinishAttack();
     }
+}
+
+public enum TrueFalse
+{
+    False,
+    True,
 }

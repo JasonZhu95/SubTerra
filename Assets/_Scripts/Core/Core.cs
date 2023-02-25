@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 public class Core : MonoBehaviour
 {
     public Transform EntityTransform { get; private set; }
-    private readonly List<CoreComponent> CoreComponents = new List<CoreComponent>();
+    public readonly List<CoreComponent> CoreComponents = new List<CoreComponent>();
 
     [field: SerializeField] public GameObject Parent { get; private set; }
 
@@ -35,15 +34,6 @@ public class Core : MonoBehaviour
         }
     }
 
-    public void AddComponent(CoreComponent component)
-    {
-        if (!CoreComponents.Contains(component))
-        {
-            CoreComponents.Add(component);
-        }
-    }
-
-    // FUNCTION: Accesses the List of Core Components and returns the type of component.
     public T GetCoreComponent<T>() where T : CoreComponent
     {
         var comp = CoreComponents
@@ -54,7 +44,6 @@ public class Core : MonoBehaviour
         {
             Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
         }
-
         return comp;
     }
 
@@ -62,5 +51,14 @@ public class Core : MonoBehaviour
     {
         value = GetCoreComponent<T>();
         return value;
+    }
+
+    public void AddComponent(CoreComponent component)
+    {
+        if (!CoreComponents.Contains(component))
+        {
+            Debug.Log($"{component} was added");
+            CoreComponents.Add(component);
+        }
     }
 }

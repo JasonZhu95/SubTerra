@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Project.CoreComponents;
 using UnityEngine;
 
 public class AttackState : State
 {
-    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private Movement movement;
-
     protected Transform attackPosition;
 
     protected bool isAnimationFinished;
     protected bool isPlayerInMinAgroRange;
+
+    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
+
+    private ParryComponent parryComponent;
+
+    private ParryComponent ParryComponent =>
+        parryComponent ? parryComponent : core.GetCoreComponent(ref parryComponent);
 
     public AttackState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition) : base(etity, stateMachine, animBoolName)
     {
@@ -58,5 +64,10 @@ public class AttackState : State
     public virtual void FinishAttack()
     {
         isAnimationFinished = true;
+    }
+
+    public void SetParryWindowActive(bool value)
+    {
+        ParryComponent.SetParryColliderActive(value);
     }
 }

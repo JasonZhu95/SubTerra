@@ -1,22 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class Stats : CoreComponent
 {
     [field: SerializeField] public Stat Health { get; private set; }
+    [field: SerializeField] public Stat Poise { get; private set; }
+    [SerializeField] private float PoiseRecoveryPerSecond;
 
     protected override void Awake()
     {
         base.Awake();
 
         Health.Init();
+        Poise.Init();
     }
 
     private void Update()
     {
-
+        Poise.Increase(PoiseRecoveryPerSecond * Time.deltaTime);
     }
 }
 
@@ -49,5 +50,6 @@ public class Stat
     public void Init() => CurrentValue = MaxValue;
 
     public void Increase(float amount) => CurrentValue += amount;
+
     public void Decrease(float amount) => CurrentValue -= amount;
 }

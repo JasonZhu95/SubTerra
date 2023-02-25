@@ -1,34 +1,35 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class ModifierContainer<T, U> where T : Modifier<U>
+namespace Project.Modifiers
 {
-    private readonly List<T> Modifiers = new List<T>();
-
-    public void AddModifier(T modifier) => Modifiers.Add(modifier);
-
-    public void RemoveModifier(T modifier) => Modifiers.Remove(modifier);
-
-    public U ApplyModifiers(U initialValue)
+    public class ModifierContainer<T, U> where T : Modifier<U>
     {
-        U modifiedValue = initialValue;
+        private readonly List<T> Modifiers = new List<T>();
 
-        foreach (T modifier in Modifiers)
+        public void AddModifier(T modifier) => Modifiers.Add(modifier);
+
+        public void RemoveModifier(T modifier) => Modifiers.Remove(modifier);
+
+        public U ApplyModifiers(U initialValue)
         {
-            modifiedValue = modifier.ModifyValue(modifiedValue);
+            U modifiedValue = initialValue;
+
+            foreach (T modifier in Modifiers)
+            {
+                modifiedValue = modifier.ModifyValue(modifiedValue);
+            }
+
+            return modifiedValue;
         }
-
-        return modifiedValue;
     }
-}
 
-public abstract class Modifier
-{
+    public abstract class Modifier
+    {
 
-}
+    }
 
-public abstract class Modifier<T> : Modifier
-{
-    public abstract T ModifyValue(T value);
+    public abstract class Modifier<T> : Modifier
+    {
+        public abstract T ModifyValue(T value);
+    }
 }

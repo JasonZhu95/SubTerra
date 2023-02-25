@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class DodgeState : State
 {
-    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
-    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
-
-    private Movement movement;
-    private CollisionSenses collisionSenses;
-
     protected D_DodgeState stateData;
 
     protected bool performCloseRangeAction;
     protected bool isPlayerInMaxAgroRange;
     protected bool isGrounded;
     protected bool isDodgeOver;
+
+    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
+
+    private CollisionSenses CollisionSenses => collisionSenses ? collisionSenses : core.GetCoreComponent(ref collisionSenses);
+    private CollisionSenses collisionSenses;
 
     public DodgeState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_DodgeState stateData) : base(etity, stateMachine, animBoolName)
     {

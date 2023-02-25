@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Project.Combat.Interfaces;
 
-public abstract class DamageModifier : Modifier<DamageData>
+namespace Project.Modifiers
 {
+    public abstract class DamageModifier : Modifier<DamageData>
+    {
+    }
 }

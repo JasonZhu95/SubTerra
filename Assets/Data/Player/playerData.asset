@@ -41,13 +41,4 @@ MonoBehaviour:
   crouchMovementVelocity: 5
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
-  groundCheckRadius: 0.3
-  wallCheckDistance: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  ceilingCheckDistance: 0.5
-  whatIsTrampoline:
-    serializedVersion: 2
-    m_Bits: 128
   trampolineVelocity: 20

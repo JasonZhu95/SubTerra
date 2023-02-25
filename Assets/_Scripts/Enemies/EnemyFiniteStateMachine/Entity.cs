@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    private Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
-    private Movement movement;
-
     public FiniteStateMachine stateMachine;
 
     public D_Entity entityData;
@@ -33,6 +30,9 @@ public class Entity : MonoBehaviour
 
     protected bool isStunned;
     protected bool isDead;
+
+    private Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
+    private Movement movement;
 
     public virtual void Awake()
     {
