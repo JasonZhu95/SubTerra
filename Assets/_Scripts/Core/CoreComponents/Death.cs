@@ -4,8 +4,7 @@ public class Death : CoreComponent
 {
     [SerializeField] private GameObject[] deathParticles;
 
-    private Stats Stats { get => stats ?? core.GetCoreComponent(ref stats); }
-    private Stats stats;
+    private Stats Stats;
 
     private ParticleManager ParticleManager { get => particleManager ?? core.GetCoreComponent(ref particleManager); }
     private ParticleManager particleManager;
@@ -13,6 +12,7 @@ public class Death : CoreComponent
     public override void Init(Core core)
     {
         base.Init(core);
+        Stats = core.GetCoreComponent(ref Stats);
 
         Stats.Health.OnCurrentValueZero += Die;
     }
