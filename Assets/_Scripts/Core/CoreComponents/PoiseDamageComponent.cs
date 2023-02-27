@@ -12,7 +12,6 @@ namespace Project.CoreComponents
 
         public void PoiseDamage(PoiseDamageData data)
         {
-            print("Poise Damaged");
             var processedData = data;
             
             // Preprocess incoming poise damage

@@ -46,11 +46,9 @@ namespace Project.Projectiles
 
         private void CheckHits(RaycastHit2D[] hits)
         {
-            print($"Found {hits.Length} hit(s)");
             if (!Projectile.CanDamage) return;
             foreach (var hit in hits)
             {
-                print($"hit: {hit.transform.name}");
                 if (!LayerMaskUtilities.IsLayerInLayerMask(hit, Data.LayerMask)) continue;
                 if (CombatUtilities.CheckIfDamageable(hit, damageData, out _))
                 {

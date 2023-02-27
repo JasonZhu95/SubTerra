@@ -21,7 +21,6 @@ namespace Project.Managers
             
             channel.RaiseBeforeStateChangeEvent(this, new GameStateEventArgs(CurrentGameState));
 
-            Debug.Log(context.State);
             switch (context.State)
             {
                 case GameState.UI:

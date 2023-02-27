@@ -30,11 +30,9 @@ public class DamageComponent : CoreComponent, IDamageable
 
     public void Damage(DamageData data)
     {
-        
         OnDamage?.Invoke(data.Source);
 
         var modifiedData = DamageModifiers.ApplyModifiers(data);
-        print($"{core.Parent.name} Damage by {modifiedData.DamageAmount}");
 
         if (modifiedData.DamageAmount <= 0.0f) return;
 

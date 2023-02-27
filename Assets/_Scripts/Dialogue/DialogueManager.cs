@@ -93,7 +93,7 @@ namespace Project.UI
             dialoguePanel.SetActive(true);
 
             displayNameText.text = "???";
-            portraitAnimator.Play("default");
+            portraitAnimator.Play("PortraitDefault");
             layoutAnimator.Play("right");
 
             ContinueStory();
