@@ -23,6 +23,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool GrabInput { get; private set; }
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
+    public bool InteractPressed { get; set; }
 
     public bool[] AttackInputs { get; private set; }
     public bool[] AttackInputsHold { get; private set; }
@@ -77,19 +78,6 @@ public class PlayerInputHandler : MonoBehaviour
             case GameState.Gameplay:
                 playerInput.SwitchCurrentActionMap("Gameplay");
                 break;
-        }
-    }
-
-    public void OnInteractInput(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            OnInteract?.Invoke(true);
-        }
-
-        if (context.canceled)
-        {
-            OnInteract?.Invoke(false);
         }
     }
 
@@ -188,6 +176,21 @@ public class PlayerInputHandler : MonoBehaviour
         {
             AttackInputs[(int)CombatInputs.secondary] = false;
             AttackInputsHold[(int)CombatInputs.secondary] = false;
+        }
+    }
+
+    public void OnInteractInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnInteract?.Invoke(true);
+            InteractPressed = true;
+        }
+
+        if (context.canceled)
+        {
+            OnInteract?.Invoke(false);
+            InteractPressed = false;
         }
     }
 

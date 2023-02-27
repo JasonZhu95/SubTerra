@@ -45,7 +45,6 @@ namespace Project.Weapons
 
         public event Action OnEnter;
         public event Action OnExit;
-        public event Action OnGenerateWeapon;
 
         public event Action<int> OnCounterChange;
 

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - ParticleContainer
   - ProjectileContainer
+  - DialogueContainer
   layers:
   - Default
   - TransparentFX
@@ -57,6 +58,9 @@ TagManager:
     locked: 0
   - name: Enemies
     uniqueID: 221026571
+    locked: 0
+  - name: NPC
+    uniqueID: 3819118507
     locked: 0
   - name: Player
     uniqueID: 2839692221

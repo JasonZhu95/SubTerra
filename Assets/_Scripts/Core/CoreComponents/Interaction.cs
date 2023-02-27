@@ -14,7 +14,7 @@ public class Interaction : CoreComponent
 
     public void TriggerInteraction(bool value)
     {        
-        if (currentInteractable == null || !value) return; 
+        if (currentInteractable == null || !value) return;
         OnInteract?.Invoke(currentInteractable);
     }
     

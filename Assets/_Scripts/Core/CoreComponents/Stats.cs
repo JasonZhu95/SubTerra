@@ -42,7 +42,6 @@ public class Stat
         }
     }
 
-    public event Action<float> OnMaxValueChange;
     public event Action<float> OnCurrentValueChange;
 
     public event Action OnCurrentValueZero;

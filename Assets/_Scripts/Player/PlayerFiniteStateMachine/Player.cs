@@ -107,6 +107,8 @@ public class Player : MonoBehaviour
         MovementCollider = GetComponent<BoxCollider2D>();
         playerObstacleCollision = GetComponent<PlayerObstacleCollision>();
 
+        InputHandler.OnInteract += Interaction.TriggerInteraction;
+
         StateMachine.Initialize(IdleState);
     }
 
