@@ -344,6 +344,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "b737dae2-d3f1-4bb7-9be7-b0e5dfcff1c2",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "56439720-ebfc-4b19-bb7a-f1bc6f284d30",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "def371ac-1cf5-4944-8c33-ebb784440342",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

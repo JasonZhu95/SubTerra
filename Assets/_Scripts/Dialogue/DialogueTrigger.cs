@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project.Combat.Interfaces;
+using Project.EventChannels;
+using Project.Managers;
 
 namespace Project.UI
 {
@@ -11,6 +13,7 @@ namespace Project.UI
         private PlayerInputHandler inputHandler;
         private GameObject dialogueManager;
         private DialogueManager dialogueManagerReference;
+        [SerializeField] private GameStateEventChannel GameStateEventChannel;
 
         [Header("Visual Cue")]
         [SerializeField] private GameObject visualCue;
@@ -34,10 +37,19 @@ namespace Project.UI
 
         private void Update()
         {
-            if (inputHandler.InteractPressed && visualCue.activeSelf)
+            if (playerInRange && !dialogueManagerReference.DialogueIsPlaying)
             {
-                dialogueManagerReference.EnterDialogueMode(inkJSON);
-                inputHandler.InteractPressed = false;
+                visualCue.SetActive(true);
+                if (inputHandler.InteractPressed)
+                {
+                    dialogueManagerReference.EnterDialogueMode(inkJSON);
+                    GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.UI));
+                    inputHandler.InteractPressed = false;
+                }
+            }
+            else
+            {
+                visualCue.SetActive(false);
             }
         }
 
@@ -53,12 +65,12 @@ namespace Project.UI
 
         public void EnableInteraction()
         {
-            visualCue.SetActive(true);
+            playerInRange = true;
         }
     
         public void DisableInteraction()
         {
-            visualCue.SetActive(false);
+            playerInRange = false;
         }
 
         public Vector3 GetPosition() => transform.position;

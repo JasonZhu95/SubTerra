@@ -20,7 +20,8 @@ namespace Project.Managers
             if (context.State == CurrentGameState) return;
             
             channel.RaiseBeforeStateChangeEvent(this, new GameStateEventArgs(CurrentGameState));
-            
+
+            Debug.Log(context.State);
             switch (context.State)
             {
                 case GameState.UI:
