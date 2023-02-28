@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Project.LevelSetup;
 
 namespace Project.Menu
 {
@@ -49,9 +50,15 @@ namespace Project.Menu
         public TMP_Dropdown resolutionDropdown;
         private Resolution[] resolutions;
 
+        private LevelLoaderManager levelLoaderManager;
         #endregion
 
         #region Unity Callback Functions
+
+        private void Awake()
+        {
+            levelLoaderManager = GameObject.Find("LevelLoader").GetComponent<LevelLoaderManager>();
+        }
         private void Start()
         {
             resolutions = Screen.resolutions;
@@ -81,7 +88,7 @@ namespace Project.Menu
         #region Level Load Functions
         public void NewGameDialogueYes()
         {
-            SceneManager.LoadScene(newGameLevel);
+            levelLoaderManager.LoadNextLevel();
         }
 
         public void LoadGameDialogueYes()
