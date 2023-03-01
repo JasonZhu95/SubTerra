@@ -24,6 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
     public bool InteractPressed { get; set; }
+    public bool EscapePressed { get; set; }
 
     public bool[] AttackInputs { get; private set; }
     public bool[] AttackInputsHold { get; private set; }
@@ -191,6 +192,14 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnInteract?.Invoke(false);
             InteractPressed = false;
+        }
+    }
+
+    public void OnEscapeInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            EscapePressed = !EscapePressed;
         }
     }
 
