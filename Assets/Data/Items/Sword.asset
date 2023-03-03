@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c611a8aa2418e1e4eb01a28689572f53, type: 3}
+  m_Script: {fileID: 11500000, guid: f1c1a6ec1f927374fa7363c21e12849a, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Sword
-  <Description>k__BackingField: Its a sword.
-  <ItemImage>k__BackingField: {fileID: 255617269, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
+  <Description>k__BackingField: Cuts Things
+  <ItemImage>k__BackingField: {fileID: 1264934417, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
+  <DefaultParametersList>k__BackingField:
+  - itemParameter: {fileID: 11400000, guid: 15996eef7747b224bbd23fc1f39a9e49, type: 2}
+    value: 100

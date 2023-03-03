@@ -24,6 +24,7 @@ public class Stats : CoreComponent
 [System.Serializable]
 public class Stat
 {
+    [SerializeField]
     private float currentValue;
     [field: SerializeField] public float MaxValue { get; private set; }
 
