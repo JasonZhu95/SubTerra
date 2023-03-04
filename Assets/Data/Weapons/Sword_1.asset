@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8cbf04f051c8140ad3f2ed1afb6407, type: 3}
   m_Name: Sword_1
   m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: Basic Sword
+  <Description>k__BackingField: Its a Sword.
+  <ItemImage>k__BackingField: {fileID: 0}
+  <DefaultParametersList>k__BackingField: []
+  <actionSFX>k__BackingField: {fileID: 0}
   <NumberOfAttacks>k__BackingField: 3
   <WeaponName>k__BackingField: Basic Sword
   <WeaponDescription>k__BackingField: Basic Sword.  Its a sword...

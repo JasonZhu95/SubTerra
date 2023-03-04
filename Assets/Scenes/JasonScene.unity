@@ -1713,8 +1713,8 @@ GameObject:
   - component: {fileID: 264109755}
   - component: {fileID: 264109754}
   - component: {fileID: 264109756}
-  - component: {fileID: 264109757}
   - component: {fileID: 264109758}
+  - component: {fileID: 264109759}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2105,6 +2105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ce2dca3b899a34a8f663453724ec40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryData: {fileID: 11400000, guid: 9396cf843be676249906c3a7751f58cb, type: 2}
   playerData: {fileID: 11400000, guid: 8472a7e87ad25aa458da56b2ab5db6f8, type: 2}
   trampolineDetected: 0
 --- !u!114 &264109756
@@ -2122,23 +2123,12 @@ MonoBehaviour:
   inventoryUI: {fileID: 3986804108863933462}
   inventoryData: {fileID: 11400000, guid: 9396cf843be676249906c3a7751f58cb, type: 2}
   GameStateEventChannel: {fileID: 11400000, guid: 3d386526366ccf848b8d8276fb964e25, type: 2}
+  dropClip: {fileID: 0}
+  audioSource: {fileID: 264109759}
   initialItems:
   - quantity: 2
     item: {fileID: 11400000, guid: e12cdaf0570af744fb78b770bd4b9f64, type: 2}
     itemState: []
---- !u!114 &264109757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264109746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bfeb44c47f9e8b41bfa9384641cbcc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryData: {fileID: 11400000, guid: 9396cf843be676249906c3a7751f58cb, type: 2}
 --- !u!114 &264109758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,6 +2147,102 @@ MonoBehaviour:
   - itemParameter: {fileID: 11400000, guid: 15996eef7747b224bbd23fc1f39a9e49, type: 2}
     value: -10
   itemCurrentState: []
+--- !u!82 &264109759
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264109746}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &271402376
 GameObject:
   m_ObjectHideFlags: 0
@@ -23357,5 +23443,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrimaryWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 6970912594649326158, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 21d9f628027d2e040aad76a599a7e9eb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}

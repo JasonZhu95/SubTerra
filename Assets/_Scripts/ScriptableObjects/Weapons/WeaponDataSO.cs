@@ -2,11 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using Project.Inventory.Data;
 
 namespace Project.Weapons
 {
     [CreateAssetMenu(fileName = "new Weapon Data", menuName = "Data/Weapon Data")]
-    public class WeaponDataSO : ScriptableObject
+    public class WeaponDataSO : EquippableItemSO
     {
         [field: SerializeField]
         public int NumberOfAttacks { get; private set; }
