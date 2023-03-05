@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Project.Combat.Interfaces;
@@ -27,9 +28,30 @@ public class DamageComponent : CoreComponent, IDamageable
     private Stats stats;
     private CollisionSenses collisionSenses;
     private ParticleManager particleManager;
+    private GameObject player;
+    private GameObject enemyCollision;
+    private SpriteRenderer sr;
+    private Color color;
+
+    [SerializeField] private float invincibilityDuration = 1.5f;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        player = GameObject.Find("Player");
+        sr = player.GetComponent<SpriteRenderer>();
+        color = sr.material.color;
+        enemyCollision = player.transform.GetChild(0).GetChild(7).gameObject;
+
+    }
 
     public void Damage(DamageData data)
     {
+        if (core.Parent.name == "Player")
+        {
+            StartCoroutine(BecomeInvincible());
+        }
+
         OnDamage?.Invoke(data.Source);
 
         var modifiedData = DamageModifiers.ApplyModifiers(data);
@@ -38,5 +60,29 @@ public class DamageComponent : CoreComponent, IDamageable
 
         Stats?.Health.Decrease(modifiedData.DamageAmount);
         ParticleManager?.StartParticlesWithRandomRotation(damageParticles);
+
+    }
+
+    private IEnumerator BecomeInvincible()
+    {
+        player.layer = LayerMask.NameToLayer("PlayerInvincible");
+        enemyCollision.layer = LayerMask.NameToLayer("PlayerInvincible");
+
+        for (int i = 0; i < 5; i++)
+        {
+            color.a = 0.5f;
+            sr.material.color = color;
+
+            yield return new WaitForSeconds(invincibilityDuration / 10);
+
+            color.a = .75f;
+            sr.material.color = color;
+            yield return new WaitForSeconds(invincibilityDuration / 10);
+        }
+
+        player.layer = LayerMask.NameToLayer("Player");
+        enemyCollision.layer = LayerMask.NameToLayer("Default");
+        color.a = 1f;
+        sr.material.color = color;
     }
 }

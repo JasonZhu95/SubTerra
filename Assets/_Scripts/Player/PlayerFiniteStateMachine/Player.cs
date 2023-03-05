@@ -47,14 +47,8 @@ public class Player : MonoBehaviour
     private CollisionSenses CollisionSenses { get => collisionSenses ?? Core.GetCoreComponent(ref collisionSenses); }
     private CollisionSenses collisionSenses;
 
-    private PlayerInventory Inventory => inventory ? inventory : Core.GetCoreComponent(ref inventory);
-    private PlayerInventory inventory;
-
     private Interaction Interaction => interaction ? interaction : Core.GetCoreComponent(ref interaction);
     private Interaction interaction;
-
-    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
-    private Stats stats;
 
     #endregion
 
