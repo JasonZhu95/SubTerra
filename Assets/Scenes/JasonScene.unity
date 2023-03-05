@@ -2056,7 +2056,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 264109752}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OnEscapeInput
+        m_MethodName: OnPauseInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2068,6 +2068,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fa7d83e5-151b-4255-a557-91aef96154f5
     m_ActionName: UI/PauseMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 264109752}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnInventoryInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 49199b93-acc3-4cb6-b131-e079844ca373
+    m_ActionName: Gameplay/InventoryMenu[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 264109752}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnInventoryInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d08597d0-4c04-4d92-b4a4-96ad6b71faee
+    m_ActionName: UI/InventoryMenu[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -2125,6 +2157,7 @@ MonoBehaviour:
   GameStateEventChannel: {fileID: 11400000, guid: 3d386526366ccf848b8d8276fb964e25, type: 2}
   dropClip: {fileID: 0}
   audioSource: {fileID: 264109759}
+  itemActionPanelObject: {fileID: 1996584765}
   initialItems:
   - quantity: 2
     item: {fileID: 11400000, guid: e12cdaf0570af744fb78b770bd4b9f64, type: 2}
@@ -2141,7 +2174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31864ba7d64f2f49b809416b23ccbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  itemActionPanelObject: {fileID: 1996584765}
+  playerInventory: {fileID: 1617528957}
   inventoryData: {fileID: 11400000, guid: 9396cf843be676249906c3a7751f58cb, type: 2}
   parametersToModify:
   - itemParameter: {fileID: 11400000, guid: 15996eef7747b224bbd23fc1f39a9e49, type: 2}
@@ -12039,9 +12073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 128
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 480, y: 270}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -21415,8 +21449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a232acdce89663b40a435efc5576c72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: e12cdaf0570af744fb78b770bd4b9f64, type: 2}
-  <Quantity>k__BackingField: 5
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 21d9f628027d2e040aad76a599a7e9eb, type: 2}
+  <Quantity>k__BackingField: 1
   audioSource: {fileID: 1699300637}
   duration: 0.3
 --- !u!58 &1699300639
@@ -22438,8 +22472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a232acdce89663b40a435efc5576c72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 35fa286fe3c22ec46b862961b53be3ed, type: 2}
-  <Quantity>k__BackingField: 2
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 86e146ea99e16304ea791673216698a6, type: 2}
+  <Quantity>k__BackingField: 1
   audioSource: {fileID: 2082276667}
   duration: 0.3
 --- !u!58 &2082276669

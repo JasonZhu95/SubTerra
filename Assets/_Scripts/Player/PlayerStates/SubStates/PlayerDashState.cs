@@ -27,7 +27,7 @@ public class PlayerDashState : PlayerAbilityState
     public override void Enter()
     {
         base.Enter();
-
+        player.JumpState.DecreaseAmountOfJumpsLeft();
         CanDash = false;
         player.InputHandler.UseDashInput();
 

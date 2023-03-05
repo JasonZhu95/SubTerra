@@ -14,9 +14,9 @@ namespace Project.UI
 
         public void SetWeaponInfo(WeaponDataSO data)
         {
-            weaponIcon.sprite = data.PickupSprite;
-            weaponName.text = data.WeaponName;
-            weaponDescription.text = data.WeaponDescription;
+            weaponIcon.sprite = data.ItemImage;
+            weaponName.text = data.Name;
+            weaponDescription.text = data.Description;
         }
     }
 }

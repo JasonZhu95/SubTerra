@@ -23,6 +23,9 @@ namespace Project.Inventory
         [SerializeField]
         private AudioSource audioSource;
 
+        [SerializeField]
+        private ItemActionPanel itemActionPanelObject;
+
         public PlayerInputHandler InputHandler { get; private set; }
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
@@ -73,13 +76,20 @@ namespace Project.Inventory
             if (itemAction != null)
             {
                 inventoryUI.ShowItemAction(itemIndex);
-                inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
+                inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex, 0));
             }
 
-            IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if (destroyableItem != null)
+            if (itemAction.ActionName == "Equip")
             {
-                inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
+                inventoryUI.AddAction("Equip2", () => PerformAction(itemIndex, 1));
+            }
+            else
+            {
+                IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
+                if (destroyableItem != null)
+                {
+                    inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
+                }
             }
         }
 
@@ -90,8 +100,9 @@ namespace Project.Inventory
             audioSource.PlayOneShot(dropClip);
         }
 
-        public void PerformAction(int itemIndex)
+        public void PerformAction(int itemIndex, int equipIndex)
         {
+            itemActionPanelObject.Toggle(false);
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
             if (inventoryItem.IsEmpty)
                 return;
@@ -103,7 +114,7 @@ namespace Project.Inventory
             IItemAction itemAction = inventoryItem.item as IItemAction;
             if (itemAction != null)
             {
-                itemAction.PerformAction(gameObject, inventoryItem.itemState);
+                itemAction.PerformAction(gameObject, inventoryItem.itemState, equipIndex);
                 audioSource.PlayOneShot(itemAction.actionSFX);
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
                 {
@@ -161,7 +172,7 @@ namespace Project.Inventory
 
         private void Update()
         {
-            if (InputHandler.EscapePressed)
+            if (InputHandler.InventoryPressed)
             {
                 if (inventoryUI.isActiveAndEnabled == false)
                 {

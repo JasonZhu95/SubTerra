@@ -24,7 +24,7 @@ public class WeaponPickup : MonoBehaviour, IInteractable
 
     private void Init()
     {
-        graphics.sprite = data.PickupSprite;
+        graphics.sprite = data.ItemImage;
     }
 
     public object GetInteractionContext()

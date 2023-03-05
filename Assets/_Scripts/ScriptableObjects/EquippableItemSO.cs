@@ -1,3 +1,4 @@
+using Project.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,13 @@ namespace Project.Inventory.Data
         [field: SerializeField]
         public AudioClip actionSFX { get; private set; }
 
-        public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
+        public bool PerformAction(GameObject character, List<ItemParameter> itemState = null, int equipIndex = 0)
         {
             AgentWeapon weaponSystem = character.GetComponent<AgentWeapon>();
+
             if (weaponSystem != null)
             {
-                weaponSystem.SetWeapon(this, itemState == null ? DefaultParametersList : itemState);
+                weaponSystem.SetWeapon(this, itemState == null ? DefaultParametersList : itemState, equipIndex);
                 return true;
             }
             return false;

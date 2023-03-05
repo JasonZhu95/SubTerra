@@ -16,7 +16,7 @@ namespace Project.Inventory.Data
         [field: SerializeField]
         public AudioClip actionSFX { get; private set; }
 
-        public bool PerformAction(GameObject character, List<ItemParameter> itemState = null)
+        public bool PerformAction(GameObject character, List<ItemParameter> itemState = null, int equipIndex = 0)
         {
             foreach (ModifierData data in modifiersData)
             {
@@ -35,7 +35,7 @@ namespace Project.Inventory.Data
     {
         public string ActionName { get; }
         public AudioClip actionSFX { get; }
-        bool PerformAction(GameObject character, List<ItemParameter> itemState);
+        bool PerformAction(GameObject character, List<ItemParameter> itemState, int equipIndex);
     }
 
     [Serializable]

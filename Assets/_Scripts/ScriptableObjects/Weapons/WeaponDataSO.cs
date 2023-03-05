@@ -13,15 +13,6 @@ namespace Project.Weapons
         public int NumberOfAttacks { get; private set; }
 
         [field: SerializeField]
-        public string WeaponName { get; private set; }
-
-        [field: SerializeField, TextArea(3, 10)]
-        public string WeaponDescription { get; private set; }
-
-        [field: SerializeField]
-        public Sprite PickupSprite { get; private set; }
-
-        [field: SerializeField]
         public RuntimeAnimatorController AnimatorController { get; private set; }
 
         [SerializeReference]

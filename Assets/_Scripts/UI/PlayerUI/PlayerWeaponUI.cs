@@ -28,7 +28,7 @@ namespace Project.UI
         {
             if (context.WeaponInput == input && weaponIcon)
             {
-                weaponIcon.sprite = context.WeaponData.PickupSprite;
+                weaponIcon.sprite = context.WeaponData.ItemImage;
                 weaponIcon.color = Color.white;
             }   
         }

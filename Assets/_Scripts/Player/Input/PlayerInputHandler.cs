@@ -24,7 +24,9 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
     public bool InteractPressed { get; set; }
-    public bool EscapePressed { get; set; }
+    public bool PausePressed { get; set; }
+    public bool InventoryPressed { get; set; }
+
 
     public bool[] AttackInputs { get; private set; }
     public bool[] AttackInputsHold { get; private set; }
@@ -195,11 +197,19 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void OnEscapeInput(InputAction.CallbackContext context)
+    public void OnPauseInput(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            EscapePressed = !EscapePressed;
+            PausePressed = !PausePressed;
+        }
+    }
+
+    public void OnInventoryInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            InventoryPressed = !InventoryPressed;
         }
     }
 

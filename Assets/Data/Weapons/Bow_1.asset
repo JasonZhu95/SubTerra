@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8cbf04f051c8140ad3f2ed1afb6407, type: 3}
   m_Name: Bow_1
   m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: Basic Bow
+  <Description>k__BackingField: Its a bow...
+  <ItemImage>k__BackingField: {fileID: -1299135722, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
+  <DefaultParametersList>k__BackingField: []
+  <actionSFX>k__BackingField: {fileID: 0}
   <NumberOfAttacks>k__BackingField: 1
-  <WeaponName>k__BackingField: Basic Bow
-  <WeaponDescription>k__BackingField: Its a bow dude...
-  <PickupSprite>k__BackingField: {fileID: -1299135722, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 9c1c4757ecd7d1c45a9be7fea74526ea, type: 2}
   componentDatas:
   - rid: 3813184976568188933

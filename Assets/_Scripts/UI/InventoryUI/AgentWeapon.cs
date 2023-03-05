@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project.Inventory.Data;
+using Project.Inventory.UI;
+using Project.Weapons;
 
 public class AgentWeapon : MonoBehaviour
 {
     [SerializeField]
-    private EquippableItemSO weapon;
+    private ItemActionPanel itemActionPanelObject;
+
+    [SerializeField]
+    private PlayerInventory playerInventory;
 
     [SerializeField]
     private InventorySO inventoryData;
@@ -14,14 +19,25 @@ public class AgentWeapon : MonoBehaviour
     [SerializeField]
     private List<ItemParameter> parametersToModify, itemCurrentState;
 
-    public void SetWeapon(EquippableItemSO weaponItemSO, List<ItemParameter> itemState)
+    public void SetWeapon(EquippableItemSO weaponItemSO, List<ItemParameter> itemState, int equipIndex)
     {
-        if (weapon != null)
+        if (equipIndex == 0)
         {
-            inventoryData.AddItem(weapon, 1, itemCurrentState);
+            inventoryData.AddItem(playerInventory.weapons[0], 1, itemCurrentState);
+            playerInventory.SetWeapon(weaponItemSO as WeaponDataSO, (CombatInputs)0);
+            //itemActionPanelObject.Toggle(false);
+        }
+        else if (equipIndex == 1)
+        {
+            inventoryData.AddItem(playerInventory.weapons[1], 1, itemCurrentState);
+            playerInventory.SetWeapon(weaponItemSO as WeaponDataSO, (CombatInputs)1);
+            //itemActionPanelObject.Toggle(false);
+        }
+        else
+        {
+            Debug.Log("Equip Index Error Out of Range");
         }
 
-        this.weapon = weaponItemSO;
         this.itemCurrentState = new List<ItemParameter>(itemState);
         ModifyParameters();
     }

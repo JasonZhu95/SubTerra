@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "InventoryMenu",
+                    "type": "Button",
+                    "id": "49199b93-acc3-4cb6-b131-e079844ca373",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -362,6 +371,17 @@
                     "action": "PauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "547e93ce-4a31-4a9e-afb7-c84a98272139",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "InventoryMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -382,6 +402,15 @@
                     "name": "PauseMenu",
                     "type": "Button",
                     "id": "fa7d83e5-151b-4255-a557-91aef96154f5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InventoryMenu",
+                    "type": "Button",
+                    "id": "d08597d0-4c04-4d92-b4a4-96ad6b71faee",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -408,6 +437,17 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2bbdcce-cdcf-4c34-a0f4-8b26c685a305",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "InventoryMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
