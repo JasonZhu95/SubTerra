@@ -30,7 +30,12 @@ public class DamageComponent : CoreComponent, IDamageable
     private ParticleManager particleManager;
     private GameObject player;
     private GameObject enemyCollision;
-    private SpriteRenderer sr;
+    [SerializeField]
+    private SpriteRenderer sr = null;
+    [SerializeField]
+    private SpriteRenderer primarySR = null;
+    [SerializeField]
+    private SpriteRenderer secondarySR = null;
     private Color color;
 
     [SerializeField] private float invincibilityDuration = 1.5f;
@@ -72,11 +77,15 @@ public class DamageComponent : CoreComponent, IDamageable
         {
             color.a = 0.5f;
             sr.material.color = color;
+            primarySR.material.color = color;
+            secondarySR.material.color = color;
 
             yield return new WaitForSeconds(invincibilityDuration / 10);
 
             color.a = .75f;
             sr.material.color = color;
+            primarySR.material.color = color;
+            secondarySR.material.color = color;
             yield return new WaitForSeconds(invincibilityDuration / 10);
         }
 
@@ -84,5 +93,7 @@ public class DamageComponent : CoreComponent, IDamageable
         enemyCollision.layer = LayerMask.NameToLayer("Default");
         color.a = 1f;
         sr.material.color = color;
+        primarySR.material.color = color;
+        secondarySR.material.color = color;
     }
 }
