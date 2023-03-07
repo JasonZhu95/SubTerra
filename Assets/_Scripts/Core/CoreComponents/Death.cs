@@ -40,13 +40,16 @@ public class Death : CoreComponent
             ParticleManager.StartParticles(particle);
         }
 
-        color.a = 0.0f;
-        playerSR.material.color = color;
-        CVC.m_Follow = null;
-
         if (core.Parent.name == "Player")
         {
+            color.a = 0.0f;
+            playerSR.material.color = color;
+            CVC.m_Follow = null;
             StartCoroutine(RespawnPlayer());
+        }
+        else
+        {
+            core.Parent.SetActive(false);
         }
     }
 
