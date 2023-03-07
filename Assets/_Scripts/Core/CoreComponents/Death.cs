@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using Cinemachine;
 
 public class Death : CoreComponent
 {
@@ -8,6 +10,20 @@ public class Death : CoreComponent
 
     private ParticleManager ParticleManager { get => particleManager ?? core.GetCoreComponent(ref particleManager); }
     private ParticleManager particleManager;
+
+    public Transform RespawnPoints { get; set; }
+
+    private SpriteRenderer playerSR;
+    private Color color;
+
+    private CinemachineVirtualCamera CVC;
+
+    protected override void Awake()
+    {
+        playerSR = core.transform.parent.gameObject.GetComponent<SpriteRenderer>();
+        color = playerSR.material.color;
+        CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();
+    }
 
     public override void Init(Core core)
     {
@@ -24,7 +40,14 @@ public class Death : CoreComponent
             ParticleManager.StartParticles(particle);
         }
 
-        core.transform.parent.gameObject.SetActive(false);
+        color.a = 0.0f;
+        playerSR.material.color = color;
+        CVC.m_Follow = null;
+
+        if (core.Parent.name == "Player")
+        {
+            StartCoroutine(RespawnPlayer());
+        }
     }
 
     private void OnEnable()
@@ -38,5 +61,15 @@ public class Death : CoreComponent
     private void OnDisable()
     {
         Stats.Health.OnCurrentValueZero -= Die;
+    }
+
+    private IEnumerator RespawnPlayer()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        core.Parent.transform.position = RespawnPoints.position;
+        CVC.m_Follow = core.Parent.transform;
+        color.a = 1.0f;
+        playerSR.material.color = color;
     }
 }

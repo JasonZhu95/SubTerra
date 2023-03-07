@@ -48,11 +48,6 @@ public class PlayerObstacleCollision : MonoBehaviour
             playerRB.velocity = workspace;
             currentVelocity = workspace;
         }
-
-        if (collision.gameObject.CompareTag("Spike"))
-        {
-            Destroy(player);
-        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)

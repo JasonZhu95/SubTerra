@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trampoline
-  - Spike
   - Enemy
   - ParticleContainer
   - ProjectileContainer
   - DialogueContainer
+  - DeathZone
+  - RespawnZones
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - Player
   - Trampoline
-  - Spike
+  - DeathZone
   - Damageable
   - Weapon
   - Enemies
