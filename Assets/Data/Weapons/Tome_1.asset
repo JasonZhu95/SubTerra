@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8cbf04f051c8140ad3f2ed1afb6407, type: 3}
+  m_Name: Tome_1
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 0
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: Fireball Tome
+  <Description>k__BackingField: Shoots Fireballs
+  <ItemImage>k__BackingField: {fileID: 803789864, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
+  <DefaultParametersList>k__BackingField: []
+  <actionSFX>k__BackingField: {fileID: 0}
+  <NumberOfAttacks>k__BackingField: 1
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: cdeae98877b9a124eb10eaf90be2db3f, type: 2}
+  componentDatas:
+  - rid: 5884576516520017921
+  - rid: 5884576516520017922
+  - rid: 5884576516520017923
+  - rid: 5884576516520017920
+  references:
+    version: 2
+    RefIds:
+    - rid: 5884576516520017920
+      type: {class: WeaponSpriteData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: WeaponSpriteData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          AttackPhases:
+          - Name: Anticipation
+            Phase: 0
+            Sprites:
+            - {fileID: -334668851, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 1659142269, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -253299701, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -701160267, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 215120960, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 1900226911, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -83384155, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 654047787, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -945227958, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -330536524, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -475329448, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -1837528787, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+          - Name: Idle
+            Phase: 1
+            Sprites:
+            - {fileID: 1361132081, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -861184503, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 1982865369, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 291211050, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 167728692, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+          - Name: Cancel
+            Phase: 3
+            Sprites:
+            - {fileID: -708233637, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 2090981808, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -1270253461, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 0}
+            - {fileID: 0}
+          - Name: Action
+            Phase: 2
+            Sprites:
+            - {fileID: -1719551744, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -1225874425, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -1748245525, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 971548428, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -1003454176, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 1194608091, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 347286354, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: 627540379, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -232260209, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+            - {fileID: -1656547534, guid: f797e9d237a08854eb1224752037cb0c, type: 3}
+    - rid: 5884576516520017921
+      type: {class: AttackMovementData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: AttackMovementData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          Velocity: 4
+    - rid: 5884576516520017922
+      type: {class: AttackRangedData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: AttackRangedData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          debug: 0
+          AttackData:
+          - offset: {x: 0.64, y: 0.18}
+            direction: {x: 1, y: 0}
+            projectileData: {fileID: 11400000, guid: 1f135286ca6018e4db7db43d210cb177, type: 2}
+    - rid: 5884576516520017923
+      type: {class: WeaponInputHoldData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: WeaponInputHoldData

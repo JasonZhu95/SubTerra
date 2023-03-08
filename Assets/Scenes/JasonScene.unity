@@ -7091,7 +7091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1615768975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8545,7 +8545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a232acdce89663b40a435efc5576c72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 86e146ea99e16304ea791673216698a6, type: 2}
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: 8073221b691dc99448eacf5b8cb6c992, type: 2}
   <Quantity>k__BackingField: 1
   audioSource: {fileID: 2082276667}
   duration: 0.3
@@ -11112,6 +11112,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 264109747}
     m_Modifications:
+    - target: {fileID: 3264078690027454104, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677487779240824495, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cdeae98877b9a124eb10eaf90be2db3f, type: 2}
     - target: {fileID: 4949552808670578356, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -11163,7 +11171,7 @@ PrefabInstance:
     - target: {fileID: 6970912594649326158, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}
       propertyPath: weaponData
       value: 
-      objectReference: {fileID: 11400000, guid: 21d9f628027d2e040aad76a599a7e9eb, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}
 --- !u!1 &5110833365661346439

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc82cbee14fc31c4f9bc8eb4436a00d7, type: 3}
+  m_Name: Fireball_1
+  m_EditorClassIdentifier: 
+  <ProjectilePrefab>k__BackingField: {fileID: 6568436293777649578, guid: a23562d6e30c5224480d073309e4da62, type: 3}
+  <interactableLayers>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 512
+  <ComponentDatas>k__BackingField:
+  - rid: 5884576516520017924
+  - rid: 5884576516520017925
+  - rid: 5884576516520017926
+  - rid: 5884576516520017927
+  - rid: 5884576516520017928
+  - rid: 5884576516520017929
+  - rid: 5884576516520017930
+  references:
+    version: 2
+    RefIds:
+    - rid: 5884576516520017924
+      type: {class: HitboxData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: HitboxData
+        Hitbox:
+          serializedVersion: 2
+          x: -0.87
+          y: -0.375
+          width: 1.25
+          height: 0.75
+        CompensateForVelocity: 0
+        LayerMask:
+          serializedVersion: 2
+          m_Bits: 520
+        DoInitialCheck: 1
+    - rid: 5884576516520017925
+      type: {class: ProjectileMovementData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: ProjectileMovementData
+        ApplyContinuously: 0
+        Velocity: 15
+    - rid: 5884576516520017926
+      type: {class: ProjectileGraphicsControllerData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: ProjectileGraphicsControllerData
+        projectileSprite: {fileID: 808658678, guid: dc65255945be5b54ea84ff5f3a647f1c, type: 3}
+    - rid: 5884576516520017927
+      type: {class: ParticlesData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: ParticlesData
+        <trailPrefab>k__BackingField: {fileID: 2268897439260401120, guid: fd8a5b2b1722126408fe812efdcb3605, type: 3}
+    - rid: 5884576516520017928
+      type: {class: DespawnOnTouchLayerData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: DespawnOnTouchLayerData
+        <Layer>k__BackingField:
+          serializedVersion: 2
+          m_Bits: 8
+    - rid: 5884576516520017929
+      type: {class: ProjectileDamageData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: ProjectileDamageData
+        DamageAmount: 15
+        LayerMask:
+          serializedVersion: 2
+          m_Bits: 512
+    - rid: 5884576516520017930
+      type: {class: ParticlesOnDisableData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: ParticlesOnDisableData
+        <DespawnParticles>k__BackingField: {fileID: 3331873728183600638, guid: 3a4377b127a76d7419e443e741948d98, type: 3}
