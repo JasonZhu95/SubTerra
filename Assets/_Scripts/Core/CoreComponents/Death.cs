@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Cinemachine;
+using Project.Managers;
+using Project.LevelSetup;
 
 public class Death : CoreComponent
 {
@@ -11,18 +13,13 @@ public class Death : CoreComponent
     private ParticleManager ParticleManager { get => particleManager ?? core.GetCoreComponent(ref particleManager); }
     private ParticleManager particleManager;
 
-    public Transform RespawnPoints { get; set; }
-
-    private SpriteRenderer playerSR;
-    private Color color;
-
-    private CinemachineVirtualCamera CVC;
+    private RespawnManager respawnManager;
+    private LevelLoaderManager levelLoaderManager;
 
     protected override void Awake()
     {
-        playerSR = core.transform.parent.gameObject.GetComponent<SpriteRenderer>();
-        color = playerSR.material.color;
-        CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();
+        respawnManager = GameObject.Find("Managers").transform.Find("RespawnManager").GetComponent<RespawnManager>();
+        levelLoaderManager = GameObject.Find("LevelLoader").GetComponent<LevelLoaderManager>();
     }
 
     public override void Init(Core core)
@@ -42,10 +39,36 @@ public class Death : CoreComponent
 
         if (core.Parent.name == "Player")
         {
-            color.a = 0.0f;
-            playerSR.material.color = color;
-            CVC.m_Follow = null;
-            StartCoroutine(RespawnPlayer());
+            levelLoaderManager.PlayTransition();
+            respawnManager.PlayerDeathSwitchActive(true);
+            Stats.Health.Increase(Stats.Health.MaxValue);
+        }
+        else
+        {
+            core.Parent.SetActive(false);
+        }
+    }
+
+    public void DeathZoneDamage()
+    {
+        foreach (var particle in deathParticles)
+        {
+            ParticleManager.StartParticles(particle);
+        }
+
+        if (core.Parent.name == "Player")
+        {
+            levelLoaderManager.PlayTransition();
+            respawnManager.PlayerDeathSwitchActive(false);
+            if (Stats.Health.CurrentValue == 10f)
+            {
+                Die();
+            }
+            else
+            {
+                Stats.Health.Decrease(10f);
+            }
+            //TODO: Hardcoded Health decrease.  Change to heart system
         }
         else
         {
@@ -64,15 +87,5 @@ public class Death : CoreComponent
     private void OnDisable()
     {
         Stats.Health.OnCurrentValueZero -= Die;
-    }
-
-    private IEnumerator RespawnPlayer()
-    {
-        yield return new WaitForSeconds(2.0f);
-
-        core.Parent.transform.position = RespawnPoints.position;
-        CVC.m_Follow = core.Parent.transform;
-        color.a = 1.0f;
-        playerSR.material.color = color;
     }
 }

@@ -57,11 +57,11 @@ TagManager:
   - name: Background
     uniqueID: 4288144583
     locked: 0
-  - name: Obstacles
-    uniqueID: 2576009203
-    locked: 0
   - name: Platforms
     uniqueID: 367101643
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2576009203
     locked: 0
   - name: Enemies
     uniqueID: 221026571

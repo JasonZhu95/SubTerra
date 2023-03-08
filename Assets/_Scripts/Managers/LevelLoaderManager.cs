@@ -23,5 +23,10 @@ namespace Project.LevelSetup
 
             SceneManager.LoadScene(levelIndex);
         }
+
+        public void PlayTransition()
+        {
+            transition.SetTrigger("Start");
+        }
     }
 }

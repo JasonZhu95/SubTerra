@@ -1,6 +1,8 @@
 ﻿using Project.EventChannels;
+using System.Collections;
 using UnityEngine;
 
+// Script responsible for handling Time Scale Changes between UI.
 namespace Project.Managers
 {
     public class GameManager : MonoBehaviour

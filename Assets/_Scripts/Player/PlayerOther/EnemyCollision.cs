@@ -1,6 +1,8 @@
 using UnityEngine;
 using Project.Combat.Interfaces;
+using System.Collections;
 
+// Script Responsible for handling Knockack and Damage On Enemy COLLISION.
 public class EnemyCollision : CoreComponent
 {
     private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
@@ -14,10 +16,15 @@ public class EnemyCollision : CoreComponent
     [SerializeField]
     private float knockbackStrength;
 
-    private Vector3 collisionDirection;
     private DamageData damageData;
+    private BoxCollider2D enemyCollisionCollider;
+    public bool CanSetDeathZoneCollision { get; set; }
 
-    private GameObject player;
+    protected override void Awake()
+    {
+        enemyCollisionCollider = gameObject.GetComponent<BoxCollider2D>();
+        CanSetDeathZoneCollision = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,7 +38,11 @@ public class EnemyCollision : CoreComponent
 
         if (collision.gameObject.CompareTag("DeathZone"))
         {
-            Death.Die();
+            if (CanSetDeathZoneCollision)
+            {
+                CanSetDeathZoneCollision = false;
+                Death.DeathZoneDamage();
+            }
         }
     }
 
