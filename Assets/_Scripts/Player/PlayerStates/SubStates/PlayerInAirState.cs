@@ -136,7 +136,7 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.WallGrabState);
         }
-        else if (isTouchingWall && xInput == Movement?.FacingDirection)
+        else if (isTouchingWall && xInput == Movement?.FacingDirection && Movement.CurrentVelocity.y <= 0.0f)
         {
             stateMachine.ChangeState(player.WallSlideState);
         }

@@ -4560,6 +4560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 0
+  button: {fileID: 0}
 --- !u!114 &928790403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7091,7 +7092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1615768975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7139,12 +7140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c39119b3ac63ddc41a62f9b0e3f31f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CG: {fileID: 0}
   channel: {fileID: 11400000, guid: 40ec8a196b2971a4082aab13cfd4ebd5, type: 2}
   GameStateEventChannel: {fileID: 11400000, guid: 3d386526366ccf848b8d8276fb964e25, type: 2}
   TriggerDeselectUIChannel: {fileID: 11400000, guid: 984358674439c964ca6b1793702cfd2f, type: 2}
+  weaponChoices: []
   primarySlot: {fileID: 928790401}
   secondarySlot: {fileID: 2106813935}
   newWeaponSlot: {fileID: 2119833741}
+  inventory: {fileID: 0}
+  newWeaponData: {fileID: 0}
 --- !u!1 &1617528955
 GameObject:
   m_ObjectHideFlags: 0
@@ -8882,6 +8887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 0
+  button: {fileID: 0}
 --- !u!114 &2106813937
 MonoBehaviour:
   m_ObjectHideFlags: 0
