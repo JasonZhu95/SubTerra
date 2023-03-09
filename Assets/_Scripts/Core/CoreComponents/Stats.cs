@@ -5,6 +5,7 @@ public class Stats : CoreComponent
 {
     [field: SerializeField] public Stat Health { get; private set; }
     [field: SerializeField] public Stat Poise { get; private set; }
+    [field: SerializeField] public int CoinDeathValue { get; private set; }
     [SerializeField] private float PoiseRecoveryPerSecond;
 
     protected override void Awake()

@@ -18,6 +18,8 @@ public class PlayerInventory : CoreComponent
 
     private WeaponPickup weaponPickup;
 
+    public int CoinsHeld { get; private set; }
+
     public void SetWeapon(WeaponDataSO data, CombatInputs input)
     {
         if (weaponPickup != null)
@@ -40,6 +42,7 @@ public class PlayerInventory : CoreComponent
                 InventoryChangeChannel.RaiseEvent(this, new WeaponChangedEventArgs(weapons[i], (CombatInputs) i));
         }
     }
+
 
     private void HandleInteraction(IInteractable context)
     {
@@ -69,4 +72,7 @@ public class PlayerInventory : CoreComponent
     {
         interaction.OnInteract += HandleInteraction;
     }
+
+    public void IncreaseCoins(int amount) => CoinsHeld += amount;
+    public void DecreaseCoins(int amount) => CoinsHeld -= amount;
 }

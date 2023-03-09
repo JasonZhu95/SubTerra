@@ -11,6 +11,7 @@ TagManager:
   - DialogueContainer
   - DeathZone
   - RespawnZones
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Interactable
   - PlayerDamageable
   - PlayerInvincible
-  - 
+  - Collectible
   - 
   - 
   - 

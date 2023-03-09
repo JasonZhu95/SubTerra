@@ -8,6 +8,8 @@ public class Death : CoreComponent
 {
     [SerializeField] private GameObject[] deathParticles;
 
+    [SerializeField] private GameObject coinObject;
+
     private Stats Stats;
 
     private ParticleManager ParticleManager { get => particleManager ?? core.GetCoreComponent(ref particleManager); }
@@ -15,6 +17,9 @@ public class Death : CoreComponent
 
     private RespawnManager respawnManager;
     private LevelLoaderManager levelLoaderManager;
+
+    private int coinWorkspace;
+    private int coinWorkspaceAmount;
 
     protected override void Awake()
     {
@@ -45,6 +50,8 @@ public class Death : CoreComponent
         }
         else
         {
+            Debug.Log("dead");
+            InstantiateCoins();
             core.Parent.SetActive(false);
         }
     }
@@ -72,6 +79,7 @@ public class Death : CoreComponent
         }
         else
         {
+            InstantiateCoins();
             core.Parent.SetActive(false);
         }
     }
@@ -87,5 +95,29 @@ public class Death : CoreComponent
     private void OnDisable()
     {
         Stats.Health.OnCurrentValueZero -= Die;
+    }
+
+    private void InstantiateCoins()
+    {
+        coinWorkspace = Stats.CoinDeathValue;
+        coinWorkspaceAmount = coinWorkspace / 10;
+        coinWorkspace = coinWorkspace % 10;
+        LoopCoinAmount(coinWorkspaceAmount, 10);
+
+        coinWorkspaceAmount = coinWorkspace / 5;
+        coinWorkspace = coinWorkspace % 5;
+        LoopCoinAmount(coinWorkspaceAmount, 5);
+
+        LoopCoinAmount(coinWorkspace, 1);
+
+    }
+
+    private void LoopCoinAmount(int amount, int coinValue)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject instance = Instantiate(coinObject, gameObject.transform.position, Quaternion.identity);
+            instance.GetComponent<CoinValueSet>().SetCoinValue(coinValue);
+        }
     }
 }

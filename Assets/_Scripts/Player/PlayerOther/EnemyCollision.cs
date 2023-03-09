@@ -11,29 +11,46 @@ public class EnemyCollision : CoreComponent
     private Death Death { get => death ?? core.GetCoreComponent(ref death); }
     private Death death;
 
+    private PlayerInventory PlayerInventory { get => playerInventory ?? core.GetCoreComponent(ref playerInventory); }
+    private PlayerInventory playerInventory;
+
+    private CoinValueSet coin;
+
     [SerializeField]
     private Vector2 knockbackAngle;
     [SerializeField]
     private float knockbackStrength;
 
     private DamageData damageData;
-    private BoxCollider2D enemyCollisionCollider;
     public bool CanSetDeathZoneCollision { get; set; }
 
     protected override void Awake()
     {
-        enemyCollisionCollider = gameObject.GetComponent<BoxCollider2D>();
         CanSetDeathZoneCollision = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (core.Parent.name == "Player")
         {
-            var data = new KnockbackData(knockbackAngle, knockbackStrength, -Movement.FacingDirection, transform.parent.parent.gameObject);
-            GameObject.Find("Combat").GetComponent<IKnockbackable>().Knockback(data);
-            damageData.SetData(transform.parent.parent.gameObject, 10f);
-            GameObject.Find("Combat").GetComponent<IDamageable>().Damage(damageData);
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log(core.Parent);
+                var data = new KnockbackData(knockbackAngle, knockbackStrength, -Movement.FacingDirection, core.Parent);
+                core.Parent.transform.GetChild(0).Find("Combat").GetComponent<IKnockbackable>().Knockback(data);
+                damageData.SetData(core.Parent, 10f);
+                core.Parent.transform.GetChild(0).Find("Combat").GetComponent<IDamageable>().Damage(damageData);
+            }
+
+            if (collision.gameObject.CompareTag("Collectible"))
+            {
+                coin = collision.gameObject.GetComponent<CoinValueSet>();
+                if (coin.CanCollect)
+                {
+                    PlayerInventory.IncreaseCoins(coin.CoinValue);
+                    Destroy(collision.gameObject);
+                }
+            }
         }
 
         if (collision.gameObject.CompareTag("DeathZone"))
@@ -46,4 +63,19 @@ public class EnemyCollision : CoreComponent
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (core.Parent.name == "Player")
+        {
+            if (collision.gameObject.CompareTag("Collectible"))
+            {
+                coin = collision.gameObject.GetComponent<CoinValueSet>();
+                if (coin.CanCollect)
+                {
+                    PlayerInventory.IncreaseCoins(coin.CoinValue);
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
+    }
 }
