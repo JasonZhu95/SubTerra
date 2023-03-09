@@ -25,6 +25,7 @@ namespace Project.Weapons
             foreach (var item in detected)
             {
                 CheckDamage(item.gameObject, currentAttackData);
+                CheckTrigger(item.gameObject, true);
             }
         }
 

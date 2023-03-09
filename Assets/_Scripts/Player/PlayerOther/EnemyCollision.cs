@@ -35,7 +35,6 @@ public class EnemyCollision : CoreComponent
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log(core.Parent);
                 var data = new KnockbackData(knockbackAngle, knockbackStrength, -Movement.FacingDirection, core.Parent);
                 core.Parent.transform.GetChild(0).Find("Combat").GetComponent<IKnockbackable>().Knockback(data);
                 damageData.SetData(core.Parent, 10f);

@@ -10,6 +10,7 @@ namespace Project.Projectiles
         private IHitbox[] hitboxes = new IHitbox[0];
 
         private DamageData damageData;
+        private TriggerableData triggerData;
 
         public override void SetReferences()
         {
@@ -20,6 +21,7 @@ namespace Project.Projectiles
             Data = Projectile.Data.GetComponentData<ProjectileDamageData>();
 
             damageData.SetData(gameObject, Data.DamageAmount);
+
 
             OnEnable();
         }
@@ -49,8 +51,13 @@ namespace Project.Projectiles
             if (!Projectile.CanDamage) return;
             foreach (var hit in hits)
             {
+                triggerData.SetData(hit.collider.gameObject, true);
                 if (!LayerMaskUtilities.IsLayerInLayerMask(hit, Data.LayerMask)) continue;
                 if (CombatUtilities.CheckIfDamageable(hit, damageData, out _))
+                {
+                    Projectile.Disable();
+                }
+                if (CombatUtilities.CheckIfTriggerable(hit, triggerData, out _))
                 {
                     Projectile.Disable();
                 }

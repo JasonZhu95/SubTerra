@@ -50,7 +50,6 @@ public class Death : CoreComponent
         }
         else
         {
-            Debug.Log("dead");
             InstantiateCoins();
             core.Parent.SetActive(false);
         }

@@ -28,6 +28,27 @@ namespace Project.Combat
 
         #endregion
 
+        #region ITriggerable Check
+
+        public static bool CheckIfTriggerable(GameObject obj, TriggerableData data, out ITriggerable triggerable)
+        {
+            if (!obj.TryGetComponentInChildren(out triggerable)) return false;
+            triggerable.TriggerObject(data);
+            return true;
+        }
+
+        public static bool CheckIfTriggerable(Collider2D obj, TriggerableData data, out ITriggerable triggerable)
+        {
+            return CheckIfTriggerable(obj.gameObject, data, out triggerable);
+        }
+
+        public static bool CheckIfTriggerable(RaycastHit2D obj, TriggerableData data, out ITriggerable triggerable)
+        {
+            return CheckIfTriggerable(obj.collider, data, out triggerable);
+        }
+
+        #endregion
+
         #region IKnockbackable Check
 
         public static bool CheckIfKnockbackable(GameObject obj, KnockbackData data, out IKnockbackable knockbackable)
