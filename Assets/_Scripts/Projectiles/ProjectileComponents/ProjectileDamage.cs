@@ -57,10 +57,7 @@ namespace Project.Projectiles
                 {
                     Projectile.Disable();
                 }
-                if (CombatUtilities.CheckIfTriggerable(hit, triggerData, out _))
-                {
-                    Projectile.Disable();
-                }
+                CombatUtilities.CheckIfTriggerable(hit, triggerData, out _);
             }
         }
     }

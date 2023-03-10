@@ -13,7 +13,7 @@ namespace Project.Inventory
     {
         [SerializeField] private UIInventoryPage inventoryUI;
 
-        [SerializeField] private InventorySO inventoryData;
+        [SerializeField] public InventorySO inventoryData;
 
         [SerializeField] private GameStateEventChannel GameStateEventChannel;
 

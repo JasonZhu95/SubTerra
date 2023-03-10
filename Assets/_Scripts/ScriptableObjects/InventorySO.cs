@@ -150,6 +150,22 @@ namespace Project.Inventory.Data
         {
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
+
+        public bool SearchInventoryAndRemove(string nameToSearch)
+        {
+            for(int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].item != null)
+                {
+                    if (inventoryItems[i].ReturnItemName() == nameToSearch)
+                    {
+                        RemoveItem(i, 1);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 
     [Serializable]
@@ -177,5 +193,10 @@ namespace Project.Inventory.Data
                 quantity = 0,
                 itemState = new List<ItemParameter>()
             };
+
+        public string ReturnItemName()
+        {
+            return item.Name;
+        }
     }
 }
