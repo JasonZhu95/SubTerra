@@ -369,7 +369,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1107052584036285302, guid: 1ae7bca40ea4efb468d6bc186f41f5e2, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1107052584036285302, guid: 1ae7bca40ea4efb468d6bc186f41f5e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -414,18 +414,6 @@ PrefabInstance:
     - target: {fileID: 1107052584036285321, guid: 1ae7bca40ea4efb468d6bc186f41f5e2, type: 3}
       propertyPath: m_Name
       value: Enemy1 Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107052584129619947, guid: 1ae7bca40ea4efb468d6bc186f41f5e2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107052584304052935, guid: 1ae7bca40ea4efb468d6bc186f41f5e2, type: 3}
-      propertyPath: maxKnockbackTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5920296707803696397, guid: 1ae7bca40ea4efb468d6bc186f41f5e2, type: 3}
-      propertyPath: knockbackStrength
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ae7bca40ea4efb468d6bc186f41f5e2, type: 3}
