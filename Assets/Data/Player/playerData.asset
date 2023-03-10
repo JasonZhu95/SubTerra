@@ -18,7 +18,7 @@ MonoBehaviour:
   halfGravityThresholdMin: -3
   halfGravityThresholdMax: 4
   wallJumpVelocity: 20
-  wallJumpTime: 0.4
+  wallJumpTime: 0.2
   wallJumpAngle: {x: 1, y: 2}
   wallJumpUpVelocity: 15
   wallJumpUpTime: 0.2
@@ -42,3 +42,4 @@ MonoBehaviour:
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
   trampolineVelocity: 20
+  stunTime: 2

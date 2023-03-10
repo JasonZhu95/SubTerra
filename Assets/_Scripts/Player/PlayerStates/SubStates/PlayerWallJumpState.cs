@@ -44,7 +44,17 @@ public class PlayerWallJumpState : PlayerAbilityState
         {
             player.StateMachine.ChangeState(player.DashState);
         }
-        if (player.WallJumpUpCheck)
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] &&
+            player.PrimaryAttackState.CheckIfCanAttack())
+        {
+            stateMachine.ChangeState(player.PrimaryAttackState);
+        }
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] &&
+                 player.SecondaryAttackState.CheckIfCanAttack())
+        {
+            stateMachine.ChangeState(player.SecondaryAttackState);
+        }
+        else if (player.WallJumpUpCheck)
         {
             if (Time.time > startTime + playerData.wallJumpUpTime)
             {

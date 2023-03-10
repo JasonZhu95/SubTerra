@@ -48,7 +48,7 @@ public class CoinValueSet : MonoBehaviour
 
     private IEnumerator EnableCoinCollision()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         CanCollect = true;
     }
 }
