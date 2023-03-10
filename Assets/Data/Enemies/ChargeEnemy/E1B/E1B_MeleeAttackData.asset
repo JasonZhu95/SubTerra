@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f5aa482e628e2429c6afc331c722f2, type: 3}
+  m_Name: E1B_MeleeAttackData
+  m_EditorClassIdentifier: 
+  attackRadius: 0.75
+  attackDamage: 50
+  knockbackAngle: {x: 1, y: 1}
+  knockbackStrength: 20
+  poiseDamage: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 16384
