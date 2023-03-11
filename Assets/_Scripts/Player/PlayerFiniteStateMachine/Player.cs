@@ -61,6 +61,16 @@ public class Player : MonoBehaviour
     private Weapon secondaryWeapon;
     #endregion
 
+    #region Disable State Variables
+
+    public bool DisableDash { get; set; } = true;
+    public bool DisableWallJump { get; set; } = true;
+    public bool DisableWallClimb { get; set; } = true;
+    public bool DisableWallSlide { get; set; } = true;
+    public bool DisableWallGrab { get; set; } = true;
+
+    #endregion
+
     #region Unity Callback Functions
 
     private void Awake()

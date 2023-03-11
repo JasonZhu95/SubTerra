@@ -22,7 +22,7 @@ public class PlayerWallClimbState : PlayerTouchingWallState
             {
                 Movement?.SetVelocityY(-playerData.wallClimbVelocityDown);
             }
-            else if (yInput == 0)
+            else if (yInput == 0 && !player.DisableWallGrab)
             {
                 player.StateMachine.ChangeState(player.WallGrabState);
             }

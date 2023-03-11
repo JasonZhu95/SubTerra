@@ -40,7 +40,7 @@ public class PlayerWallJumpState : PlayerAbilityState
         player.Anim.SetFloat("yVelocity", Movement.CurrentVelocity.y);
         player.Anim.SetFloat("xVelocity", Mathf.Abs(Movement.CurrentVelocity.x));
 
-        if (dashInput && player.DashState.CanDash)
+        if (dashInput && player.DashState.CanDash && !player.DisableDash)
         {
             player.StateMachine.ChangeState(player.DashState);
         }

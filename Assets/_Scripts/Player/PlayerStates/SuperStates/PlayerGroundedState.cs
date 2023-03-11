@@ -85,11 +85,11 @@ public class PlayerGroundedState : PlayerState
                 player.InAirState.StartCoyoteTime();
                 stateMachine.ChangeState(player.InAirState);
             }
-            else if (isTouchingWall && grabInput && isTouchingLedge)
+            else if (isTouchingWall && grabInput && isTouchingLedge && !player.DisableWallGrab)
             {
                 stateMachine.ChangeState(player.WallGrabState);
             }
-            else if (dashInput && player.DashState.CheckIfCanDash() && !isTouchingCeiling)
+            else if (dashInput && player.DashState.CheckIfCanDash() && !isTouchingCeiling && !player.DisableDash)
             {
                 stateMachine.ChangeState(player.DashState);
             }

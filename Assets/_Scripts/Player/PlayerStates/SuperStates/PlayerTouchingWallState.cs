@@ -70,7 +70,7 @@ public class PlayerTouchingWallState : PlayerState
         jumpInput = player.InputHandler.JumpInput;
 
         // State Changes
-        if(jumpInput)
+        if(jumpInput && !player.DisableWallJump)
         {
             if (grabInput && yInput == 1)
             {
