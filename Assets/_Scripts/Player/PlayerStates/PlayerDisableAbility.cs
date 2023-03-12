@@ -36,7 +36,7 @@ public class PlayerDisableAbility : MonoBehaviour
                     Debug.Log("Invalid Ability State");
                     break;
             }
-            //Play an animation on pickup maybe
+            // TODO: Add animation
             DestroyItem();
 
         }

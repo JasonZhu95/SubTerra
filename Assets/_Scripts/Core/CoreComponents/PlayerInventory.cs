@@ -5,7 +5,7 @@ using Project.EventChannels;
 using Project.Weapons;
 using UnityEngine;
 
-public class PlayerInventory : CoreComponent
+public class PlayerInventory : CoreComponent, IDataPersistence
 {
     public WeaponDataSO[] weapons;
 
@@ -75,4 +75,14 @@ public class PlayerInventory : CoreComponent
 
     public void IncreaseCoins(int amount) => CoinsHeld += amount;
     public void DecreaseCoins(int amount) => CoinsHeld -= amount;
+
+    public void LoadData(GameData data)
+    {
+        CoinsHeld = data.coinCount;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.coinCount = CoinsHeld;
+    }
 }

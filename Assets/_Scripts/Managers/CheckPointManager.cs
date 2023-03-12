@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Project.Managers
 {
-    public class CheckPointManager : MonoBehaviour
+    public class CheckPointManager : MonoBehaviour, IDataPersistence
     {
         private List<GameObject> checkPointList;
 
@@ -39,9 +39,19 @@ namespace Project.Managers
                 if (source.name == checkPointList[i].name)
                 {
                     LastSetCheckPointIndex = i;
-                    Debug.Log(source.name + " SET " + LastSetCheckPointIndex);
                 }
             }
+        }
+
+        public void LoadData(GameData data)
+        {
+            LastSetCheckPointIndex = data.checkPointIndex;
+        }
+
+        public void SaveData(ref GameData data)
+        {
+            data.checkPointIndex = LastSetCheckPointIndex;
+            data.checkPointPosition = checkPointList[data.checkPointIndex].transform.position;
         }
     }
 }

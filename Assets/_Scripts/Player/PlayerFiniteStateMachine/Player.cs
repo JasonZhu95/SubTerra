@@ -6,7 +6,7 @@ using Project.EventChannels;
 using Project.StateMachine;
 
 // Class that creates state objects
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDataPersistence
 {
 
     #region State Variables
@@ -155,6 +155,19 @@ public class Player : MonoBehaviour
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
     private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+
+    #endregion
+
+    #region Data Persistence Save
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.checkPointPosition;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+    }
 
     #endregion
 }
