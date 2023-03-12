@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bow_1
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
+  ID: -1
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Basic Bow
   <Description>k__BackingField: Its a bow...

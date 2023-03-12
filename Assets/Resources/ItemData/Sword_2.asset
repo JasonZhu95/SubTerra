@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8cbf04f051c8140ad3f2ed1afb6407, type: 3}
+  m_Name: Sword_2
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 0
+  ID: -1
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: 
+  <Description>k__BackingField: 
+  <ItemImage>k__BackingField: {fileID: 0}
+  <DefaultParametersList>k__BackingField: []
+  <actionSFX>k__BackingField: {fileID: 0}
+  <NumberOfAttacks>k__BackingField: 3
+  <AnimatorController>k__BackingField: {fileID: 0}
+  componentDatas:
+  - rid: 5884576614231572481
+  references:
+    version: 2
+    RefIds:
+    - rid: 5884576614231572481
+      type: {class: WeaponSpriteData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: WeaponSpriteData
+        repeatData: 0
+        data: []

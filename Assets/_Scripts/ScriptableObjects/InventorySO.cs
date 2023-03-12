@@ -9,7 +9,7 @@ namespace Project.Inventory.Data
     public class InventorySO : ScriptableObject
     {
         [SerializeField]
-        private List<InventoryItem> inventoryItems;
+        public List<InventoryItem> inventoryItems;
 
         [field: SerializeField]
         public int Size { get; private set; } = 10;
@@ -25,7 +25,7 @@ namespace Project.Inventory.Data
             }
         }
 
-        public int AddItem(ItemSO item, int quantity, List<ItemParameter> itemState = null)
+        public int AddItem(ItemSO item, int Id, int quantity, List<ItemParameter> itemState = null)
         {
             if (item.IsStackable == false)
             {
@@ -33,7 +33,7 @@ namespace Project.Inventory.Data
                 {
                     while(quantity > 0 && IsInventoryFull() == false)
                     {
-                        quantity -= AddItemToFirstFreeSlot(item, 1, itemState);
+                        quantity -= AddItemToFirstFreeSlot(item, Id, 1, itemState);
                     }
                     InformAboutChange();
                     return quantity;
@@ -44,11 +44,12 @@ namespace Project.Inventory.Data
             return quantity;
         }
 
-        private int AddItemToFirstFreeSlot(ItemSO item, int quantity, List<ItemParameter> itemState = null)
+        private int AddItemToFirstFreeSlot(ItemSO item, int Id, int quantity, List<ItemParameter> itemState = null)
         {
             InventoryItem newItem = new InventoryItem
             {
                 item = item,
+                ID = Id,
                 quantity = quantity,
                 itemState = new List<ItemParameter>(itemState == null ? item.DefaultParametersList : itemState)
             };
@@ -93,7 +94,7 @@ namespace Project.Inventory.Data
             {
                 int newQuantity = Mathf.Clamp(quantity, 0, item.MaxStackSize);
                 quantity -= newQuantity;
-                AddItemToFirstFreeSlot(item, newQuantity);
+                AddItemToFirstFreeSlot(item, item.ID, newQuantity);
             }
             return quantity;
         }
@@ -116,7 +117,7 @@ namespace Project.Inventory.Data
 
         public void AddItem(InventoryItem item)
         {
-            AddItem(item.item, item.quantity);
+            AddItem(item.item, item.ID, item.quantity);
         }
 
         public Dictionary<int, InventoryItem> GetCurrentInventoryState()
@@ -173,6 +174,7 @@ namespace Project.Inventory.Data
     {
         public int quantity;
         public ItemSO item;
+        public int ID;
         public List<ItemParameter> itemState;
         public bool IsEmpty => item == null;
 
@@ -181,15 +183,18 @@ namespace Project.Inventory.Data
             return new InventoryItem
             {
                 item = this.item,
+                ID = item.ID,
                 quantity = newQuantity,
                 itemState = new List<ItemParameter>(this.itemState)
             };
         }
 
+
         public static InventoryItem GetEmptyItem()
             => new InventoryItem
             {
                 item = null,
+                ID = -1,
                 quantity = 0,
                 itemState = new List<ItemParameter>()
             };

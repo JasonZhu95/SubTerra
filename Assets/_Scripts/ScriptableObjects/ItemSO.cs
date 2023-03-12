@@ -9,7 +9,7 @@ namespace Project.Inventory.Data
         [field: SerializeField]
         public bool IsStackable { get; set; }
 
-        public int ID => GetInstanceID();
+        public int ID = -1;
 
         [field: SerializeField]
         public int MaxStackSize { get; set; } = 1;

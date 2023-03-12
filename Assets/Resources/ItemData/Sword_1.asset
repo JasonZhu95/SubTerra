@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Sword_1
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
+  ID: -1
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Basic Sword
   <Description>k__BackingField: Its a Sword.
@@ -20,9 +21,6 @@ MonoBehaviour:
   <DefaultParametersList>k__BackingField: []
   <actionSFX>k__BackingField: {fileID: 0}
   <NumberOfAttacks>k__BackingField: 3
-  <WeaponName>k__BackingField: Basic Sword
-  <WeaponDescription>k__BackingField: Basic Sword.  Its a sword...
-  <PickupSprite>k__BackingField: {fileID: 255617269, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: a5a7a724be910bc46bffa559c191a0b6, type: 2}
   componentDatas:
   - rid: 3813184956623486981

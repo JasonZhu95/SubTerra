@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Project.Inventory
 {
-    public class InventoryController : MonoBehaviour
+    public class InventoryController : MonoBehaviour, IDataPersistence
     {
         [SerializeField] private UIInventoryPage inventoryUI;
 
@@ -191,6 +191,16 @@ namespace Project.Inventory
                 inventoryUI.Hide();
                 GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.Gameplay));
             }
+        }
+
+        public void LoadData(GameData data)
+        {
+            inventoryData.inventoryItems = data.inventoryItems;
+        }
+
+        public void SaveData(ref GameData data)
+        {
+            data.inventoryItems = inventoryData.inventoryItems;
         }
     }
 }

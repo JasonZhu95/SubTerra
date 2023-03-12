@@ -1724,10 +1724,7 @@ MonoBehaviour:
   dropClip: {fileID: 0}
   audioSource: {fileID: 264109759}
   itemActionPanelObject: {fileID: 1996584765}
-  initialItems:
-  - quantity: 2
-    item: {fileID: 11400000, guid: e12cdaf0570af744fb78b770bd4b9f64, type: 2}
-    itemState: []
+  initialItems: []
 --- !u!114 &264109758
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Cherry
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
+  ID: -1
   <MaxStackSize>k__BackingField: 99
   <Name>k__BackingField: Cherry
   <Description>k__BackingField: Heal 10 HP
   <ItemImage>k__BackingField: {fileID: 21300000, guid: bdce2a9cb3d0242958c2593a3b8d8742, type: 3}
+  <DefaultParametersList>k__BackingField: []
   modifiersData:
   - statModifier: {fileID: 11400000, guid: 67d0dde8365cf324985480d91eedc9b4, type: 2}
     value: 10
+  <actionSFX>k__BackingField: {fileID: 0}

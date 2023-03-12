@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
+  ID: -1
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Key
   <Description>k__BackingField: What do you think it does... It's a key my dude.

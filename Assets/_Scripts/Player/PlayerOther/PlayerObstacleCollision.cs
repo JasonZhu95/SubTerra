@@ -31,7 +31,7 @@ public class PlayerObstacleCollision : MonoBehaviour
         Item item = collision.GetComponent<Item>();
         if (item != null)
         {
-            int reminder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
+            int reminder = inventoryData.AddItem(item.InventoryItem, item.InventoryItem.ID, item.Quantity);
             if (reminder == 0)
                 item.DestroyItem();
             else
