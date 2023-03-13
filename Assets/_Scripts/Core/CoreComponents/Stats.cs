@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Stats : CoreComponent
+public class Stats : CoreComponent, IDataPersistence
 {
     [field: SerializeField] public Stat Health { get; private set; }
     [field: SerializeField] public Stat Poise { get; private set; }
@@ -20,14 +20,32 @@ public class Stats : CoreComponent
     {
         Poise.Increase(PoiseRecoveryPerSecond * Time.deltaTime);
     }
+
+    public void LoadData(GameData data)
+    {
+        if (core.Parent.name == "Player")
+        {
+            Health.MaxValue = data.maxHealth;
+            Health.currentValue = data.currentHealth;
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (core.Parent.name == "Player")
+        {
+            data.maxHealth = Health.MaxValue;
+            data.currentHealth = Health.currentValue;
+        }
+    }
 }
 
 [System.Serializable]
 public class Stat
 {
     [SerializeField]
-    private float currentValue;
-    [field: SerializeField] public float MaxValue { get; private set; }
+    public float currentValue;
+    [field: SerializeField] public float MaxValue { get; set; }
 
     public float CurrentValue
     {

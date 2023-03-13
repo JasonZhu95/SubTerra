@@ -8,21 +8,42 @@ public class GameData
 {
     public int coinCount;
     public int checkPointIndex;
+    public float currentHealth;
+    public float maxHealth;
+
+    public bool doorStatus;
+    public bool disableDash;
+    public bool disableWallJump;
+    public bool disableWallClimb;
+    public bool disableWallGrab;
+    public bool disableWallSlide;
     public SerializableDictionary<string, bool> itemsCollected;
+    public SerializableDictionary<string, bool> abilityCollected;
     public List<InventoryItem> inventoryItems;
 
     public Vector3 checkPointPosition;
 
-    //Default values on game start when tehre is not data to load
+    //Default values on game start when there is not data to load
     public GameData()
     {
-        this.coinCount = 0;
+        coinCount = 0;
         checkPointIndex = 0;
+        // TODO: Set Manually Max Health values;
+        currentHealth = 100f;
+        maxHealth = 100f;
+
+        doorStatus = false;
+        disableDash = false;
+        disableWallJump = false;
+        disableWallClimb = false;
+        disableWallGrab = false;
+        disableWallSlide = false;
 
         // TODO: Set manually to first checkpoint position. Change later
         checkPointPosition = new Vector3(-5.18f, -6.0f, 0);
         inventoryItems = new List<InventoryItem>(new InventoryItem[18]);
 
         itemsCollected = new SerializableDictionary<string, bool>();
+        abilityCollected = new SerializableDictionary<string, bool>();
     }
 }
