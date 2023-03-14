@@ -42,9 +42,8 @@ namespace Project.Menu
         [SerializeField] private GameObject confirmationPrompt;
 
         [Header("Level To Load")]
-        public string newGameLevel;
         [SerializeField] private GameObject noSavedGameDialogue;
-        private string levelToLoad;
+        //private string levelToLoad;
 
         [Header("Resolution Dropdowns")]
         public TMP_Dropdown resolutionDropdown;
@@ -86,21 +85,22 @@ namespace Project.Menu
         #endregion
 
         #region Level Load Functions
+        // Creates a new game - initialize save data
         public void NewGameDialogueYes()
         {
+            DataPersistenceManager.instance.NewGame();
             levelLoaderManager.LoadNextLevel();
         }
 
         public void LoadGameDialogueYes()
         {
-            if (PlayerPrefs.HasKey("SavedLevel"))
+            if (!DataPersistenceManager.instance.HasGameData())
             {
-                levelToLoad = PlayerPrefs.GetString("SavedLevel");
-                SceneManager.LoadScene(levelToLoad);
+                noSavedGameDialogue.SetActive(true);
             }
             else
             {
-                noSavedGameDialogue.SetActive(true);
+                levelLoaderManager.LoadNextLevel();
             }
         }
         #endregion
@@ -228,6 +228,10 @@ namespace Project.Menu
             confirmationPrompt.SetActive(true);
             yield return new WaitForSeconds(2);
             confirmationPrompt.SetActive(false);
+        }
+
+        private void DisableMenuButtonsOnLoad()
+        {
         }
         #endregion
     }
