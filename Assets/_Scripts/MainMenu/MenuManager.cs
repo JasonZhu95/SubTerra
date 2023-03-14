@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Project.LevelSetup;
 
-namespace Project.Menu
+namespace Project.MenuUI
 {
-    public class MenuManager : MonoBehaviour
+    public class MenuManager : Menu
     {
         #region Variables
+        [Header("Menu Navigation")]
+        [SerializeField] private SaveSlotsMenu saveSlotsMenu;
+
+        [Header("Menu Buttons")]
+        [SerializeField] private Button newGameButton;
+        [SerializeField] private Button loadGameButton;
+
         [Header("Volume Setting")]
         [SerializeField] private TMP_Text volumeTextValue;
         [SerializeField] private Slider volumeSlider;
@@ -86,22 +93,16 @@ namespace Project.Menu
 
         #region Level Load Functions
         // Creates a new game - initialize save data
-        public void NewGameDialogueYes()
+        public void OnNewGameClicked()
         {
-            DataPersistenceManager.instance.NewGame();
-            levelLoaderManager.LoadNextLevel();
+            saveSlotsMenu.ActivateMenu(false);
+            this.DeactivateMenu();
         }
 
-        public void LoadGameDialogueYes()
+        public void OnLoadGameClicked()
         {
-            if (!DataPersistenceManager.instance.HasGameData())
-            {
-                noSavedGameDialogue.SetActive(true);
-            }
-            else
-            {
-                levelLoaderManager.LoadNextLevel();
-            }
+            saveSlotsMenu.ActivateMenu(true);
+            this.DeactivateMenu();
         }
         #endregion
 
@@ -230,8 +231,20 @@ namespace Project.Menu
             confirmationPrompt.SetActive(false);
         }
 
-        private void DisableMenuButtonsOnLoad()
+        private void DisableMenuButtons()
         {
+            newGameButton.interactable = false;
+
+        }
+
+        public void ActivateMenu()
+        {
+            this.gameObject.SetActive(true);
+        }
+
+        public void DeactivateMenu()
+        {
+            this.gameObject.SetActive(false);
         }
         #endregion
     }

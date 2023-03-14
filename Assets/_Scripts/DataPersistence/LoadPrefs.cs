@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Project.Menu;
+using Project.MenuUI;
 
 namespace Project.Save
 {

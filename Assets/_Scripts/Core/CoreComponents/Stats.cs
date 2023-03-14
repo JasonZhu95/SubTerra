@@ -8,12 +8,17 @@ public class Stats : CoreComponent, IDataPersistence
     [field: SerializeField] public int CoinDeathValue { get; private set; }
     [SerializeField] private float PoiseRecoveryPerSecond;
 
+    private float startPlayTime;
+    private float savedPlaytime;
+    private float finalPlayTime;
+
     protected override void Awake()
     {
         base.Awake();
 
         Health.Init();
         Poise.Init();
+        startPlayTime = Time.time;
     }
 
     private void Update()
@@ -25,6 +30,7 @@ public class Stats : CoreComponent, IDataPersistence
     {
         if (core.Parent.name == "Player")
         {
+            savedPlaytime = data.playTime;
             Health.MaxValue = data.maxHealth;
             Health.currentValue = data.currentHealth;
         }
@@ -34,6 +40,9 @@ public class Stats : CoreComponent, IDataPersistence
     {
         if (core.Parent.name == "Player")
         {
+            finalPlayTime = (Time.time - startPlayTime) + savedPlaytime;
+            data.playTime = finalPlayTime;
+            data.playTime = finalPlayTime;
             data.maxHealth = Health.MaxValue;
             data.currentHealth = Health.currentValue;
         }

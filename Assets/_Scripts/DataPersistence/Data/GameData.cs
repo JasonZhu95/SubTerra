@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project.Inventory.Data;
+using System;
 
 [System.Serializable]
 public class GameData
 {
+    public long lastUpdated;
     public int coinCount;
     public int checkPointIndex;
     public float currentHealth;
     public float maxHealth;
+    public float playTime;
 
     public bool doorStatus;
     public bool disableDash;
@@ -45,5 +48,11 @@ public class GameData
 
         itemsCollected = new SerializableDictionary<string, bool>();
         abilityCollected = new SerializableDictionary<string, bool>();
+    }
+
+    public string FormatPlayTime()
+    {
+        TimeSpan time = TimeSpan.FromSeconds(playTime);
+        return time.ToString("hh':'mm':'ss");
     }
 }
