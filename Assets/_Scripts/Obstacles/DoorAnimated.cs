@@ -5,12 +5,20 @@ using UnityEngine;
 public class DoorAnimated : MonoBehaviour, IDataPersistence
 {
     private Animator doorAnim;
-    private bool doorOpen;
+    public bool doorOpen = false;
+
+    [SerializeField] private string id;
+
+    [ContextMenu("Generate Guid for Item ID")]
+
+    private void GenerateGuid()
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
 
     private void Awake()
     {
         doorAnim = transform.parent.GetComponent<Animator>();
-        doorOpen = false;
     }
 
     public void OpenDoor()
@@ -27,9 +35,8 @@ public class DoorAnimated : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        doorOpen = data.doorStatus;
-        if (doorOpen)
-        {
+        data.doorState.TryGetValue(id, out doorOpen);
+        if (doorOpen){
             OpenDoor();
         }
         else
@@ -38,8 +45,12 @@ public class DoorAnimated : MonoBehaviour, IDataPersistence
         }
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
-        data.doorStatus = doorOpen;
+        if (data.doorState.ContainsKey(id))
+        {
+            data.doorState.Remove(id);
+        }
+        data.doorState.Add(id, doorOpen);
     }
 }

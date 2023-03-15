@@ -22,7 +22,7 @@ public class SaveSlotsMenu : Menu
 
     private void Awake()
     {
-        saveSlots = this.GetComponentsInChildren<SaveSlot>();
+        saveSlots = GetComponentsInChildren<SaveSlot>();
         levelLoaderManager = GameObject.Find("LevelLoader").GetComponent<LevelLoaderManager>();
     }
 
@@ -37,6 +37,7 @@ public class SaveSlotsMenu : Menu
         {
             DataPersistenceManager.instance.NewGame();
         }
+        DataPersistenceManager.instance.SaveGame();
 
         levelLoaderManager.LoadNextLevel();
     }
@@ -44,13 +45,19 @@ public class SaveSlotsMenu : Menu
     public void OnBackClicked()
     {
         mainMenu.ActivateMenu();
-        this.DeactivateMenu();
+        DeactivateMenu();
+    }
+
+    public void OnClearClicked(SaveSlot saveSlot)
+    {
+        DataPersistenceManager.instance.DeleteProfileData(saveSlot.GetProfileId());
+        ActivateMenu(isLoadingGame);
     }
 
     public void ActivateMenu(bool isLoadingGame)
     {
         // Activate menu on UI
-        this.gameObject.SetActive(true);
+        gameObject.SetActive(true);
 
         this.isLoadingGame = isLoadingGame;
 
@@ -77,12 +84,13 @@ public class SaveSlotsMenu : Menu
                 }
             }
         }
-        StartCoroutine(this.SetFirstSelected(firstSelected));
+        Button firstSelectedButton = firstSelected.GetComponent<Button>();
+        SetFirstSelected(firstSelectedButton);
     }
 
     public void DeactivateMenu()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void DisableMenuButtons()

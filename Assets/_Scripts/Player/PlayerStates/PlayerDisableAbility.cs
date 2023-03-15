@@ -98,7 +98,7 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
         player.DisableWallSlide = data.disableWallSlide;
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         if (data.abilityCollected.ContainsKey(id))
         {

@@ -81,7 +81,7 @@ public class PlayerInventory : CoreComponent, IDataPersistence
         CoinsHeld = data.coinCount;
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         data.coinCount = CoinsHeld;
     }

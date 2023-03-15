@@ -17,6 +17,9 @@ public class SaveSlot : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coinCount;
     [SerializeField] private TextMeshProUGUI playTime;
 
+    [Header("Clear Data Button")]
+    [SerializeField] private Button clearButton;
+
     private Button saveSlotButton;
 
     private void Awake()
@@ -30,11 +33,13 @@ public class SaveSlot : MonoBehaviour
         {
             noDataContent.SetActive(true);
             hasDataContent.SetActive(false);
+            clearButton.gameObject.SetActive(false);
         }
         else
         {
             noDataContent.SetActive(false);
             hasDataContent.SetActive(true);
+            clearButton.gameObject.SetActive(true);
 
             playTime.text = data.FormatPlayTime();
             healthCount.text = "HEALTH COUNT: " + data.currentHealth;
@@ -50,6 +55,7 @@ public class SaveSlot : MonoBehaviour
     public void SetInteractable(bool interactable)
     {
         saveSlotButton.interactable = interactable;
+        clearButton.interactable = interactable;
     }
 
 }

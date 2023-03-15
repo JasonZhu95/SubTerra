@@ -48,7 +48,7 @@ namespace Project.Managers
             LastSetCheckPointIndex = data.checkPointIndex;
         }
 
-        public void SaveData(ref GameData data)
+        public void SaveData(GameData data)
         {
             data.checkPointIndex = LastSetCheckPointIndex;
             data.checkPointPosition = checkPointList[data.checkPointIndex].transform.position;

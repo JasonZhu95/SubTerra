@@ -165,7 +165,7 @@ public class Player : MonoBehaviour, IDataPersistence
         this.transform.position = data.checkPointPosition;
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
     }
 

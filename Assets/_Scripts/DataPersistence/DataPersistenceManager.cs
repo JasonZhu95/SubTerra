@@ -42,30 +42,23 @@ public class DataPersistenceManager : MonoBehaviour
 
         dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
 
-        this.selectedProfileId = dataHandler.GetMostRecentlyUpdatedProfileId();
+        InitializeSelectedProfileId();
     }
 
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
-    }
-
-    public void OnSceneUnloaded(Scene scene)
-    {
-        SaveGame();
     }
 
     public void ChangeSelectedProfileId(string newProfileId)
@@ -130,7 +123,7 @@ public class DataPersistenceManager : MonoBehaviour
         // pass data to other scripts
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-            dataPersistenceObj.SaveData(ref gameData);
+            dataPersistenceObj.SaveData(gameData);
         }
 
         gameData.lastUpdated = System.DateTime.Now.ToBinary();
@@ -139,9 +132,21 @@ public class DataPersistenceManager : MonoBehaviour
         dataHandler.Save(gameData, selectedProfileId);
     }
 
+    public void DeleteProfileData(string profileId)
+    {
+        dataHandler.Delete(profileId);
+        InitializeSelectedProfileId();
+        LoadGame();
+    }
+
+    private void InitializeSelectedProfileId()
+    {
+        selectedProfileId = dataHandler.GetMostRecentlyUpdatedProfileId();
+    }
+
     private List<IDataPersistence> FindAllDataPersistenceObjects()
     {
-        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
+        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>(true).OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
     }

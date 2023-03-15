@@ -36,7 +36,7 @@ public class Stats : CoreComponent, IDataPersistence
         }
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(GameData data)
     {
         if (core.Parent.name == "Player")
         {

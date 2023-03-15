@@ -220,7 +220,7 @@ namespace Project.Inventory
             }
         }
 
-        public void SaveData(ref GameData data)
+        public void SaveData(GameData data)
         {
             data.inventoryItems = inventoryData.inventoryItems;
         }

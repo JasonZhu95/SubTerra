@@ -88,6 +88,7 @@ namespace Project.MenuUI
             resolutionDropdown.AddOptions(options);
             resolutionDropdown.value = currentResolutionIndex;
             resolutionDropdown.RefreshShownValue();
+            DisableButtonsDependingOnProfileData();
         }
         #endregion
 
@@ -240,11 +241,20 @@ namespace Project.MenuUI
         public void ActivateMenu()
         {
             this.gameObject.SetActive(true);
+            DisableButtonsDependingOnProfileData();
         }
 
         public void DeactivateMenu()
         {
             this.gameObject.SetActive(false);
+        }
+
+        private void DisableButtonsDependingOnProfileData()
+        {
+            if (!DataPersistenceManager.instance.HasGameData())
+            {
+                loadGameButton.interactable = false;
+            }
         }
         #endregion
     }

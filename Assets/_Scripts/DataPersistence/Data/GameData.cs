@@ -14,7 +14,6 @@ public class GameData
     public float maxHealth;
     public float playTime;
 
-    public bool doorStatus;
     public bool disableDash;
     public bool disableWallJump;
     public bool disableWallClimb;
@@ -22,6 +21,7 @@ public class GameData
     public bool disableWallSlide;
     public SerializableDictionary<string, bool> itemsCollected;
     public SerializableDictionary<string, bool> abilityCollected;
+    public SerializableDictionary<string, bool> doorState;
     public List<InventoryItem> inventoryItems;
 
     public Vector3 checkPointPosition;
@@ -35,7 +35,6 @@ public class GameData
         currentHealth = 100f;
         maxHealth = 100f;
 
-        doorStatus = false;
         disableDash = false;
         disableWallJump = false;
         disableWallClimb = false;
@@ -48,6 +47,7 @@ public class GameData
 
         itemsCollected = new SerializableDictionary<string, bool>();
         abilityCollected = new SerializableDictionary<string, bool>();
+        doorState = new SerializableDictionary<string, bool>();
     }
 
     public string FormatPlayTime()
