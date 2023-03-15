@@ -203,5 +203,19 @@ namespace Project.Inventory.Data
         {
             return item.Name;
         }
+
+        public void SetItemID(int id)
+        {
+            ID = id;
+        }
+        public void SetQuantity(int quant)
+        {
+            quantity = quant;
+        }
+        public void SetItemSO(ItemSO itemToAdd)
+        {
+            item = itemToAdd;
+        }
+
     }
 }

@@ -28,7 +28,11 @@ namespace Project.Inventory
 
         public PlayerInputHandler InputHandler { get; private set; }
 
+        [SerializeField]
+        private ItemDatabase database;
+
         public List<InventoryItem> initialItems = new List<InventoryItem>();
+        public List<InventoryItem> itemsToAdd = new List<InventoryItem>();
 
         private void Start()
         {
@@ -46,6 +50,13 @@ namespace Project.Inventory
                     continue;
                 inventoryData.AddItem(item);
             }
+            foreach (InventoryItem item in itemsToAdd)
+            {
+                if (item.IsEmpty)
+                    continue;
+                inventoryData.AddItem(item);
+            }
+            
         }
 
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
@@ -195,7 +206,18 @@ namespace Project.Inventory
 
         public void LoadData(GameData data)
         {
-            inventoryData.inventoryItems = data.inventoryItems;
+            for (int i = 0; i < 18; i++)
+            {
+                itemsToAdd.Add(InventoryItem.GetEmptyItem());
+            }
+            for (int i = 0; i < itemsToAdd.Count; i++)
+            {
+                var temp = new InventoryItem();
+                temp.ID = data.inventoryItems[i].ID;
+                temp.quantity = data.inventoryItems[i].quantity;
+                temp.item = database.GetItem(temp.ID);
+                itemsToAdd[i] = temp;
+            }
         }
 
         public void SaveData(ref GameData data)
