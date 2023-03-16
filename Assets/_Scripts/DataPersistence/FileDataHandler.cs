@@ -10,6 +10,7 @@ public class FileDataHandler
     private string dataFileName = "";
     private bool useEncryption = false;
     private readonly string encryptionCodeWord = "SuperSmashBros.ForTheNintendoGamecube";
+    private readonly string backupExtension = ".bak";
 
     public FileDataHandler(string dataDirPath, string dataFileName, bool useEncryption)
     {
@@ -18,7 +19,7 @@ public class FileDataHandler
         this.useEncryption = useEncryption;
     }
 
-    public GameData Load(string profileId)
+    public GameData Load(string profileId, bool allowRestoreFromBackup = true)
     {
         // Base case if profileId is null
         if (profileId == null)
@@ -52,7 +53,20 @@ public class FileDataHandler
             }
             catch (Exception e)
             {
-                Debug.LogError("Error occurred when trying to load data from file: " + fullPath + "\n" + e);
+                if (allowRestoreFromBackup)
+                {
+                    Debug.LogWarning("Failed to load save file.  Attempting to use backup file.\n" + e);
+                    bool rollbackSuccess = AttemptRollback(fullPath);
+                    if (rollbackSuccess)
+                    {
+                        loadedData = Load(profileId, false);
+                    }
+                }
+                else
+                {
+                    Debug.LogError("Error occurred when trying to load file at path: " + fullPath
+                         + " and backup load failed.\n" + e);
+                }
             }
         }
         return loadedData;
@@ -68,6 +82,7 @@ public class FileDataHandler
 
         // Path.Combine is used to manage different Operating System strings
         string fullPath = Path.Combine(dataDirPath, profileId, dataFileName);
+        string backupFilePath = fullPath + backupExtension;
         try
         {
             // Create the directory for the file if it doesn't exist
@@ -76,6 +91,7 @@ public class FileDataHandler
             // Serialize the game data
             string dataToStore = JsonUtility.ToJson(data, true);
 
+            // Encrypt data
             if (useEncryption)
             {
                 dataToStore = EncryptDecrypt(dataToStore);
@@ -88,6 +104,18 @@ public class FileDataHandler
                 {
                     writer.Write(dataToStore);
                 }
+            }
+
+            // Verify Game Data can be loaded properly
+            GameData verifiedGameData = Load(profileId);
+            // if data can be verified create backup file
+            if (verifiedGameData != null)
+            {
+                File.Copy(fullPath, backupFilePath, true);
+            }
+            else
+            {
+                throw new Exception("Save file could not be verified and backup can't be created.");
             }
         }
         catch (Exception e)
@@ -193,5 +221,29 @@ public class FileDataHandler
             }
         }
         return mostRecentProfileId;
+    }
+
+    private bool AttemptRollback(String fullPath)
+    {
+        bool success = false;
+        string backupFilePath = fullPath + backupExtension;
+        try
+        {
+            if (File.Exists(backupFilePath))
+            {
+                File.Copy(backupFilePath, fullPath, true);
+                success = true;
+                Debug.LogWarning("Rolled back to backup file at: " + backupFilePath);
+            }
+            else
+            {
+                throw new Exception("Attempted rollback, but backup file did not exist.");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error occured when trying to use backup file at: " + backupFilePath + "\n" + e);
+        }
+        return success;
     }
 }
