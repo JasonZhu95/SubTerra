@@ -1,6 +1,6 @@
 using System;
 using Project.Combat;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.Weapons;
 using UnityEngine;
 

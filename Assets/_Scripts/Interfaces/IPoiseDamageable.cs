@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Project.Combat.Interfaces
+namespace Project.Interfaces
 {
     public interface IPoiseDamageable
     {

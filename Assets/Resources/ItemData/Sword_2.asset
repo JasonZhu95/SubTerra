@@ -19,6 +19,7 @@ MonoBehaviour:
   <Description>k__BackingField: 
   <ItemImage>k__BackingField: {fileID: 0}
   <DefaultParametersList>k__BackingField: []
+  <ItemCost>k__BackingField: 200
   <actionSFX>k__BackingField: {fileID: 0}
   <NumberOfAttacks>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 0}

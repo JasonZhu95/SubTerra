@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Sword_1
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
-  ID: -1
+  ID: 3
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Basic Sword
   <Description>k__BackingField: Its a Sword.
   <ItemImage>k__BackingField: {fileID: 255617269, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
   <DefaultParametersList>k__BackingField: []
+  <ItemCost>k__BackingField: 200
   <actionSFX>k__BackingField: {fileID: 0}
   <NumberOfAttacks>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: a5a7a724be910bc46bffa559c191a0b6, type: 2}

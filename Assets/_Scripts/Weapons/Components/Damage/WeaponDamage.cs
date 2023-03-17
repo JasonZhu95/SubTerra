@@ -1,6 +1,6 @@
 using UnityEngine;
 using Project.Combat;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 
 namespace Project.Weapons
 {

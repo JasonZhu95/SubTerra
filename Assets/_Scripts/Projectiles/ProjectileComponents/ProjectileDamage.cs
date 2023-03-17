@@ -1,7 +1,7 @@
 using UnityEngine;
 using Project.Combat;
 using Project.Utilities;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 
 namespace Project.Projectiles
 {

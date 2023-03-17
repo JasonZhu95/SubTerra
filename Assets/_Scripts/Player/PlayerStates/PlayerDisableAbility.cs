@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Project.Interfaces;
 
 public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
 {

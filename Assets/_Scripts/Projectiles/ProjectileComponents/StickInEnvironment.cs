@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.Utilities;
 
 namespace Project.Projectiles

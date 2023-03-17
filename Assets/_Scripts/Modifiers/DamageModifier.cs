@@ -1,4 +1,4 @@
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 
 namespace Project.Modifiers
 {

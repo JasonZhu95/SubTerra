@@ -1,27 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Project.Interfaces;
+using Project.EventChannels;
 using Project.Managers;
+using Project.Inventory;
 
-public class CheckPointInteraction : MonoBehaviour, IInteractable
+public class ShopTrigger : MonoBehaviour, IInteractable
 {
     private bool playerInRange;
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
 
+    [Header("EventChannel For UI")]
+    [SerializeField] private GameStateEventChannel GameStateEventChannel;
+
     private GameObject player;
     private PlayerInputHandler inputHandler;
+    private IBuyItem customer;
 
-    private CheckPointManager checkPointManager;
+    [SerializeField]
+    private UI_Shop shopUI;
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         inputHandler = player.GetComponent<PlayerInputHandler>();
-        checkPointManager = GameObject.Find("Managers").transform.Find("CheckPointManager").GetComponent<CheckPointManager>();
         visualCue.SetActive(false);
+        customer = player.GetComponent<InventoryController>().GetComponent<IBuyItem>();
     }
 
     private void Update()
@@ -29,10 +34,15 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
         if (playerInRange)
         {
             visualCue.SetActive(true);
-            if (inputHandler.InteractPressed)
+            if (inputHandler.InteractShopPressed)
             {
-                checkPointManager.SetCheckPoint(gameObject);
-                inputHandler.InteractPressed = false;
+                shopUI.Show(customer);
+                GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.UI));
+            }
+            else
+            {
+                shopUI.Hide();
+                GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.Gameplay));
             }
         }
         else
@@ -48,7 +58,6 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
 
     public void SetContext(object obj)
     {
-
     }
 
     public void EnableInteraction()

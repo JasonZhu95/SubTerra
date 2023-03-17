@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project.Inventory.Data;
+using Project.Interfaces;
 
 public class Item : MonoBehaviour, IDataPersistence
 {

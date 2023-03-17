@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.Utilities.GO;
 using Project.Weapons;
 using UnityEngine;

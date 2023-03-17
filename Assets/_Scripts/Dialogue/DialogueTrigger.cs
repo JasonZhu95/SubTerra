@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.EventChannels;
 using Project.Managers;
 

@@ -62,7 +62,7 @@ namespace Project.Weapons
 
             if (detected.Length == 0) return;
 
-            var parryData = new Combat.Interfaces.ParryData
+            var parryData = new Interfaces.ParryData
             {
                 source = gameObject
             };

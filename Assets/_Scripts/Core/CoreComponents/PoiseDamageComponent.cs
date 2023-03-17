@@ -1,4 +1,4 @@
-﻿using Project.Combat.Interfaces;
+﻿using Project.Interfaces;
 using Project.Modifiers;
 
 namespace Project.CoreComponents

@@ -1,5 +1,5 @@
 ﻿using System;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using UnityEngine;
 
 namespace Project.CoreComponents

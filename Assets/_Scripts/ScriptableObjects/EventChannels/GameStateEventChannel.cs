@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Project.EventChannels
 {
+    // Responsible for gamestate changes such as pausing and opening UI
     [CreateAssetMenu(fileName = "newGameStateEventChannel", menuName = "Event Channels/Game State")]
     public class GameStateEventChannel : ScriptableObject
     {

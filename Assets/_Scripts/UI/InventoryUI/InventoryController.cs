@@ -4,12 +4,13 @@ using Project.Managers;
 using Project.Inventory.UI;
 using Project.Inventory.Data;
 using System.Collections.Generic;
-using System;
 using System.Text;
+using Project.Interfaces;
+
 
 namespace Project.Inventory
 {
-    public class InventoryController : MonoBehaviour, IDataPersistence
+    public class InventoryController : MonoBehaviour, IDataPersistence, IBuyItem
     {
         [SerializeField] private UIInventoryPage inventoryUI;
 
@@ -34,12 +35,45 @@ namespace Project.Inventory
         public List<InventoryItem> initialItems = new List<InventoryItem>();
         public List<InventoryItem> itemsToAdd = new List<InventoryItem>();
 
+        private PlayerInventory playerInventory;
+
+        private void Awake()
+        {
+            InputHandler = GetComponent<PlayerInputHandler>();
+            playerInventory = transform.GetChild(0).GetComponentInChildren<PlayerInventory>();
+        }
+
         private void Start()
         {
             PrepareUI();
             PrepareInventoryData();
         }
 
+        private void Update()
+        {
+            // Check if Player Opens the inventory
+            if (InputHandler.InventoryPressed)
+            {
+                if (inventoryUI.isActiveAndEnabled == false)
+                {
+                    inventoryUI.Show();
+                    foreach (var item in inventoryData.GetCurrentInventoryState())
+                    {
+                        inventoryUI.UpdateData(item.Key,
+                            item.Value.item.ItemImage,
+                            item.Value.quantity);
+                    }
+                    GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.UI));
+                }
+            }
+            else
+            {
+                inventoryUI.Hide();
+                GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.Gameplay));
+            }
+        }
+
+        // On Gamestart load any items in save file or any starting initial items.
         private void PrepareInventoryData()
         {
             inventoryData.Initialize();
@@ -59,6 +93,7 @@ namespace Project.Inventory
             
         }
 
+        // Update the UI when item data is changed
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
         {
             inventoryUI.ResetAllItems();
@@ -69,6 +104,7 @@ namespace Project.Inventory
             }
         }
 
+        // Add Events onto the UI when user interacts with the inventory.
         private void PrepareUI()
         {
             inventoryUI.InitializeInventoryUI(inventoryData.Size);
@@ -78,6 +114,7 @@ namespace Project.Inventory
             inventoryUI.OnItemActionRequested += HandleItemActionRequest;
         }
 
+        // Depending on the ItemData Type, Add appropriate buttons of the items on right click.
         private void HandleItemActionRequest(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
@@ -104,6 +141,7 @@ namespace Project.Inventory
             }
         }
 
+        // If Drop item button is selected, destroy item.
         private void DropItem(int itemIndex, int quantity)
         {
             inventoryData.RemoveItem(itemIndex, quantity);
@@ -111,6 +149,8 @@ namespace Project.Inventory
             audioSource.PlayOneShot(dropClip);
         }
 
+        // If a button is clicked perform the action of the appropriate button
+        // EX: Consume is clicked on a consumable, then perform the Consume function associated with the item
         public void PerformAction(int itemIndex, int equipIndex)
         {
             itemActionPanelObject.Toggle(false);
@@ -134,6 +174,7 @@ namespace Project.Inventory
             }
         }
 
+        // If Item is dragged create an instance of the selected object attached to cursor
         private void HandleDragging(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
@@ -142,11 +183,13 @@ namespace Project.Inventory
             inventoryUI.CreateDraggedItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
         }
 
+        // If Item is dragged onto another item, change the index of the item data
         private void HandleSwapItems(int itemIndex_1, int itemIndex_2)
         {
             inventoryData.SwapItems(itemIndex_1, itemIndex_2);
         }
 
+        // If item is selected Update the Inventory UI with the appropriate description
         private void HandleDescriptionRequest(int itemIndex)
         {
             InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
@@ -161,6 +204,7 @@ namespace Project.Inventory
                 item.name, description);
         }
 
+        // Add Item Description to the appropriate format for the UI.
         private string PrepareDescription(InventoryItem inventoryItem)
         {
             StringBuilder sb = new StringBuilder();
@@ -176,34 +220,7 @@ namespace Project.Inventory
             return sb.ToString();
         }
 
-        private void Awake()
-        {
-            InputHandler = GetComponent<PlayerInputHandler>();
-        }
-
-        private void Update()
-        {
-            if (InputHandler.InventoryPressed)
-            {
-                if (inventoryUI.isActiveAndEnabled == false)
-                {
-                    inventoryUI.Show();
-                    foreach (var item in inventoryData.GetCurrentInventoryState())
-                    {
-                        inventoryUI.UpdateData(item.Key,
-                            item.Value.item.ItemImage,
-                            item.Value.quantity);
-                    }
-                    GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.UI));
-                }
-            }
-            else
-            {
-                inventoryUI.Hide();
-                GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.Gameplay));
-            }
-        }
-
+        // Load Inventory Data
         public void LoadData(GameData data)
         {
             for (int i = 0; i < 18; i++)
@@ -220,9 +237,30 @@ namespace Project.Inventory
             }
         }
 
+        // Save Inventory Data
         public void SaveData(GameData data)
         {
             data.inventoryItems = inventoryData.inventoryItems;
+        }
+
+        // Buy item from shop
+        public void BoughtItem(ItemSO itemSO)
+        {
+            inventoryData.AddItem(itemSO, itemSO.ID, 1);
+        }
+        
+        // Check if player has enough currency
+        public bool TrySpendCurrency(int currencyAmount)
+        {
+            if (playerInventory.GetCoinAmount() >= currencyAmount)
+            {
+                playerInventory.DecreaseCoins(currencyAmount);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

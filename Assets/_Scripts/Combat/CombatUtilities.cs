@@ -1,7 +1,7 @@
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.ExtensionMethods;
 using UnityEngine;
-using ParryData = Project.Combat.Interfaces.ParryData;
+using ParryData = Project.Interfaces.ParryData;
 
 namespace Project.Combat
 {

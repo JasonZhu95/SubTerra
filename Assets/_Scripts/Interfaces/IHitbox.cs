@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace Project.Combat.Interfaces
+namespace Project.Interfaces
 {
     public interface IHitbox
     {

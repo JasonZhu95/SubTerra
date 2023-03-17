@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 
 namespace Project.Projectiles
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.EventChannels;
 using Project.Weapons;
 using UnityEngine;
@@ -75,6 +75,10 @@ public class PlayerInventory : CoreComponent, IDataPersistence
 
     public void IncreaseCoins(int amount) => CoinsHeld += amount;
     public void DecreaseCoins(int amount) => CoinsHeld -= amount;
+    public int GetCoinAmount()
+    {
+        return CoinsHeld;
+    }
 
     public void LoadData(GameData data)
     {

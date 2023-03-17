@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Project.Interfaces;
 
 public class Stats : CoreComponent, IDataPersistence
 {

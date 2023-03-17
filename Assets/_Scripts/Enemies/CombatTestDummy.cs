@@ -1,5 +1,5 @@
 using UnityEngine;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 
 public class CombatTestDummy : MonoBehaviour, IDamageable, IKnockbackable
 {

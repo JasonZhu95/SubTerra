@@ -26,6 +26,9 @@ namespace Project.Inventory.Data
 
         [field: SerializeField]
         public List<ItemParameter> DefaultParametersList { get; set; }
+
+        [field: SerializeField]
+        public int ItemCost { get; set; }
     }
 
     [Serializable]

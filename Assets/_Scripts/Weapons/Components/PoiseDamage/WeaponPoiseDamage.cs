@@ -1,6 +1,6 @@
 ﻿using System;
 using Project.Combat;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using UnityEngine;
 
 namespace Project.Weapons.PoiseDamage

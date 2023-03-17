@@ -1,5 +1,5 @@
 using UnityEngine;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using System.Collections;
 
 // Script Responsible for handling Knockack and Damage On Enemy COLLISION.

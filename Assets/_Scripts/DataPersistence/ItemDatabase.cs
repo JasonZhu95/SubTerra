@@ -14,6 +14,7 @@ public class ItemDatabase : ScriptableObject
     {
         itemDatabase = new List<ItemSO>();
 
+        // Automatically load every item scriptable object into the database scriptable object.
         var foundItems = Resources.LoadAll<ItemSO>("ItemData").OrderBy(i => i.ID).ToList();
 
         var hasIDInRange = foundItems.Where(i => i.ID != -1 && i.ID < foundItems.Count).OrderBy(i => i.ID).ToList();
@@ -39,12 +40,14 @@ public class ItemDatabase : ScriptableObject
             }
         }
 
+        // In case item has an invalid ID, add it to the database at the end
         foreach (var item in hasIDNotInRange)
         {
             itemDatabase.Add(item);
         }
     }
 
+    // Return the itemSO located at the index of the database
     public ItemSO GetItem(int id)
     {
         return itemDatabase.Find(i => i.ID == id);

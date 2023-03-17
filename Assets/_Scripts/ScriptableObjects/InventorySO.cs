@@ -29,7 +29,7 @@ namespace Project.Inventory.Data
         {
             if (item.IsStackable == false)
             {
-                for (int i = 0; i < inventoryItems.Count; i++)
+                for (int i = 0; i < inventoryItems.Count;)
                 {
                     while(quantity > 0 && IsInventoryFull() == false)
                     {

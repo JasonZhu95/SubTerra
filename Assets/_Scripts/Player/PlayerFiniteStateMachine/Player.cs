@@ -4,6 +4,7 @@ using UnityEngine;
 using Project.Weapons;
 using Project.EventChannels;
 using Project.StateMachine;
+using Project.Interfaces;
 
 // Class that creates state objects
 public class Player : MonoBehaviour, IDataPersistence

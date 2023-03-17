@@ -24,6 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
     public bool InteractPressed { get; set; }
+    public bool InteractShopPressed { get; private set; }
     public bool PausePressed { get; set; }
     public bool InventoryPressed { get; set; }
 
@@ -188,6 +189,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnInteract?.Invoke(true);
             InteractPressed = true;
+            InteractShopPressed = !InteractShopPressed;
         }
 
         if (context.canceled)

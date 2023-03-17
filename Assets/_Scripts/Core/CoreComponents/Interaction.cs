@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using UnityEngine;
 
 public class Interaction : CoreComponent

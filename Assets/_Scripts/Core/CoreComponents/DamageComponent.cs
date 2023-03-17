@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.Modifiers;
 using Project.Weapons;
 using UnityEngine;

@@ -1,5 +1,5 @@
 using UnityEngine;
-using Project.Combat.Interfaces;
+using Project.Interfaces;
 using Project.Inventory;
 using Project.Inventory.Data;
 
