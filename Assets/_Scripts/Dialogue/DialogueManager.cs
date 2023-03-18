@@ -91,6 +91,7 @@ namespace Project.UI
             currentStory = new Story(inkJSON.text);
             DialogueIsPlaying = true;
             dialoguePanel.SetActive(true);
+            inputHandler.SwitchToActionMap("UI");
 
             displayNameText.text = "???";
             portraitAnimator.Play("PortraitDefault");
@@ -104,7 +105,7 @@ namespace Project.UI
             DialogueIsPlaying = false;
             dialoguePanel.SetActive(false);
             dialogueText.text = "";
-            GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.Gameplay));
+            inputHandler.SwitchToActionMap("Gameplay");
         }
 
         private void ContinueStory()

@@ -13,7 +13,6 @@ namespace Project.UI
         private PlayerInputHandler inputHandler;
         private GameObject dialogueManager;
         private DialogueManager dialogueManagerReference;
-        [SerializeField] private GameStateEventChannel GameStateEventChannel;
 
         [Header("Visual Cue")]
         [SerializeField] private GameObject visualCue;
@@ -43,7 +42,6 @@ namespace Project.UI
                 if (inputHandler.InteractPressed)
                 {
                     dialogueManagerReference.EnterDialogueMode(inkJSON);
-                    GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.UI));
                     inputHandler.InteractPressed = false;
                 }
             }

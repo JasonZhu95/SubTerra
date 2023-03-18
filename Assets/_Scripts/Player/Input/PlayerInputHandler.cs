@@ -11,8 +11,8 @@ public class PlayerInputHandler : MonoBehaviour
     #region Variables
 
     private PlayerInput playerInput;
-    private Camera cam;
 
+    // Gameplay Actions
     public Vector2 RawMovementInput { get; private set; }
     public Vector2 RawDashDirectionInput { get; private set; }
     public Vector2Int DashDirectionInput { get; private set; }
@@ -23,15 +23,19 @@ public class PlayerInputHandler : MonoBehaviour
     public bool GrabInput { get; private set; }
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
-    public bool MainActionUIInput { get; set; }
     public bool InteractPressed { get; set; }
     public bool InteractShopPressed { get; private set; }
     public bool PausePressed { get; set; }
     public bool InventoryPressed { get; set; }
 
-
     public bool[] AttackInputs { get; private set; }
     public bool[] AttackInputsHold { get; private set; }
+
+    // UI Actions
+    public bool MainActionUIInput { get; set; }
+    public Vector2 RawMenuNavigationInput { get; private set; }
+    public int NormMenuInputX { get; private set; }
+    public int NormMenuInputY { get; private set; }
 
     [SerializeField]
     private float inputHoldTime = 0.2f;
@@ -43,6 +47,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     [Header("Event Channels")] [SerializeField]
     private GameStateEventChannel GameStateEventChannel;
+
+    public InputActionAsset inputActionAsset;
 
     #endregion
 
@@ -59,8 +65,6 @@ public class PlayerInputHandler : MonoBehaviour
         int count = Enum.GetValues(typeof(CombatInputs)).Length;
         AttackInputs = new bool[count];
         AttackInputsHold = new bool[count];
-
-        cam = Camera.main;
     }
 
     private void Update()
@@ -72,6 +76,20 @@ public class PlayerInputHandler : MonoBehaviour
     #endregion
 
     #region Game State Functions
+
+    public void SwitchToActionMap(String actionMapString)
+    {
+        playerInput.SwitchCurrentActionMap(actionMapString);
+        Debug.Log("Switched to: " + actionMapString);
+        if (actionMapString == "UI")
+        {
+            Time.timeScale = 0f;
+        }
+        if (actionMapString == "Gameplay")
+        {
+            Time.timeScale = 1f;
+        }
+    }
 
     private void HandleGameStateChange(object sender, GameStateEventArgs context)
     {
@@ -226,6 +244,14 @@ public class PlayerInputHandler : MonoBehaviour
         {
             MainActionUIInput = false;
         }
+    }
+
+    public void OnMenuNavigationInput(InputAction.CallbackContext context)
+    {
+        RawMenuNavigationInput = context.ReadValue<Vector2>();
+
+        NormMenuInputX = Mathf.RoundToInt(RawMenuNavigationInput.x);
+        NormMenuInputY = Mathf.RoundToInt(RawMenuNavigationInput.y);
     }
 
     #endregion

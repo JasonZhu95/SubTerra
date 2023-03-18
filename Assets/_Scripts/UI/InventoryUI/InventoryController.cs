@@ -16,8 +16,6 @@ namespace Project.Inventory
 
         [SerializeField] public InventorySO inventoryData;
 
-        [SerializeField] private GameStateEventChannel GameStateEventChannel;
-
         [SerializeField]
         private AudioClip dropClip;
 
@@ -63,13 +61,13 @@ namespace Project.Inventory
                             item.Value.item.ItemImage,
                             item.Value.quantity);
                     }
-                    GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.UI));
+                    InputHandler.SwitchToActionMap("UI");
                 }
             }
-            else
+            else if (!InputHandler.InventoryPressed && inventoryUI.isActiveAndEnabled == true)
             {
                 inventoryUI.Hide();
-                GameStateEventChannel.RaiseSetChangeGameStateEvent(this, new GameStateEventArgs(GameState.Gameplay));
+                InputHandler.SwitchToActionMap("Gameplay");
             }
         }
 
