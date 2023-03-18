@@ -23,6 +23,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool GrabInput { get; private set; }
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
+    public bool MainActionUIInput { get; set; }
     public bool InteractPressed { get; set; }
     public bool InteractShopPressed { get; private set; }
     public bool PausePressed { get; set; }
@@ -212,6 +213,18 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             InventoryPressed = !InventoryPressed;
+        }
+    }
+
+    public void OnMainActionUIInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            MainActionUIInput = true;
+        }
+        if (context.canceled)
+        {
+            MainActionUIInput = false;
         }
     }
 

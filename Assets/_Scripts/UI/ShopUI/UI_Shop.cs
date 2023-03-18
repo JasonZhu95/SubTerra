@@ -15,19 +15,19 @@ public class UI_Shop : MonoBehaviour
 
     private void Awake()
     {
-        container = transform.Find("ItemContainer");
         shopItemTemplate = container.Find("ShopItemTemplate");
         shopItemTemplate.gameObject.SetActive(false);
         container.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 
     private void Start()
     {
-        CreateItemButton(itemDatabase.GetItem(0), 0);
-        CreateItemButton(itemDatabase.GetItem(1), 1);
-        CreateItemButton(itemDatabase.GetItem(2), 2);
-        CreateItemButton(itemDatabase.GetItem(3), 3);
-        CreateItemButton(itemDatabase.GetItem(5), 4);
+        //CreateItemButton(itemDatabase.GetItem(0), 0);
+        //CreateItemButton(itemDatabase.GetItem(1), 1);
+        //CreateItemButton(itemDatabase.GetItem(2), 2);
+        //CreateItemButton(itemDatabase.GetItem(3), 3);
+        //CreateItemButton(itemDatabase.GetItem(5), 4);
     }
 
     private void CreateItemButton(ItemSO itemData, int positionIndex)
@@ -64,11 +64,11 @@ public class UI_Shop : MonoBehaviour
     public void Show(IBuyItem customer)
     {
         this.customer = customer;
-        container.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
-        container.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
