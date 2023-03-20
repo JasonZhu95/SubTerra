@@ -1,71 +1,74 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopButtonController : MonoBehaviour
 {
     public int index;
     public int maxIndex;
-    [SerializeField] bool keyDown;
-    [SerializeField] RectTransform rectTransform;
-    public bool isPressConfirm;
-    public int VerticalMovement;
-
     private int yInput;
+    private bool mainActionInput;
+
+    public int buttonOffsetHeight = 70;
 
     private PlayerInputHandler inputHandler;
+
+    private bool keyDown;
+    [SerializeField] RectTransform rectTransform;
+    private Vector2 startingOffset;
+    [SerializeField] private bool confirmMenu;
 
     void Start()
     {
         inputHandler = GameObject.FindWithTag("Player").GetComponent<PlayerInputHandler>();
         rectTransform = GetComponent<RectTransform>();
+        startingOffset = rectTransform.offsetMax;
     }
 
     void Update()
     {
         yInput = inputHandler.NormMenuInputY;
 
-        if (yInput == 1)
-            VerticalMovement = 1;
-        if (yInput == -1)
-            VerticalMovement = -1;
-        if (yInput != 1 && yInput != -1)
-            VerticalMovement = 0;
-
-        if (yInput != 0 || VerticalMovement != 0)
+        if (yInput != 0)
         {
             if (!keyDown)
             {
-                if (yInput < 0 || VerticalMovement < 0)
+                if (yInput < 0)
                 {
                     if (index < maxIndex)
                     {
                         index++;
                         if (index > 1 && index < maxIndex)
                         {
-                            rectTransform.offsetMax -= new Vector2(0, -70);
+                            rectTransform.offsetMax -= new Vector2(0, -buttonOffsetHeight);
                         }
                     }
                     else
                     {
                         index = 0;
-                        rectTransform.offsetMax = Vector2.zero;
+                        rectTransform.offsetMax = startingOffset;
                     }
                 }
-                else if (yInput > 0 || VerticalMovement > 0)
+                else if (yInput > 0)
                 {
                     if (index > 0)
                     {
                         index--;
                         if (index < maxIndex - 1 && index > 0)
                         {
-                            rectTransform.offsetMax -= new Vector2(0, 70);
+                            rectTransform.offsetMax -= new Vector2(0, buttonOffsetHeight);
                         }
                     }
                     else
                     {
                         index = maxIndex;
-                        rectTransform.offsetMax = new Vector2(0, (maxIndex - 2) * 70);
+                        if (confirmMenu)
+                        {
+                            rectTransform.offsetMax = startingOffset;
+                        }
+                        else
+                        {
+                            rectTransform.offsetMax = new Vector2(0, (maxIndex - 2) * buttonOffsetHeight);
+                        }
                     }
                 }
                 keyDown = true;
@@ -75,15 +78,5 @@ public class ShopButtonController : MonoBehaviour
         {
             keyDown = false;
         }
-    }
-
-    public void onPressConfirm()
-    {
-        isPressConfirm = true;
-    }
-
-    public void onReleaseConfirm()
-    {
-        isPressConfirm = false;
     }
 }

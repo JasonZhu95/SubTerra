@@ -24,15 +24,16 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
     public bool InteractPressed { get; set; }
-    public bool InteractShopPressed { get; private set; }
     public bool PausePressed { get; set; }
     public bool InventoryPressed { get; set; }
+    public bool InteractShopPressed { get; private set; }
 
     public bool[] AttackInputs { get; private set; }
     public bool[] AttackInputsHold { get; private set; }
 
     // UI Actions
     public bool MainActionUIInput { get; set; }
+    public bool BackActionUIInput { get; set; }
     public Vector2 RawMenuNavigationInput { get; private set; }
     public int NormMenuInputX { get; private set; }
     public int NormMenuInputY { get; private set; }
@@ -80,7 +81,6 @@ public class PlayerInputHandler : MonoBehaviour
     public void SwitchToActionMap(String actionMapString)
     {
         playerInput.SwitchCurrentActionMap(actionMapString);
-        Debug.Log("Switched to: " + actionMapString);
         if (actionMapString == "UI")
         {
             Time.timeScale = 0f;
@@ -208,13 +208,14 @@ public class PlayerInputHandler : MonoBehaviour
         {
             OnInteract?.Invoke(true);
             InteractPressed = true;
-            InteractShopPressed = !InteractShopPressed;
+            InteractShopPressed = true;
         }
 
         if (context.canceled)
         {
             OnInteract?.Invoke(false);
             InteractPressed = false;
+            InteractShopPressed = false;
         }
     }
 
@@ -238,11 +239,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            MainActionUIInput = true;
-        }
-        if (context.canceled)
-        {
-            MainActionUIInput = false;
+            MainActionUIInput = !MainActionUIInput;
+            Debug.Log("Main Action UI Input: " + MainActionUIInput);
         }
     }
 

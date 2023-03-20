@@ -18,6 +18,7 @@ public class ShopTrigger : MonoBehaviour, IInteractable
     [SerializeField]
     private UI_Shop shopUI;
 
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -31,15 +32,12 @@ public class ShopTrigger : MonoBehaviour, IInteractable
         if (playerInRange)
         {
             visualCue.SetActive(true);
-            if (inputHandler.InteractShopPressed)
+            if (inputHandler.InteractShopPressed && !shopUI.isActiveAndEnabled)
             {
-                if (!shopUI.isActiveAndEnabled)
-                {
                     shopUI.Show(customer);
                     inputHandler.SwitchToActionMap("UI");
-                }
             }
-            else if(shopUI.isActiveAndEnabled)
+            else if(inputHandler.InteractShopPressed && shopUI.isActiveAndEnabled)
             {
                 shopUI.Hide();
                 inputHandler.SwitchToActionMap("Gameplay");
