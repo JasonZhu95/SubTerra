@@ -32,8 +32,8 @@ public class GameData
         coinCount = 0;
         checkPointIndex = 0;
         // TODO: Set Manually Max Health values;
-        currentHealth = 100f;
-        maxHealth = 100f;
+        currentHealth = 5f;
+        maxHealth = 5f;
 
         disableDash = false;
         disableWallJump = false;

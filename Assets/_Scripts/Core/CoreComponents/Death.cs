@@ -74,7 +74,6 @@ public class Death : CoreComponent
             {
                 Stats.Health.Decrease(1f);
             }
-            //TODO: Hardcoded Health decrease.  Change to heart system
         }
         else
         {

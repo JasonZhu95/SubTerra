@@ -86,7 +86,7 @@ MonoBehaviour:
       type: {class: ProjectileDamageData, ns: Project.Projectiles, asm: Assembly-CSharp}
       data:
         name: ProjectileDamageData
-        DamageAmount: 10
+        DamageAmount: 1
         LayerMask:
           serializedVersion: 2
           m_Bits: 16384

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackAngle: {x: 1, y: 1}
   knockbackStrength: 10
+  collisionDamage: 1
 --- !u!61 &518102711
 BoxCollider2D:
   m_ObjectHideFlags: 0

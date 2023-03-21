@@ -22,5 +22,5 @@ MonoBehaviour:
   <ItemCost>k__BackingField: 50
   modifiersData:
   - statModifier: {fileID: 11400000, guid: 67d0dde8365cf324985480d91eedc9b4, type: 2}
-    value: 10
+    value: 1
   <actionSFX>k__BackingField: {fileID: 0}
