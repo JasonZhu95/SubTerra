@@ -20,6 +20,8 @@ public class EnemyCollision : CoreComponent
     private Vector2 knockbackAngle;
     [SerializeField]
     private float knockbackStrength;
+    [SerializeField]
+    private float collisionDamage;
 
     private DamageData damageData;
     public bool CanSetDeathZoneCollision { get; set; }
@@ -37,7 +39,7 @@ public class EnemyCollision : CoreComponent
             {
                 var data = new KnockbackData(knockbackAngle, knockbackStrength, -Movement.FacingDirection, core.Parent);
                 core.Parent.transform.GetChild(0).Find("Combat").GetComponent<IKnockbackable>().Knockback(data);
-                damageData.SetData(core.Parent, 10f);
+                damageData.SetData(core.Parent, collisionDamage);
                 core.Parent.transform.GetChild(0).Find("Combat").GetComponent<IDamageable>().Damage(damageData);
             }
 

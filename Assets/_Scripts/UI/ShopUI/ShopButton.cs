@@ -67,6 +67,10 @@ public class ShopButton : MonoBehaviour
                 descriptionText.text = ItemData.Description;
             }
             animator.SetBool("selected", true);
+            if (inputHandler.MainActionUIInput && !canAfford)
+            {
+                inputHandler.MainActionUIInput = false;
+            }
             if (inputHandler.MainActionUIInput && canAfford)
             {
                 animator.SetBool("pressed", true);

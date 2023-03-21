@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc41f950ad38f9049b58f7702517f254
+guid: e5cb78de14ddd984ca67f29f9612c86e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1024
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_animation_0
+      name: heart_animated_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c9699b2b72cc9e41b3b71e83022b89e
-      internalID: -45261579
+      spriteID: aeb0ccb47394c394e8db3b07b6f28c91
+      internalID: -774759496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_animation_1
+      name: heart_animated_2_1
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 17
         y: 0
-        width: 1024
-        height: 1024
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d11fed7a2c33540af0b09a2b7ea2c5
-      internalID: -1087269232
+      spriteID: 3ca3dd90b3117ca45ae0b971c158d712
+      internalID: -511980567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_animation_2
+      name: heart_animated_2_2
       rect:
         serializedVersion: 2
-        x: 2048
+        x: 34
         y: 0
-        width: 1024
-        height: 1024
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0356ea1803d13448a73008699c96b73
-      internalID: 1305601752
+      spriteID: c7d8a2399414894448eb8e15f695dd45
+      internalID: 1870705006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_animation_3
+      name: heart_animated_2_3
       rect:
         serializedVersion: 2
-        x: 3072
+        x: 51
         y: 0
-        width: 1024
-        height: 1024
+        width: 17
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a032407312c5ea544ab3f05945fc8b98
-      internalID: 935482835
+      spriteID: b5aaf0484fd7d9e47873d353dcecf18d
+      internalID: 161339909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart_animated_2_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3431686d72002624dae484451bd85006
+      internalID: 1812224952
       vertices: []
       indices: 
       edges: []
@@ -199,10 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_animation_3: 935482835
-      Idle_animation_1: -1087269232
-      Idle_animation_2: 1305601752
-      Idle_animation_0: -45261579
+      heart_animated_2_3: 161339909
+      heart_animated_2_4: 1812224952
+      heart_animated_2_1: -511980567
+      heart_animated_2_2: 1870705006
+      heart_animated_2_0: -774759496
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

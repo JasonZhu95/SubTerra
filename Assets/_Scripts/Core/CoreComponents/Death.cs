@@ -66,13 +66,13 @@ public class Death : CoreComponent
         {
             levelLoaderManager.PlayTransition();
             respawnManager.PlayerDeathSwitchActive(false);
-            if (Stats.Health.CurrentValue == 10f)
+            if (Stats.Health.CurrentValue == 1f)
             {
                 Die();
             }
             else
             {
-                Stats.Health.Decrease(10f);
+                Stats.Health.Decrease(1f);
             }
             //TODO: Hardcoded Health decrease.  Change to heart system
         }
