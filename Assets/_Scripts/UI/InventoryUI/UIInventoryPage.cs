@@ -6,17 +6,12 @@ namespace Project.Inventory.UI
 {
     public class UIInventoryPage : MonoBehaviour
     {
-        [SerializeField]
-        private UIInventoryItem itemPrefab;
-
-        [SerializeField]
-        private RectTransform contentPanel;
-
-        [SerializeField]
-        private UIInventoryDescription itemDescription;
-
-        [SerializeField]
-        private MouseFollower mouseFollower;
+        [SerializeField] private UIInventoryItem itemPrefab;
+        [SerializeField] private RectTransform contentPanel;
+        [SerializeField] private UIInventoryDescription itemDescription;
+        [SerializeField] private MouseFollower mouseFollower;
+        [SerializeField] private UIInventoryDescription inventoryDescription;
+        [SerializeField] private ItemActionPanel actionPanel;
 
         private List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
@@ -30,8 +25,6 @@ namespace Project.Inventory.UI
 
         public int currentlySelectedIndex { get; set; }
 
-        [SerializeField]
-        private ItemActionPanel actionPanel;
 
         private void Awake()
         {
@@ -151,15 +144,24 @@ namespace Project.Inventory.UI
             DeselectAllItems();
         }
 
-        public void AddAction(string actionName, Action performAction)
+        public void AddAction(string actionName, Action performAction, bool firstAction = false)
         {
-            actionPanel.AddButton(actionName, performAction);
+            actionPanel.AddButton(actionName, performAction, firstAction);
         }
 
         public void ShowItemAction(int itemIndex)
         {
             actionPanel.Toggle(true);
             actionPanel.transform.position = listOfUIItems[itemIndex].transform.position;
+        }
+
+        public void ShowItemActionOnInput(int itemIndex)
+        {
+            if (!listOfUIItems[itemIndex].hasNoActions && !listOfUIItems[itemIndex].empty)
+            {
+                ShowItemAction(itemIndex);
+                OnItemActionRequested?.Invoke(itemIndex);
+            }
         }
 
         private void DeselectAllItems()
@@ -182,12 +184,30 @@ namespace Project.Inventory.UI
         {
             listOfUIItems[0].Select();
             currentlySelectedIndex = 0;
+            if (!listOfUIItems[0].empty)
+            {
+                HandleItemSelection(listOfUIItems[0]);
+            }
+            else
+            {
+                inventoryDescription.ResetDescription();
+            }
         }
+
         public void SelectItemIndex(int index)
         {
             DeselectAllItems();
             listOfUIItems[index].Select();
             currentlySelectedIndex = index;
+            if (!listOfUIItems[index].empty)
+            {
+                HandleItemSelection(listOfUIItems[index]);
+            }
+            else
+            {
+                inventoryDescription.ResetDescription();
+            }
+
         }
     }
 }

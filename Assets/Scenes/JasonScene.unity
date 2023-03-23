@@ -1991,6 +1991,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199861811}
   m_CullTransparentMesh: 1
+--- !u!114 &200035784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3454498120376958648, guid: 9fd8abb025080394aad163e313a47197, type: 3}
+  m_PrefabInstance: {fileID: 4393828868968212530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f6e96e4fe693a44b084bc20819af91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &236816058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4949552808670578356, guid: e7f32ff60d943f74b98741e553b58cbf, type: 3}
@@ -2860,6 +2871,7 @@ MonoBehaviour:
   audioSource: {fileID: 264109759}
   itemActionPanelObject: {fileID: 1996584765}
   database: {fileID: 11400000, guid: 786cffd44155d3d46a58e99c22b03e1c, type: 2}
+  itemsWithNoActions: []
   initialItems: []
   itemsToAdd: []
 --- !u!114 &264109758
@@ -14454,6 +14466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 5857596831699099455, guid: e8459e5aa22b4644bb206614a5f578a7, type: 3}
+  buttonAction: {fileID: 0}
 --- !u!114 &1996584766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18159,6 +18172,14 @@ PrefabInstance:
       propertyPath: mouseFollower
       value: 
       objectReference: {fileID: 1356673330}
+    - target: {fileID: 840481142503367716, guid: 9fd8abb025080394aad163e313a47197, type: 3}
+      propertyPath: itemActionPanel
+      value: 
+      objectReference: {fileID: 1996584765}
+    - target: {fileID: 840481142503367716, guid: 9fd8abb025080394aad163e313a47197, type: 3}
+      propertyPath: inventoryDescription
+      value: 
+      objectReference: {fileID: 200035784}
     - target: {fileID: 4393828868388476775, guid: 9fd8abb025080394aad163e313a47197, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

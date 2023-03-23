@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Project.Inventory.UI
 {
@@ -10,24 +12,48 @@ namespace Project.Inventory.UI
         IBeginDragHandler, IEndDragHandler, IDropHandler, IDragHandler
     {
         [SerializeField]
-        private Image itemImage;
+        public Image itemImage;
         [SerializeField]
         private TMP_Text quantityTxt;
 
         [SerializeField]
         private Image borderImage;
 
+        private InventoryController inventoryController;
+
         public event Action<UIInventoryItem> OnItemClicked,
             OnItemDroppedOn, OnItemBeginDrag, OnItemEndDrag,
             OnRightMouseBtnClick;
 
-        private bool empty = true;
+        public bool empty = true;
+        public bool hasNoActions = false;
 
         public void Awake()
         {
             ResetData();
             Deselect();
+            inventoryController = GameObject.FindWithTag("Player").GetComponent<InventoryController>();
         }
+
+        private void Start()
+        {
+            CheckHasNoActionItemList();
+        }
+
+        private void CheckHasNoActionItemList()
+        {
+            if (itemImage != null && !empty)
+            {
+                foreach (Sprite item in inventoryController.itemsWithNoActions)
+                {
+                    if (itemImage.sprite.texture.GetRawTextureData().SequenceEqual(item.texture.GetRawTextureData()))
+                    {
+                        hasNoActions = true;
+                    }
+                }
+            }
+        }
+
         public void ResetData()
         {
             itemImage.gameObject.SetActive(false);

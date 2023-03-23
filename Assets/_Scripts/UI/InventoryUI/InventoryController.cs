@@ -7,33 +7,27 @@ using System.Collections.Generic;
 using System.Text;
 using Project.Interfaces;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace Project.Inventory
 {
     public class InventoryController : MonoBehaviour, IDataPersistence, IBuyItem
     {
         [SerializeField] private UIInventoryPage inventoryUI;
-
         [SerializeField] public InventorySO inventoryData;
-
-        [SerializeField]
-        private AudioClip dropClip;
-
-        [SerializeField]
-        private AudioSource audioSource;
-
-        [SerializeField]
-        private ItemActionPanel itemActionPanelObject;
+        [SerializeField] private AudioClip dropClip;
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private ItemActionPanel itemActionPanelObject;
+        [SerializeField] private ItemDatabase database;
 
         public PlayerInputHandler InputHandler { get; private set; }
+        private PlayerInventory playerInventory;
 
-        [SerializeField]
-        private ItemDatabase database;
+        [HideInInspector] public List<Sprite> itemsWithNoActions;
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
         public List<InventoryItem> itemsToAdd = new List<InventoryItem>();
 
-        private PlayerInventory playerInventory;
         private int menuXInput;
         private int menuYInput;
         private float lastTime;
@@ -42,6 +36,7 @@ namespace Project.Inventory
         {
             InputHandler = GetComponent<PlayerInputHandler>();
             playerInventory = transform.GetChild(0).GetComponentInChildren<PlayerInventory>();
+            itemsWithNoActions.Add(database.GetItem(2).ItemImage);
         }
 
         private void Start()
@@ -53,6 +48,8 @@ namespace Project.Inventory
 
         private void Update()
         {
+            menuXInput = InputHandler.NormMenuInputX;
+            menuYInput = InputHandler.NormMenuInputY;
 
             // Check if Player Opens the inventory
             if (InputHandler.InventoryPressed)
@@ -76,16 +73,19 @@ namespace Project.Inventory
                 InputHandler.SwitchToActionMap("Gameplay");
             }
 
-            // Do Menu Actions
-            if (inventoryUI.isActiveAndEnabled)
+            if (inventoryUI.isActiveAndEnabled && !itemActionPanelObject.isActiveAndEnabled)
             {
-                menuXInput = InputHandler.NormMenuInputX;
-                menuYInput = InputHandler.NormMenuInputY;
+                // On currently selected index open action menu on player input
+                if (InputHandler.MainActionUIInput)
+                {
+                    inventoryUI.ShowItemActionOnInput(inventoryUI.currentlySelectedIndex);
+                    InputHandler.MainActionUIInput = false;
+                }
 
-                if (menuYInput != 0 && (Time.unscaledTime - lastTime > 0.5f))
+                // Navigate selected item depending on player input
+                if (menuYInput != 0 && (Time.unscaledTime - lastTime > 0.2f))
                 {
                     lastTime = Time.unscaledTime;
-                    Debug.Log("Pressed1");
                     if (menuYInput == 1)
                     {
                         if ((inventoryUI.currentlySelectedIndex - 6) < 0)
@@ -102,7 +102,6 @@ namespace Project.Inventory
                         if ((inventoryUI.currentlySelectedIndex + 6) >= 18)
                         {
                             inventoryUI.SelectItemIndex((inventoryUI.currentlySelectedIndex + 6) % 18);
-                            Debug.Log((inventoryUI.currentlySelectedIndex + 6) % 18);
                         }
                         else
                         {
@@ -110,9 +109,8 @@ namespace Project.Inventory
                         }
                     }
                 }
-                if (menuXInput != 0 && (Time.unscaledTime - lastTime > 0.1f))
+                if (menuXInput != 0 && (Time.unscaledTime - lastTime > 0.2f))
                 {
-                    Debug.Log("Pressed2");
                     lastTime = Time.unscaledTime;
                     if (menuXInput == 1)
                     {
@@ -138,6 +136,54 @@ namespace Project.Inventory
                     }
                 }
             }
+
+            // If Actionpanel is open, check for player input
+            if (itemActionPanelObject.isActiveAndEnabled)
+            {
+                if (InputHandler.MainActionUIInput)
+                {
+                    Debug.Log("Pressed" + itemActionPanelObject.CurrentButtonIndex);
+                    // Click the button
+                    itemActionPanelObject.transform.GetChild(itemActionPanelObject.CurrentButtonIndex).gameObject.GetComponent<Button>().onClick.Invoke();
+                    itemActionPanelObject.CurrentButtonIndex = 0;
+                    InputHandler.MainActionUIInput = false;
+                }
+                if (menuYInput != 0 && (Time.unscaledTime - lastTime > 0.2f))
+                {
+                    lastTime = Time.unscaledTime;
+                    if (menuYInput == 1)
+                    {
+                        if (itemActionPanelObject.CurrentButtonIndex == 0)
+                        {
+                            itemActionPanelObject.DeselectSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                            itemActionPanelObject.CurrentButtonIndex = 1;
+                            itemActionPanelObject.SetSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                        }
+                        else
+                        {
+                            itemActionPanelObject.DeselectSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                            itemActionPanelObject.CurrentButtonIndex -= 1;
+                            itemActionPanelObject.SetSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                        }
+                    }
+
+                    if (menuYInput == -1)
+                    {
+                        if (itemActionPanelObject.CurrentButtonIndex == 1)
+                        {
+                            itemActionPanelObject.DeselectSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                            itemActionPanelObject.CurrentButtonIndex = 0;
+                            itemActionPanelObject.SetSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                        }
+                        else
+                        {
+                            itemActionPanelObject.DeselectSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                            itemActionPanelObject.CurrentButtonIndex += 1;
+                            itemActionPanelObject.SetSelectedBorder(itemActionPanelObject.CurrentButtonIndex);
+                        }
+                    }
+                }
+            }
         }
 
         // On Gamestart load any items in save file or any starting initial items.
@@ -157,7 +203,6 @@ namespace Project.Inventory
                     continue;
                 inventoryData.AddItem(item);
             }
-            
         }
 
         // Update the UI when item data is changed
@@ -188,10 +233,11 @@ namespace Project.Inventory
             if (inventoryItem.IsEmpty)
                 return;
             IItemAction itemAction = inventoryItem.item as IItemAction;
+
             if (itemAction != null)
             {
                 inventoryUI.ShowItemAction(itemIndex);
-                inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex, 0));
+                inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex, 0), true);
             }
 
             if (itemAction.ActionName == "Equip")

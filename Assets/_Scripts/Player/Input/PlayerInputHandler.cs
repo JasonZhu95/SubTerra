@@ -240,7 +240,6 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             MainActionUIInput = !MainActionUIInput;
-            Debug.Log("Main Action UI Input: " + MainActionUIInput);
         }
     }
 

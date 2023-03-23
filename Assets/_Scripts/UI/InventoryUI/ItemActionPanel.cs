@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
@@ -11,11 +9,30 @@ namespace Project.Inventory.UI
         [SerializeField]
         private GameObject buttonPrefab;
 
-        public void AddButton(string name, Action onClickAction)
+        [HideInInspector]
+        public GameObject buttonAction;
+
+        public int CurrentButtonIndex { get; set; } = 0;
+
+        public void AddButton(string name, Action onClickAction, bool firstAction = false)
         {
-            GameObject button = Instantiate(buttonPrefab, transform);
-            button.GetComponent<Button>().onClick.AddListener(() => onClickAction());
-            button.GetComponentInChildren<TMPro.TMP_Text>().text = name;
+            buttonAction = Instantiate(buttonPrefab, transform);
+            buttonAction.GetComponent<Button>().onClick.AddListener(() => onClickAction());
+            buttonAction.GetComponentInChildren<TMPro.TMP_Text>().text = name;
+            if (firstAction)
+            {
+                buttonAction.transform.GetChild(1).gameObject.SetActive(true);
+            }
+        }
+
+        public void DeselectSelectedBorder(int index)
+        {
+            transform.GetChild(index).GetChild(1).gameObject.SetActive(false);
+        }
+
+        public void SetSelectedBorder(int index)
+        {
+            transform.GetChild(index).GetChild(1).gameObject.SetActive(true);
         }
 
         public void Toggle(bool val)
