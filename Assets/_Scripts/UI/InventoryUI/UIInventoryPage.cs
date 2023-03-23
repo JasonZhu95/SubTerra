@@ -18,7 +18,7 @@ namespace Project.Inventory.UI
         [SerializeField]
         private MouseFollower mouseFollower;
 
-        List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
+        private List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
         private int currentlyDraggedItemIndex = -1;
 
@@ -27,6 +27,8 @@ namespace Project.Inventory.UI
                 OnStartDragging;
 
         public event Action<int, int> OnSwapItems;
+
+        public int currentlySelectedIndex { get; set; }
 
         [SerializeField]
         private ItemActionPanel actionPanel;
@@ -68,6 +70,7 @@ namespace Project.Inventory.UI
             itemDescription.SetDescription(itemImage, name, description);
             DeselectAllItems();
             listOfUIItems[itemIndex].Select();
+            currentlySelectedIndex = itemIndex;
         }
 
         public void UpdateData(int itemIndex,
@@ -139,6 +142,7 @@ namespace Project.Inventory.UI
         {
             gameObject.SetActive(true);
             ResetSelection();
+            SelectFirstItem();
         }
 
         public void ResetSelection()
@@ -172,6 +176,18 @@ namespace Project.Inventory.UI
             actionPanel.Toggle(false);
             gameObject.SetActive(false);
             ResetDraggedItem();
+        }
+
+        public void SelectFirstItem()
+        {
+            listOfUIItems[0].Select();
+            currentlySelectedIndex = 0;
+        }
+        public void SelectItemIndex(int index)
+        {
+            DeselectAllItems();
+            listOfUIItems[index].Select();
+            currentlySelectedIndex = index;
         }
     }
 }

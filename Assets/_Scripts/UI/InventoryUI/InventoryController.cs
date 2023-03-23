@@ -6,7 +6,7 @@ using Project.Inventory.Data;
 using System.Collections.Generic;
 using System.Text;
 using Project.Interfaces;
-
+using System.Collections;
 
 namespace Project.Inventory
 {
@@ -34,6 +34,9 @@ namespace Project.Inventory
         public List<InventoryItem> itemsToAdd = new List<InventoryItem>();
 
         private PlayerInventory playerInventory;
+        private int menuXInput;
+        private int menuYInput;
+        private float lastTime;
 
         private void Awake()
         {
@@ -45,10 +48,12 @@ namespace Project.Inventory
         {
             PrepareUI();
             PrepareInventoryData();
+            lastTime = Time.unscaledTime;
         }
 
         private void Update()
         {
+
             // Check if Player Opens the inventory
             if (InputHandler.InventoryPressed)
             {
@@ -62,12 +67,76 @@ namespace Project.Inventory
                             item.Value.quantity);
                     }
                     InputHandler.SwitchToActionMap("UI");
+
                 }
             }
             else if (!InputHandler.InventoryPressed && inventoryUI.isActiveAndEnabled == true)
             {
                 inventoryUI.Hide();
                 InputHandler.SwitchToActionMap("Gameplay");
+            }
+
+            // Do Menu Actions
+            if (inventoryUI.isActiveAndEnabled)
+            {
+                menuXInput = InputHandler.NormMenuInputX;
+                menuYInput = InputHandler.NormMenuInputY;
+
+                if (menuYInput != 0 && (Time.unscaledTime - lastTime > 0.5f))
+                {
+                    lastTime = Time.unscaledTime;
+                    Debug.Log("Pressed1");
+                    if (menuYInput == 1)
+                    {
+                        if ((inventoryUI.currentlySelectedIndex - 6) < 0)
+                        {
+                            inventoryUI.SelectItemIndex((inventoryUI.currentlySelectedIndex - 6) + 18);
+                        }
+                        else
+                        {
+                            inventoryUI.SelectItemIndex(inventoryUI.currentlySelectedIndex - 6);
+                        }
+                    }
+                    if (menuYInput == -1)
+                    {
+                        if ((inventoryUI.currentlySelectedIndex + 6) >= 18)
+                        {
+                            inventoryUI.SelectItemIndex((inventoryUI.currentlySelectedIndex + 6) % 18);
+                            Debug.Log((inventoryUI.currentlySelectedIndex + 6) % 18);
+                        }
+                        else
+                        {
+                            inventoryUI.SelectItemIndex(inventoryUI.currentlySelectedIndex + 6);
+                        }
+                    }
+                }
+                if (menuXInput != 0 && (Time.unscaledTime - lastTime > 0.1f))
+                {
+                    Debug.Log("Pressed2");
+                    lastTime = Time.unscaledTime;
+                    if (menuXInput == 1)
+                    {
+                        if (inventoryUI.currentlySelectedIndex == 17)
+                        {
+                            inventoryUI.SelectItemIndex(0);
+                        }
+                        else
+                        {
+                            inventoryUI.SelectItemIndex(inventoryUI.currentlySelectedIndex + 1);
+                        }
+                    }
+                    if (menuXInput == -1)
+                    {
+                        if (inventoryUI.currentlySelectedIndex == 0)
+                        {
+                            inventoryUI.SelectItemIndex(17);
+                        }
+                        else
+                        {
+                            inventoryUI.SelectItemIndex(inventoryUI.currentlySelectedIndex - 1);
+                        }
+                    }
+                }
             }
         }
 
