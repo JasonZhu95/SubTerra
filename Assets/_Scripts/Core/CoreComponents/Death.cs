@@ -21,6 +21,8 @@ public class Death : CoreComponent
     private int coinWorkspace;
     private int coinWorkspaceAmount;
 
+    private bool subscribedToEvent = false;
+
     protected override void Awake()
     {
         respawnManager = GameObject.Find("Managers").transform.Find("RespawnManager").GetComponent<RespawnManager>();
@@ -32,7 +34,11 @@ public class Death : CoreComponent
         base.Init(core);
         Stats = core.GetCoreComponent(ref Stats);
 
-        Stats.Health.OnCurrentValueZero += Die;
+        if (!subscribedToEvent)
+        {
+            Stats.Health.OnCurrentValueZero += Die;
+            subscribedToEvent = true;
+        }
     }
 
     public void Die()
@@ -84,9 +90,10 @@ public class Death : CoreComponent
 
     private void OnEnable()
     {
-        if (Stats)
+        if (Stats && !subscribedToEvent)
         {
             Stats.Health.OnCurrentValueZero += Die;
+            subscribedToEvent = true;
         }
     }
 

@@ -11,7 +11,8 @@ public class ShopTrigger : MonoBehaviour, IInteractable
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
 
-    private GameObject player;
+    private GameObject playerObject;
+    private CollisionSenses playerCollision;
     private PlayerInputHandler inputHandler;
     private IBuyItem customer;
     [SerializeField]
@@ -23,15 +24,16 @@ public class ShopTrigger : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
-        inputHandler = player.GetComponent<PlayerInputHandler>();
+        playerObject = GameObject.FindWithTag("Player");
+        playerCollision = playerObject.GetComponent<Player>().Core.transform.GetChild(1).GetComponent<CollisionSenses>();
+        inputHandler = playerObject.GetComponent<PlayerInputHandler>();
         visualCue.SetActive(false);
-        customer = player.GetComponent<InventoryController>().GetComponent<IBuyItem>();
+        customer = playerObject.GetComponent<InventoryController>().GetComponent<IBuyItem>();
     }
 
     private void Update()
     {
-        if (playerInRange)
+        if (playerInRange && playerCollision.Ground)
         {
             visualCue.SetActive(true);
             if (inputHandler.InteractShopPressed && !shopUI.isActiveAndEnabled)

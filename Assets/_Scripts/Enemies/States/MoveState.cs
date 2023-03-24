@@ -33,8 +33,8 @@ public class MoveState : State
     public override void Enter()
     {
         base.Enter();
+
         Movement?.SetVelocityX(stateData.movementSpeed * Movement.FacingDirection);
-        
     }
 
     public override void Exit()

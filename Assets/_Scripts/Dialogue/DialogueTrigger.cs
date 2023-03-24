@@ -10,6 +10,7 @@ namespace Project.UI
     public class DialogueTrigger : MonoBehaviour, IInteractable
     {
         private GameObject player;
+        private CollisionSenses playerCollision;
         private PlayerInputHandler inputHandler;
         private GameObject dialogueManager;
         private DialogueManager dialogueManagerReference;
@@ -24,7 +25,6 @@ namespace Project.UI
 
         public bool interactInputPressed { get; set; }
     
-
         private void Awake()
         {
             player = GameObject.FindWithTag("Player");
@@ -34,9 +34,14 @@ namespace Project.UI
             visualCue.SetActive(false);
         }
 
+        private void Start()
+        {
+            playerCollision = player.GetComponent<Player>().Core.transform.GetChild(1).GetComponent<CollisionSenses>();
+        }
+
         private void Update()
         {
-            if (playerInRange && !dialogueManagerReference.DialogueIsPlaying)
+            if (playerInRange && !dialogueManagerReference.DialogueIsPlaying && playerCollision.Ground)
             {
                 visualCue.SetActive(true);
                 if (inputHandler.InteractPressed)

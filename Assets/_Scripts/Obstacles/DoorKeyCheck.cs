@@ -13,6 +13,7 @@ public class DoorKeyCheck : MonoBehaviour, IInteractable
     [SerializeField] private DoorAnimated door;
 
     private GameObject player;
+    private CollisionSenses playerCollision;
     private PlayerInputHandler inputHandler;
     private bool deactivateUpdate;
     private InventorySO inventoryData;
@@ -22,6 +23,7 @@ public class DoorKeyCheck : MonoBehaviour, IInteractable
     {
         playerHasKey = false;
         player = GameObject.FindWithTag("Player");
+        playerCollision = player.GetComponent<Player>().Core.transform.GetChild(1).GetComponent<CollisionSenses>();
         inputHandler = player.GetComponent<PlayerInputHandler>();
         visualCue.SetActive(false);
         deactivateUpdate = false;
@@ -32,7 +34,7 @@ public class DoorKeyCheck : MonoBehaviour, IInteractable
     {
         if (!deactivateUpdate)
         {
-            if (playerInRange)
+            if (playerInRange && playerCollision.Ground)
             {
                 visualCue.SetActive(true);
                 if (inputHandler.InteractPressed)

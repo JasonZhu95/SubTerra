@@ -17,17 +17,11 @@ public class DamageComponent : CoreComponent, IDamageable
         new ModifierContainer<DamageModifier, DamageData>();
 
     private Stats Stats => stats ? stats : core.GetCoreComponent(ref stats);
-
-    private CollisionSenses CollisionSenses => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
-
-    private Movement Movement => movement ?? core.GetCoreComponent(ref movement);
-
     private ParticleManager ParticleManager => particleManager ?? core.GetCoreComponent(ref particleManager);
 
-    private Movement movement;
     private Stats stats;
-    private CollisionSenses collisionSenses;
     private ParticleManager particleManager;
+
     private GameObject player;
     private GameObject enemyCollision;
     [SerializeField]

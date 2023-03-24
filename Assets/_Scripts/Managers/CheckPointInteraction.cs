@@ -12,6 +12,8 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
     [SerializeField] private GameObject visualCue;
 
     private GameObject player;
+    private CollisionSenses playerCollision;
+
     private PlayerInputHandler inputHandler;
 
     private CheckPointManager checkPointManager;
@@ -24,9 +26,14 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
         visualCue.SetActive(false);
     }
 
+    private void Start()
+    {
+        playerCollision = player.GetComponent<Player>().Core.transform.GetChild(1).GetComponent<CollisionSenses>();
+    }
+
     private void Update()
     {
-        if (playerInRange)
+        if (playerInRange && playerCollision.Ground)
         {
             visualCue.SetActive(true);
             if (inputHandler.InteractPressed)
