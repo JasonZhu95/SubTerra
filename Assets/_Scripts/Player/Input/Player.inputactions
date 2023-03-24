@@ -433,6 +433,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "BackAction",
+                    "type": "Button",
+                    "id": "e638756f-93de-4aba-b400-43bf926647c5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -545,6 +554,17 @@
                     "action": "MenuNavigation",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "95bf22b5-b174-49fd-85f5-845cc732584a",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "BackAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

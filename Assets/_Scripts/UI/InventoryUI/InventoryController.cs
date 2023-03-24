@@ -75,6 +75,15 @@ namespace Project.Inventory
 
             if (inventoryUI.isActiveAndEnabled && !itemActionPanelObject.isActiveAndEnabled)
             {
+                // On Back Button Input exit inventory ui
+                if (InputHandler.BackActionUIInput)
+                {
+                    inventoryUI.Hide();
+                    InputHandler.SwitchToActionMap("Gameplay");
+                    InputHandler.BackActionUIInput = false;
+                    InputHandler.InventoryPressed = false;
+                }
+
                 // On currently selected index open action menu on player input
                 if (InputHandler.MainActionUIInput)
                 {
@@ -140,14 +149,23 @@ namespace Project.Inventory
             // If Actionpanel is open, check for player input
             if (itemActionPanelObject.isActiveAndEnabled)
             {
+                // On Back button pressed
+                if (InputHandler.BackActionUIInput)
+                {
+                    itemActionPanelObject.gameObject.SetActive(false);
+                    InputHandler.BackActionUIInput = false;
+                }
+
+                // Perform highlighted action
                 if (InputHandler.MainActionUIInput)
                 {
-                    Debug.Log("Pressed" + itemActionPanelObject.CurrentButtonIndex);
                     // Click the button
                     itemActionPanelObject.transform.GetChild(itemActionPanelObject.CurrentButtonIndex).gameObject.GetComponent<Button>().onClick.Invoke();
                     itemActionPanelObject.CurrentButtonIndex = 0;
                     InputHandler.MainActionUIInput = false;
                 }
+
+                // Check arrow key inputs to change selected button
                 if (menuYInput != 0 && (Time.unscaledTime - lastTime > 0.2f))
                 {
                     lastTime = Time.unscaledTime;

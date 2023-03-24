@@ -24,10 +24,6 @@ public class UI_Shop : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    private void Update()
-    {
-    }
-
     private void Start()
     {
         CreateItemButton(itemDatabase.GetItem(0), 0);

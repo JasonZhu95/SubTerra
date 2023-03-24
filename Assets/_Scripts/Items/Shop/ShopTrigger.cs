@@ -14,6 +14,8 @@ public class ShopTrigger : MonoBehaviour, IInteractable
     private GameObject player;
     private PlayerInputHandler inputHandler;
     private IBuyItem customer;
+    [SerializeField]
+    private GameObject shopConfirmMenu;
 
     [SerializeField]
     private UI_Shop shopUI;
@@ -34,11 +36,12 @@ public class ShopTrigger : MonoBehaviour, IInteractable
             visualCue.SetActive(true);
             if (inputHandler.InteractShopPressed && !shopUI.isActiveAndEnabled)
             {
-                    shopUI.Show(customer);
-                    inputHandler.SwitchToActionMap("UI");
+                shopUI.Show(customer);
+                inputHandler.SwitchToActionMap("UI");
             }
-            else if(inputHandler.InteractShopPressed && shopUI.isActiveAndEnabled)
+            else if(inputHandler.BackActionUIInput && shopUI.isActiveAndEnabled && !shopConfirmMenu.activeSelf)
             {
+                inputHandler.BackActionUIInput = false;
                 shopUI.Hide();
                 inputHandler.SwitchToActionMap("Gameplay");
             }

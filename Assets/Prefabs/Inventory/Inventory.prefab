@@ -965,7 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1023,10 +1023,9 @@ MonoBehaviour:
   contentPanel: {fileID: 4393828869049877471}
   itemDescription: {fileID: 3454498120376958648}
   mouseFollower: {fileID: 0}
-  image: {fileID: 255617269, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
-  quantity: 1
-  title: Sword
-  description: Its a sword...
+  inventoryDescription: {fileID: 3454498120376958648}
+  actionPanel: {fileID: 0}
+  weaponIconUI: {fileID: 0}
 --- !u!1 &4393828869600271413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +1343,7 @@ MonoBehaviour:
   m_MinHeight: -1
   m_PreferredWidth: -1
   m_PreferredHeight: -1
-  m_FlexibleWidth: 100
+  m_FlexibleWidth: 1000
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
 --- !u!1 &4393828870183651961

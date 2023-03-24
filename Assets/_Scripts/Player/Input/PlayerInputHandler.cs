@@ -243,6 +243,14 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnBackActionUIInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            BackActionUIInput = !BackActionUIInput;
+        }
+    }
+
     public void OnMenuNavigationInput(InputAction.CallbackContext context)
     {
         RawMenuNavigationInput = context.ReadValue<Vector2>();

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Project.Inventory.UI
         [SerializeField] private MouseFollower mouseFollower;
         [SerializeField] private UIInventoryDescription inventoryDescription;
         [SerializeField] private ItemActionPanel actionPanel;
+        [SerializeField] private GameObject weaponIconUI;
 
         private List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
@@ -28,7 +30,7 @@ namespace Project.Inventory.UI
 
         private void Awake()
         {
-            Hide();
+            Hide(true);
             mouseFollower.Toggle(false);
             itemDescription.ResetDescription();
         }
@@ -133,6 +135,7 @@ namespace Project.Inventory.UI
 
         public void Show()
         {
+            weaponIconUI.SetActive(true);
             gameObject.SetActive(true);
             ResetSelection();
             SelectFirstItem();
@@ -173,8 +176,12 @@ namespace Project.Inventory.UI
             actionPanel.Toggle(false);
         }
 
-        public void Hide()
+        public void Hide(bool awake = false)
         {
+            if (!awake)
+            {
+                weaponIconUI.SetActive(false);
+            }
             actionPanel.Toggle(false);
             gameObject.SetActive(false);
             ResetDraggedItem();

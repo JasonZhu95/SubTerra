@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project.Inventory.Data;
 using System;
+using Project.Weapons;
 
 [System.Serializable]
 public class GameData
@@ -19,6 +19,8 @@ public class GameData
     public bool disableWallClimb;
     public bool disableWallGrab;
     public bool disableWallSlide;
+    public int[] equippedItemsID;
+
     public SerializableDictionary<string, bool> itemsCollected;
     public SerializableDictionary<string, bool> abilityCollected;
     public SerializableDictionary<string, bool> doorState;
@@ -48,6 +50,7 @@ public class GameData
         itemsCollected = new SerializableDictionary<string, bool>();
         abilityCollected = new SerializableDictionary<string, bool>();
         doorState = new SerializableDictionary<string, bool>();
+        equippedItemsID = new int[2] { -1, -1 };
     }
 
     public string FormatPlayTime()

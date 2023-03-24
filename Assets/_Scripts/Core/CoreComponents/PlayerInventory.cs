@@ -13,6 +13,9 @@ public class PlayerInventory : CoreComponent, IDataPersistence
 
     private Interaction Interaction => interaction ? interaction : core.GetCoreComponent(ref interaction);
 
+    [SerializeField]
+    private ItemDatabase database;
+
     [SerializeField] private WeaponChangedEventChannel InventoryChangeChannel;
     [SerializeField] private WeaponPickupEventChannel WeaponPickupChannel;
 
@@ -83,10 +86,17 @@ public class PlayerInventory : CoreComponent, IDataPersistence
     public void LoadData(GameData data)
     {
         CoinsHeld = data.coinCount;
+        if (data.equippedItemsID[0] != -1 && data.equippedItemsID[1] != -1)
+        { 
+            weapons[0] = database.GetItem(data.equippedItemsID[0]) as WeaponDataSO;
+            weapons[1] = database.GetItem(data.equippedItemsID[1]) as WeaponDataSO;
+        }
     }
 
     public void SaveData(GameData data)
     {
         data.coinCount = CoinsHeld;
+        data.equippedItemsID[0] = weapons[0].ID;
+        data.equippedItemsID[1] = weapons[1].ID;
     }
 }

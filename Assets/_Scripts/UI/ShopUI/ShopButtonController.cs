@@ -6,7 +6,6 @@ public class ShopButtonController : MonoBehaviour
     public int index;
     public int maxIndex;
     private int yInput;
-    private bool mainActionInput;
 
     public int buttonOffsetHeight = 70;
 
@@ -16,6 +15,8 @@ public class ShopButtonController : MonoBehaviour
     [SerializeField] RectTransform rectTransform;
     private Vector2 startingOffset;
     [SerializeField] private bool confirmMenu;
+    [SerializeField] private GameObject confirmMenuObject;
+    [SerializeField] private GameObject shopVerticalLayoutObject;
 
     void Start()
     {
@@ -28,6 +29,18 @@ public class ShopButtonController : MonoBehaviour
     {
         yInput = inputHandler.NormMenuInputY;
 
+        // Check menu navigation on Back
+        if (confirmMenuObject.activeSelf)
+        {
+            if (inputHandler.BackActionUIInput)
+            {
+                shopVerticalLayoutObject.SetActive(true);
+                confirmMenuObject.SetActive(false);
+                inputHandler.BackActionUIInput = false;
+            }
+        }
+
+        // Check Menu Navigation arrow keys
         if (yInput != 0)
         {
             if (!keyDown)
