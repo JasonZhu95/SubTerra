@@ -235,7 +235,6 @@ namespace Project.MenuUI
         private void DisableMenuButtons()
         {
             newGameButton.interactable = false;
-
         }
 
         public void ActivateMenu()
@@ -255,6 +254,11 @@ namespace Project.MenuUI
             {
                 loadGameButton.interactable = false;
             }
+        }
+
+        public void onExitButton()
+        {
+            Application.Quit();
         }
         #endregion
     }

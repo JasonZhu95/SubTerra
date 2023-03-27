@@ -10,6 +10,11 @@ namespace Project.LevelSetup
         public Animator transition;
         public float transitionTime = 1f;
 
+        public void LoadMainMenu()
+        {
+            StartCoroutine(LoadLevel(0));
+        }
+
         public void LoadNextLevel()
         {
             StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));

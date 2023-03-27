@@ -15,6 +15,7 @@ public class D_Entity : ScriptableObject
 
     public float minAgroDistance = 3f;
     public float maxAgroDistance = 4f;
+    public float circleAgroDistance = 10f;
 
     public float stunResistance = 3f;
     public float stunRecoveryTime = 2f;
