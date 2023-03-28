@@ -58,6 +58,7 @@ public class PauseUI : MonoBehaviour
     {
         anim.SetBool("pause", false);
         InputHandler.PausePressed = false;
+        InputHandler.BlockActionInput = false;
         InputHandler.SwitchToActionMap("Gameplay");
         isPaused = false;
     }
@@ -65,6 +66,7 @@ public class PauseUI : MonoBehaviour
     public void ReturnToMenu()
     {
         DataPersistenceManager.instance.SaveGame();
+        InputHandler.BlockActionInput = false;
         levelLoaderManager.LoadMainMenu();
         InputHandler.SwitchToActionMap("Gameplay");
     }

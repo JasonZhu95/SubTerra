@@ -38,11 +38,13 @@ public class ShopTrigger : MonoBehaviour, IInteractable
             visualCue.SetActive(true);
             if (inputHandler.InteractShopPressed && !shopUI.isActiveAndEnabled)
             {
+                inputHandler.BlockActionInput = true;
                 shopUI.Show(customer);
                 inputHandler.SwitchToActionMap("UI");
             }
             else if(inputHandler.BackActionUIInput && shopUI.isActiveAndEnabled && !shopConfirmMenu.activeSelf)
             {
+                inputHandler.BlockActionInput = false;
                 inputHandler.BackActionUIInput = false;
                 shopUI.Hide();
                 inputHandler.SwitchToActionMap("Gameplay");

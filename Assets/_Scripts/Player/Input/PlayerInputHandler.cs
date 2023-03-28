@@ -32,6 +32,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool[] AttackInputsHold { get; private set; }
 
     // UI Actions
+    public bool BlockActionInput { get; set; } = false;
     public bool MainActionUIInput { get; set; }
     public bool BackActionUIInput { get; set; }
     public Vector2 RawMenuNavigationInput { get; private set; }
@@ -207,8 +208,8 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             OnInteract?.Invoke(true);
-            InteractPressed = true;
             InteractShopPressed = true;
+            InteractPressed = true;
         }
 
         if (context.canceled)
@@ -221,16 +222,18 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnPauseInput(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !BlockActionInput)
         {
+            BlockActionInput = true;
             PausePressed = !PausePressed;
         }
     }
 
     public void OnInventoryInput(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !BlockActionInput)
         {
+            BlockActionInput = true;
             InventoryPressed = !InventoryPressed;
         }
     }

@@ -88,6 +88,7 @@ namespace Project.UI
         #region Dialogue Functions
         public void EnterDialogueMode(TextAsset inkJSON)
         {
+            inputHandler.BlockActionInput = true;
             currentStory = new Story(inkJSON.text);
             DialogueIsPlaying = true;
             dialoguePanel.SetActive(true);
@@ -102,6 +103,7 @@ namespace Project.UI
 
         private void ExitDialogueMode()
         {
+            inputHandler.BlockActionInput = false;
             DialogueIsPlaying = false;
             dialoguePanel.SetActive(false);
             dialogueText.text = "";

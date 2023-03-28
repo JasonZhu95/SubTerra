@@ -69,6 +69,7 @@ namespace Project.Inventory
             }
             else if (!InputHandler.InventoryPressed && inventoryUI.isActiveAndEnabled == true)
             {
+                InputHandler.BlockActionInput = false;
                 inventoryUI.Hide();
                 InputHandler.SwitchToActionMap("Gameplay");
             }
@@ -80,6 +81,7 @@ namespace Project.Inventory
                 {
                     inventoryUI.Hide();
                     InputHandler.SwitchToActionMap("Gameplay");
+                    InputHandler.BlockActionInput = false;
                     InputHandler.BackActionUIInput = false;
                     InputHandler.InventoryPressed = false;
                 }
