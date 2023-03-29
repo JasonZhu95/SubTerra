@@ -5,7 +5,7 @@ public class Menu : MonoBehaviour
 {
     [Header("First Selected Button")]
 
-    [SerializeField] private Button firstSelected;
+    [SerializeField] protected Button firstSelected;
 
     protected virtual void OnEnable()
     {

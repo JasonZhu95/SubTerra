@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Project.LevelSetup;
+using UnityEngine.EventSystems;
 
 namespace Project.MenuUI
 {
@@ -56,14 +57,21 @@ namespace Project.MenuUI
         public TMP_Dropdown resolutionDropdown;
         private Resolution[] resolutions;
 
-        private LevelLoaderManager levelLoaderManager;
+        private Animator mainMenuAnim;
         #endregion
 
         #region Unity Callback Functions
 
         private void Awake()
         {
-            levelLoaderManager = GameObject.Find("LevelLoader").GetComponent<LevelLoaderManager>();
+            mainMenuAnim = GetComponent<Animator>();
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+
+            mainMenuAnim.SetBool("start", true);
         }
         private void Start()
         {
@@ -96,14 +104,14 @@ namespace Project.MenuUI
         // Creates a new game - initialize save data
         public void OnNewGameClicked()
         {
+            mainMenuAnim.SetBool("start", false);
             saveSlotsMenu.ActivateMenu(false);
-            this.DeactivateMenu();
         }
 
         public void OnLoadGameClicked()
         {
+            mainMenuAnim.SetBool("start", false);
             saveSlotsMenu.ActivateMenu(true);
-            this.DeactivateMenu();
         }
         #endregion
 
@@ -240,6 +248,7 @@ namespace Project.MenuUI
         public void ActivateMenu()
         {
             this.gameObject.SetActive(true);
+            mainMenuAnim.SetBool("start", true);
             DisableButtonsDependingOnProfileData();
         }
 

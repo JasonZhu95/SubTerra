@@ -22,11 +22,13 @@ public class SaveSlotsMenu : Menu
     private SaveSlot[] saveSlots;
 
     private bool isLoadingGame = false;
+    private Animator saveSlotsAnim;
 
     private void Awake()
     {
         saveSlots = GetComponentsInChildren<SaveSlot>();
         levelLoaderManager = GameObject.Find("LevelLoader").GetComponent<LevelLoaderManager>();
+        saveSlotsAnim = GetComponent<Animator>();
     }
 
     public void OnSaveSlotClicked(SaveSlot saveSlot)
@@ -77,8 +79,7 @@ public class SaveSlotsMenu : Menu
 
     public void OnBackClicked()
     {
-        mainMenu.ActivateMenu();
-        DeactivateMenu();
+        saveSlotsAnim.SetBool("start", false);
     }
 
     public void OnClearClicked(SaveSlot saveSlot)
@@ -133,10 +134,12 @@ public class SaveSlotsMenu : Menu
         }
         Button firstSelectedButton = firstSelected.GetComponent<Button>();
         SetFirstSelected(firstSelectedButton);
+        saveSlotsAnim.SetBool("start", true);
     }
 
     public void DeactivateMenu()
     {
+        mainMenu.ActivateMenu();
         gameObject.SetActive(false);
     }
 
