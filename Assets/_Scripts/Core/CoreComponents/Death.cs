@@ -100,6 +100,7 @@ public class Death : CoreComponent
     private void OnDisable()
     {
         Stats.Health.OnCurrentValueZero -= Die;
+        subscribedToEvent = false;
     }
 
     private void InstantiateCoins()
