@@ -62,7 +62,7 @@ public class PlayerInputHandler : MonoBehaviour
         GameStateEventChannel.OnAfterStateChange += HandleGameStateChange;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         GameStateEventChannel.OnAfterStateChange -= HandleGameStateChange;
     }

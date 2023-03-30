@@ -61,7 +61,7 @@ public class Enemy1 : Entity
         ParryComponent.OnParried += () => stateMachine.ChangeState(stunState);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         Stats.Poise.OnCurrentValueZero -= () => stateMachine.ChangeState(stunState);
         ParryComponent.OnParried -= () => stateMachine.ChangeState(stunState);

@@ -41,7 +41,12 @@ public class DamageComponent : CoreComponent, IDamageable
         sr = player.GetComponent<SpriteRenderer>();
         color = sr.material.color;
         enemyCollision = player.transform.GetChild(0).GetChild(7).gameObject;
+    }
 
+    private void OnEnable()
+    {
+        player.layer = LayerMask.NameToLayer("Player");
+        enemyCollision.layer = LayerMask.NameToLayer("Default");
     }
 
     public void Damage(DamageData data)
