@@ -69,6 +69,12 @@ public class Enemy2 : Entity
         ParryComponent.OnParried += () => stateMachine.ChangeState(stunState);
     }
 
+    private void OnDisable()
+    {
+        Stats.Poise.OnCurrentValueZero -= () => stateMachine.ChangeState(stunState);
+        ParryComponent.OnParried -= () => stateMachine.ChangeState(stunState);
+    }
+
     public override void OnDrawGizmos()
     {
         base.OnDrawGizmos();

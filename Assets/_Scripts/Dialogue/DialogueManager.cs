@@ -18,10 +18,11 @@ namespace Project.UI
         [SerializeField] private TextMeshProUGUI displayNameText;
         [SerializeField] private Animator portraitAnimator;
 
-        [SerializeField] private GameStateEventChannel GameStateEventChannel;
 
         [Header("Choices UI")]
         [SerializeField] private GameObject[] choices;
+        [SerializeField] private GameStateEventChannel GameStateEventChannel;
+        [SerializeField] private Animator dialogueAnim;
         #endregion
 
         #region Local Variables
@@ -86,12 +87,15 @@ namespace Project.UI
         #endregion
 
         #region Dialogue Functions
+
+        // Main function to handle opening and initializing the dialogue menu
         public void EnterDialogueMode(TextAsset inkJSON)
         {
             inputHandler.BlockActionInput = true;
             currentStory = new Story(inkJSON.text);
             DialogueIsPlaying = true;
             dialoguePanel.SetActive(true);
+            dialogueAnim.SetBool("start", true);
             inputHandler.SwitchToActionMap("UI");
 
             displayNameText.text = "???";
@@ -101,7 +105,8 @@ namespace Project.UI
             ContinueStory();
         }
 
-        private void ExitDialogueMode()
+        // Exit the dialogue menu
+        public void ExitDialogueMode()
         {
             inputHandler.BlockActionInput = false;
             DialogueIsPlaying = false;
@@ -110,6 +115,7 @@ namespace Project.UI
             inputHandler.SwitchToActionMap("Gameplay");
         }
 
+        // Check if there are more dialogue to be displayed
         private void ContinueStory()
         {
             if (currentStory.canContinue)
@@ -120,10 +126,11 @@ namespace Project.UI
             }
             else
             {
-                ExitDialogueMode();
+                dialogueAnim.SetBool("start", false);
             }
         }
 
+        // From the inky text file, determine status of the speaker by parsing the text data
         private void HandleTags(List<string> currentTags)
         {
             foreach (string tag in currentTags)
@@ -154,6 +161,7 @@ namespace Project.UI
             }
         }
 
+        // Display choices to the player
         private void DisplayChoices()
         {
             List<Choice> currentChoices = currentStory.currentChoices;
@@ -179,6 +187,7 @@ namespace Project.UI
             StartCoroutine(SelectFirstChoice());
         }
 
+        // Set the first selected game choice
         private IEnumerator SelectFirstChoice()
         {
             EventSystem.current.SetSelectedGameObject(null);

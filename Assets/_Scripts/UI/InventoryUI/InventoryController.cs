@@ -39,6 +39,11 @@ namespace Project.Inventory
             itemsWithNoActions.Add(database.GetItem(2).ItemImage);
         }
 
+        private void OnDisable()
+        {
+            inventoryData.OnInventoryUpdated -= UpdateInventoryUI;
+        }
+
         private void Start()
         {
             PrepareUI();

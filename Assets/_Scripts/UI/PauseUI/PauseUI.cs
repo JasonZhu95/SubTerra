@@ -23,6 +23,7 @@ public class PauseUI : MonoBehaviour
     private Animator anim;
     private Animator animConfirmation;
     private LevelLoaderManager levelLoaderManager;
+    private DataPersistenceManager dataPersistenceManager;
 
     private bool isPaused;
 
@@ -40,6 +41,7 @@ public class PauseUI : MonoBehaviour
         levelLoaderManager = GameObject.Find("LevelLoader").GetComponent<LevelLoaderManager>();
         pauseMenuImage = pauseMenu.GetComponent<Image>();
         newColor = pauseMenuImage.color;
+        dataPersistenceManager = GameObject.Find("DataPersistenceManager").GetComponent<DataPersistenceManager>();
     }
 
     private void Update()
@@ -96,10 +98,10 @@ public class PauseUI : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        DataPersistenceManager.instance.SaveGame();
         InputHandler.BlockActionInput = false;
-        levelLoaderManager.LoadMainMenu();
         InputHandler.SwitchToActionMap("Gameplay");
+        dataPersistenceManager.SaveGame();
+        levelLoaderManager.LoadMainMenu();
     }
 
     public void QuitGame()

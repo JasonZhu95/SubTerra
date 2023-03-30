@@ -62,6 +62,11 @@ public class PlayerInputHandler : MonoBehaviour
         GameStateEventChannel.OnAfterStateChange += HandleGameStateChange;
     }
 
+    private void OnDisable()
+    {
+        GameStateEventChannel.OnAfterStateChange -= HandleGameStateChange;
+    }
+
     private void Start()
     {
         int count = Enum.GetValues(typeof(CombatInputs)).Length;

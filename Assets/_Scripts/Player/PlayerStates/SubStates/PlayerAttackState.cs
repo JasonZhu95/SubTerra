@@ -39,6 +39,8 @@ public class PlayerAttackState : PlayerAbilityState
         weapon.AnimEventHandler.OnEnableInterrupt += SetCanInterrupt;
     }
 
+
+
     public override void Enter()
     {
         base.Enter();

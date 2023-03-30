@@ -90,6 +90,10 @@ namespace Project.Weapons
             AnimEventHandler.OnFinish += OnExit;
         }
 
+        private void OnDisable()
+        {
+        }
+
         public void Init(Core core)
         {
             Core = core;

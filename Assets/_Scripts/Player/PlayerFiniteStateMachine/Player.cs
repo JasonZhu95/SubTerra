@@ -117,6 +117,12 @@ public class Player : MonoBehaviour, IDataPersistence
         StateMachine.Initialize(IdleState);
     }
 
+    private void OnDisable()
+    {
+        inventoryChannel.OnEvent -= PrimaryAttackState.HandleWeaponChange;
+        inventoryChannel.OnEvent -= SecondaryAttackState.HandleWeaponChange;
+    }
+
     private void Update()
     {
         Core.LogicUpdate();
