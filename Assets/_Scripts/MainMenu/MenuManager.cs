@@ -14,6 +14,7 @@ namespace Project.MenuUI
         #region Variables
         [Header("Menu Navigation")]
         [SerializeField] private SaveSlotsMenu saveSlotsMenu;
+        [SerializeField] private GameObject optionsMenu;
 
         [Header("Menu Buttons")]
         [SerializeField] private Button newGameButton;
@@ -48,9 +49,6 @@ namespace Project.MenuUI
 
         [Header("Confirmation")]
         [SerializeField] private GameObject confirmationPrompt;
-
-        [Header("Level To Load")]
-        [SerializeField] private GameObject noSavedGameDialogue;
         //private string levelToLoad;
 
         [Header("Resolution Dropdowns")]
@@ -58,6 +56,7 @@ namespace Project.MenuUI
         private Resolution[] resolutions;
 
         private Animator mainMenuAnim;
+        private bool isOptionsMenuPressed = false;
         #endregion
 
         #region Unity Callback Functions
@@ -72,6 +71,7 @@ namespace Project.MenuUI
             base.OnEnable();
 
             mainMenuAnim.SetBool("start", true);
+            isOptionsMenuPressed = false;
         }
         private void Start()
         {
@@ -248,13 +248,23 @@ namespace Project.MenuUI
         public void ActivateMenu()
         {
             this.gameObject.SetActive(true);
-            mainMenuAnim.SetBool("start", true);
             DisableButtonsDependingOnProfileData();
         }
 
         public void DeactivateMenu()
         {
-            this.gameObject.SetActive(false);
+            if (isOptionsMenuPressed)
+            {
+                optionsMenu.SetActive(true);
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    transform.GetChild(i).gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+            }
         }
 
         private void DisableButtonsDependingOnProfileData()
@@ -263,6 +273,12 @@ namespace Project.MenuUI
             {
                 loadGameButton.interactable = false;
             }
+        }
+
+        public void OnOptionsMenuButton()
+        {
+            isOptionsMenuPressed = true;
+            mainMenuAnim.SetBool("start", false);
         }
 
         public void onExitButton()
