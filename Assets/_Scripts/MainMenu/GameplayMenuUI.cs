@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameplayMenuUI : MonoBehaviour
 {
     private Animator gameplayMenuAnim;
 
-    [SerializeField]
-    private GameObject optionsMenu;
+    [SerializeField] private GameObject firstSelected;
+    [SerializeField] private GameObject optionsMenu;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class GameplayMenuUI : MonoBehaviour
 
     private void OnEnable()
     {
+        EventSystem.current.SetSelectedGameObject(firstSelected);
         gameplayMenuAnim.SetBool("start", true);
     }
 

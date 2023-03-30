@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SoundMenuUI : MonoBehaviour
 {
     private Animator soundMenuAnim;
-
-    [SerializeField]
-    private GameObject optionsMenu;
+    [SerializeField] private GameObject firstSelected;
+    [SerializeField] private GameObject optionsMenu;
 
     private void Awake()
     {
@@ -16,6 +16,7 @@ public class SoundMenuUI : MonoBehaviour
 
     private void OnEnable()
     {
+        EventSystem.current.SetSelectedGameObject(firstSelected);
         soundMenuAnim.SetBool("start", true);
     }
 
