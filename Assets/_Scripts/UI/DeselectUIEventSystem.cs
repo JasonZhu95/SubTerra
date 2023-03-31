@@ -17,11 +17,6 @@ namespace Project.UI
             triggerDisableSelectedChannel.OnEvent += DisableSelectedUI;
         }
 
-        private void OnDisable()
-        {
-            triggerDisableSelectedChannel.OnEvent -= DisableSelectedUI;
-        }
-
         private void DisableSelectedUI(object sender, EventArgs arg)
         {
             eventSystem.SetSelectedGameObject(null);

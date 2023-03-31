@@ -45,7 +45,7 @@ public class GameData
 
         // TODO: Set manually to first checkpoint position. Change later
         checkPointPosition = new Vector3(-5.18f, -6.0f, 0);
-        inventoryItems = new List<InventoryItem>(new InventoryItem[18]);
+        inventoryItems = new List<InventoryItem>(new InventoryItem[24]);
 
         itemsCollected = new SerializableDictionary<string, bool>();
         abilityCollected = new SerializableDictionary<string, bool>();

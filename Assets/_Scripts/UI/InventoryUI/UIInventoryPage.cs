@@ -14,6 +14,7 @@ namespace Project.Inventory.UI
         [SerializeField] private UIInventoryDescription inventoryDescription;
         [SerializeField] private ItemActionPanel actionPanel;
         [SerializeField] private GameObject weaponIconUI;
+        [SerializeField]private Animator inventoryMenu;
 
         private List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
@@ -27,12 +28,12 @@ namespace Project.Inventory.UI
 
         public int currentlySelectedIndex { get; set; }
 
-
         private void Awake()
         {
             Hide(true);
             mouseFollower.Toggle(false);
             itemDescription.ResetDescription();
+            gameObject.SetActive(false);
         }
 
         public void InitializeInventoryUI(int inventorysize)
@@ -137,6 +138,7 @@ namespace Project.Inventory.UI
         {
             weaponIconUI.SetActive(true);
             gameObject.SetActive(true);
+            inventoryMenu.SetBool("start", true);
             ResetSelection();
             SelectFirstItem();
         }
@@ -182,9 +184,15 @@ namespace Project.Inventory.UI
             {
                 weaponIconUI.SetActive(false);
             }
+            inventoryMenu.SetBool("start", false);
             actionPanel.Toggle(false);
-            gameObject.SetActive(false);
             ResetDraggedItem();
+        }
+
+        public void DisableInventoryMenu()
+        {
+            weaponIconUI.SetActive(false);
+            gameObject.SetActive(false);
         }
 
         public void SelectFirstItem()

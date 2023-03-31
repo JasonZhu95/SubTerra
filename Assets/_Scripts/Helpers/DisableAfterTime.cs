@@ -11,7 +11,7 @@ public class DisableAfterTime : MonoBehaviour
 
     private IEnumerator DisableAfterTimeOnAwake()
     {
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.0005f);
 
         gameObject.SetActive(false);
     }

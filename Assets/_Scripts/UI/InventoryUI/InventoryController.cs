@@ -106,7 +106,7 @@ namespace Project.Inventory
                     {
                         if ((inventoryUI.currentlySelectedIndex - 6) < 0)
                         {
-                            inventoryUI.SelectItemIndex((inventoryUI.currentlySelectedIndex - 6) + 18);
+                            inventoryUI.SelectItemIndex((inventoryUI.currentlySelectedIndex - 6) + 24);
                         }
                         else
                         {
@@ -115,9 +115,9 @@ namespace Project.Inventory
                     }
                     if (menuYInput == -1)
                     {
-                        if ((inventoryUI.currentlySelectedIndex + 6) >= 18)
+                        if ((inventoryUI.currentlySelectedIndex + 6) >= 24)
                         {
-                            inventoryUI.SelectItemIndex((inventoryUI.currentlySelectedIndex + 6) % 18);
+                            inventoryUI.SelectItemIndex((inventoryUI.currentlySelectedIndex + 6) % 24);
                         }
                         else
                         {
@@ -130,7 +130,7 @@ namespace Project.Inventory
                     lastTime = Time.unscaledTime;
                     if (menuXInput == 1)
                     {
-                        if (inventoryUI.currentlySelectedIndex == 17)
+                        if (inventoryUI.currentlySelectedIndex == 23)
                         {
                             inventoryUI.SelectItemIndex(0);
                         }
@@ -143,7 +143,7 @@ namespace Project.Inventory
                     {
                         if (inventoryUI.currentlySelectedIndex == 0)
                         {
-                            inventoryUI.SelectItemIndex(17);
+                            inventoryUI.SelectItemIndex(23);
                         }
                         else
                         {
@@ -310,6 +310,7 @@ namespace Project.Inventory
                     inventoryUI.ResetSelection();
                 }
             }
+            inventoryUI.SelectItemIndex(itemIndex);
         }
 
         // If Item is dragged create an instance of the selected object attached to cursor
@@ -361,7 +362,7 @@ namespace Project.Inventory
         // Load Inventory Data
         public void LoadData(GameData data)
         {
-            for (int i = 0; i < 18; i++)
+            for (int i = 0; i < 24; i++)
             {
                 itemsToAdd.Add(InventoryItem.GetEmptyItem());
             }
