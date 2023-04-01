@@ -10,6 +10,8 @@ public class ShopConfirmButton : MonoBehaviour
     public Animator animator;
     public int thisIndex;
     [SerializeField] private ShopButtonController shopMenuButtonController;
+    [SerializeField] private Animator shopConfirmMenuAnim;
+    [SerializeField] private Animator shopConfirmMenuReturnAnim;
 
     public ItemSO ItemData { get; set; }
     [SerializeField]
@@ -19,10 +21,19 @@ public class ShopConfirmButton : MonoBehaviour
 
     private PlayerInputHandler inputHandler;
 
-
     private void Awake()
     {
         inputHandler = GameObject.FindWithTag("Player").GetComponent<PlayerInputHandler>();
+    }
+
+    private void OnEnable()
+    {
+        uiShop.gameObject.SetActive(false);
+        shopConfirmMenuAnim.SetBool("start", true);
+    }
+
+    private void OnDisable()
+    {
     }
 
     private void Update()
@@ -35,18 +46,12 @@ public class ShopConfirmButton : MonoBehaviour
                 animator.SetBool("pressed", true);
                 if (thisIndex == 0)
                 {
-                    // TODO: Buy the item
-                    inputHandler.MainActionUIInput = false;
                     uiShop.OnItemTemplateClick(ItemData);
-                    shopConfirmMenu.SetActive(false);
-                    shopMenuButtonController.gameObject.SetActive(true);
+                    Hide();
                 }
                 else if (thisIndex == 1)
                 {
-                    // TODO: Do not buy the item
-                    inputHandler.MainActionUIInput = false;
-                    shopConfirmMenu.SetActive(false);
-                    shopMenuButtonController.gameObject.SetActive(true);
+                    Hide();
                 }
             }
             else if (animator.GetBool("pressed"))
@@ -58,5 +63,20 @@ public class ShopConfirmButton : MonoBehaviour
         {
             animator.SetBool("selected", false);
         }
+    }
+
+    private void Hide()
+    {
+        inputHandler.MainActionUIInput = false;
+        shopConfirmMenuAnim.SetBool("start", false);
+    }
+
+    public void DeactivateShopConfirmMenu()
+    {
+        shopConfirmMenu.SetActive(false);
+        uiShop.transform.localScale = new Vector3(0, 0, 0);
+        uiShop.gameObject.SetActive(true);
+        shopConfirmMenuReturnAnim.SetBool("start", true);
+        shopMenuButtonController.shopVerticalLayoutObject.SetActive(true);
     }
 }

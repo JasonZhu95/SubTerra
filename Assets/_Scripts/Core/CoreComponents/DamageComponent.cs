@@ -34,12 +34,15 @@ public class DamageComponent : CoreComponent, IDamageable
 
     [SerializeField] private float invincibilityDuration = 1.5f;
 
+    private GameObject playerCombatComponent;
+
     protected override void Awake()
     {
         base.Awake();
         player = GameObject.Find("Player");
         sr = player.GetComponent<SpriteRenderer>();
         color = sr.material.color;
+        playerCombatComponent = player.transform.GetChild(0).GetChild(2).gameObject;
         enemyCollision = player.transform.GetChild(0).GetChild(7).gameObject;
     }
 
@@ -71,6 +74,7 @@ public class DamageComponent : CoreComponent, IDamageable
     {
         player.layer = LayerMask.NameToLayer("PlayerInvincible");
         enemyCollision.layer = LayerMask.NameToLayer("PlayerInvincible");
+        playerCombatComponent.layer = LayerMask.NameToLayer("PlayerInvincible");
 
         for (int i = 0; i < 5; i++)
         {
@@ -87,9 +91,9 @@ public class DamageComponent : CoreComponent, IDamageable
             secondarySR.material.color = color;
             yield return new WaitForSeconds(invincibilityDuration / 10);
         }
-
         player.layer = LayerMask.NameToLayer("Player");
         enemyCollision.layer = LayerMask.NameToLayer("Default");
+        playerCombatComponent.layer = LayerMask.NameToLayer("PlayerDamageable");
         color.a = 1f;
         sr.material.color = color;
         primarySR.material.color = color;

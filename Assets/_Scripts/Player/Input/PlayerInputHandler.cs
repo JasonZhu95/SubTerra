@@ -210,7 +210,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !BlockActionInput)
         {
             OnInteract?.Invoke(true);
             InteractShopPressed = true;

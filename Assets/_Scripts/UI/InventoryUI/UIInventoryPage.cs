@@ -30,10 +30,13 @@ namespace Project.Inventory.UI
 
         private void Awake()
         {
-            Hide(true);
+
+        }
+        private void Start()
+        {
+            DisableInventoryMenu();
             mouseFollower.Toggle(false);
             itemDescription.ResetDescription();
-            gameObject.SetActive(false);
         }
 
         public void InitializeInventoryUI(int inventorysize)
@@ -136,8 +139,8 @@ namespace Project.Inventory.UI
 
         public void Show()
         {
-            weaponIconUI.SetActive(true);
             gameObject.SetActive(true);
+            weaponIconUI.SetActive(true);
             inventoryMenu.SetBool("start", true);
             ResetSelection();
             SelectFirstItem();
@@ -180,10 +183,6 @@ namespace Project.Inventory.UI
 
         public void Hide(bool awake = false)
         {
-            if (!awake)
-            {
-                weaponIconUI.SetActive(false);
-            }
             inventoryMenu.SetBool("start", false);
             actionPanel.Toggle(false);
             ResetDraggedItem();

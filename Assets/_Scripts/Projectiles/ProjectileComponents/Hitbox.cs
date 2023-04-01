@@ -32,7 +32,6 @@ namespace Project.Projectiles
         private void FixedUpdate()
         {
             var dist = Data.CompensateForVelocity ? rb.velocity.magnitude * Time.deltaTime : 0;
-
             hits = Physics2D.BoxCastAll(
                 transform.position + (Vector3)Data.Hitbox.center,
                 Data.Hitbox.size,

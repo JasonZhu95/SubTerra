@@ -55,7 +55,6 @@ namespace Project.Inventory
         {
             menuXInput = InputHandler.NormMenuInputX;
             menuYInput = InputHandler.NormMenuInputY;
-
             // Check if Player Opens the inventory
             if (InputHandler.InventoryPressed)
             {

@@ -78,9 +78,9 @@ namespace Project.UI
                 return;
             }
 
-            if (inputHandler.InteractPressed)
+            if (inputHandler.MainActionUIInput)
             {
-                inputHandler.InteractPressed = false;
+                inputHandler.MainActionUIInput = false;
                 ContinueStory();
             }
         }

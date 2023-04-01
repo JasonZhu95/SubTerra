@@ -16,7 +16,7 @@ public class ShopButtonController : MonoBehaviour
     private Vector2 startingOffset;
     [SerializeField] private bool confirmMenu;
     [SerializeField] private GameObject confirmMenuObject;
-    [SerializeField] private GameObject shopVerticalLayoutObject;
+    [SerializeField] public GameObject shopVerticalLayoutObject;
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class ShopButtonController : MonoBehaviour
             if (inputHandler.BackActionUIInput)
             {
                 shopVerticalLayoutObject.SetActive(true);
-                confirmMenuObject.SetActive(false);
+                confirmMenuObject.GetComponent<Animator>().SetBool("start", false);
                 inputHandler.BackActionUIInput = false;
             }
         }

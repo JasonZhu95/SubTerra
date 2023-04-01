@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class ShopButton : MonoBehaviour
 {
     [SerializeField] private GameObject shopPanelToOpen;
-    [SerializeField]
-    private TextMeshProUGUI confirmTitleText;
-    [SerializeField]
-    private TextMeshProUGUI confirmCoinText;
-    [SerializeField]
-    private Image confirmItemImage;
+    [SerializeField] private TextMeshProUGUI confirmTitleText;
+    [SerializeField] private TextMeshProUGUI confirmCoinText;
+    [SerializeField] private Image confirmItemImage;
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI descriptionText;
+    [SerializeField] private ShopConfirmButton shopConfirmButton;
+    [SerializeField] private TextMeshProUGUI priceText;
+    [SerializeField] private Animator uiShopAnim;
 
     public ShopButtonController shopButtonController;
     public Animator animator;
@@ -19,18 +21,12 @@ public class ShopButton : MonoBehaviour
 
     private PlayerInputHandler inputHandler;
 
-    [SerializeField]
-    private TextMeshProUGUI titleText;
-    [SerializeField]
-    private TextMeshProUGUI descriptionText;
-    [SerializeField]
-    private ShopConfirmButton shopConfirmButton;
-
     private PlayerInventory playerInventory;
 
     private bool canAfford;
     private Image borderSpriteRenderer;
     private Color disablePurchaseColor;
+    private Color priceTextColor;
 
     public ItemSO ItemData { get; set; }
 
@@ -40,6 +36,7 @@ public class ShopButton : MonoBehaviour
         playerInventory = GameObject.FindWithTag("Player").transform.GetChild(0).GetComponentInChildren<PlayerInventory>();
         borderSpriteRenderer = transform.GetChild(0).GetComponent<Image>();
         disablePurchaseColor = borderSpriteRenderer.color;
+        priceTextColor = priceText.color;
     }
 
     private void Update()
@@ -48,12 +45,16 @@ public class ShopButton : MonoBehaviour
         if (ItemData.ItemCost > playerInventory.CoinsHeld)
         {
             disablePurchaseColor.a = 0.6f;
+            priceTextColor.a = 0.6f;
+            priceText.color = priceTextColor;
             borderSpriteRenderer.color = disablePurchaseColor;
             canAfford = false;
         }
         else
         {
             disablePurchaseColor.a = 1.0f;
+            priceTextColor.a = 1.0f;
+            priceText.color = priceTextColor;
             borderSpriteRenderer.color = disablePurchaseColor;
             canAfford = true;
         }
@@ -82,8 +83,7 @@ public class ShopButton : MonoBehaviour
                     confirmItemImage.sprite = ItemData.ItemImage;
                     shopConfirmButton.ItemData = ItemData;
 
-                    shopButtonController.gameObject.SetActive(false);
-                    shopPanelToOpen.SetActive(true);
+                    uiShopAnim.SetTrigger("return");
                 }
             }
             else if (animator.GetBool("pressed"))
@@ -95,5 +95,11 @@ public class ShopButton : MonoBehaviour
         {
             animator.SetBool("selected", false);
         }
+    }
+
+    public void ActivateConfirmMenu()
+    {
+        shopButtonController.gameObject.SetActive(false);
+        shopPanelToOpen.SetActive(true);
     }
 }

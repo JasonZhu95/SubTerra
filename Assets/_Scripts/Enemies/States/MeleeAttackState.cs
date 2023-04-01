@@ -25,31 +25,34 @@ public class MeleeAttackState : AttackState
 
         foreach (Collider2D collider in detectedObjects)
         {
-            IDamageable damageable = collider.GetComponent<IDamageable>();
-
-            if (damageable != null)
+            if (collider.transform.root.gameObject.layer != LayerMask.NameToLayer("PlayerInvincible"))
             {
-                damageData.SetData(core.Parent, stateData.attackDamage);
-                damageable.Damage(damageData);
-            }
+                IDamageable damageable = collider.GetComponent<IDamageable>();
 
-            IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
+                if (damageable != null)
+                {
+                    damageData.SetData(core.Parent, stateData.attackDamage);
+                    damageable.Damage(damageData);
+                }
 
-            if (knockbackable != null)
-            {
-                var data = new KnockbackData(stateData.knockbackAngle, stateData.knockbackStrength,
-                    Movement.FacingDirection, core.transform.parent.gameObject);
-                knockbackable.Knockback(data);
-            }
+                IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
 
-            IPoiseDamageable poiseDamageable = collider.GetComponent<IPoiseDamageable>();
+                if (knockbackable != null)
+                {
+                    var data = new KnockbackData(stateData.knockbackAngle, stateData.knockbackStrength,
+                        Movement.FacingDirection, core.transform.parent.gameObject);
+                    knockbackable.Knockback(data);
+                }
 
-            if (poiseDamageable != null)
-            {
-                var data = new PoiseDamageData();
-                data.Source = core.transform.parent.gameObject;
-                data.PoiseDamageAmount = stateData.poiseDamage;
-                poiseDamageable.PoiseDamage(data);
+                IPoiseDamageable poiseDamageable = collider.GetComponent<IPoiseDamageable>();
+
+                if (poiseDamageable != null)
+                {
+                    var data = new PoiseDamageData();
+                    data.Source = core.transform.parent.gameObject;
+                    data.PoiseDamageAmount = stateData.poiseDamage;
+                    poiseDamageable.PoiseDamage(data);
+                }
             }
         }
     }

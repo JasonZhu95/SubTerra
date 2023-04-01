@@ -19,6 +19,7 @@ MonoBehaviour:
   groundCheckRadius: 0.3
   minAgroDistance: 7
   maxAgroDistance: 8
+  circleAgroDistance: 10
   stunResistance: 3
   stunRecoveryTime: 2
   closeRangeActionDistance: 1.5
@@ -28,4 +29,4 @@ MonoBehaviour:
     m_Bits: 8
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 49216

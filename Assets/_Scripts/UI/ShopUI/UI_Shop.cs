@@ -12,6 +12,8 @@ public class UI_Shop : MonoBehaviour
     public Transform itemContainer;
     private IBuyItem customer;
     private int maxIndexAmount;
+    [SerializeField]
+    private Animator shopAnimator;
     
     [SerializeField]
     private ItemDatabase itemDatabase;
@@ -73,9 +75,15 @@ public class UI_Shop : MonoBehaviour
     {
         this.customer = customer;
         gameObject.SetActive(true);
+        shopAnimator.SetBool("start", true);
     }
 
     public void Hide()
+    {
+        shopAnimator.SetBool("start", false);
+    }
+
+    public void DeactivateShopMenu()
     {
         gameObject.SetActive(false);
     }
