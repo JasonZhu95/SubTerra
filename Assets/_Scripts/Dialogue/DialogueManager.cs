@@ -108,6 +108,11 @@ namespace Project.UI
         // Exit the dialogue menu
         public void ExitDialogueMode()
         {
+            dialogueAnim.SetBool("start", false);
+        }
+
+        public void ExitDialogueAfterAnimation()
+        {
             inputHandler.BlockActionInput = false;
             DialogueIsPlaying = false;
             dialoguePanel.SetActive(false);
@@ -126,7 +131,7 @@ namespace Project.UI
             }
             else
             {
-                dialogueAnim.SetBool("start", false);
+                ExitDialogueMode();
             }
         }
 

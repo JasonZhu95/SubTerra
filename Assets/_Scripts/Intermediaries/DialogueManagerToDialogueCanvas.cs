@@ -10,6 +10,6 @@ public class DialogueManagerToDialogueCanvas : MonoBehaviour
 
     private void OnAnimationFinished()
     {
-        dialogueManager.ExitDialogueMode();
+        dialogueManager.ExitDialogueAfterAnimation();
     }
 }
