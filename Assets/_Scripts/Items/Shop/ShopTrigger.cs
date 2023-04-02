@@ -40,7 +40,7 @@ public class ShopTrigger : MonoBehaviour, IInteractable
             {
                 inputHandler.BlockActionInput = true;
                 shopUI.Show(customer);
-                inputHandler.SwitchToActionMap("UI");
+                inputHandler.SwitchToActionMap("UINoPause");
             }
             else if(inputHandler.BackActionUIInput && shopUI.isActiveAndEnabled && !shopConfirmMenu.activeSelf)
             {

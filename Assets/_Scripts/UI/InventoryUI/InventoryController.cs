@@ -31,6 +31,7 @@ namespace Project.Inventory
         private int menuXInput;
         private int menuYInput;
         private float lastTime;
+        private bool actionMapSwitchOnlyOnce = false;
 
         private void Awake()
         {
@@ -55,7 +56,13 @@ namespace Project.Inventory
         {
             menuXInput = InputHandler.NormMenuInputX;
             menuYInput = InputHandler.NormMenuInputY;
+
             // Check if Player Opens the inventory
+            if (!inventoryUI.isActiveAndEnabled)
+            {
+                actionMapSwitchOnlyOnce = false;
+            }
+
             if (InputHandler.InventoryPressed)
             {
                 if (inventoryUI.isActiveAndEnabled == false)
@@ -67,15 +74,18 @@ namespace Project.Inventory
                             item.Value.item.ItemImage,
                             item.Value.quantity);
                     }
-                    InputHandler.SwitchToActionMap("UI");
-
+                    InputHandler.SwitchToActionMap("UINoPause");
                 }
             }
             else if (!InputHandler.InventoryPressed && inventoryUI.isActiveAndEnabled == true)
             {
                 InputHandler.BlockActionInput = false;
                 inventoryUI.Hide();
-                InputHandler.SwitchToActionMap("Gameplay");
+                if (!actionMapSwitchOnlyOnce)
+                {
+                    InputHandler.SwitchToActionMap("Gameplay");
+                    actionMapSwitchOnlyOnce = true;
+                }
             }
 
             if (inventoryUI.isActiveAndEnabled && !itemActionPanelObject.isActiveAndEnabled)

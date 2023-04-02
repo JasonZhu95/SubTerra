@@ -86,13 +86,19 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void SwitchToActionMap(String actionMapString)
     {
-        playerInput.SwitchCurrentActionMap(actionMapString);
         if (actionMapString == "UI")
         {
+            playerInput.SwitchCurrentActionMap("UI");
             Time.timeScale = 0f;
+        }
+        if (actionMapString == "UINoPause")
+        {
+            playerInput.SwitchCurrentActionMap("UI");
+            Time.timeScale = 1f;
         }
         if (actionMapString == "Gameplay")
         {
+            playerInput.SwitchCurrentActionMap("Gameplay");
             Time.timeScale = 1f;
         }
     }
@@ -103,6 +109,9 @@ public class PlayerInputHandler : MonoBehaviour
         {
             case GameState.UI:
                 playerInput.SwitchCurrentActionMap("UI");
+                break;
+            case GameState.UINoPause:
+                playerInput.SwitchCurrentActionMap("UINoPause");
                 break;
             case GameState.Gameplay:
                 playerInput.SwitchCurrentActionMap("Gameplay");

@@ -14,6 +14,7 @@ namespace Project.UI
         #region Serialized Variables
         [Header("Dialogue UI")]
         [SerializeField] private GameObject dialoguePanel;
+        [SerializeField] private GameObject portraitFrame;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private TextMeshProUGUI displayNameText;
         [SerializeField] private Animator portraitAnimator;
@@ -61,6 +62,7 @@ namespace Project.UI
         {
             DialogueIsPlaying = false;
             dialoguePanel.SetActive(false);
+            portraitFrame.SetActive(false);
 
             choicesText = new TextMeshProUGUI[choices.Length];
             int index = 0;
@@ -95,8 +97,9 @@ namespace Project.UI
             currentStory = new Story(inkJSON.text);
             DialogueIsPlaying = true;
             dialoguePanel.SetActive(true);
+            portraitFrame.SetActive(true);
             dialogueAnim.SetBool("start", true);
-            inputHandler.SwitchToActionMap("UI");
+            inputHandler.SwitchToActionMap("UINoPause");
 
             displayNameText.text = "???";
             portraitAnimator.Play("PortraitDefault");
@@ -116,6 +119,7 @@ namespace Project.UI
             inputHandler.BlockActionInput = false;
             DialogueIsPlaying = false;
             dialoguePanel.SetActive(false);
+            portraitFrame.SetActive(false);
             dialogueText.text = "";
             inputHandler.SwitchToActionMap("Gameplay");
         }
@@ -207,3 +211,4 @@ namespace Project.UI
         #endregion
     }
 }
+

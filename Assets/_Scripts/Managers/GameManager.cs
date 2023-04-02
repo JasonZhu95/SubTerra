@@ -28,6 +28,9 @@ namespace Project.Managers
                 case GameState.UI:
                     HandleUIState();
                     break;
+                case GameState.UINoPause:
+                    HandleUINoPauseState();
+                    break;
                 case GameState.Gameplay:
                     HandleGameplayState();
                     break;
@@ -48,6 +51,11 @@ namespace Project.Managers
             Time.timeScale = 0f;
         }
 
+        private void HandleUINoPauseState()
+        {
+            Time.timeScale = 1f;
+        }
+
         private void OnDestroy()
         {
             channel.OnSetChangeGameState -= ChangeGameState;
@@ -57,6 +65,7 @@ namespace Project.Managers
     public enum GameState
     {
          UI,
+         UINoPause,
          Gameplay,
     }
 }
