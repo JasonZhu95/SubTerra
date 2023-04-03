@@ -14,6 +14,7 @@ namespace Project.UI
         #region Serialized Variables
         [Header("Dialogue UI")]
         [SerializeField] private GameObject dialoguePanel;
+        [SerializeField] private GameObject continueIcon;
         [SerializeField] private GameObject portraitFrame;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private TextMeshProUGUI displayNameText;
@@ -24,6 +25,10 @@ namespace Project.UI
         [SerializeField] private GameObject[] choices;
         [SerializeField] private GameStateEventChannel GameStateEventChannel;
         [SerializeField] private Animator dialogueAnim;
+
+        [Header("Params")]
+        [SerializeField] private float typingSpeed = 0.04f;
+
         #endregion
 
         #region Local Variables
@@ -37,6 +42,8 @@ namespace Project.UI
         public bool DialogueIsPlaying { get; private set; }
 
         private static DialogueManager instance;
+        private Coroutine displayLineCoroutine;
+        private bool canContinueToNextLine = false;
         #endregion
 
         #region Ink Parsing
@@ -80,7 +87,7 @@ namespace Project.UI
                 return;
             }
 
-            if (inputHandler.MainActionUIInput)
+            if (inputHandler.MainActionUIInput && canContinueToNextLine && currentStory.currentChoices.Count == 0)
             {
                 inputHandler.MainActionUIInput = false;
                 ContinueStory();
@@ -129,7 +136,11 @@ namespace Project.UI
         {
             if (currentStory.canContinue)
             {
-                dialogueText.text = currentStory.Continue();
+                if (displayLineCoroutine != null)
+                {
+                    StopCoroutine(displayLineCoroutine);
+                }
+                displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
                 DisplayChoices();
                 HandleTags(currentStory.currentTags);
             }
@@ -137,6 +148,30 @@ namespace Project.UI
             {
                 ExitDialogueMode();
             }
+        }
+
+        private IEnumerator DisplayLine(string line)
+        {
+            dialogueText.text = line;
+            dialogueText.maxVisibleCharacters = 0;
+            continueIcon.SetActive(false);
+            HideChoices();
+            canContinueToNextLine = false;
+
+            foreach (char letter in line.ToCharArray())
+            {
+                if (inputHandler.MainActionUIInput)
+                {
+                    dialogueText.maxVisibleCharacters = line.Length;
+                    inputHandler.MainActionUIInput = false;
+                    break;
+                }
+                dialogueText.maxVisibleCharacters++;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            continueIcon.SetActive(true);
+            DisplayChoices();
+            canContinueToNextLine = true;
         }
 
         // From the inky text file, determine status of the speaker by parsing the text data
@@ -196,6 +231,15 @@ namespace Project.UI
             StartCoroutine(SelectFirstChoice());
         }
 
+        // Hide Choices from player
+        private void HideChoices()
+        {
+            foreach(GameObject choiceButton in choices)
+            {
+                choiceButton.SetActive(false);
+            }
+        }
+
         // Set the first selected game choice
         private IEnumerator SelectFirstChoice()
         {
@@ -206,7 +250,11 @@ namespace Project.UI
 
         public void MakeChoice(int choiceIndex)
         {
-            currentStory.ChooseChoiceIndex(choiceIndex);
+            if (canContinueToNextLine)
+            {
+                currentStory.ChooseChoiceIndex(choiceIndex);
+                ContinueStory();
+            }
         }
         #endregion
     }

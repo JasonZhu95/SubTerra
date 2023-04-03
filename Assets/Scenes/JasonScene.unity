@@ -7161,6 +7161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 557405214}
+  continueIcon: {fileID: 1208583608}
   portraitFrame: {fileID: 722363081}
   dialogueText: {fileID: 1495426605}
   displayNameText: {fileID: 477733863}
@@ -7171,6 +7172,7 @@ MonoBehaviour:
   - {fileID: 2093296858}
   GameStateEventChannel: {fileID: 11400000, guid: 3d386526366ccf848b8d8276fb964e25, type: 2}
   dialogueAnim: {fileID: 1212161948}
+  typingSpeed: 0.04
 --- !u!1 &693264752
 GameObject:
   m_ObjectHideFlags: 0
