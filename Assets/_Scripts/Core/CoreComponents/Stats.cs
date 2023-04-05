@@ -81,4 +81,6 @@ public class Stat
     public void Increase(float amount) => CurrentValue += amount;
 
     public void Decrease(float amount) => CurrentValue -= amount;
+
+    public void SetHealth(float amount) => CurrentValue = amount;
 }

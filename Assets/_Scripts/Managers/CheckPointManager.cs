@@ -8,6 +8,7 @@ namespace Project.Managers
     public class CheckPointManager : MonoBehaviour, IDataPersistence
     {
         private List<GameObject> checkPointList;
+        private Stats playerStats;
 
         public int LastSetCheckPointIndex { get; private set; }
 
@@ -15,6 +16,7 @@ namespace Project.Managers
         {
             InitializeList();
             SetCheckPoint(gameObject.transform.GetChild(0).gameObject);
+            playerStats = GameObject.FindWithTag("Player").transform.GetChild(0).GetChild(3).GetComponent<Stats>();
         }
 
         private void InitializeList()
@@ -42,6 +44,11 @@ namespace Project.Managers
                     LastSetCheckPointIndex = i;
                 }
             }
+        }
+
+        public void HealOnCheckpointSet()
+        {
+            playerStats.Health.SetHealth(playerStats.Health.MaxValue);
         }
 
         public void LoadData(GameData data)

@@ -39,6 +39,7 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
             if (inputHandler.InteractPressed)
             {
                 checkPointManager.SetCheckPoint(gameObject);
+                checkPointManager.HealOnCheckpointSet();
                 inputHandler.InteractPressed = false;
             }
         }
