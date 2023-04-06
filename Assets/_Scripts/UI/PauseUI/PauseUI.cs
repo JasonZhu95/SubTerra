@@ -48,7 +48,7 @@ public class PauseUI : MonoBehaviour
     {
         if (InputHandler.PausePressed)
         {
-            if (isPaused)
+            if (pauseMenu.activeSelf)
             {
                 ResumeGame();
             }
@@ -65,22 +65,22 @@ public class PauseUI : MonoBehaviour
         InputHandler.SwitchToActionMap("UI");
         InputHandler.PausePressed = false;
         anim.SetBool("pause", true);
-        isPaused = true;
         EventSystem.current.SetSelectedGameObject(firstSelectedButton);
     }
 
     public void ResumeGame()
     {
+        FindObjectOfType<SoundManager>().Play("UIClick");
         anim.SetBool("pause", false);
         anim.SetBool("pauseFromConfirm", false);
         InputHandler.PausePressed = false;
         InputHandler.BlockActionInput = false;
         InputHandler.SwitchToActionMap("Gameplay");
-        isPaused = false;
     }
 
     public void StartConfirmationMenu()
     {
+        FindObjectOfType<SoundManager>().Play("UIClick");
         pauseMenu.SetActive(false);
         confirmationMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(firstSelectedConfirmationButton);
@@ -89,6 +89,7 @@ public class PauseUI : MonoBehaviour
 
     public void CancelConfirmationMenu()
     {
+        FindObjectOfType<SoundManager>().Play("UIClick");
         EventSystem.current.SetSelectedGameObject(firstSelectedButton);
         pauseMenu.SetActive(true);
         anim.SetBool("pauseFromConfirm", true);
@@ -98,6 +99,7 @@ public class PauseUI : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        FindObjectOfType<SoundManager>().Play("UIClick");
         InputHandler.BlockActionInput = false;
         InputHandler.SwitchToActionMap("Gameplay");
         dataPersistenceManager.SaveGame();
@@ -106,6 +108,7 @@ public class PauseUI : MonoBehaviour
 
     public void QuitGame()
     {
+        FindObjectOfType<SoundManager>().Play("UIClick");
         Application.Quit();
     }
 }

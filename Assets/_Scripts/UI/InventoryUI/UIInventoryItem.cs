@@ -71,8 +71,12 @@ namespace Project.Inventory.UI
             empty = false;
         }
 
-        public void Select()
+        public void Select(bool doNotPlayAudio = false)
         {
+            if (!doNotPlayAudio)
+            {
+                FindObjectOfType<SoundManager>().Play("UIHover");
+            }
             borderImage.enabled = true;
         }
 
@@ -80,6 +84,7 @@ namespace Project.Inventory.UI
         {
             if (pointerData.button == PointerEventData.InputButton.Right)
             {
+                FindObjectOfType<SoundManager>().Play("UIClick");
                 OnRightMouseBtnClick?.Invoke(this);
             }
             else

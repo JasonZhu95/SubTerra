@@ -31,24 +31,28 @@ public class OptionsMenuSelect : MonoBehaviour
     public void OnBackButtonClicked()
     {
         optionsMenuAnim.SetBool("start", false);
+        FindObjectOfType<SoundManager>().Play("UIClick");
         lastButtonClicked = ButtonClicked.Back;
     }
 
     public void OnGraphicsButtonClicked()
     {
         optionsMenuAnim.SetBool("start", false);
+        FindObjectOfType<SoundManager>().Play("UIClick");
         lastButtonClicked = ButtonClicked.Graphics;
     }
 
     public void OnSoundButtonClicked()
     {
         optionsMenuAnim.SetBool("start", false);
+        FindObjectOfType<SoundManager>().Play("UIClick");
         lastButtonClicked = ButtonClicked.Sound;
     }
 
     public void OnGameplayButtonClicked()
     {
         optionsMenuAnim.SetBool("start", false);
+        FindObjectOfType<SoundManager>().Play("UIClick");
         lastButtonClicked = ButtonClicked.Gameplay;
     }
 

@@ -74,6 +74,7 @@ public class UI_Shop : MonoBehaviour
     public void Show(IBuyItem customer)
     {
         this.customer = customer;
+        FindObjectOfType<SoundManager>().Play("UIHover");
         gameObject.SetActive(true);
         shopAnimator.SetBool("start", true);
     }

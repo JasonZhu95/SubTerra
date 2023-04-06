@@ -43,6 +43,7 @@ public class ShopConfirmButton : MonoBehaviour
             animator.SetBool("selected", true);
             if (inputHandler.MainActionUIInput)
             {
+                FindObjectOfType<SoundManager>().Play("UIClick");
                 animator.SetBool("pressed", true);
                 if (thisIndex == 0)
                 {

@@ -45,6 +45,7 @@ public class ShopButtonController : MonoBehaviour
         {
             if (!keyDown)
             {
+                FindObjectOfType<SoundManager>().Play("UIHover");
                 if (yInput < 0)
                 {
                     if (index < maxIndex)

@@ -176,6 +176,7 @@ namespace Project.Inventory
                 if (InputHandler.MainActionUIInput)
                 {
                     // Click the button
+                    FindObjectOfType<SoundManager>().Play("UIClick");
                     itemActionPanelObject.transform.GetChild(itemActionPanelObject.CurrentButtonIndex).gameObject.GetComponent<Button>().onClick.Invoke();
                     itemActionPanelObject.CurrentButtonIndex = 0;
                     InputHandler.MainActionUIInput = false;
@@ -313,13 +314,13 @@ namespace Project.Inventory
             if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject, inventoryItem.itemState, equipIndex);
-                audioSource.PlayOneShot(itemAction.actionSFX);
+                FindObjectOfType<SoundManager>().Play("UIClick");
                 if (inventoryData.GetItemAt(itemIndex).IsEmpty)
                 {
                     inventoryUI.ResetSelection();
                 }
             }
-            inventoryUI.SelectItemIndex(itemIndex);
+            inventoryUI.SelectItemIndex(itemIndex, true);
         }
 
         // If Item is dragged create an instance of the selected object attached to cursor

@@ -50,6 +50,7 @@ namespace Project.UI
         private const string SPEAKER_TAG = "speaker";
         private const string PORTRAIT_TAG = "portrait";
         private const string LAYOUT_TAG = "layout";
+        private const string AUDIO_TAG = "audio";
         #endregion
 
         #region Unity Callback Functions
@@ -57,7 +58,7 @@ namespace Project.UI
         {
             if (instance != null)
             {
-                Debug.LogError("More than 1 Dialogue MAnager");
+                Debug.LogError("More than 1 Dialogue Manager");
             }
             instance = this;
             player = GameObject.FindWithTag("Player");
@@ -197,6 +198,9 @@ namespace Project.UI
                         break;
                     case LAYOUT_TAG:
                         layoutAnimator.Play(tagValue);
+                        break;
+                    case AUDIO_TAG:
+                        FindObjectOfType<SoundManager>().Play(tagValue);
                         break;
                     default:
                         Debug.LogWarning("TAG Error Parsing Tag: " + tag);

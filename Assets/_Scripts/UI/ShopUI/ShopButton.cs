@@ -74,6 +74,7 @@ public class ShopButton : MonoBehaviour
             }
             if (inputHandler.MainActionUIInput && canAfford)
             {
+                FindObjectOfType<SoundManager>().Play("UIClick");
                 animator.SetBool("pressed", true);
                 if (shopPanelToOpen != null)
                 {

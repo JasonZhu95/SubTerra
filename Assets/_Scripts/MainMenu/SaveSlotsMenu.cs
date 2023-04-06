@@ -38,6 +38,8 @@ public class SaveSlotsMenu : Menu
         // Loading Game
         if (isLoadingGame)
         {
+            saveSlotsAnim.SetBool("start", false);
+            FindObjectOfType<SoundManager>().Play("UIGameStart");
             DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
             SaveGameAndLoadScene();
         }
@@ -49,6 +51,8 @@ public class SaveSlotsMenu : Menu
                 // Execute function depending on which button is clicked
                 () =>
                 {
+                    saveSlotsAnim.SetBool("start", false);
+                    FindObjectOfType<SoundManager>().Play("UIGameStart");
                     DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
                     DataPersistenceManager.instance.NewGame();
                     SaveGameAndLoadScene();
@@ -61,6 +65,8 @@ public class SaveSlotsMenu : Menu
         // New Game and slot is empty
         else
         {
+            saveSlotsAnim.SetBool("start", false);
+            FindObjectOfType<SoundManager>().Play("UIGameStart");
             DataPersistenceManager.instance.ChangeSelectedProfileId(saveSlot.GetProfileId());
             DataPersistenceManager.instance.NewGame();
             SaveGameAndLoadScene();
@@ -80,6 +86,7 @@ public class SaveSlotsMenu : Menu
     public void OnBackClicked()
     {
         saveSlotsAnim.SetBool("start", false);
+        FindObjectOfType<SoundManager>().Play("UIClick");
     }
 
     public void OnClearClicked(SaveSlot saveSlot)

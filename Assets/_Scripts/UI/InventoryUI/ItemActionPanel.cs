@@ -33,6 +33,7 @@ namespace Project.Inventory.UI
         public void SetSelectedBorder(int index)
         {
             transform.GetChild(index).GetChild(1).gameObject.SetActive(true);
+            FindObjectOfType<SoundManager>().Play("UIHover");
         }
 
         public void Toggle(bool val)

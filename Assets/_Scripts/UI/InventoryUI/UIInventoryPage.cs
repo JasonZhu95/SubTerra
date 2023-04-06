@@ -167,6 +167,7 @@ namespace Project.Inventory.UI
         {
             if (!listOfUIItems[itemIndex].hasNoActions && !listOfUIItems[itemIndex].empty)
             {
+                FindObjectOfType<SoundManager>().Play("UIClick");
                 ShowItemAction(itemIndex);
                 OnItemActionRequested?.Invoke(itemIndex);
             }
@@ -208,10 +209,10 @@ namespace Project.Inventory.UI
             }
         }
 
-        public void SelectItemIndex(int index)
+        public void SelectItemIndex(int index, bool doNotPlayAudio = false)
         {
             DeselectAllItems();
-            listOfUIItems[index].Select();
+            listOfUIItems[index].Select(doNotPlayAudio);
             currentlySelectedIndex = index;
             if (!listOfUIItems[index].empty)
             {

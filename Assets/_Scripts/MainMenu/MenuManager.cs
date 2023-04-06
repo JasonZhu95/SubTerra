@@ -105,12 +105,14 @@ namespace Project.MenuUI
         public void OnNewGameClicked()
         {
             mainMenuAnim.SetBool("start", false);
+            FindObjectOfType<SoundManager>().Play("UIClick");
             saveSlotsMenu.ActivateMenu(false);
         }
 
         public void OnLoadGameClicked()
         {
             mainMenuAnim.SetBool("start", false);
+            FindObjectOfType<SoundManager>().Play("UIClick");
             saveSlotsMenu.ActivateMenu(true);
         }
         #endregion
@@ -118,6 +120,7 @@ namespace Project.MenuUI
         #region Apply Functions
         public void GameplayApply()
         {
+            FindObjectOfType<SoundManager>().Play("UIClick");
             if (invertYToggle.isOn)
             {
                 PlayerPrefs.SetInt("masterInvertY", 1);
@@ -135,6 +138,7 @@ namespace Project.MenuUI
 
         public void GraphicsApply()
         {
+            FindObjectOfType<SoundManager>().Play("UIClick");
             PlayerPrefs.SetFloat("masterBrightness", brightnessLevel);
             //TODO:Change Brightness
 
@@ -149,6 +153,7 @@ namespace Project.MenuUI
 
         public void VolumeApply()
         {
+            FindObjectOfType<SoundManager>().Play("UIClick");
             PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
             StartCoroutine(ConfirmationBox());
         }
@@ -278,11 +283,13 @@ namespace Project.MenuUI
         public void OnOptionsMenuButton()
         {
             isOptionsMenuPressed = true;
+            FindObjectOfType<SoundManager>().Play("UIClick");
             mainMenuAnim.SetBool("start", false);
         }
 
         public void onExitButton()
         {
+            FindObjectOfType<SoundManager>().Play("UIClick");
             Application.Quit();
         }
         #endregion

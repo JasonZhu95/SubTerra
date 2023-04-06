@@ -22,6 +22,7 @@ public class SoundMenuUI : MonoBehaviour
 
     public void OnBackClicked()
     {
+        FindObjectOfType<SoundManager>().Play("UIClick");
         soundMenuAnim.SetBool("start", false);
     }
 
