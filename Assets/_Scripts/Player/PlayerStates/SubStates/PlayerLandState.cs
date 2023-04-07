@@ -8,6 +8,22 @@ public class PlayerLandState : PlayerGroundedState
     {
     }
 
+    public override void DoChecks()
+    {
+        base.DoChecks();
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+        playerSoundManager.Play("PlayerLand");
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -24,5 +40,10 @@ public class PlayerLandState : PlayerGroundedState
                 stateMachine.ChangeState(player.IdleState);
             }
         }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
     }
 }

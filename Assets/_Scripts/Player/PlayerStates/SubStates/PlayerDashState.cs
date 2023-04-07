@@ -27,6 +27,8 @@ public class PlayerDashState : PlayerAbilityState
     public override void Enter()
     {
         base.Enter();
+
+        playerSoundManager.Play("PlayerDash");
         player.JumpState.DecreaseAmountOfJumpsLeft();
         CanDash = false;
         player.InputHandler.UseDashInput();

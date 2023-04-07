@@ -17,6 +17,7 @@ namespace Project.Weapons
         public event Action OnDisableOptionalSprite;
         public event Action OnMinHold;
         public event Action OnEnableInterrupt;
+        public event Action OnSfxEnable;
 
         public event Action<WeaponAttackPhases> OnEnterAttackPhase;
 
@@ -73,6 +74,16 @@ namespace Project.Weapons
         private void EnableInterruptTrigger()
         {
             OnEnableInterrupt?.Invoke();
+        }
+
+        private void PlaySfxTrigger()
+        {
+            OnSfxEnable?.Invoke();
+        }
+
+        private void PlayBowTrigger()
+        {
+            FindObjectOfType<SoundManager>().Play("WeaponBowLaunch");
         }
     }
 }

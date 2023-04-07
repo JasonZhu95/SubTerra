@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerState
 {
     protected Core core;
+    protected SoundManager playerSoundManager;
 
     protected Player player;
     protected PlayerStateMachine stateMachine;
@@ -26,6 +27,7 @@ public class PlayerState
         this.playerData = playerData;
         this.animBoolName = animBoolName;
         core = player.Core;
+        playerSoundManager = player.playerSoundManager;
     }
 
     // FUNCTION: occurs when a state is entered

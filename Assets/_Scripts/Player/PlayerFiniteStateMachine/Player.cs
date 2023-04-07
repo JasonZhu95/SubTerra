@@ -44,12 +44,15 @@ public class Player : MonoBehaviour, IDataPersistence
     public Rigidbody2D RB { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
     public PlayerObstacleCollision playerObstacleCollision { get; private set; }
+    public SoundManager playerSoundManager { get; private set; }
 
     private CollisionSenses CollisionSenses { get => collisionSenses ?? Core.GetCoreComponent(ref collisionSenses); }
     private CollisionSenses collisionSenses;
 
     private Interaction Interaction => interaction ? interaction : Core.GetCoreComponent(ref interaction);
     private Interaction interaction;
+
+
 
     #endregion
 
@@ -77,6 +80,7 @@ public class Player : MonoBehaviour, IDataPersistence
     private void Awake()
     {
         Core = GetComponentInChildren<Core>();
+        playerSoundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
 
         primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
         secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
@@ -162,6 +166,17 @@ public class Player : MonoBehaviour, IDataPersistence
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
     private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+
+    private void AnimationWalkTrigger()
+    {
+        int randomInt = Random.Range(1, 4);
+        playerSoundManager.Play("PlayerWalk" + randomInt);
+    }
+
+    private void AnimationLedgeClimbUpTrigger()
+    {
+        playerSoundManager.Play("PlayerLedgeClimbUp");
+    }
 
     #endregion
 

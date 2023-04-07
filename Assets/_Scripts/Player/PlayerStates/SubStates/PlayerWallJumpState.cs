@@ -15,6 +15,7 @@ public class PlayerWallJumpState : PlayerAbilityState
     public override void Enter()
     {
         base.Enter();
+        playerSoundManager.Play("PlayerWallJump");
         xInput = player.InputHandler.NormInputX;
         player.InputHandler.UseJumpInput();
         player.JumpState.ResetAmountOfJumpsLeft();

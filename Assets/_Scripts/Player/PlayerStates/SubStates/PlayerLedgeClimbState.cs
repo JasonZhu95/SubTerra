@@ -45,7 +45,7 @@ public class PlayerLedgeClimbState : PlayerState
     public override void Enter()
     {
         base.Enter();
-
+        playerSoundManager.Play("PlayerLedgeClimb");
         Movement?.SetVelocityZero();
         player.transform.position = detectedPosition;
         cornerPosition = DetermineCornerPosition();

@@ -8,6 +8,23 @@ public class PlayerWallSlideState : PlayerTouchingWallState
     {
     }
 
+    public override void DoChecks()
+    {
+        base.DoChecks();
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+        playerSoundManager.Play("PlayerWallSlide");
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        playerSoundManager.StopPlay("PlayerWallSlide");
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
@@ -21,5 +38,10 @@ public class PlayerWallSlideState : PlayerTouchingWallState
                 stateMachine.ChangeState(player.WallGrabState);
             }
         }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
     }
 }

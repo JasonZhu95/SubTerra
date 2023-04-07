@@ -12,6 +12,7 @@ public class DamageComponent : CoreComponent, IDamageable
     public event Action<GameObject> OnDamage;
 
     [SerializeField] private GameObject damageParticles;
+    [SerializeField] private string damageSfxToPlay;
 
     public ModifierContainer<DamageModifier, DamageData> DamageModifiers { get; private set; } =
         new ModifierContainer<DamageModifier, DamageData>();
@@ -67,6 +68,10 @@ public class DamageComponent : CoreComponent, IDamageable
 
         Stats?.Health.Decrease(modifiedData.DamageAmount);
         ParticleManager?.StartParticlesWithRandomRotation(damageParticles);
+        if (damageSfxToPlay != null)
+        {
+            FindObjectOfType<SoundManager>().Play(damageSfxToPlay);
+        }
 
     }
 

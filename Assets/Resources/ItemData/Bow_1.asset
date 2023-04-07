@@ -27,11 +27,22 @@ MonoBehaviour:
   - rid: 3813184976568188933
   - rid: 3813184974850359299
   - rid: 3813184974850359298
+  - rid: 249868574796283905
   - rid: 3813184974850359297
   - rid: 3813184974850359296
   references:
     version: 2
     RefIds:
+    - rid: 249868574796283905
+      type: {class: PlayWeaponSfxData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: PlayWeaponSfxData
+        repeatData: 0
+        data:
+        - AttackName: 
+          <AudioFileToPlay>k__BackingField: WeaponBowLoad
+        - AttackName: 
+          <AudioFileToPlay>k__BackingField: WeaponBowLaunch
     - rid: 3813184974850359296
       type: {class: WeaponSpriteData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
