@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // Script Responsible for handling Respawn on Player Death.
 // Starts a coroutine that reactivates the player and moves it to the
@@ -18,6 +19,11 @@ namespace Project.Managers
         private Color color;
         private EnemyCollision enemyCollision;
 
+        private SpriteRenderer weapon1baseSR;
+        private SpriteRenderer weapon1weaponSR;
+        private SpriteRenderer weapon2baseSR;
+        private SpriteRenderer weapon2weaponSR;
+
         private void Awake()
         {
             player = GameObject.Find("Player");
@@ -25,6 +31,10 @@ namespace Project.Managers
             checkPointManager = GameObject.Find("Managers").transform.Find("CheckPointManager").GetComponent<CheckPointManager>();
             color = playerSR.material.color;
             enemyCollision = player.transform.Find("Core").Find("EnemyCollision").GetComponent<EnemyCollision>();
+            weapon1baseSR = player.transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>();
+            weapon2baseSR = player.transform.GetChild(2).GetChild(0).GetComponent<SpriteRenderer>();
+            weapon1weaponSR = player.transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>();
+            weapon2weaponSR = player.transform.GetChild(2).GetChild(1).GetComponent<SpriteRenderer>();
         }
 
         public void PlayerDeathSwitchActive(bool fullDeath)
@@ -37,10 +47,17 @@ namespace Project.Managers
         {
             color.a = 1f;
             playerSR.material.color = color;
-            player.SetActive(false);
+            player.GetComponent<PlayerInput>().enabled = false;
+            playerSR.enabled = false;
+            weapon1baseSR.enabled = false;
+            weapon2baseSR.enabled = false;
+            weapon1weaponSR.enabled = false;
+            weapon2weaponSR.enabled = false;
+            
 
             yield return new WaitForSeconds(2.0f);
 
+            Debug.Log("We're back");
             if (fullDeath)
             {
                 player.transform.position = checkPointManager.GoToLastCheckPoint();
@@ -50,7 +67,12 @@ namespace Project.Managers
                 player.transform.position = RespawnPoints.position;
             }
             enemyCollision.CanSetDeathZoneCollision = true;
-            player.SetActive(true);
+            player.GetComponent<PlayerInput>().enabled = true;
+            player.GetComponent<SpriteRenderer>().enabled = true;
+            weapon1baseSR.enabled = true;
+            weapon2baseSR.enabled = true;
+            weapon1weaponSR.enabled = true;
+            weapon2weaponSR.enabled = true;
         }
 
     }

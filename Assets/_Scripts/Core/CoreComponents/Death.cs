@@ -50,8 +50,8 @@ public class Death : CoreComponent
 
         if (core.Parent.name == "Player")
         {
-            levelLoaderManager.PlayTransition();
             respawnManager.PlayerDeathSwitchActive(true);
+            levelLoaderManager.PlayTransition();
             Stats.Health.Increase(Stats.Health.MaxValue);
         }
         else
