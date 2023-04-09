@@ -12,13 +12,17 @@ public class ButtonArrowHandler : MonoBehaviour, IPointerEnterHandler
     private EventSystem eventSystem;
     private Button thisButton;
 
+    public bool DisableClickOnAwake = false;
     private bool disableButtonClick = false;
 
     private void Awake()
     {
         arrowContainer = gameObject.transform.GetChild(0).gameObject;
         thisButton = gameObject.GetComponent<Button>();
-        thisButton.onClick.AddListener(DisableOnClick);
+        if (disableButtonClick)
+        {
+            thisButton.onClick.AddListener(DisableOnClick);
+        }
     }
 
     private void OnEnable()

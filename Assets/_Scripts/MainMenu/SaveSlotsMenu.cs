@@ -46,6 +46,7 @@ public class SaveSlotsMenu : Menu
         // New Game, but has data in slot
         else if (saveSlot.HasData)
         {
+            DisableSaveSlotInteraction();
             confirmationPopoutMenu.ActivateMenu(
                 "Starting a New Game with this slot will override the currently saved data.  Are you sure?",
                 // Execute function depending on which button is clicked
@@ -92,6 +93,7 @@ public class SaveSlotsMenu : Menu
     public void OnClearClicked(SaveSlot saveSlot)
     {
         DisableMenuButtons();
+        DisableSaveSlotInteraction();
 
         confirmationPopoutMenu.ActivateMenu(
             "Are you sure you want to delete this save file?",
@@ -106,11 +108,24 @@ public class SaveSlotsMenu : Menu
 
     }
 
+    private void DisableSaveSlotInteraction()
+    {
+        transform.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+    public void EnableSaveSlotInteraction()
+    {
+        transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+
+    }
+
     public void ActivateMenu(bool isLoadingGame)
     {
         // Activate menu on UI
         gameObject.SetActive(true);
 
+        EnableSaveSlotInteraction();
         this.isLoadingGame = isLoadingGame;
 
         // Load profiles that exist

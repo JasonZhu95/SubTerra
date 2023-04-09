@@ -17,6 +17,7 @@ namespace Project.Weapons
         private HitboxStruct currentAttackData;
 
         private Collider2D[] detected;
+        private Collider2D[] detectedHammer;
 
         private void CheckHitbox()
         {
@@ -28,7 +29,25 @@ namespace Project.Weapons
 
             // Look for colliders in the hitbox
             detected = Physics2D.OverlapBoxAll(offset, currentAttackData.Hitbox.size, 0f, data.DamageableLayers);
-
+            if (!currentAttackData.isHammer)
+            {
+                for (int i = 0; i < detected.Length; i++)
+                {
+                    if (detected[i].gameObject.name == "DestroyableTile")
+                    {
+                        detectedHammer = new Collider2D[detected.Length - 1];
+                        if (i > 0)
+                        {
+                            Array.Copy(detected, 0, detectedHammer, 0, i);
+                        }
+                        if (i < detected.Length - 1)
+                        {
+                            Array.Copy(detected, i + 1, detectedHammer, i, detected.Length - i - 1);
+                        }
+                        detected = detectedHammer;
+                    }
+                }
+            }
             if (detected.Length == 0) return;
 
             OnDetected?.Invoke(detected);
@@ -89,6 +108,7 @@ namespace Project.Weapons
         public bool debug;
         [field: SerializeField]
         public Rect Hitbox { get; private set; }
+        public bool isHammer;
 
         public void SetName(string value) => AttackName = value;
     }

@@ -178,6 +178,16 @@ public class Player : MonoBehaviour, IDataPersistence
         playerSoundManager.Play("PlayerLedgeClimbUp");
     }
 
+    private void AnimationCrouchMoveTrigger()
+    {
+        playerSoundManager.Play("PlayerCrouch");
+    }
+
+    private void AnimationWallClimbTrigger()
+    {
+        playerSoundManager.Play("PlayerWallClimb");
+    }
+
     #endregion
 
     #region Data Persistence Save

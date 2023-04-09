@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8cbf04f051c8140ad3f2ed1afb6407, type: 3}
+  m_Name: Hammer
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 0
+  ID: 3
+  <MaxStackSize>k__BackingField: 1
+  <Name>k__BackingField: Hammer
+  <Description>k__BackingField: Breaks Blocks
+  <ItemImage>k__BackingField: {fileID: 255617269, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
+  <DefaultParametersList>k__BackingField: []
+  <ItemCost>k__BackingField: 200
+  <actionSFX>k__BackingField: {fileID: 0}
+  <NumberOfAttacks>k__BackingField: 1
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 4fa01ad774c4e7144936e81b913d1ee4, type: 2}
+  componentDatas:
+  - rid: 3813184956623486981
+  - rid: 3813184956623486980
+  - rid: 3813184956623486979
+  - rid: 249868574796283904
+  - rid: 3813184974850359318
+  - rid: 3813184956623486978
+  - rid: 3813184956623486976
+  references:
+    version: 2
+    RefIds:
+    - rid: 249868574796283904
+      type: {class: PlayWeaponSfxData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: PlayWeaponSfxData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          <AudioFileToPlay>k__BackingField: WeaponSword1
+    - rid: 3813184956623486976
+      type: {class: WeaponSpriteData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: WeaponSpriteData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          AttackPhases:
+          - Name: Action
+            Phase: 2
+            Sprites:
+            - {fileID: 377857714, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
+            - {fileID: -320620226, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
+            - {fileID: 15382981, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
+            - {fileID: -1281347056, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
+            - {fileID: 803068858, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
+    - rid: 3813184956623486978
+      type: {class: WeaponHitboxData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: WeaponHitboxData
+        repeatData: 1
+        data:
+        - AttackName: Attack 1
+          debug: 0
+          <Hitbox>k__BackingField:
+            serializedVersion: 2
+            x: 1
+            y: 0.25
+            width: 2
+            height: 2.5
+          isHammer: 1
+        <DamageableLayers>k__BackingField:
+          serializedVersion: 2
+          m_Bits: 512
+    - rid: 3813184956623486979
+      type: {class: KnockbackOnHitboxActionData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: KnockbackOnHitboxActionData
+        repeatData: 0
+        data:
+        - attackName: Attack 1
+          <KnockbackAngle>k__BackingField: {x: 1, y: 1}
+          <KnockbackStrength>k__BackingField: 10
+    - rid: 3813184956623486980
+      type: {class: DamageOnHitboxActionData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: DamageOnHitboxActionData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          <DamageAmount>k__BackingField: 20
+    - rid: 3813184956623486981
+      type: {class: AttackMovementData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: AttackMovementData
+        repeatData: 0
+        data:
+        - AttackName: Attack 1
+          Velocity: 3
+    - rid: 3813184974850359318
+      type: {class: PoiseDamageOnHitboxActionData, ns: Project.Weapons, asm: Assembly-CSharp}
+      data:
+        <ComponentName>k__BackingField: PoiseDamageOnHitboxActionData
+        repeatData: 0
+        data:
+        - attackName: Attack 1
+          <PoiseDamageAmount>k__BackingField: 12.5

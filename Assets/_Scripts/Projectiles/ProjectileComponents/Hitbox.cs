@@ -31,6 +31,7 @@ namespace Project.Projectiles
 
         private void FixedUpdate()
         {
+            // Look for colliders in the hitbox of the arrow
             var dist = Data.CompensateForVelocity ? rb.velocity.magnitude * Time.deltaTime : 0;
             hits = Physics2D.BoxCastAll(
                 transform.position + (Vector3)Data.Hitbox.center,
@@ -40,6 +41,22 @@ namespace Project.Projectiles
                 dist,
                 Data.LayerMask
             );
+            for (int i = 0; i < hits.Length; i++)
+            {
+                if (hits[i].collider.gameObject.name == "DestroyableTile")
+                {
+                    RaycastHit2D[] tempHit = new RaycastHit2D[hits.Length - 1];
+                    if (i > 0)
+                    {
+                        Array.Copy(hits, 0, tempHit, 0, i);
+                    }
+                    if (i < hits.Length - 1)
+                    {
+                        Array.Copy(hits, i + 1, tempHit, i, hits.Length - i - 1);
+                    }
+                    hits = tempHit;
+                }
+            }
 
             if (hits.Length > 0) CheckHits();
         }

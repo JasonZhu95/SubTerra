@@ -13,6 +13,7 @@ namespace Project.Interfaces
     {
         public float DamageAmount;
         public GameObject Source;
+        public string WeaponSourceName;
 
         public void SetData(GameObject source, float damageAmount)
         {
