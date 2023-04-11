@@ -44,7 +44,7 @@ public class GameData
         disableWallSlide = false;
 
         // TODO: Set manually to first checkpoint position. Change later
-        checkPointPosition = new Vector3(-5.18f, -6.0f, 0);
+        checkPointPosition = new Vector3(-9.94f, 4.07f, 0);
         inventoryItems = new List<InventoryItem>(new InventoryItem[24]);
 
         itemsCollected = new SerializableDictionary<string, bool>();

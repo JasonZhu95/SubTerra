@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackAngle: {x: 1, y: 1}
   knockbackStrength: 10
+  collisionDamage: 1
 --- !u!61 &8514538964207774049
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -729,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageParticles: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
+  damageSfxToPlay: Damage
   sr: {fileID: 0}
   primarySR: {fileID: 0}
   secondarySR: {fileID: 0}

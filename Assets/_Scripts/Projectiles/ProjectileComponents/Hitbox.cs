@@ -25,6 +25,22 @@ namespace Project.Projectiles
 
             if (!Data.DoInitialCheck) return;
             hits = Physics2D.LinecastAll(transform.position, Projectile.SpawningEntityPos, Data.LayerMask);
+            for (int i = 0; i < hits.Length; i++)
+            {
+                if (hits[i].collider.gameObject.name == "DestroyableTile")
+                {
+                    RaycastHit2D[] tempHit = new RaycastHit2D[hits.Length - 1];
+                    if (i > 0)
+                    {
+                        Array.Copy(hits, 0, tempHit, 0, i);
+                    }
+                    if (i < hits.Length - 1)
+                    {
+                        Array.Copy(hits, i + 1, tempHit, i, hits.Length - i - 1);
+                    }
+                    hits = tempHit;
+                }
+            }
 
             if (hits.Length > 0) CheckHits();
         }

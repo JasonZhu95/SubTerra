@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageParticles: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
+  damageSfxToPlay: Damage
   sr: {fileID: 0}
   primarySR: {fileID: 0}
   secondarySR: {fileID: 0}

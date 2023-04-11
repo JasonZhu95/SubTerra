@@ -57,6 +57,24 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: MusicTheme0
+    clip: {fileID: 8300000, guid: 667faf6fa2e139048a2da11f4c5a6d02, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicTheme1
+    clip: {fileID: 8300000, guid: b2efe8897b509564fba96a6325e6aa4b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerCrouch
+    clip: {fileID: 8300000, guid: 83114af2e589d7e4291fa80adc3f0b6a, type: 3}
+    volume: 0.02
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: PlayerDash
     clip: {fileID: 8300000, guid: 5f9860fd3d0f5a6418b1cd48da533dd7, type: 3}
     volume: 0.2
@@ -103,6 +121,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 83114af2e589d7e4291fa80adc3f0b6a, type: 3}
     volume: 0.05
     pitch: 1.6
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerWallClimb
+    clip: {fileID: 8300000, guid: 24b784f82484e3b4da44910f99af2e5c, type: 3}
+    volume: 0.1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerWallJump
@@ -164,16 +188,4 @@ MonoBehaviour:
     volume: 0.1
     pitch: 1
     loop: 0
-    source: {fileID: 0}
-  - name: MusicTheme0
-    clip: {fileID: 8300000, guid: 667faf6fa2e139048a2da11f4c5a6d02, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: MusicTheme1
-    clip: {fileID: 8300000, guid: b2efe8897b509564fba96a6325e6aa4b, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
     source: {fileID: 0}
