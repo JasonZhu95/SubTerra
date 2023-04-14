@@ -1,0 +1,1625 @@
+fileFormatVersion: 2
+guid: 732767940e2ed70479d6da8ef9ccce5b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: idle_0
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 641
+        width: 80
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0302869a85b381145afcbe97bbf7eae9
+      internalID: -1244205070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_4
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 641
+        width: 91
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3422953b509f0c34ca05828644c984ff
+      internalID: 325322138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_1
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 641
+        width: 87
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2080bbdcf87d254a82cdd4aeb4e9b7e
+      internalID: -943253124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_2
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 641
+        width: 91
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c192bfae6f1d294f883cb8d7f0ac1fe
+      internalID: 1133497586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_3
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 641
+        width: 91
+        height: 106
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65f84ffbfea96a49a3151c835d33730
+      internalID: 1433902362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_5
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 641
+        width: 87
+        height: 102
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778e52de8bec28547be36b91b52c9636
+      internalID: -2142472837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_0
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 481
+        width: 64
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3053206b263cfc749b69d718d572a55c
+      internalID: -2056610683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_5
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 481
+        width: 78
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64a159c5ff2d824ba57768c151022c3
+      internalID: -1520212015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_1
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 481
+        width: 68
+        height: 99
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cededea6fd70940ab9f742cabec2f3
+      internalID: 1524581528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_2
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 481
+        width: 67
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2427a51665e3a0d4197e5ca6098e7971
+      internalID: 1184636857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_3
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 481
+        width: 70
+        height: 99
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c6f456d1e66a340845079f3c491627
+      internalID: 969054335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_4
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 481
+        width: 74
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eed0c64d95a2534aafa94d5cead27b4
+      internalID: 1127245045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_6
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 481
+        width: 85
+        height: 99
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e553b6c8a1eccbc4c9e0f0229b8fb01d
+      internalID: 1444445001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_7
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 481
+        width: 80
+        height: 99
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0d815abf29df040a7cf439c9f8bc13
+      internalID: -81707515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_8
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 481
+        width: 80
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8a95f27d9deb04e9a2cf652eddf02c
+      internalID: -647812897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_9
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 481
+        width: 73
+        height: 99
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4a6f72200c89047b0cb8dcf1bcb3a6
+      internalID: -318142646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_10
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 481
+        width: 70
+        height: 100
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00946c3688f024e41ad8d333d1008875
+      internalID: -1418746328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_11
+      rect:
+        serializedVersion: 2
+        x: 3277
+        y: 481
+        width: 68
+        height: 99
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9b40ff0f349ad44a876831bcb89cfe
+      internalID: -1432089530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_1
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 321
+        width: 76
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2476b7d4f610546b87dbd144afa633
+      internalID: -562802353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_4
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 321
+        width: 96
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8be09c03babb74d9377aea1adfd9a1
+      internalID: 375545245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_6
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 321
+        width: 92
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b4344f739b58b40bcff6753fa42639
+      internalID: 1625952685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_7
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 321
+        width: 92
+        height: 114
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd74d52e865e6d479e6b3babeb6f1c8
+      internalID: -1731677520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_8
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 321
+        width: 92
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6007d1cdab47fb84daf1ea07354f0be8
+      internalID: 2010347494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_0
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 321
+        width: 80
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a2d2716e3c45d438b84c9a469efade
+      internalID: -1049923270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_2
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 321
+        width: 93
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acea5a83706658d46af8527d67a79995
+      internalID: 1151762317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_3
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 321
+        width: 90
+        height: 107
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564f290c8ace43b499718d974f2b896c
+      internalID: -1568759928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_5
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 321
+        width: 96
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b722d4449a16dc4490e064320dde6bb
+      internalID: -1260950887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_13
+      rect:
+        serializedVersion: 2
+        x: 3845
+        y: 321
+        width: 106
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db6eb26d53770e41988c7260b4faf71
+      internalID: -987270656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_14
+      rect:
+        serializedVersion: 2
+        x: 4138
+        y: 321
+        width: 96
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c0dd7940d625b4d9ac32dc64ea7b6a
+      internalID: -2105445795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_9
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 321
+        width: 258
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5eeae16f5bad3d4bb6aed156da6eef5
+      internalID: -221171972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_10
+      rect:
+        serializedVersion: 2
+        x: 2902
+        y: 322
+        width: 264
+        height: 101
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f050fbe150aa7c5469018302120c93b6
+      internalID: 788321049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_11
+      rect:
+        serializedVersion: 2
+        x: 3188
+        y: 321
+        width: 270
+        height: 97
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510f794b3f02a2c429a206d500dcae34
+      internalID: -659134648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melee_attack_12
+      rect:
+        serializedVersion: 2
+        x: 3536
+        y: 321
+        width: 148
+        height: 102
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0764d216e53482419bdc2a3533309b8
+      internalID: 1745070469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_0
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 161
+        width: 80
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d7a10ca6c07924e8688a250e3c1eaa
+      internalID: 2100555383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_2
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 161
+        width: 102
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0691c70b471261049a9b38fc39bb6813
+      internalID: 1491534426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_4
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 161
+        width: 80
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479e95ada2e4c2547806922cae0ae70d
+      internalID: 748166743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_1
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 161
+        width: 85
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7bd20766c9f1b44b16569fb23beb85
+      internalID: -159026633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_3
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 161
+        width: 90
+        height: 102
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47dc9aaea1ecda940ae4c0d166673824
+      internalID: 845788136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_9
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 1
+        width: 162
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da749dcb68206345b2609d06ca43f34
+      internalID: -138207208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_18
+      rect:
+        serializedVersion: 2
+        x: 5257
+        y: 1
+        width: 150
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c7f6b909238e545ac86e2e99e8d8d6
+      internalID: 1397198500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_5
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 1
+        width: 132
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454f66acfb2aaaa418b10c056b37594c
+      internalID: -1605971184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_3
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 1
+        width: 78
+        height: 99
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7668457e79968ae4fbd0e130e823029c
+      internalID: 552734377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_4
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 1
+        width: 98
+        height: 105
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb83a2ee03bd74e4484336d37a46e273
+      internalID: -1546619953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_8
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 1
+        width: 162
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b155b415d756f468e39846b9685fe7
+      internalID: -1960088385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_2
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1
+        width: 70
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 721ae0fdc2226604293ff27b7886f338
+      internalID: -1880473310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_7
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 1
+        width: 166
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13f3386f911efc4ebba3a4c429725c1
+      internalID: -1597612172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_10
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 1
+        width: 162
+        height: 124
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61276e473c967946b01182eefb5fc74
+      internalID: -29412690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_0
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1
+        width: 80
+        height: 89
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a9f1cab9983e447a8faecac8abbcb0
+      internalID: 979136562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_6
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 1
+        width: 146
+        height: 118
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4931143aa609e7d4aad8fb159a72b280
+      internalID: -1727380443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_1
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1
+        width: 74
+        height: 97
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480c8565841d7b64cb035b64053c5bb7
+      internalID: -1464028192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_17
+      rect:
+        serializedVersion: 2
+        x: 4969
+        y: 1
+        width: 150
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917c40f6fc704ce48ab395a96cebceff
+      internalID: -1533701660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_11
+      rect:
+        serializedVersion: 2
+        x: 3234
+        y: 1
+        width: 162
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b53becb02db3942a95e55f8f31c930
+      internalID: 1183331468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_12
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1
+        width: 164
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5566757f5f3061a4b9d7602d0c65c226
+      internalID: -249114557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_13
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 1
+        width: 164
+        height: 115
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd5b12ef74adbd4ca7fd7e26c3f271a
+      internalID: 715208540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_14
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1
+        width: 164
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d36ee538d4ecb4eb913f224cf42825
+      internalID: 698149005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_15
+      rect:
+        serializedVersion: 2
+        x: 4390
+        y: 1
+        width: 154
+        height: 121
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845f6bd19f3f3034ab6c4eccf0a08b93
+      internalID: 1835355252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_16
+      rect:
+        serializedVersion: 2
+        x: 4681
+        y: 1
+        width: 150
+        height: 123
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045fc47554cf2204baaf4b88e22aaf5f
+      internalID: 262846284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_19
+      rect:
+        serializedVersion: 2
+        x: 5545
+        y: 1
+        width: 150
+        height: 85
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958da1501247fc0498c54ba7d99c0c83
+      internalID: -1868288860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_20
+      rect:
+        serializedVersion: 2
+        x: 5833
+        y: 1
+        width: 150
+        height: 2
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340c70e0e10be6d4b8ad8f98002876a3
+      internalID: -1357636906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: die_21
+      rect:
+        serializedVersion: 2
+        x: 6121
+        y: 1
+        width: 150
+        height: 2
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b170efd8390b9478947849abf1ff09
+      internalID: 1190836513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      melee_attack_5: -1260950887
+      DemonKing_27: 1677900515
+      DemonKing_100: -952626386
+      die_4: -1546619953
+      DemonKing_151: 1332840238
+      walk_10: -1418746328
+      DemonKing_53: -1580325097
+      DemonKing_179: -171848134
+      melee_attack_3: -1568759928
+      DemonKing_83: 516678233
+      DemonKing_234: -143472991
+      DemonKing_21: 236470126
+      DemonKing_99: -1739562512
+      DemonKing_28: 1970531913
+      DemonKing_36: 1269827307
+      DemonKing_81: 1482392782
+      DemonKing_12: -1356483499
+      DemonKing_130: 600599562
+      DemonKing_207: -1237748834
+      DemonKing_224: -609389798
+      walk_2: 1184636857
+      DemonKing_7: -1018252237
+      DemonKing_173: 659670411
+      DemonKing_14: -559230727
+      melee_attack_8: 2010347494
+      DemonKing_164: 2050382792
+      melee_attack_4: 375545245
+      DemonKing_230: -377497934
+      die_12: -249114557
+      DemonKing_163: -205810226
+      DemonKing_169: -1069122465
+      DemonKing_89: 767287264
+      DemonKing_154: -717181093
+      walk_6: 1444445001
+      DemonKing_178: 1886310064
+      DemonKing_46: 1546509869
+      DemonKing_123: 148545905
+      DemonKing_19: -419028183
+      DemonKing_118: -1244851911
+      DemonKing_42: -1776340925
+      idle_5: -2142472837
+      DemonKing_156: -466896669
+      DemonKing_134: -1050541709
+      DemonKing_32: 2132462718
+      die_11: 1183331468
+      hit_0: 2100555383
+      melee_attack_13: -987270656
+      DemonKing_202: -1372889497
+      DemonKing_71: 1671444338
+      DemonKing_41: 1987161856
+      DemonKing_57: 844754082
+      DemonKing_44: 485092049
+      DemonKing_93: 1185724732
+      DemonKing_174: 20558811
+      DemonKing_181: 357129395
+      DemonKing_176: 207362570
+      DemonKing_97: -276937933
+      walk_11: -1432089530
+      die_7: -1597612172
+      DemonKing_45: -776796322
+      DemonKing_76: 529922125
+      DemonKing_91: 1487854191
+      DemonKing_148: 1637278751
+      DemonKing_140: -732526109
+      DemonKing_199: -1093405490
+      DemonKing_88: -73653146
+      DemonKing_206: 1829318760
+      DemonKing_33: 1618317246
+      idle_1: -943253124
+      die_13: 715208540
+      DemonKing_43: -2001284900
+      DemonKing_200: 175789463
+      DemonKing_186: -1607597477
+      DemonKing_129: -1768096025
+      DemonKing_0: -143262688
+      hit_1: -159026633
+      DemonKing_155: 410693182
+      DemonKing_38: -838735484
+      DemonKing_103: 815378276
+      DemonKing_177: 200723338
+      DemonKing_233: -1129672695
+      DemonKing_59: -1348958592
+      DemonKing_188: 1930426623
+      DemonKing_165: 634445431
+      DemonKing_184: -1936796729
+      DemonKing_56: 230983122
+      DemonKing_191: 142437116
+      DemonKing_214: 1053510913
+      DemonKing_232: 1446336335
+      DemonKing_160: 873495916
+      DemonKing_193: -2081148131
+      DemonKing_54: -1742558326
+      DemonKing_26: 1941195977
+      DemonKing_172: 497373877
+      idle_4: 325322138
+      DemonKing_29: 852199981
+      melee_attack_10: 788321049
+      DemonKing_227: 2124045596
+      DemonKing_131: -2113083571
+      die_0: 979136562
+      melee_attack_7: -1731677520
+      DemonKing_104: -2068334135
+      walk_0: -2056610683
+      DemonKing_49: 1252631119
+      DemonKing_139: -761315745
+      DemonKing_128: -1859840962
+      DemonKing_25: 1844984830
+      die_18: 1397198500
+      DemonKing_150: 520634248
+      DemonKing_78: 1296265588
+      hit_2: 1491534426
+      die_17: -1533701660
+      DemonKing_185: -1500920699
+      die_16: 262846284
+      DemonKing_37: 545323211
+      DemonKing_111: 848711565
+      DemonKing_223: -166355978
+      DemonKing_225: 749419199
+      DemonKing_192: 1860494779
+      DemonKing_6: 1883433832
+      DemonKing_114: -818298955
+      DemonKing_209: 985832145
+      DemonKing_22: 437327032
+      die_15: 1835355252
+      DemonKing_132: -1588535529
+      melee_attack_0: -1049923270
+      DemonKing_34: -1637199042
+      DemonKing_161: -574193783
+      DemonKing_157: 1478713636
+      DemonKing_228: -2001379986
+      DemonKing_236: 543725452
+      DemonKing_90: -2038530433
+      DemonKing_62: 1683581399
+      DemonKing_63: 1512831377
+      melee_attack_11: -659134648
+      DemonKing_77: -998119061
+      die_20: -1357636906
+      DemonKing_216: -1460652071
+      melee_attack_2: 1151762317
+      melee_attack_6: 1625952685
+      DemonKing_198: 27932076
+      DemonKing_212: -447898000
+      melee_attack_14: -2105445795
+      DemonKing_210: -1825299500
+      DemonKing_112: -198914054
+      DemonKing_126: -1831785155
+      DemonKing_201: -600062293
+      DemonKing_80: -1922806230
+      DemonKing_125: -266061008
+      DemonKing_60: -872903427
+      DemonKing_23: 19100590
+      DemonKing_145: 948260221
+      walk_5: -1520212015
+      walk_3: 969054335
+      die_10: -29412690
+      DemonKing_31: 2097385903
+      DemonKing_30: -1741496034
+      DemonKing_144: 426456765
+      DemonKing_197: 2022187177
+      DemonKing_222: -1660492876
+      DemonKing_86: 2096766785
+      walk_1: 1524581528
+      DemonKing_142: 1028314706
+      DemonKing_5: 1986068209
+      die_14: 698149005
+      DemonKing_102: 1267572644
+      DemonKing_48: -674191613
+      die_6: -1727380443
+      DemonKing_196: -1463450254
+      DemonKing_20: -2081240365
+      DemonKing_47: -1991379753
+      DemonKing_152: -1666652606
+      die_3: 552734377
+      die_21: 1190836513
+      die_1: -1464028192
+      DemonKing_205: -961314093
+      DemonKing_9: -494251357
+      die_8: -1960088385
+      DemonKing_166: -810001841
+      DemonKing_50: -1447079028
+      hit_4: 748166743
+      DemonKing_231: -352280995
+      DemonKing_146: -889685595
+      DemonKing_239: 2141792490
+      DemonKing_11: 1390774972
+      walk_7: -81707515
+      DemonKing_135: -2136349164
+      DemonKing_8: 1000586106
+      idle_3: 1433902362
+      idle_0: -1244205070
+      DemonKing_61: 2060342988
+      DemonKing_124: -934444131
+      DemonKing_138: 680105399
+      DemonKing_226: -1645944482
+      melee_attack_1: -562802353
+      DemonKing_55: -1499649058
+      DemonKing_143: -1168325137
+      idle_2: 1133497586
+      DemonKing_221: -1943748774
+      DemonKing_238: -1809038985
+      DemonKing_113: 258929325
+      die_2: -1880473310
+      DemonKing_4: 2116657626
+      DemonKing_96: 1219185825
+      DemonKing_98: -345024528
+      DemonKing_158: -2028097864
+      melee_attack_12: 1745070469
+      DemonKing_182: 927729604
+      DemonKing_39: -2138187102
+      DemonKing_149: -446165510
+      DemonKing_58: 1025102955
+      DemonKing_190: -1906910087
+      DemonKing_167: 461509562
+      DemonKing_208: 1051297616
+      DemonKing_237: -284688671
+      DemonKing_168: 424065596
+      die_19: -1868288860
+      DemonKing_82: 1602066168
+      DemonKing_213: -2068700808
+      DemonKing_101: -1408151957
+      DemonKing_52: 920823708
+      walk_9: -318142646
+      DemonKing_109: 1740398958
+      DemonKing_180: 1327750968
+      DemonKing_13: 1846675134
+      DemonKing_211: -414498995
+      die_5: -1605971184
+      DemonKing_162: 150552325
+      hit_3: 845788136
+      DemonKing_35: -827591732
+      DemonKing_84: 1161654816
+      DemonKing_153: 1790531911
+      DemonKing_203: 1626846145
+      walk_8: -647812897
+      DemonKing_67: -515858284
+      melee_attack_9: -221171972
+      walk_4: 1127245045
+      DemonKing_85: 1296073758
+      DemonKing_220: 24726029
+      DemonKing_105: -1567010413
+      DemonKing_24: 1242399062
+      die_9: -138207208
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -20,4 +20,14 @@ public class DeadState : State
 
         entity.gameObject.SetActive(false);
     }
+
+    public virtual void TriggerDeathParticles()
+    {
+
+    }
+
+    public virtual void DieAnimationFinished()
+    {
+
+    }
 }

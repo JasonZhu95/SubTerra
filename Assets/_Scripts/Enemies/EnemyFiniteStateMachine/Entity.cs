@@ -80,6 +80,11 @@ public class Entity : MonoBehaviour
         return Physics2D.Raycast(playerCheck.position, transform.right, entityData.closeRangeActionDistance, entityData.whatIsPlayer);
     }
 
+    public virtual bool CheckPlayerInMidRangeAction()
+    {
+        return Physics2D.Raycast(playerCheck.position, transform.right, entityData.midRangeActionDistance, entityData.whatIsPlayer);
+    }
+
     public virtual bool CheckPlayerInCircleRange()
     {
         return Physics2D.OverlapCircle(playerCheck.position, entityData.circleAgroDistance);

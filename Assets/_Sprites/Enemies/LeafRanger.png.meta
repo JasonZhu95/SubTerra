@@ -1,0 +1,5038 @@
+fileFormatVersion: 2
+guid: 7a2fee3a60ec71b40a5bb2321e3fe2b7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LeafRanger_44
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1668
+        width: 43
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64395e143b7c46d44807c51b05a87402
+      internalID: -1606447959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_45
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1668
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33ae4cc734f90f4abd121c2151bedda
+      internalID: 859370346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_46
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1668
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6853f3bd3e2e424ea90512b30b3aeab
+      internalID: -1356523509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 2049
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c03be3894585d49a370e5d1c204225
+      internalID: 188746645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_1
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 2049
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052ae26047c567f43b9e448ec0cad57a
+      internalID: -1182979337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_2
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 2049
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1399a757223f74d8780d6b8d3645af
+      internalID: -1176100413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_3
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 2049
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da55bc45292929f4d925b18a689c3129
+      internalID: -854557028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_4
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 2049
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9588ab12dbcf2c84cb63db5604322ef0
+      internalID: -1069735468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_5
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 2049
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a4a5b757ee0a4245978a7cd22348c6e
+      internalID: 702234899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_6
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 2049
+        width: 49
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710f861a46722d9448c1b4cb0c0822c8
+      internalID: -1921272165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_7
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 2049
+        width: 49
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28506970910926d459ff49c262e9d636
+      internalID: -189198292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_8
+      rect:
+        serializedVersion: 2
+        x: 2422
+        y: 2049
+        width: 49
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b375ae9732e47944a9210dc8893191f2
+      internalID: 738391078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_9
+      rect:
+        serializedVersion: 2
+        x: 2710
+        y: 2049
+        width: 49
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbd148520cc86347aa9e3de5ba8df53
+      internalID: -362546836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_10
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 2049
+        width: 49
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb5d2d0766b6d548a2f58780df1ea10
+      internalID: 1000051880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_11
+      rect:
+        serializedVersion: 2
+        x: 3286
+        y: 2049
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb4cf8cffaf654409dc330261a2cbe3
+      internalID: -1829255098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_12
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1921
+        width: 48
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12a5c112d9d415c49b39ee195997d01d
+      internalID: -368830048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_13
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1927
+        width: 51
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00f1117138898c4f90ef3ae6a55b698
+      internalID: 1296325070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_14
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1929
+        width: 46
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8484fc8da8f45ba4bbf889e49a6c81a6
+      internalID: 1676971556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_15
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1921
+        width: 47
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89150781c35c504eb35a3380b4cac56
+      internalID: -90755583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_16
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 1921
+        width: 43
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa3759ca5ccce243ad91418bcaa51a3
+      internalID: -948398784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_17
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 1921
+        width: 44
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f42f90f2ec666b4eb09bf03cd7a0a92
+      internalID: -1971176000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_18
+      rect:
+        serializedVersion: 2
+        x: 1850
+        y: 1927
+        width: 47
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9825663e381c1b84ab2ef9c6c7840571
+      internalID: 1644597640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_19
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 1925
+        width: 45
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508db90f376c97543ac24c56209a4bf3
+      internalID: 381517335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_20
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 1921
+        width: 46
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191dc2d2262f73c44980269532fdbcd6
+      internalID: 1768707800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_21
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 1921
+        width: 46
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe9943ab8c6b544684e35a532c3f471
+      internalID: 86318560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_22
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1793
+        width: 45
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb767823fd90d548a3d37068281cd24
+      internalID: -186604417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_23
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1793
+        width: 49
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a09503dc0641f419c716035411aec8
+      internalID: -692574907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_24
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1796
+        width: 43
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52561891adedbe4a805e99bd367a560
+      internalID: 1579710977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_25
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1796
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1128699a65b6274696e3c56940ff7c5
+      internalID: -434959580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_26
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1796
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81f96b6b2c5b764d863ce1df478def6
+      internalID: -1900571221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_27
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1796
+        width: 43
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378d55bd41ea4df4e944bc55f9a1d928
+      internalID: -2053467078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_28
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 1796
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c624d4966c6e442a086d03d65917f6
+      internalID: 1731309415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_29
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 1796
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0d68a0b9df3ea48953fbcd93c700a8
+      internalID: 125142913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_30
+      rect:
+        serializedVersion: 2
+        x: 2428
+        y: 1799
+        width: 44
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d763be7bc774cc46af1a6669cedb305
+      internalID: -1096144687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_31
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 1802
+        width: 47
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65053387671040b4590cee1158dc44bc
+      internalID: -1934704388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_32
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 1800
+        width: 53
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd52241374173b643ae7dc20e7afe70e
+      internalID: 1636692065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_33
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 1798
+        width: 46
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c4ffd6b533bf447a7b934ce78de8ca
+      internalID: -2059493631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_34
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 1795
+        width: 40
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a097be9ac21834690735b74bc49a19
+      internalID: -747910149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_35
+      rect:
+        serializedVersion: 2
+        x: 3877
+        y: 1795
+        width: 36
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1ad5f2c29eb104d85725188330037e
+      internalID: 1069807253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_36
+      rect:
+        serializedVersion: 2
+        x: 4163
+        y: 1795
+        width: 38
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b8a7ea30cec3b4eb8b164062f40f31
+      internalID: -747211361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_37
+      rect:
+        serializedVersion: 2
+        x: 4449
+        y: 1795
+        width: 40
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cbd5cd1efc9d54d9baf72fbe637a01
+      internalID: -1080333153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_38
+      rect:
+        serializedVersion: 2
+        x: 4741
+        y: 1795
+        width: 36
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c02df563c986f409bf282b831efb6e
+      internalID: -1291098527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_39
+      rect:
+        serializedVersion: 2
+        x: 5027
+        y: 1795
+        width: 38
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c25980f7eac55643999ef0498f5408a
+      internalID: 1824863852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_40
+      rect:
+        serializedVersion: 2
+        x: 5314
+        y: 1793
+        width: 41
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c242974836a5a164c808b13142061576
+      internalID: -894631177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_41
+      rect:
+        serializedVersion: 2
+        x: 5590
+        y: 1793
+        width: 57
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3970625b6e8cd214f8a9d3486018b5e2
+      internalID: -1107075412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_42
+      rect:
+        serializedVersion: 2
+        x: 5880
+        y: 1793
+        width: 49
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64ab365c7fa6d245b2bf8b17e8a0742
+      internalID: -283191568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_43
+      rect:
+        serializedVersion: 2
+        x: 6172
+        y: 1793
+        width: 44
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab658f9c641372646b1f6bd6ab555d1b
+      internalID: -170098608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_47
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1537
+        width: 45
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec8e46184ae0624089aa9657d8c82a9
+      internalID: 1523241192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_48
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1537
+        width: 49
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc6997c39cac4794ab2e620148398a84
+      internalID: -1541258016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_49
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1540
+        width: 43
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98c3d74bfcf446458f59d90c31b4aaa
+      internalID: -2031892976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_50
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1540
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b8fd419adbf9348901596b39f26ec1
+      internalID: 2121160536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_51
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1540
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee6ad3d78a9d164290ff8ed64b7f596
+      internalID: -167432623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_52
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1540
+        width: 43
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39896a0cd245884da618cc7092b3e82
+      internalID: -570525530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_53
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 1540
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a41dc5aa94591145b75a8110b027365
+      internalID: -815560917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_54
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 1540
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac52cfb1165e34641a7db7afa5587048
+      internalID: 1738788852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_55
+      rect:
+        serializedVersion: 2
+        x: 2428
+        y: 1543
+        width: 44
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1657e3280223ec42ab5ec3f82e277af
+      internalID: -1041004899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_56
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 1546
+        width: 47
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4191b01323be742b81c09b55b9bc13
+      internalID: 679721506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_57
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 1544
+        width: 53
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34aab36830b4b884cac0cdf247f43a10
+      internalID: 357330604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_58
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 1542
+        width: 46
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ced6140a84ca794794b914617bd75af
+      internalID: 1468728012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_59
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 1539
+        width: 40
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fd37f172d07444491618a5897b18b2
+      internalID: 1482982932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_60
+      rect:
+        serializedVersion: 2
+        x: 3877
+        y: 1539
+        width: 36
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccbb4c639d054346bb982d91c1ad862
+      internalID: 1069352436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_61
+      rect:
+        serializedVersion: 2
+        x: 4163
+        y: 1539
+        width: 38
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7add677b16be94ba3dcb14154523d3
+      internalID: -2061253884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_62
+      rect:
+        serializedVersion: 2
+        x: 4449
+        y: 1539
+        width: 40
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daeb2f23795f22f4792eef2ed8e311d5
+      internalID: -355786864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_63
+      rect:
+        serializedVersion: 2
+        x: 4741
+        y: 1539
+        width: 36
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb841a369488f8b43b5ce357b30ef1d4
+      internalID: -1857939402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_64
+      rect:
+        serializedVersion: 2
+        x: 5027
+        y: 1539
+        width: 38
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d93901532219b2547a185aeeb0724266
+      internalID: 577642835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_65
+      rect:
+        serializedVersion: 2
+        x: 5314
+        y: 1537
+        width: 41
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e058b3ded065948b08ee45a173e5f2
+      internalID: -1826290875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_66
+      rect:
+        serializedVersion: 2
+        x: 5590
+        y: 1537
+        width: 57
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec77eea5a2448e46899e0fcde7090fd
+      internalID: 1121347771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_67
+      rect:
+        serializedVersion: 2
+        x: 5880
+        y: 1537
+        width: 49
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50aa2ae8e223b394ca75697d0476fa1d
+      internalID: 1781498371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_68
+      rect:
+        serializedVersion: 2
+        x: 6172
+        y: 1537
+        width: 44
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd416d5cbc70a04e8748a8abf052c0f
+      internalID: -1326654502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_69
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1411
+        width: 40
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8c79b95c7471142b919fac58eb43f6
+      internalID: -982252240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_70
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1411
+        width: 36
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05a883f41436c24b8d12703e80cf47b
+      internalID: 289516831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_71
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1411
+        width: 38
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92d62e64020ee249ba301993b729d62
+      internalID: 107761625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_72
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1281
+        width: 45
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483f106e748d692428ea7b02ec10e66d
+      internalID: -125384417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_73
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1281
+        width: 49
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15903068d223db840a2666f83489f6dd
+      internalID: 2040503891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_74
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1284
+        width: 43
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89470313532f23845babfcdd10bdb8ca
+      internalID: 617233261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_75
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1284
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f92a9304a53abe4e9223a71bce6fdaf
+      internalID: 1134877601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_76
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 1284
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16163cc6c4012349820d4447d868818
+      internalID: -2012494338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_77
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 1284
+        width: 43
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f173b84621b9105448087e869e500825
+      internalID: 1228668700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_78
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 1284
+        width: 37
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828ae3f86fc86b345b03cc1bb7090063
+      internalID: 1098624972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_79
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 1284
+        width: 44
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14e6b7f18a3a944592e132b3b8b03ee
+      internalID: -987561915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_80
+      rect:
+        serializedVersion: 2
+        x: 2428
+        y: 1287
+        width: 44
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aeb8aac3da5e594c9a3b23a581a148e
+      internalID: 961246619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_81
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 1290
+        width: 47
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc945ab0db8853b4499d68dd57cae1a7
+      internalID: -1312120880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_82
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 1288
+        width: 53
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a087a5ceafefe47affae75e2920ad8
+      internalID: 963006854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_83
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 1286
+        width: 46
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd897f74c159c2141be8d053b147d9ee
+      internalID: 1161209617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_84
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 1283
+        width: 40
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2217909a290deca45b35a50520c9b074
+      internalID: 1671487771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_85
+      rect:
+        serializedVersion: 2
+        x: 3877
+        y: 1283
+        width: 36
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea52086d0d4521d4691a90519e0c8df6
+      internalID: 730603537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_86
+      rect:
+        serializedVersion: 2
+        x: 4163
+        y: 1283
+        width: 38
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40fc012058a08f489595ebceacad029
+      internalID: 1274404813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_87
+      rect:
+        serializedVersion: 2
+        x: 4449
+        y: 1283
+        width: 40
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53366724ef531ef42b594f87e5f7efb3
+      internalID: 129295651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_88
+      rect:
+        serializedVersion: 2
+        x: 4741
+        y: 1283
+        width: 36
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d697682f739284b9120ab58fdc5c99
+      internalID: 1215017660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_89
+      rect:
+        serializedVersion: 2
+        x: 5027
+        y: 1283
+        width: 38
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f70d3b87410aa438dfef13d2e1def2
+      internalID: 1451804027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_90
+      rect:
+        serializedVersion: 2
+        x: 5314
+        y: 1281
+        width: 41
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71125d9badabc547baf2614754a9ebe
+      internalID: -1619680428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_91
+      rect:
+        serializedVersion: 2
+        x: 5590
+        y: 1281
+        width: 57
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0c885bed1b60a4e8fe36519446693b
+      internalID: -57783321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_92
+      rect:
+        serializedVersion: 2
+        x: 5880
+        y: 1281
+        width: 49
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f83d46d024ca424eb4e158871396240
+      internalID: 1587383012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_93
+      rect:
+        serializedVersion: 2
+        x: 6172
+        y: 1281
+        width: 44
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4823f0ae07ac6f64ab0c23c828605843
+      internalID: 1925517684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_94
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1159
+        width: 44
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53115a17096a9824cb6b281cb86e4a09
+      internalID: 1740534998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_95
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1162
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8dee3f9f664e241b82fe7ffe1f6148
+      internalID: -2059734857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_96
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 1160
+        width: 58
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f45d9cdfb731a949bd87d5202aad8e4
+      internalID: 562006759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_97
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 1160
+        width: 56
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda8b24f3df08694985747af12ca9ec3
+      internalID: 2074180948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_98
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 1160
+        width: 60
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d3d719ec35efb4b889cebf9ed17af0
+      internalID: 990108015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_99
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 1160
+        width: 60
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc7589a0f3f0b14e9831b187a3806d5
+      internalID: 796338229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_100
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1160
+        width: 68
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766188e6e01018d4b871217756af851b
+      internalID: 681183895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_101
+      rect:
+        serializedVersion: 2
+        x: 2126
+        y: 1160
+        width: 70
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4a30b13c0cb2243a811f5abfc6e902
+      internalID: 736819472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_102
+      rect:
+        serializedVersion: 2
+        x: 2423
+        y: 1160
+        width: 48
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000ccb75536a5954bb8fa2d6aacaf4d0
+      internalID: 1777418920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_104
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 1158
+        width: 46
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76fab78347adca64db4109b4ca773d49
+      internalID: -1364027382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_105
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1025
+        width: 54
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a97b5c1cfe61744987cbe041539f7b
+      internalID: 76806555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_106
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 1025
+        width: 39
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ea7d4c764e27d48beaa58e2ec378f1
+      internalID: -1522644666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_107
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1026
+        width: 38
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347e07f648ee1dc468762a44ad700e41
+      internalID: 475196503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_108
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 1025
+        width: 42
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf33a0eb8900034686e798550d02a38
+      internalID: 920467832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_109
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1025
+        width: 40
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e43e82687fc4cf4d8d0c2603c2a204e
+      internalID: 927835947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_110
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 1025
+        width: 42
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc32da163cccd34d9d5c9de11a67ea2
+      internalID: 720013124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_111
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 1025
+        width: 43
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b14164ac0815cc48babf31aeb42136e
+      internalID: 2047789331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_112
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 1025
+        width: 44
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cff624d9e5e6294198653500f5a05ef
+      internalID: 861112260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_113
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 897
+        width: 55
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ea30dd51a001e46bc570ae928aa499
+      internalID: -2047916287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_114
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 897
+        width: 71
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af8377f631585240b75c536a741c691
+      internalID: -742007591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_115
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 897
+        width: 70
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b801e6a68ce8240b8ff4774a8837f2
+      internalID: 1274603289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_116
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 897
+        width: 68
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd4353a1be0489449e5d1830dec31c2
+      internalID: 340163198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_117
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 897
+        width: 70
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465c9dcdacf0040478f23fd5dcc83dfb
+      internalID: -339933312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_118
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 897
+        width: 71
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7240b8830ad3c0d4b88bddbac86f7464
+      internalID: -1230920312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_119
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 897
+        width: 70
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fba28f3436d9d042b966f8c1412c4c3
+      internalID: -2071978278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_120
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 897
+        width: 68
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fac20055a6df9b468d4136a327fd7db
+      internalID: -917107220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_121
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 897
+        width: 70
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31aaccd037f63b440bedf19f13dceb40
+      internalID: 1994897797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_122
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 897
+        width: 52
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c2c7a483ef5ee45973febcfdba587f
+      internalID: -121177054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_123
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 897
+        width: 43
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd9c85b5168ec14f8b42b42edcedbc4
+      internalID: -1357419604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_124
+      rect:
+        serializedVersion: 2
+        x: 3292
+        y: 897
+        width: 44
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c1ca4b2c2ea044a82c0d145dc7eefb
+      internalID: 1961203546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_125
+      rect:
+        serializedVersion: 2
+        x: 3574
+        y: 897
+        width: 49
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a425fc5da61ee4da38226ac618e1a6
+      internalID: -882471909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_126
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 769
+        width: 42
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de883fb4b1074f142be263fcbb5c2e27
+      internalID: -272408509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_127
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 769
+        width: 50
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4265129019378949842bdaec5f1d0c9
+      internalID: 1985477454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_128
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 769
+        width: 50
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd05f42d171ae6e4ebf6b16579357ba5
+      internalID: -219940061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_129
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 769
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855e37b06dfafe943af710219533c322
+      internalID: 1886829096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_130
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 769
+        width: 86
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088b357a728ecee41bfe88c938ee52c1
+      internalID: -2051114175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_131
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 769
+        width: 100
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca937d94bc8f8b4db59a9a1907683c6
+      internalID: -199137102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_132
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 769
+        width: 98
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50daeb28d06b1a4f9f84dd8f1af180a
+      internalID: -486805286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_133
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 769
+        width: 98
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103357ba384e9a24a82be0cea7521e90
+      internalID: 1672687990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_134
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 769
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59d528f1d4ff80649a7b710facee5d6c
+      internalID: -1889793269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_135
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 769
+        width: 48
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0090960b1674633468d46b69f51f7df5
+      internalID: -2083453904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_136
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 641
+        width: 44
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4ebae1c63863c4ca6b763c0ff31668
+      internalID: -1959827192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_137
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 641
+        width: 50
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42ea8af215686a409f212e1e7ced631
+      internalID: 11215178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_138
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 641
+        width: 54
+        height: 61
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa720e3be21e7d408ffb5b834fffc10
+      internalID: -1170166626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_139
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 641
+        width: 68
+        height: 57
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548892f575035134786118b829bf5d46
+      internalID: -1733928681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_140
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 641
+        width: 68
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7153439d50e4e384ba1e9cd83063c2aa
+      internalID: 217272794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_141
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 641
+        width: 68
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec44495fc5998e43b4b12a5d0b8cb3f
+      internalID: 1075401568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_142
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 641
+        width: 68
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b05acef0c28b04b9b00d51b823eafb
+      internalID: -1560521053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_143
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 641
+        width: 68
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c39a8e250396f498d38e8e1d39c0d0
+      internalID: -24884643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_144
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 641
+        width: 98
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb775a167a78964aabf7d5a0e2cf94b
+      internalID: -1560477227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_146
+      rect:
+        serializedVersion: 2
+        x: 2686
+        y: 641
+        width: 98
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8bca6c9f6b46a4dbfaa9a6b7c41d7f
+      internalID: 602754136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_148
+      rect:
+        serializedVersion: 2
+        x: 2972
+        y: 641
+        width: 102
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2442b3f26db849240882806c02f39944
+      internalID: -998807348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_149
+      rect:
+        serializedVersion: 2
+        x: 3279
+        y: 641
+        width: 64
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7480b9dc52f9327449337cfc0f964af1
+      internalID: 569175034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_150
+      rect:
+        serializedVersion: 2
+        x: 3577
+        y: 641
+        width: 44
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8222120d36c9d4941a6c3021e6ce5ef2
+      internalID: -1569945704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_151
+      rect:
+        serializedVersion: 2
+        x: 3864
+        y: 641
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f694728cbded5734b909e2c4ffb9269a
+      internalID: 229134424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_152
+      rect:
+        serializedVersion: 2
+        x: 4152
+        y: 641
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62094cb499e66bb478d578d5b4ec2cbb
+      internalID: 1678549463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_4
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 513
+        width: 43
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9907c2a7696bc2428237938ed823e1b
+      internalID: -449518772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_5
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 513
+        width: 40
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877db52f3980dea498c8f4fc2829ef4b
+      internalID: -213395508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_6
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 513
+        width: 40
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443f12cdab2d16e469daa086ab6ed301
+      internalID: -1428788774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_7
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 513
+        width: 58
+        height: 73
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4babd6335792fad4b83467d030ecc4a2
+      internalID: 60270109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_8
+      rect:
+        serializedVersion: 2
+        x: 2392
+        y: 513
+        width: 92
+        height: 88
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5745d1888524e5438b077d65817a2c3
+      internalID: 297782541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_0
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 513
+        width: 36
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5361c6196816c4941add0cb81b262f5c
+      internalID: 741599187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_1
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 513
+        width: 33
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9e34c50fb715c478645f5551077622
+      internalID: -1354250352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_2
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 513
+        width: 39
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32307ed0dc2c257468d7325116475070
+      internalID: 440214741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_9
+      rect:
+        serializedVersion: 2
+        x: 2676
+        y: 513
+        width: 100
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95141a3620f00a44af5f01b4bfe9190
+      internalID: -267644103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_10
+      rect:
+        serializedVersion: 2
+        x: 3002
+        y: 513
+        width: 32
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714b589981bdcab44a2f82969f07006a
+      internalID: 1735153390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_11
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 513
+        width: 48
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c2082ac3291804b9237f7268ad7382
+      internalID: 230121051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrow_rain_3
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 513
+        width: 50
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dfc35fead2852c4ea4ba081547bb9e7
+      internalID: -155314062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_173
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 385
+        width: 39
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7006ca4763b338743a03c925bc024322
+      internalID: -726143511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_174
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 385
+        width: 37
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aba96501536f754f85bedbefbf678e9
+      internalID: -1518810701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_175
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 385
+        width: 48
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4e594eecec827499e2a7fa7b076c70
+      internalID: -1876364352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_176
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 385
+        width: 62
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aec85090b80f0a42934dbf579506419
+      internalID: -1154483080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_177
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 385
+        width: 64
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ed355a658266146a4691cc33e277a3
+      internalID: -1124300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_178
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 385
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3abd9badb7700479b897427fafc5b9
+      internalID: -1194005434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_179
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 385
+        width: 78
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9deb3feeeccc78c43a7b63dd7b9ea3c7
+      internalID: -675257525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_180
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 385
+        width: 84
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181cbdd19df3b12468c884b31c687695
+      internalID: -816803173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_181
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 385
+        width: 100
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd30e2d505c9bd488972b631af17396
+      internalID: -859881976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_182
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 385
+        width: 324
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e852527aa7c0a045a3e1d5e05052918
+      internalID: -231354783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_183
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 385
+        width: 286
+        height: 35
+      alignment: 9
+      pivot: {x: 0.41, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35c4bc9cbbcb3a48bc870078c85180c
+      internalID: 1639407712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_184
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 385
+        width: 288
+        height: 29
+      alignment: 9
+      pivot: {x: 0.4, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c01a24fba81ac44d96c41760365df6e
+      internalID: 447082822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_185
+      rect:
+        serializedVersion: 2
+        x: 3457
+        y: 385
+        width: 288
+        height: 29
+      alignment: 9
+      pivot: {x: 0.3925, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679466997f2dc494ab103119c956ddd8
+      internalID: -2025606113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_187
+      rect:
+        serializedVersion: 2
+        x: 4133
+        y: 385
+        width: 48
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341e0891d389d4e4aa62fc1fb1d89629
+      internalID: 608667715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_188
+      rect:
+        serializedVersion: 2
+        x: 4442
+        y: 385
+        width: 39
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21e44ecbcda9294b9a0f46e0ecdd996
+      internalID: -1995009872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_189
+      rect:
+        serializedVersion: 2
+        x: 4727
+        y: 385
+        width: 48
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c07e0bd5fc89d4a8f35d90788a6ad3
+      internalID: -1878334082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_191
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 257
+        width: 36
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39a8fc0aae3ec94e92ab769b19ab3a8
+      internalID: 1653039745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_192
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 257
+        width: 38
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c82994b35fcc994ea92b71009c063f8
+      internalID: 1273645327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_193
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 257
+        width: 44
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faeb53a11426db043bcf3e2fab57ffc9
+      internalID: -88219313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_194
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 257
+        width: 58
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e52b8c43268804aa0432ddc7d5625f
+      internalID: -227635950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_195
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 257
+        width: 58
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec56e525e39036a4e8741cad05e0afce
+      internalID: 178876350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_196
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 257
+        width: 64
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789d23c481d73f94b93e852a29c9d919
+      internalID: 1215180254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_197
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 257
+        width: 78
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03272612e612174e80aeb23a94aeccc
+      internalID: 1893510999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_198
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 257
+        width: 72
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304d72ec6189bbd449f89a57387a77ae
+      internalID: 1164842454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_199
+      rect:
+        serializedVersion: 2
+        x: 2423
+        y: 257
+        width: 72
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3560ff56fea0948b087b139c88abb9
+      internalID: -1979094353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_200
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 257
+        width: 72
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe4bb39359b5b545a09c19364d07c3b
+      internalID: -978351783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_201
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 257
+        width: 72
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbce0f41dd87530489853d118a5e6c2b
+      internalID: -1615396247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_202
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 257
+        width: 72
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49aefbaeeb968e4eb7eb12375fa9b7c
+      internalID: -1221882727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_203
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 257
+        width: 72
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be9ffca68f83864ca168c687739ebda
+      internalID: -1590718900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_204
+      rect:
+        serializedVersion: 2
+        x: 3861
+        y: 257
+        width: 76
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b70c136d1437c43a61b19cb1816313
+      internalID: 1170475055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_205
+      rect:
+        serializedVersion: 2
+        x: 4155
+        y: 257
+        width: 64
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d59802f4ba19f4c9d520c823999ac5
+      internalID: 2101686399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_206
+      rect:
+        serializedVersion: 2
+        x: 4446
+        y: 257
+        width: 58
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f7cccc92445e6418c1572f6bdae13c
+      internalID: -715097169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_207
+      rect:
+        serializedVersion: 2
+        x: 4734
+        y: 257
+        width: 58
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56499a5693533a429810d2c2b198906
+      internalID: 1677706255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_208
+      rect:
+        serializedVersion: 2
+        x: 5023
+        y: 257
+        width: 44
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39360d7ae20e495498e3c9191c5f948b
+      internalID: 1356692317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_209
+      rect:
+        serializedVersion: 2
+        x: 5303
+        y: 257
+        width: 48
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1810d9d1b9a13534fa273135b9a660dc
+      internalID: -462325146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_210
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 129
+        width: 39
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb86d17883775c45b803ee43d70b5cd
+      internalID: -727384165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_211
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 129
+        width: 39
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75118816074e1f24eb0deecfb62fc96b
+      internalID: 509331846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_212
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 129
+        width: 39
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed64c85776653154c81629d415074844
+      internalID: -434101252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_213
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 129
+        width: 36
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21a2337a83727346a62a14d3d282803
+      internalID: 708022916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_214
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 129
+        width: 36
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142f3e26a66d0d341949bd831b1c1e38
+      internalID: 1518279635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_215
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 129
+        width: 48
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7622d93959cad45816ee4a270c76b9
+      internalID: 318082502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_216
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 1
+        width: 48
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf4571c72f361f4a9377b2e3b6f7764
+      internalID: 651499260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_217
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1
+        width: 64
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1614161f773ee439cfcf8043c92b52
+      internalID: 910695446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_218
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 1
+        width: 66
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4fd3c7ae81d4b4487363866fbd5300
+      internalID: -1918596015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_219
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 1
+        width: 60
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bcee97a5e7e6349ae8bd157c6f5064
+      internalID: -337602626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_220
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 1
+        width: 56
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d716fbb89452b414a8a5ae92d0889dd1
+      internalID: -2086273505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_221
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1
+        width: 56
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 034bada89bb641b47870e41dee7a3e23
+      internalID: -1748146332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_222
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 1
+        width: 58
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6b6a995948dd543b4b8e29c8c393c1
+      internalID: -1728407382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_223
+      rect:
+        serializedVersion: 2
+        x: 2136
+        y: 1
+        width: 56
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee24e7361fa8b5d468767555501cc8c3
+      internalID: 1656137756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_224
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 1
+        width: 54
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50548b51055fe884bb11f1a602bd40a1
+      internalID: 1371766030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_225
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 1
+        width: 54
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f24ac777b48c94e91882d77a8e2ed9
+      internalID: -442408925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_226
+      rect:
+        serializedVersion: 2
+        x: 3001
+        y: 1
+        width: 54
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97255d721c86ab7439421b546c418166
+      internalID: 1839834525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_227
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 1
+        width: 54
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06ca33c6fe1afd46a0ad407327f9010
+      internalID: -881344174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_228
+      rect:
+        serializedVersion: 2
+        x: 3564
+        y: 1
+        width: 80
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fdb4a53d6cc9f34a89cb4f996fbe9e3
+      internalID: 1227035197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_229
+      rect:
+        serializedVersion: 2
+        x: 3850
+        y: 1
+        width: 84
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ae0f91badb01f428ca5a212d941040
+      internalID: 630027675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_230
+      rect:
+        serializedVersion: 2
+        x: 4138
+        y: 1
+        width: 84
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4ba2d0c966e0f43ba680a7066bbfad
+      internalID: 595586710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_231
+      rect:
+        serializedVersion: 2
+        x: 4426
+        y: 1
+        width: 84
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e9ab4f39f196014586034453319d233
+      internalID: -1833057745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_232
+      rect:
+        serializedVersion: 2
+        x: 4714
+        y: 1
+        width: 84
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3accd7a583e0cf47b9a618c2e3d6e04
+      internalID: 1293906488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_233
+      rect:
+        serializedVersion: 2
+        x: 5002
+        y: 1
+        width: 84
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fea7a009e4733345bf0caf854fd83bd
+      internalID: -976868794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_234
+      rect:
+        serializedVersion: 2
+        x: 5290
+        y: 1
+        width: 84
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0294fa1449d3c4caa338cf207dd39e
+      internalID: 1867571970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LeafRanger_186
+      rect:
+        serializedVersion: 2
+        x: 3837
+        y: 385
+        width: 42
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b2a09fec3a0a14b80485cd7f8decbc
+      internalID: -1403404152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LeafRanger_152: 1678549463
+      LeafRanger_64: 577642835
+      LeafRanger_195: 178876350
+      LeafRanger_229: 630027675
+      LeafRanger_26: -1900571221
+      LeafRanger_218: -1918596015
+      LeafRanger_112: 861112260
+      LeafRanger_113: -2047916287
+      LeafRanger_140: 217272794
+      LeafRanger_150: -1569945704
+      LeafRanger_93: 1925517684
+      LeafRanger_122: -121177054
+      LeafRanger_14: 1676971556
+      LeafRanger_25: -434959580
+      LeafRanger_118: -1230920312
+      LeafRanger_133: 1672687990
+      LeafRanger_161: -203091558
+      LeafRanger_34: -747910149
+      LeafRanger_125: -882471909
+      LeafRanger_220: -2086273505
+      LeafRanger_174: -1518810701
+      LeafRanger_131: -199137102
+      LeafRanger_29: 125142913
+      LeafRanger_187: 608667715
+      LeafRanger_73: 2040503891
+      LeafRanger_228: 1227035197
+      LeafRanger_193: -88219313
+      LeafRanger_110: 720013124
+      LeafRanger_153: 1854574708
+      LeafRanger_37: -1080333153
+      LeafRanger_19: 381517335
+      LeafRanger_108: 920467832
+      LeafRanger_107: 475196503
+      LeafRanger_124: 1961203546
+      LeafRanger_95: -2059734857
+      LeafRanger_191: 1653039745
+      LeafRanger_79: -987561915
+      LeafRanger_208: 1356692317
+      LeafRanger_22: -186604417
+      LeafRanger_134: -1889793269
+      LeafRanger_136: -1959827192
+      LeafRanger_59: 1482982932
+      LeafRanger_205: 2101686399
+      LeafRanger_199: -1979094353
+      LeafRanger_146: 602754136
+      idle_5: 702234899
+      idle_9: -362546836
+      LeafRanger_176: -1154483080
+      LeafRanger_20: 1768707800
+      LeafRanger_102: 1777418920
+      LeafRanger_55: -1041004899
+      LeafRanger_126: -272408509
+      LeafRanger_234: 1867571970
+      LeafRanger_16: -948398784
+      LeafRanger_198: 1164842454
+      LeafRanger_38: -1291098527
+      LeafRanger_123: -1357419604
+      LeafRanger_177: -1124300048
+      LeafRanger_156: 1116495610
+      LeafRanger_117: -339933312
+      LeafRanger_13: 1296325070
+      LeafRanger_23: -692574907
+      LeafRanger_47: 1523241192
+      LeafRanger_213: 708022916
+      idle_1: -1182979337
+      LeafRanger_179: -675257525
+      LeafRanger_46: -1356523509
+      LeafRanger_49: -2031892976
+      LeafRanger_214: 1518279635
+      arrow_rain_4: -449518772
+      LeafRanger_85: 730603537
+      LeafRanger_120: -917107220
+      LeafRanger_181: -859881976
+      LeafRanger_105: 76806555
+      LeafRanger_99: 796338229
+      LeafRanger_142: -1560521053
+      LeafRanger_137: 11215178
+      idle_10: 1000051880
+      LeafRanger_70: 289516831
+      LeafRanger_145: 2124015066
+      LeafRanger_211: 509331846
+      LeafRanger_41: -1107075412
+      LeafRanger_189: -1878334082
+      LeafRanger_68: -1326654502
+      LeafRanger_43: -170098608
+      LeafRanger_106: -1522644666
+      idle_4: -1069735468
+      LeafRanger_45: 859370346
+      LeafRanger_78: 1098624972
+      LeafRanger_17: -1971176000
+      LeafRanger_144: -1560477227
+      LeafRanger_154: 378281440
+      LeafRanger_155: -1579867839
+      LeafRanger_88: 1215017660
+      LeafRanger_215: 318082502
+      LeafRanger_135: -2083453904
+      LeafRanger_147: 921022544
+      LeafRanger_21: 86318560
+      LeafRanger_31: -1934704388
+      LeafRanger_224: 1371766030
+      LeafRanger_48: -1541258016
+      LeafRanger_116: 340163198
+      LeafRanger_27: -2053467078
+      LeafRanger_28: 1731309415
+      LeafRanger_81: -1312120880
+      LeafRanger_32: 1636692065
+      LeafRanger_192: 1273645327
+      arrow_rain_5: -213395508
+      LeafRanger_40: -894631177
+      LeafRanger_51: -167432623
+      LeafRanger_52: -570525530
+      LeafRanger_33: -2059493631
+      LeafRanger_175: -1876364352
+      LeafRanger_91: -57783321
+      idle_11: -1829255098
+      LeafRanger_36: -747211361
+      LeafRanger_162: -1914198455
+      LeafRanger_76: -2012494338
+      LeafRanger_97: 2074180948
+      LeafRanger_149: 569175034
+      LeafRanger_57: 357330604
+      LeafRanger_184: 447082822
+      idle_7: -189198292
+      LeafRanger_50: 2121160536
+      LeafRanger_230: 595586710
+      LeafRanger_98: 990108015
+      LeafRanger_130: -2051114175
+      arrow_rain_8: 297782541
+      LeafRanger_58: 1468728012
+      LeafRanger_89: 1451804027
+      LeafRanger_75: 1134877601
+      LeafRanger_18: 1644597640
+      LeafRanger_104: -1364027382
+      LeafRanger_203: -1590718900
+      LeafRanger_194: -227635950
+      LeafRanger_222: -1728407382
+      LeafRanger_219: -337602626
+      arrow_rain_7: 60270109
+      LeafRanger_115: 1274603289
+      LeafRanger_119: -2071978278
+      LeafRanger_139: -1733928681
+      LeafRanger_87: 129295651
+      LeafRanger_216: 651499260
+      LeafRanger_128: -219940061
+      arrow_rain_11: 230121051
+      LeafRanger_196: 1215180254
+      LeafRanger_183: 1639407712
+      LeafRanger_42: -283191568
+      LeafRanger_72: -125384417
+      LeafRanger_61: -2061253884
+      LeafRanger_127: 1985477454
+      LeafRanger_233: -976868794
+      LeafRanger_74: 617233261
+      LeafRanger_132: -486805286
+      LeafRanger_188: -1995009872
+      LeafRanger_80: 961246619
+      LeafRanger_69: -982252240
+      LeafRanger_217: 910695446
+      LeafRanger_12: -368830048
+      LeafRanger_223: 1656137756
+      LeafRanger_201: -1615396247
+      LeafRanger_138: -1170166626
+      LeafRanger_90: -1619680428
+      arrow_rain_9: -267644103
+      LeafRanger_15: -90755583
+      LeafRanger_62: -355786864
+      LeafRanger_204: 1170475055
+      LeafRanger_77: 1228668700
+      LeafRanger_101: 736819472
+      LeafRanger_71: 107761625
+      LeafRanger_173: -726143511
+      LeafRanger_82: 963006854
+      LeafRanger_206: -715097169
+      LeafRanger_67: 1781498371
+      LeafRanger_54: 1738788852
+      LeafRanger_86: 1274404813
+      LeafRanger_96: 562006759
+      LeafRanger_84: 1671487771
+      LeafRanger_225: -442408925
+      LeafRanger_178: -1194005434
+      LeafRanger_24: 1579710977
+      LeafRanger_92: 1587383012
+      LeafRanger_185: -2025606113
+      LeafRanger_182: -231354783
+      LeafRanger_212: -434101252
+      LeafRanger_180: -816803173
+      LeafRanger_53: -815560917
+      arrow_rain_0: 741599187
+      arrow_rain_6: -1428788774
+      idle_3: -854557028
+      LeafRanger_209: -462325146
+      LeafRanger_66: 1121347771
+      LeafRanger_197: 1893510999
+      LeafRanger_164: 459577432
+      idle_0: 188746645
+      LeafRanger_207: 1677706255
+      LeafRanger_202: -1221882727
+      LeafRanger_227: -881344174
+      idle_8: 738391078
+      LeafRanger_30: -1096144687
+      LeafRanger_186: -1403404152
+      idle_2: -1176100413
+      LeafRanger_141: 1075401568
+      LeafRanger_226: 1839834525
+      LeafRanger_100: 681183895
+      LeafRanger_210: -727384165
+      LeafRanger_35: 1069807253
+      LeafRanger_148: -998807348
+      LeafRanger_60: 1069352436
+      LeafRanger_65: -1826290875
+      LeafRanger_56: 679721506
+      LeafRanger_109: 927835947
+      LeafRanger_114: -742007591
+      LeafRanger_39: 1824863852
+      LeafRanger_143: -24884643
+      LeafRanger_83: 1161209617
+      LeafRanger_121: 1994897797
+      LeafRanger_200: -978351783
+      LeafRanger_232: 1293906488
+      arrow_rain_10: 1735153390
+      arrow_rain_2: 440214741
+      LeafRanger_44: -1606447959
+      LeafRanger_63: -1857939402
+      LeafRanger_151: 229134424
+      idle_6: -1921272165
+      arrow_rain_3: -155314062
+      LeafRanger_231: -1833057745
+      LeafRanger_94: 1740534998
+      LeafRanger_221: -1748146332
+      LeafRanger_111: 2047789331
+      arrow_rain_1: -1354250352
+      LeafRanger_129: 1886829096
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

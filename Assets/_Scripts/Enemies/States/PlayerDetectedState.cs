@@ -8,6 +8,7 @@ public class PlayerDetectedState : State
 
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMaxAgroRange;
+    protected bool isPlayerInMidAgroRange;
     protected bool performLongRangeAction;
     protected bool performCloseRangeAction;
     protected bool isDetectingLedge;
@@ -28,6 +29,7 @@ public class PlayerDetectedState : State
         base.DoChecks();
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAggroRange();
+        isPlayerInMidAgroRange = entity.CheckPlayerInMidRangeAction();
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAggroRange();
         isDetectingLedge = CollisionSenses.LedgeVertical;
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();

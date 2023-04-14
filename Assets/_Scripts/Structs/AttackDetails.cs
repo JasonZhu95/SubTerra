@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct WeaponAttackDetails
+public struct AttackDetails
 {
-    public string attackName;
-    public float movementSpeed;
+    public Vector2 position;
     public float damageAmount;
+    public float stunDamageAmount;
 
     public float knockbackStrength;
     public Vector2 knockbackAngle;
