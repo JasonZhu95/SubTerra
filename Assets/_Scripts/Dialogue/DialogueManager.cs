@@ -32,6 +32,7 @@ namespace Project.UI
         #endregion
 
         #region Local Variables
+        public bool DialogueIsPlaying { get; private set; }
         private TextMeshProUGUI[] choicesText;
 
         private Story currentStory;
@@ -39,11 +40,11 @@ namespace Project.UI
         private PlayerInputHandler inputHandler;
         private Animator layoutAnimator;
 
-        public bool DialogueIsPlaying { get; private set; }
-
         private static DialogueManager instance;
         private Coroutine displayLineCoroutine;
         private bool canContinueToNextLine = false;
+
+        private string currentlyPlayingAudio;
         #endregion
 
         #region Ink Parsing
@@ -122,6 +123,7 @@ namespace Project.UI
             dialogueAnim.SetBool("start", false);
         }
 
+        // Disable dialogue
         public void ExitDialogueAfterAnimation()
         {
             inputHandler.BlockActionInput = false;
@@ -135,6 +137,13 @@ namespace Project.UI
         // Check if there are more dialogue to be displayed
         private void ContinueStory()
         {
+            // Stop current audio file
+            if (currentlyPlayingAudio != null)
+            {
+                FindObjectOfType<SoundManager>().StopPlay(currentlyPlayingAudio);
+            }
+
+            // Manage going to the next dialouge line
             if (currentStory.canContinue)
             {
                 if (displayLineCoroutine != null)
@@ -151,6 +160,7 @@ namespace Project.UI
             }
         }
 
+        // Display the dialogue with a typewriter effect
         private IEnumerator DisplayLine(string line)
         {
             dialogueText.text = line;
@@ -201,6 +211,7 @@ namespace Project.UI
                         break;
                     case AUDIO_TAG:
                         FindObjectOfType<SoundManager>().Play(tagValue);
+                        currentlyPlayingAudio = tagValue;
                         break;
                     default:
                         Debug.LogWarning("TAG Error Parsing Tag: " + tag);
