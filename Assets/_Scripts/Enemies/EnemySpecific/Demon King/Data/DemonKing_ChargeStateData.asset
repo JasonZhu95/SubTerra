@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af0caf91ac8c6a44283deda0a0e81a62, type: 3}
+  m_Script: {fileID: 11500000, guid: a41e4d44117c087468d409b2886db7b6, type: 3}
   m_Name: DemonKing_ChargeStateData
   m_EditorClassIdentifier: 
   chargeSpeed: 6

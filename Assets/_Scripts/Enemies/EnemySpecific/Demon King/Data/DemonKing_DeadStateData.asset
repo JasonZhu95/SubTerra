@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d88baeabb3ce04180015eba2fc287d, type: 3}
+  m_Script: {fileID: 11500000, guid: 64ade412ad298ee42b3261b1ac502aa2, type: 3}
   m_Name: DemonKing_DeadStateData
   m_EditorClassIdentifier: 
-  deathChunkParticle: {fileID: 3307164982254487850, guid: 9e056c415d1edbf4b82de878606faef4, type: 3}
-  deathBloodParticle: {fileID: 5782033508679158536, guid: a94d9fb111403f046bdc2ddd48e62a60, type: 3}
+  deathChunkParticle: {fileID: 3078264612223352877, guid: 138998b53f1ff0c4c9f8043a15c217a3, type: 3}
+  deathBloodParticle: {fileID: 8529164440084401556, guid: 10ad51835f1120643a2157eba066f88f, type: 3}
