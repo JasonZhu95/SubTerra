@@ -4,6 +4,7 @@ using System;
 public class AnimationToStatemachine : MonoBehaviour
 {
     public AttackState attackState;
+    public DeadState deadState;
 
     private void TriggerAttack()
     {
@@ -18,6 +19,16 @@ public class AnimationToStatemachine : MonoBehaviour
     private void FinishAttack()
     {
         attackState.FinishAttack();
+    }
+
+    private void TriggerDeathParticles()
+    {
+        deadState.TriggerDeathParticles();
+    }
+
+    private void DieAnimationFinished()
+    {
+        deadState.DieAnimationFinished();
     }
 }
 
