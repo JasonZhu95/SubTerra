@@ -9,24 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcc67a22da9fcb44a0e22271ec8f632, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a969e852db7b841aad80fceccebcbd, type: 3}
   m_Name: Ranger_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 30
   damageHopSpeed: 3
-  wallCheckDistance: 0.2
+  wallCheckDistance: 0.3
   ledgeCheckDistance: 0.4
   groundCheckRadius: 0.3
-  minAggroDistance: 10
-  maxAggroDistance: 20
+  minAgroDistance: 8
+  maxAgroDistance: 12
+  circleAgroDistance: 10
   stunResistance: 3
   stunRecoveryTime: 2
   closeRangeActionDistance: 2
-  midRangeActionDistance: 7
-  hitParticle: {fileID: 4783923992580487093, guid: 9466a437ab9d88a408e583ff18e24839, type: 3}
+  midRangeActionDistance: 6
+  hitParticle: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2056
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 16384

@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd12f0609f956e549be46238e0fe9193, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f5aa482e628e2429c6afc331c722f2, type: 3}
   m_Name: Ranger_MeleeAttackData
   m_EditorClassIdentifier: 
-  attackRadius: 0.75
-  attackDamage: 20
+  attackRadius: 0.5
+  attackDamage: 10
   knockbackAngle: {x: 1, y: 1}
-  knockbackStrength: 20
+  knockbackStrength: 10
+  poiseDamage: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 16384

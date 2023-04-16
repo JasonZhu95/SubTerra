@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DemonKing : Entity
 {
-    //private Stat Stat => stat ? stat : Core.GetCoreComponent(ref stat);
-    //private Stat stat;
+    // private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stat);
+    // private Stats stats;
 
     public DemonKing_MoveState moveState { get; private set; }
     public DemonKing_IdleState idleState { get; private set; }
@@ -62,12 +62,12 @@ public class DemonKing : Entity
 
     private void OnEnable()
     {
-        //Stat.OnCurrentValueZero += Die;
+        // Stats.Health.OnCurrentValueZero += Die;
     }
 
     private void OnDisable()
     {
-        //Stat.OnCurrentValueZero -= Die;
+        // Stats.Health.OnCurrentValueZero -= Die;
     }
 
     public override void OnDrawGizmos()

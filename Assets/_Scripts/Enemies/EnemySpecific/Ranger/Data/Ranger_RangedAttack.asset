@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66203dbe38eb6a4daf3484c07f45e4c, type: 3}
+  m_Script: {fileID: 11500000, guid: f9b5786225dde68449a69e32d1442272, type: 3}
   m_Name: Ranger_RangedAttack
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6209352435048334927, guid: d0b9e637806d91f43a10a44f1f5395f8, type: 3}
-  projectileDamage: 20
-  projectileSpeed: 24
-  projectileTravelDistance: 30
+  projectile: {fileID: 903815169726171363, guid: a1029a2bc114b3f4898f8668e8bc490b, type: 3}
+  projectileData: {fileID: 11400000, guid: 28a3703493dbb2a45a2fdf5bdbf40693, type: 2}

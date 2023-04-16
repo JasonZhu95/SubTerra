@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dd673800578ac45b6d8cd9ed5c6ebf, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e9173c2a22bb4a47a244ddca55306b1, type: 3}
   m_Name: Ranger_DodgeData
   m_EditorClassIdentifier: 
-  dodgeSpeed: 8
+  dodgeSpeed: 10
   dodgeTime: 0.2
   dodgeCooldown: 2
   dodgeAngle: {x: 1, y: 1}
