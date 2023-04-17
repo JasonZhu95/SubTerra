@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class DemonKing : Entity
 {
-    // private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stat);
-    // private Stats stats;
-
     public DemonKing_MoveState moveState { get; private set; }
     public DemonKing_IdleState idleState { get; private set; }
     public DemonKing_PlayerDetectedState playerDetectedState { get; private set; }
@@ -57,17 +54,8 @@ public class DemonKing : Entity
 
     private void Die()
     {
+        Movement.RB.constraints = RigidbodyConstraints2D.FreezeAll;
         stateMachine.ChangeState(deadState);
-    }
-
-    private void OnEnable()
-    {
-        // Stats.Health.OnCurrentValueZero += Die;
-    }
-
-    private void OnDisable()
-    {
-        // Stats.Health.OnCurrentValueZero -= Die;
     }
 
     public override void OnDrawGizmos()

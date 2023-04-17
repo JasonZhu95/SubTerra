@@ -31,8 +31,8 @@ public class Entity : MonoBehaviour
     protected bool isStunned;
     protected bool isDead;
 
-    private Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
-    private Movement movement;
+    protected Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
+    protected Movement movement;
 
     public virtual void Awake()
     {

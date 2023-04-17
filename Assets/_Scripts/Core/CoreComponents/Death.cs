@@ -54,6 +54,12 @@ public class Death : CoreComponent
             levelLoaderManager.PlayTransition();
             Stats.Health.Increase(Stats.Health.MaxValue);
         }
+        if (core.Parent.name == "Demon King" || core.Parent.name == "Ranger")
+        {
+            Invoke("InstantiateCoins", 1.3f);
+            //InstantiateCoins();
+            core.Parent.SendMessage("Die");
+        }
         else
         {
             InstantiateCoins();

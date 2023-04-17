@@ -6,6 +6,7 @@ using UnityEngine;
 public class D_BeamAttackState : ScriptableObject
 {
     public float beamDamage = 10f;
+    public float poiseDamage = 0f;
     public float knockbackStrength;
 
     public Vector2 knockbackAngle;

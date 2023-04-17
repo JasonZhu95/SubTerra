@@ -1,3 +1,4 @@
+using Project.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class BeamAttackState : AttackState
 
     protected D_BeamAttackState stateData;
 
-    protected AttackDetails attackDetails;
+    private DamageData damageData;
 
     public BeamAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_BeamAttackState stateData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
@@ -24,11 +25,6 @@ public class BeamAttackState : AttackState
     public override void Enter()
     {
         base.Enter();
-
-        attackDetails.damageAmount = stateData.beamDamage;
-        attackDetails.position = entity.transform.position;
-        attackDetails.knockbackAngle = stateData.knockbackAngle;
-        attackDetails.knockbackStrength = stateData.knockbackStrength;
     }
 
     public override void Exit()
@@ -59,18 +55,32 @@ public class BeamAttackState : AttackState
 
         foreach (Collider2D collider in detectedObjects)
         {
-            //IDamageable damageable = collider.GetComponent<IDamageable>();
-            //IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
+            IDamageable damageable = collider.GetComponent<IDamageable>();
 
-            //if (damageable != null)
-            //{
-            //    damageable.Damage(attackDetails);
-            //}
+            if (damageable != null)
+            {
+                damageData.SetData(core.Parent, stateData.beamDamage);
+                damageable.Damage(damageData);
+            }
 
-            //if (knockbackable != null)
-            //{
-            //    knockbackable.Knockback(attackDetails.knockbackAngle, attackDetails.knockbackStrength, Movement.FacingDirection);
-            //}
+            IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
+
+            if (knockbackable != null)
+            {
+                var data = new KnockbackData(stateData.knockbackAngle, stateData.knockbackStrength,
+                    Movement.FacingDirection, core.transform.parent.gameObject);
+                knockbackable.Knockback(data);
+            }
+
+            IPoiseDamageable poiseDamageable = collider.GetComponent<IPoiseDamageable>();
+
+            if (poiseDamageable != null)
+            {
+                var data = new PoiseDamageData();
+                data.Source = core.transform.parent.gameObject;
+                data.PoiseDamageAmount = stateData.poiseDamage;
+                poiseDamageable.PoiseDamage(data);
+            }
         }
 
     }

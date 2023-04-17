@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37efa1a684460fe49b598ca20c7290d9, type: 3}
   m_Name: Ranger_BeamAttackData
   m_EditorClassIdentifier: 
-  beamDamage: 10
+  beamDamage: 1
+  poiseDamage: 0
   knockbackStrength: 5
   knockbackAngle: {x: 1, y: 1}
   beamDimensions: {x: 6.2, y: -0.6}
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 16448
