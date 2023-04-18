@@ -57,8 +57,6 @@ public class Death : CoreComponent
         if (core.Parent.name == "Demon King" || core.Parent.name == "Ranger")
         {
             Invoke("InstantiateCoins", 1.3f);
-            //InstantiateCoins();
-            core.Parent.SendMessage("Die");
         }
         else
         {

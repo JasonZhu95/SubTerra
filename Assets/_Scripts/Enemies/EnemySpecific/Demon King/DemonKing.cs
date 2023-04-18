@@ -33,6 +33,9 @@ public class DemonKing : Entity
     [SerializeField]
     private Transform meleeAttackPosition;
 
+    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
+    private Stats stats;
+
     public override void Awake()
     {
         base.Awake();
@@ -50,12 +53,13 @@ public class DemonKing : Entity
     private void Start()
     {
         stateMachine.Initialize(moveState);
+
+        Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
     }
 
-    private void Die()
+    private void OnDestroy()
     {
-        Movement.RB.constraints = RigidbodyConstraints2D.FreezeAll;
-        stateMachine.ChangeState(deadState);
+        Stats.Health.OnCurrentValueZero -= () => stateMachine.ChangeState(deadState);
     }
 
     public override void OnDrawGizmos()

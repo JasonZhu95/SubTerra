@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Ranger : Entity
 {
-    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
-    private Stats stats;
-
     public Ranger_MoveState moveState { get; private set; }
     public Ranger_IdleState idleState { get; private set; }
     public Ranger_PlayerDetectedState playerDetectedState { get; private set; }
@@ -17,6 +14,7 @@ public class Ranger : Entity
     public Ranger_DodgeState dodgeState { get; private set; }
     public Ranger_RangedAttackState rangedAttackState { get; private set; }
     public Ranger_BeamAttackState beamAttackState { get; private set; }
+    public Ranger_ArrowRainState arrowRainState { get; private set; }
 
     [SerializeField]
     private D_MoveState moveStateData;
@@ -38,6 +36,8 @@ public class Ranger : Entity
     public D_RangedAttackState rangedAttackStateData;
     [SerializeField]
     public D_BeamAttackState beamAttackStateData;
+    [SerializeField]
+    public D_ArrowRainState arrowRainStateData;
 
     [SerializeField]
     private Transform meleeAttackPosition;
@@ -45,6 +45,11 @@ public class Ranger : Entity
     private Transform rangedAttackPosition;
     [SerializeField]
     private Transform beamAttackPosition;
+    [SerializeField]
+    private Transform playerPosition;
+
+    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
+    private Stats stats;
 
     public override void Awake()
     {
@@ -60,17 +65,21 @@ public class Ranger : Entity
         dodgeState = new Ranger_DodgeState(this, stateMachine, "dodge", dodgeStateData, this);
         rangedAttackState = new Ranger_RangedAttackState(this, stateMachine, "rangedAttack", rangedAttackPosition, rangedAttackStateData, this);
         beamAttackState = new Ranger_BeamAttackState(this, stateMachine, "beamAttack", beamAttackPosition, beamAttackStateData, this);
+        arrowRainState = new Ranger_ArrowRainState(this, stateMachine, "arrowRain", playerPosition, arrowRainStateData, this);
     }
 
     private void Start()
     {
         stateMachine.Initialize(moveState);
+
+        Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
+        Stats.Health.OnCurrentValueBelowHalf += () => stateMachine.ChangeState(arrowRainState);
     }
 
-    private void Die()
+    private void OnDestroy()
     {
-        Movement.RB.constraints = RigidbodyConstraints2D.FreezeAll;
-        stateMachine.ChangeState(deadState);
+        Stats.Health.OnCurrentValueZero -= () => stateMachine.ChangeState(deadState);
+        Stats.Health.OnCurrentValueBelowHalf -= () => stateMachine.ChangeState(arrowRainState);
     }
 
     public override void OnDrawGizmos()

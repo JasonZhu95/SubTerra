@@ -20,9 +20,7 @@ public class DeadState : State
 
         entity.atsm.deadState = this;
 
-        // GameObject.Instantiate(stateData.deathBloodParticle, entity.transform.position, stateData.deathBloodParticle.transform.rotation);
-        // GameObject.Instantiate(stateData.deathChunkParticle, entity.transform.position, stateData.deathChunkParticle.transform.rotation);
-
+        Movement.RB.constraints = RigidbodyConstraints2D.FreezeAll;
         Movement?.SetVelocityX(0f);
     }
 

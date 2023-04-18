@@ -49,7 +49,7 @@ public class RangedAttackState : AttackState
     {
         base.TriggerAttack();
 
-        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
+        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, Quaternion.Euler(0f, 0f, 135f));
         projectileScript = projectile.GetComponent<Projectile>();
 
         projectileScript.CreateProjectile(stateData.projectileData);

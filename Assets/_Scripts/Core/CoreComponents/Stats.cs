@@ -57,6 +57,8 @@ public class Stat
     public float currentValue;
     [field: SerializeField] public float MaxValue { get; set; }
 
+    private bool triggeredHalfLifeAttack = false;
+
     public float CurrentValue
     {
         get => currentValue;
@@ -64,6 +66,12 @@ public class Stat
         {
             currentValue = Mathf.Clamp(value, 0f, MaxValue);
             OnCurrentValueChange?.Invoke(currentValue);
+
+            if (currentValue / MaxValue <= 0.5 && !triggeredHalfLifeAttack)
+            {
+                OnCurrentValueBelowHalf?.Invoke();
+                triggeredHalfLifeAttack = true;
+            }
 
             if (currentValue <= 0f)
             {
@@ -75,6 +83,8 @@ public class Stat
     public event Action<float> OnCurrentValueChange;
 
     public event Action OnCurrentValueZero;
+
+    public event Action OnCurrentValueBelowHalf;
 
     public void Init() => CurrentValue = MaxValue;
 

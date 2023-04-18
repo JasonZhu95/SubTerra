@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &654106941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654106942}
+  m_Layer: 0
+  m_Name: ArrowRainPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &654106942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654106941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3428416274447535253}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3428416272880797051
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +566,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3428416274447535276}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 122.12, y: -7.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -545,6 +576,7 @@ Transform:
   - {fileID: 3428416272880797050}
   - {fileID: 3428416273282775334}
   - {fileID: 3428416274474362024}
+  - {fileID: 654106942}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -706,9 +738,11 @@ MonoBehaviour:
   dodgeStateData: {fileID: 11400000, guid: 614e1af6b54c0364aa239272202e34e8, type: 2}
   rangedAttackStateData: {fileID: 11400000, guid: e0e0404e6dd7ea842aa7f282ce9151c1, type: 2}
   beamAttackStateData: {fileID: 11400000, guid: 453f14e38accbeb46ad307cbca8aa131, type: 2}
+  arrowRainStateData: {fileID: 11400000, guid: 28cd872c5a84c5a438cf5ef2611ea485, type: 2}
   meleeAttackPosition: {fileID: 3428416272880797050}
   rangedAttackPosition: {fileID: 3428416273282775334}
   beamAttackPosition: {fileID: 3428416274474362024}
+  arrowRainPosition: {fileID: 654106942}
 --- !u!1 &3428416274474362025
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField:
     currentValue: 0
-    <MaxValue>k__BackingField: 30
+    <MaxValue>k__BackingField: 100
   <Poise>k__BackingField:
     currentValue: 0
     <MaxValue>k__BackingField: 100
