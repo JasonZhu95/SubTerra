@@ -89,7 +89,7 @@ namespace Project.UI
                 return;
             }
 
-            if (inputHandler.MainActionUIInput && canContinueToNextLine && currentStory.currentChoices.Count == 0)
+            if ((inputHandler.MainActionUIInput || Input.GetMouseButtonDown(0)) && canContinueToNextLine && currentStory.currentChoices.Count == 0)
             {
                 inputHandler.MainActionUIInput = false;
                 ContinueStory();
@@ -171,7 +171,7 @@ namespace Project.UI
 
             foreach (char letter in line.ToCharArray())
             {
-                if (inputHandler.MainActionUIInput)
+                if (inputHandler.MainActionUIInput || Input.GetMouseButtonDown(0))
                 {
                     dialogueText.maxVisibleCharacters = line.Length;
                     inputHandler.MainActionUIInput = false;
