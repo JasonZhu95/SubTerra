@@ -11,12 +11,13 @@ public class CursorController : MonoBehaviour
     private Texture2D cursorClicked;
 
     [SerializeField]
-    private PlayerInput playerInput;
+    private PlayerInput playerInput = null;
 
     private void Awake()
     {
         ChangeCursor(cursor);
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     private void ChangeCursor(Texture2D cursorType)
@@ -26,7 +27,21 @@ public class CursorController : MonoBehaviour
 
     private void Update()
     {
-        if (playerInput.currentActionMap.name == "UI" || playerInput.currentActionMap == null)
+        if (playerInput != null)
+        {
+            // If the player is in a UI State, turn the cursor on.
+            if (playerInput.currentActionMap.name == "UI")
+            {
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.visible = false;
+            }
+        }
+
+        // Allows cursor changes when player input is not set.  Essentially for the main menu
+        if (playerInput == null)
         {
             Cursor.visible = true;
         }
