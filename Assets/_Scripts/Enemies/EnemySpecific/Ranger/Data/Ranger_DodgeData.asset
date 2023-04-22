@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9173c2a22bb4a47a244ddca55306b1, type: 3}
   m_Name: Ranger_DodgeData
   m_EditorClassIdentifier: 
-  dodgeSpeed: 10
+  dodgeSpeed: 20
   dodgeTime: 0.2
-  dodgeCooldown: 2
+  dodgeCooldown: 10
   dodgeAngle: {x: 1, y: 1}

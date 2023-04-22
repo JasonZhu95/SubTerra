@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ranger_LookForPlayerData
   m_EditorClassIdentifier: 
   amountOfTurns: 2
-  timeBetweenTurns: 0.75
+  timeBetweenTurns: 0.4

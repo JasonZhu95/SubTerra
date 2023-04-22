@@ -32,6 +32,10 @@ public class Ranger_ArrowRainState : ArrowRain
 
         if (isAnimationFinished)
         {
+            if (performCloseRangeAction)
+            {
+                stateMachine.ChangeState(ranger.dodgeState);
+            }
             if (isPlayerInMinAgroRange)
             {
                 stateMachine.ChangeState(ranger.playerDetectedState);

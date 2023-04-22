@@ -74,12 +74,14 @@ public class Ranger : Entity
 
         Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
         Stats.Health.OnCurrentValueBelowHalf += () => stateMachine.ChangeState(arrowRainState);
+        Stats.Health.OnCurrentValueBelowQuarter += () => stateMachine.ChangeState(arrowRainState);
     }
 
     private void OnDestroy()
     {
         Stats.Health.OnCurrentValueZero -= () => stateMachine.ChangeState(deadState);
         Stats.Health.OnCurrentValueBelowHalf -= () => stateMachine.ChangeState(arrowRainState);
+        Stats.Health.OnCurrentValueBelowQuarter -= () => stateMachine.ChangeState(arrowRainState);
     }
 
     public override void OnDrawGizmos()

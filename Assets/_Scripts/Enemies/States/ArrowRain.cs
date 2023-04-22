@@ -12,7 +12,7 @@ public class ArrowRain : AttackState
     protected Projectile projectileScript;
 
     private int arrowsSpawned = 0;
-    private float lastSpawnTime = 1000000000f;
+    private float lastSpawnTime = float.MaxValue;
 
     public ArrowRain(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_ArrowRainState stateData) : base(etity, stateMachine, animBoolName, attackPosition)
     {
@@ -45,7 +45,7 @@ public class ArrowRain : AttackState
 
         if ((arrowsSpawned < stateData.number_of_arrows) && (Time.time - lastSpawnTime >= Random.Range(stateData.delayMin, stateData.delayMax)))
         {
-            SpawnArrow();
+            SpawnArrowAndWarning();
             lastSpawnTime = Time.time;
         }
     }
@@ -59,18 +59,31 @@ public class ArrowRain : AttackState
     {
         base.TriggerAttack();
 
+        arrowsSpawned = 0;
         lastSpawnTime = Time.time;
     }
 
-    public void SpawnArrow()
+    private void SpawnArrowAndWarning()
     {
-        float randomX = Random.Range(attackPosition.position.x - stateData.xVariation, attackPosition.position.x + stateData.xVariation);
-        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position + new Vector3(randomX, stateData.spawnHeightOffset, 0f), attackPosition.rotation);
-        projectileScript = projectile.GetComponent<Projectile>();
+        float randomX = Random.Range(-stateData.xVariation + attackPosition.position.x, stateData.xVariation + attackPosition.position.x);
 
+        projectile = GameObject.Instantiate(
+            stateData.projectile,
+            new Vector3(randomX, attackPosition.position.y + stateData.spawnHeightOffset, 0f),
+            attackPosition.rotation
+        );
+
+        // spawn arrow
+        projectileScript = projectile.GetComponent<Projectile>();
         projectileScript.CreateProjectile(stateData.projectileData);
         projectileScript.Init(entity.gameObject);
-        
         arrowsSpawned++;
+
+        // spawn warning
+        GameObject.Instantiate(
+            stateData.arrowRainIndicator,
+            new Vector3(randomX, attackPosition.position.y + stateData.warningHeightOffset, 0f),
+            Quaternion.Euler(0f, 0f, 0f)
+        );
     }
 }

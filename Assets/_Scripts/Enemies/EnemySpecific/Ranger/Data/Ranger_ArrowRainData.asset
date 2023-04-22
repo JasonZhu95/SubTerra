@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98714a5969d4ff4469b2d823a4f37511, type: 3}
   m_Name: Ranger_ArrowRainData
   m_EditorClassIdentifier: 
-  number_of_arrows: 20
+  number_of_arrows: 9
   xVariation: 7
   delayMin: 0
   delayMax: 0.1
-  spawnHeightOffset: 15
+  spawnHeightOffset: 20
+  warningHeightOffset: 5
+  arrowRainIndicator: {fileID: 7545826945330028627, guid: 49792d046a1b2fd4f8d738e313da80ab, type: 3}
   projectile: {fileID: 6568436293777649578, guid: a23562d6e30c5224480d073309e4da62, type: 3}
   projectileData: {fileID: 11400000, guid: f5a7c7a4a58465f4699598d53fdb6ed1, type: 2}

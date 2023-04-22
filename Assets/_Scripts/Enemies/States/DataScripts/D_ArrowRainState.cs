@@ -11,7 +11,9 @@ public class D_ArrowRainState : ScriptableObject
     public float delayMin = 0.1f;
     public float delayMax = 0.4f;
     public float spawnHeightOffset = 15f;
+    public float warningHeightOffset = 10f;
 
+    public GameObject arrowRainIndicator;
     public GameObject projectile;
     public ProjectileDataSO projectileData;
 }

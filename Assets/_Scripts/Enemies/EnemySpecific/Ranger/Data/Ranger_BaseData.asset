@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   damageHopSpeed: 3
-  wallCheckDistance: 0.3
+  wallCheckDistance: 2
   ledgeCheckDistance: 0.4
   groundCheckRadius: 0.3
-  minAgroDistance: 8
-  maxAgroDistance: 12
+  minAgroDistance: 14
+  maxAgroDistance: 18
   circleAgroDistance: 10
   stunResistance: 3
   stunRecoveryTime: 2
-  closeRangeActionDistance: 2
+  closeRangeActionDistance: 3
   midRangeActionDistance: 6
   hitParticle: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 2056
+    m_Bits: 8
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 49152

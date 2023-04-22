@@ -59,6 +59,8 @@ public class Stat
 
     private bool triggeredHalfLifeAttack = false;
 
+    private bool triggeredQuarterLifeAttack = false;
+
     public float CurrentValue
     {
         get => currentValue;
@@ -73,6 +75,12 @@ public class Stat
                 triggeredHalfLifeAttack = true;
             }
 
+            if (currentValue / MaxValue <= 0.25 && !triggeredQuarterLifeAttack)
+            {
+                OnCurrentValueBelowQuarter?.Invoke();
+                triggeredQuarterLifeAttack = true;
+            }
+
             if (currentValue <= 0f)
             {
                 OnCurrentValueZero?.Invoke();
@@ -85,6 +93,8 @@ public class Stat
     public event Action OnCurrentValueZero;
 
     public event Action OnCurrentValueBelowHalf;
+
+    public event Action OnCurrentValueBelowQuarter;
 
     public void Init() => CurrentValue = MaxValue;
 

@@ -11,6 +11,7 @@ public class AttackState : State
     protected bool isPlayerInMinAgroRange;
     protected bool isPlayerInMidAgroRange;
     protected bool isPlayerInMaxAgroRange;
+    protected bool performCloseRangeAction;
 
     private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
     private Movement movement;
@@ -32,6 +33,7 @@ public class AttackState : State
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAggroRange();
         isPlayerInMidAgroRange = entity.CheckPlayerInMidRangeAction();
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAggroRange();
+        performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()

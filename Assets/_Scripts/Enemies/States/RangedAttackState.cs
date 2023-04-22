@@ -5,6 +5,9 @@ using Project.Projectiles;
 
 public class RangedAttackState : AttackState
 {
+    private Movement Movement => movement ? movement : core.GetCoreComponent(ref movement);
+    private Movement movement;
+
     protected D_RangedAttackState stateData;
 
     protected GameObject projectile;
@@ -49,7 +52,17 @@ public class RangedAttackState : AttackState
     {
         base.TriggerAttack();
 
-        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, Quaternion.Euler(0f, 0f, 135f));
+        float arrowAngle;
+
+        if (Movement?.FacingDirection == 1)
+        {
+            arrowAngle = 0f;
+        } else
+        {
+            arrowAngle = 180f;
+        }
+
+        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, Quaternion.Euler(0f, 0f, arrowAngle));
         projectileScript = projectile.GetComponent<Projectile>();
 
         projectileScript.CreateProjectile(stateData.projectileData);
