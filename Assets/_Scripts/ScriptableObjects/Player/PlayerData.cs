@@ -58,4 +58,7 @@ public class PlayerData : ScriptableObject
 
     [Header("Stun State")]
     public float stunTime = 2f;
+
+    [Header("Camera Interpolation Variables")]
+    public float fallSpeedYDampingChangeThreshold = -15f;
 }

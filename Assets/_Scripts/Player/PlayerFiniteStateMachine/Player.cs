@@ -30,8 +30,7 @@ public class Player : MonoBehaviour, IDataPersistence
     public PlayerAttackState SecondaryAttackState { get; private set; }
     public PlayerStunState StunState { get; private set; }
 
-    [SerializeField]
-    private PlayerData playerData;
+    [SerializeField] private PlayerData playerData;
     [SerializeField] private WeaponChangedEventChannel inventoryChannel;
     #endregion
 
@@ -53,7 +52,6 @@ public class Player : MonoBehaviour, IDataPersistence
 
     private Interaction Interaction => interaction ? interaction : Core.GetCoreComponent(ref interaction);
     private Interaction interaction;
-
 
     #endregion
 
@@ -121,6 +119,7 @@ public class Player : MonoBehaviour, IDataPersistence
         InputHandler.OnInteract += Interaction.TriggerInteraction;
 
         StateMachine.Initialize(IdleState);
+        playerData.fallSpeedYDampingChangeThreshold = CameraManager.instance.fallSpeedYDampingChangeThreshold;
     }
 
     private void OnDestroy()
@@ -131,12 +130,19 @@ public class Player : MonoBehaviour, IDataPersistence
 
     private void Update()
     {
+        // Handle Any core and state machine updates
         Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
+
+        // Player Specific updates
+
+        // Check for trampolines
         if (CollisionSenses.Trampoline)
         {
             DashState.ResetCanDash();
         }
+
+        // Updating player specific facing direction for camera controller
         if (Movement.FacingDirection == 1)
         {
             PlayerFacingDirection = true;
@@ -144,6 +150,21 @@ public class Player : MonoBehaviour, IDataPersistence
         else
         {
             PlayerFacingDirection = false;
+        }
+
+        // Updating camera interpolation based on vertical velocity
+
+        // If player falling faster than threshold set begin camera lerping
+        if (RB.velocity.y < playerData.fallSpeedYDampingChangeThreshold && !CameraManager.instance.isLerpingYDamping && !CameraManager.instance.LerpedFromPlayerFalling)
+        {
+            CameraManager.instance.LerpYDamping(true);
+        }
+        
+        // If player is standing still or going upwards
+        if (RB.velocity.y >= 0f && !CameraManager.instance.isLerpingYDamping && CameraManager.instance.LerpedFromPlayerFalling)
+        {
+            CameraManager.instance.LerpedFromPlayerFalling = false;
+            CameraManager.instance.LerpYDamping(false);
         }
     }
 
