@@ -8,22 +8,21 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
 {
     private bool playerInRange;
 
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
+    [Header("Obelisk")]
+    [SerializeField] private GameObject obelisk;
 
+    private Animator obeliskAnim;
     private GameObject player;
     private CollisionSenses playerCollision;
-
     private PlayerInputHandler inputHandler;
-
     private CheckPointManager checkPointManager;
 
     private void Awake()
     {
+        obeliskAnim = obelisk.GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
         inputHandler = player.GetComponent<PlayerInputHandler>();
         checkPointManager = GameObject.Find("Managers").transform.Find("CheckPointManager").GetComponent<CheckPointManager>();
-        visualCue.SetActive(false);
     }
 
     private void Start()
@@ -35,9 +34,10 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
     {
         if (playerInRange && playerCollision.Ground)
         {
-            visualCue.SetActive(true);
+            obeliskAnim.SetBool("active", true);
             if (inputHandler.InteractPressed)
             {
+                obeliskAnim.SetBool("triggered", true);
                 checkPointManager.SetCheckPoint(gameObject);
                 checkPointManager.HealOnCheckpointSet();
                 inputHandler.InteractPressed = false;
@@ -45,7 +45,7 @@ public class CheckPointInteraction : MonoBehaviour, IInteractable
         }
         else
         {
-            visualCue.SetActive(false);
+            obeliskAnim.SetBool("active", false);
         }
     }
 
