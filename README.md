@@ -1,2 +1,2 @@
-# CPSC491Project
- Senior Capstone Project for CSPC 491 at California State Univerisity, Fullerton
+# SubTerra
+ A Metroidvania game developed with the idea of a multi-weapon combat system at its core.
