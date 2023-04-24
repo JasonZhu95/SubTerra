@@ -25396,7 +25396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968b601622e12448a529a3662401ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualCue: {fileID: 937209460}
+  obelisk: {fileID: 0}
 --- !u!61 &997946470
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34642,7 +34642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968b601622e12448a529a3662401ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualCue: {fileID: 1762231136}
+  obelisk: {fileID: 0}
 --- !u!61 &1352392066
 BoxCollider2D:
   m_ObjectHideFlags: 0
