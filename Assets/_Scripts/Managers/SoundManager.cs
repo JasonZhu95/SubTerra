@@ -80,4 +80,15 @@ public class SoundManager : MonoBehaviour
         }
         s.source.Stop();
     }
+
+    public void ChangeVolume(string name, float volume)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogError("Sound Name Was Not Found.");
+            return;
+        }
+        s.source.volume = volume;
+    }
 }

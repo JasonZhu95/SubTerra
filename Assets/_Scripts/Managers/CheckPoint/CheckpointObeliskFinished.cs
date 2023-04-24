@@ -10,8 +10,25 @@ public class CheckpointObeliskFinished : MonoBehaviour
     {
         obeliskAnim = gameObject.GetComponent<Animator>();
     }
+
     public void ObeliskAnimationFinished()
     {
         obeliskAnim.SetBool("triggered", false);
+    }
+
+    public void PlayObeliskActiveSFX()
+    {
+        FindObjectOfType<SoundManager>().Play("ObeliskActive");
+    }
+
+    public void PlayObeliskTriggeredSFX()
+    {
+        FindObjectOfType<SoundManager>().StopPlay("ObeliskActive");
+        FindObjectOfType<SoundManager>().Play("ObeliskTriggered");
+    }
+
+    public void PlayObeliskRespawnSFX()
+    {
+        FindObjectOfType<SoundManager>().Play("ObeliskRespawn");
     }
 }

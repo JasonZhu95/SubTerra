@@ -57,6 +57,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Enemy1Walk
+    clip: {fileID: 8300000, guid: e7584cc541fc441499ca09d67d305ad2, type: 3}
+    volume: 0.05
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
   - name: MusicTheme0
     clip: {fileID: 8300000, guid: 667faf6fa2e139048a2da11f4c5a6d02, type: 3}
     volume: 0.5
@@ -68,6 +74,24 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: ObeliskActive
+    clip: {fileID: 8300000, guid: f1cb5d83282f2904a85f73111d068616, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ObeliskRespawn
+    clip: {fileID: 8300000, guid: b7f8695cf65a4f24eb37544298821146, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ObeliskTriggered
+    clip: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
   - name: PlayerCrouch
     clip: {fileID: 8300000, guid: 83114af2e589d7e4291fa80adc3f0b6a, type: 3}
