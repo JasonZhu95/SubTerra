@@ -13,7 +13,7 @@ public class batAI : MonoBehaviour
 
     private float distance;
 
-    private bool reachedEndOfPath = false;
+    //private bool reachedEndOfPath = false;
 
     private Vector2 direction;
     private Vector2 force;
@@ -59,11 +59,11 @@ public class batAI : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            //reachedEndOfPath = true;
             return;
         } else
         {
-            reachedEndOfPath = false;
+            //reachedEndOfPath = false;
         }
 
         direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
