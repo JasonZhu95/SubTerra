@@ -57,7 +57,6 @@ namespace Project.Managers
 
             yield return new WaitForSeconds(2.0f);
 
-            Debug.Log("We're back");
             if (fullDeath)
             {
                 player.transform.position = checkPointManager.GoToLastCheckPoint();

@@ -20,7 +20,6 @@ public class CameraControlTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Vector2 exitDirection = (collision.transform.position - coll.bounds.center).normalized;
-            Debug.Log(exitDirection);
 
             if (customCameraInspectorObjects.swapCameras && customCameraInspectorObjects.cameraOnLeft != null && customCameraInspectorObjects.cameraOnRight != null)
             {
