@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -2814,7 +2814,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_129
+      name: die_0
       rect:
         serializedVersion: 2
         x: 0
@@ -2835,7 +2835,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_130
+      name: die_1
       rect:
         serializedVersion: 2
         x: 288
@@ -2856,7 +2856,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_131
+      name: die_2
       rect:
         serializedVersion: 2
         x: 576
@@ -2877,7 +2877,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_132
+      name: die_3
       rect:
         serializedVersion: 2
         x: 864
@@ -2898,7 +2898,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_133
+      name: die_4
       rect:
         serializedVersion: 2
         x: 1152
@@ -2919,7 +2919,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_134
+      name: die_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -2940,7 +2940,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_135
+      name: die_6
       rect:
         serializedVersion: 2
         x: 1728
@@ -2961,7 +2961,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_136
+      name: die_7
       rect:
         serializedVersion: 2
         x: 2016
@@ -2982,7 +2982,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_137
+      name: die_8
       rect:
         serializedVersion: 2
         x: 2304
@@ -3003,7 +3003,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_138
+      name: die_9
       rect:
         serializedVersion: 2
         x: 2592
@@ -3024,7 +3024,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_139
+      name: die_10
       rect:
         serializedVersion: 2
         x: 2880
@@ -3045,7 +3045,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_140
+      name: die_11
       rect:
         serializedVersion: 2
         x: 3168
@@ -3066,7 +3066,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_141
+      name: die_12
       rect:
         serializedVersion: 2
         x: 3456
@@ -3087,7 +3087,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_142
+      name: die_13
       rect:
         serializedVersion: 2
         x: 3744
@@ -3108,7 +3108,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_143
+      name: die_14
       rect:
         serializedVersion: 2
         x: 4032
@@ -3129,7 +3129,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_144
+      name: die_15
       rect:
         serializedVersion: 2
         x: 4320
@@ -3150,7 +3150,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_145
+      name: die_16
       rect:
         serializedVersion: 2
         x: 4608
@@ -3171,7 +3171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_146
+      name: die_17
       rect:
         serializedVersion: 2
         x: 4896
@@ -3192,7 +3192,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_147
+      name: die_18
       rect:
         serializedVersion: 2
         x: 5184
@@ -4200,7 +4200,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_195
+      name: mummy_spin_0
       rect:
         serializedVersion: 2
         x: 0
@@ -4221,7 +4221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_196
+      name: mummy_spin_1
       rect:
         serializedVersion: 2
         x: 288
@@ -4242,7 +4242,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_197
+      name: mummy_spin_2
       rect:
         serializedVersion: 2
         x: 576
@@ -4263,7 +4263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_198
+      name: mummy_spin_3
       rect:
         serializedVersion: 2
         x: 864
@@ -4284,7 +4284,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_199
+      name: mummy_spin_4
       rect:
         serializedVersion: 2
         x: 1152
@@ -4305,7 +4305,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_200
+      name: mummy_spin_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -4326,7 +4326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_201
+      name: mummy_spin_6
       rect:
         serializedVersion: 2
         x: 1728
@@ -4347,7 +4347,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_202
+      name: mummy_spin_7
       rect:
         serializedVersion: 2
         x: 2016
@@ -5922,7 +5922,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_277
+      name: transform_to_human_0
       rect:
         serializedVersion: 2
         x: 0
@@ -5943,7 +5943,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_278
+      name: transform_to_human_1
       rect:
         serializedVersion: 2
         x: 288
@@ -5964,7 +5964,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_279
+      name: transform_to_human_2
       rect:
         serializedVersion: 2
         x: 576
@@ -5985,7 +5985,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_280
+      name: transform_to_human_3
       rect:
         serializedVersion: 2
         x: 864
@@ -6006,7 +6006,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_281
+      name: transform_to_human_4
       rect:
         serializedVersion: 2
         x: 1152
@@ -6027,7 +6027,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_282
+      name: transform_to_human_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -6048,7 +6048,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_283
+      name: transform_to_human_6
       rect:
         serializedVersion: 2
         x: 1728
@@ -6069,7 +6069,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_284
+      name: transform_to_human_7
       rect:
         serializedVersion: 2
         x: 2016
@@ -6090,7 +6090,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wind_SpriteSheet_288x128_285
+      name: transform_to_human_8
       rect:
         serializedVersion: 2
         x: 2304
@@ -6163,12 +6163,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      die_9: 1135835632
       wind_SpriteSheet_288x128_32: -2025792508
+      transform_to_human_8: -906396536
+      die_4: 2142219412
       wind_SpriteSheet_288x128_236: -917493469
-      wind_SpriteSheet_288x128_146: -1005532709
+      mummy_spin_3: -2074982896
       wind_SpriteSheet_288x128_237: 1915236113
       wind_SpriteSheet_288x128_49: 445330634
-      wind_SpriteSheet_288x128_198: -2074982896
       wind_SpriteSheet_288x128_261: -1323350235
       wind_SpriteSheet_288x128_226: 280250837
       wind_SpriteSheet_288x128_217: -1167604530
@@ -6180,7 +6182,6 @@ TextureImporter:
       wind_SpriteSheet_288x128_204: 1371837732
       wind_SpriteSheet_288x128_203: 111220349
       wind_SpriteSheet_288x128_51: 2041488019
-      wind_SpriteSheet_288x128_140: -455003694
       wind_SpriteSheet_288x128_234: -1795507039
       transform_8: -1438787342
       run_3: 1884246417
@@ -6191,53 +6192,57 @@ TextureImporter:
       wind_SpriteSheet_288x128_268: 1142474611
       mummy_idle_6: -1959859791
       wind_SpriteSheet_288x128_211: 1895280990
-      wind_SpriteSheet_288x128_196: -1478173295
       transform_6: -1644424468
       dash_flurry_20: -852336754
+      transform_to_human_2: -245992065
       transform_0: 1612215812
+      mummy_spin_4: 170868205
       wind_SpriteSheet_288x128_43: -1141736817
-      wind_SpriteSheet_288x128_83: -216206159
-      wind_SpriteSheet_288x128_215: -591217935
-      wind_SpriteSheet_288x128_230: 2058382789
       run_1: 1565350153
+      wind_SpriteSheet_288x128_215: -591217935
       basic_attack_3: 845308533
-      shield_7: 1887766733
+      mummy_spin_7: 1741843738
+      wind_SpriteSheet_288x128_83: -216206159
       transform_10: -825453019
+      wind_SpriteSheet_288x128_230: 2058382789
       dash_flurry_21: -991956713
       wind_SpriteSheet_288x128_276: 1900116529
       wind_SpriteSheet_288x128_63: 1212623686
-      wind_SpriteSheet_288x128_75: -1627078455
+      shield_7: 1887766733
       dash_flurry_28: 821832972
+      wind_SpriteSheet_288x128_75: -1627078455
       wind_SpriteSheet_288x128_258: 1108077264
-      wind_SpriteSheet_288x128_273: 457800306
-      wind_SpriteSheet_288x128_195: -117257785
+      die_12: -1477059750
       shield_3: 2047233799
+      wind_SpriteSheet_288x128_273: 457800306
       mummy_run_5: 1479045878
       transform_1: 966947760
       run_7: 1630289118
-      wind_SpriteSheet_288x128_202: 1741843738
+      mummy_idle_0: 568707497
       wind_SpriteSheet_288x128_244: -381214056
       transform_17: -942379061
       wind_SpriteSheet_288x128_274: 510102943
       dash_flurry_14: 1603740216
-      mummy_idle_0: 568707497
+      mummy_spin_1: -1478173295
       wind_SpriteSheet_288x128_191: 557098639
       wind_SpriteSheet_288x128_262: 196260475
       idle_5: 1315281861
       wind_SpriteSheet_288x128_17: -561588672
       dash_flurry_16: -1536042697
+      die_11: -455003694
       basic_attack_5: -1639338288
       hit_0: -406772124
-      wind_SpriteSheet_288x128_129: -857723061
+      transform_to_human_0: 2038644225
       wind_SpriteSheet_288x128_52: 39830095
       transform_21: -1939499661
       dash_flurry_2: 1474890785
       wind_SpriteSheet_288x128_253: 449528498
       wind_SpriteSheet_288x128_205: -389618557
-      wind_SpriteSheet_288x128_192: 1224206843
+      die_7: -408963512
       transform_13: 1657449913
+      wind_SpriteSheet_288x128_192: 1224206843
       shield_5: -803476556
-      wind_SpriteSheet_288x128_136: -408963512
+      transform_to_human_1: 114602899
       wind_SpriteSheet_288x128_223: -353408755
       wind_SpriteSheet_288x128_241: 340444002
       transform_3: -1859604250
@@ -6264,12 +6269,11 @@ TextureImporter:
       shield_4: -862293984
       wind_SpriteSheet_288x128_86: -587216144
       hit_1: -668938102
-      wind_SpriteSheet_288x128_138: 1135835632
       wind_SpriteSheet_288x128_229: 1513370957
       dash_flurry_8: 1366559551
       transform_20: 1613680368
       wind_SpriteSheet_288x128_270: -364353606
-      wind_SpriteSheet_288x128_142: -1546386468
+      die_13: -1546386468
       wind_SpriteSheet_288x128_212: 2139342201
       dash_flurry_7: 337184380
       transform_24: 1368634095
@@ -6278,15 +6282,17 @@ TextureImporter:
       dash_flurry_25: -931207128
       wind_SpriteSheet_288x128_29: -1960120924
       wind_SpriteSheet_288x128_60: 1127167602
-      wind_SpriteSheet_288x128_131: 1639291657
+      dash_flurry_6: -613357455
       transform_14: -818552231
       wind_SpriteSheet_288x128_53: 188852050
       wind_SpriteSheet_288x128_255: -998691823
       idle_4: 1947227477
-      dash_flurry_6: -613357455
+      mummy_spin_0: -117257785
       wind_SpriteSheet_288x128_21: -352059646
       wind_SpriteSheet_288x128_218: -1522755766
+      transform_to_human_3: -1519924354
       dash_flurry_5: 1370179242
+      die_0: -857723061
       dash_flurry_26: -1039998342
       dash_flurry_11: -172871371
       dash_flurry_17: 998787889
@@ -6295,50 +6301,47 @@ TextureImporter:
       wind_SpriteSheet_288x128_56: -221506611
       transform_15: -630942802
       wind_SpriteSheet_288x128_189: 266500767
+      die_18: 1813364244
+      mummy_spin_6: 1998065334
       run_0: -1833693192
-      wind_SpriteSheet_288x128_284: -166044180
       wind_SpriteSheet_288x128_85: 180815506
       wind_SpriteSheet_288x128_84: 836034850
       hit_2: -57506967
       wind_SpriteSheet_288x128_214: 620054919
+      die_17: -1005532709
       transform_4: 9306354
-      wind_SpriteSheet_288x128_147: 1813364244
-      wind_SpriteSheet_288x128_222: -1040590585
+      die_16: 384180542
       wind_SpriteSheet_288x128_73: 1741873463
-      wind_SpriteSheet_288x128_141: -1477059750
+      wind_SpriteSheet_288x128_222: -1040590585
+      dash_flurry_24: 1787413889
       wind_SpriteSheet_288x128_82: 809938836
       dash_flurry_15: 1824264755
-      wind_SpriteSheet_288x128_144: 381101533
       transform_7: 60022880
+      mummy_run_1: 1412238217
       wind_SpriteSheet_288x128_242: 501293795
       wind_SpriteSheet_288x128_231: -187230594
-      mummy_run_1: 1412238217
-      wind_SpriteSheet_288x128_58: 1348128767
       wind_SpriteSheet_288x128_250: -763025749
-      wind_SpriteSheet_288x128_130: 1815389308
-      wind_SpriteSheet_288x128_277: 2038644225
-      wind_SpriteSheet_288x128_134: -757760098
+      wind_SpriteSheet_288x128_58: 1348128767
       dash_flurry_22: -788496927
-      wind_SpriteSheet_288x128_247: -1373449979
-      wind_SpriteSheet_288x128_263: 1805104278
       basic_attack_4: 991144484
+      wind_SpriteSheet_288x128_247: -1373449979
       wind_SpriteSheet_288x128_40: 1260027295
+      wind_SpriteSheet_288x128_269: 2088679197
+      wind_SpriteSheet_288x128_263: 1805104278
       wind_SpriteSheet_288x128_74: -2083996679
       transform_18: -2144157141
-      wind_SpriteSheet_288x128_269: 2088679197
+      die_15: 381101533
       mummy_idle_1: -208958051
       wind_SpriteSheet_288x128_33: 1517434316
       wind_SpriteSheet_288x128_248: 770501668
       transform_5: 1750722230
-      wind_SpriteSheet_288x128_282: -566334982
       wind_SpriteSheet_288x128_64: 1462388701
-      wind_SpriteSheet_288x128_132: -1887442751
-      dash_flurry_19: 1872691528
       idle_7: 1003574364
+      dash_flurry_19: 1872691528
+      die_10: -355679900
       wind_SpriteSheet_288x128_238: 288106121
       basic_attack_0: -1355785509
       wind_SpriteSheet_288x128_246: 547678560
-      dash_flurry_24: 1787413889
       wind_SpriteSheet_288x128_36: 2114910077
       wind_SpriteSheet_288x128_65: -1617842765
       wind_SpriteSheet_288x128_72: -302087427
@@ -6353,41 +6356,40 @@ TextureImporter:
       mummy_run_0: -1692034623
       wind_SpriteSheet_288x128_224: 755032553
       wind_SpriteSheet_288x128_232: -439605989
-      wind_SpriteSheet_288x128_201: 1998065334
       wind_SpriteSheet_288x128_70: -895404678
       transform_23: 225515630
       wind_SpriteSheet_288x128_78: -1631638234
       wind_SpriteSheet_288x128_188: -1943408109
-      wind_SpriteSheet_288x128_145: 384180542
+      transform_11: 359275261
       dash_flurry_13: -593454428
-      wind_SpriteSheet_288x128_281: 1693696179
+      transform_to_human_6: 1695223098
       wind_SpriteSheet_288x128_206: -338494532
       dash_flurry_4: -1564166318
       run_2: 607319470
       basic_attack_1: 2111286410
-      wind_SpriteSheet_288x128_199: 170868205
-      transform_11: 359275261
+      die_14: -1031605763
+      die_6: -35293636
       wind_SpriteSheet_288x128_256: 1171228040
       wind_SpriteSheet_288x128_39: 290402840
       wind_SpriteSheet_288x128_266: -1399209709
       wind_SpriteSheet_288x128_57: 1059903905
       wind_SpriteSheet_288x128_193: 331907044
-      wind_SpriteSheet_288x128_133: 2142219412
       wind_SpriteSheet_288x128_235: 1921673948
       mummy_run_4: -541700307
-      wind_SpriteSheet_288x128_200: 1768518569
+      die_3: -1887442751
       wind_SpriteSheet_288x128_233: -1769173242
       wind_SpriteSheet_288x128_228: 1485422380
       wind_SpriteSheet_288x128_61: 1274904868
+      die_1: 1815389308
       dash_flurry_0: 732285794
+      die_8: -2121305381
       wind_SpriteSheet_288x128_275: 935113160
       wind_SpriteSheet_288x128_219: -158803947
       wind_SpriteSheet_288x128_71: 333574291
       dash_flurry_1: 1493753168
       dash_flurry_18: -411071410
       hit_4: -1294140665
-      wind_SpriteSheet_288x128_280: -1519924354
-      wind_SpriteSheet_288x128_279: -245992065
+      transform_to_human_7: -166044180
       wind_SpriteSheet_288x128_249: 443645301
       dash_flurry_9: -310621274
       transform_9: 1235659117
@@ -6404,18 +6406,19 @@ TextureImporter:
       shield_6: 1055078019
       wind_SpriteSheet_288x128_45: -1257563888
       wind_SpriteSheet_288x128_48: 1180346026
-      wind_SpriteSheet_288x128_283: 1695223098
       idle_2: 892966006
       wind_SpriteSheet_288x128_68: 1351463943
       wind_SpriteSheet_288x128_227: 1224723707
       wind_SpriteSheet_288x128_260: 675348367
       transform_12: -2120980486
+      die_2: 1639291657
+      mummy_spin_2: -1716848393
       wind_SpriteSheet_288x128_69: 1721760045
       transform_22: -1537587013
       wind_SpriteSheet_288x128_47: 1674821532
       wind_SpriteSheet_288x128_267: -1391397126
-      wind_SpriteSheet_288x128_197: -1716848393
       wind_SpriteSheet_288x128_272: 1494455557
+      transform_to_human_4: 1693696179
       wind_SpriteSheet_288x128_42: 1323384259
       wind_SpriteSheet_288x128_208: -1506395758
       wind_SpriteSheet_288x128_252: -683057553
@@ -6424,31 +6427,28 @@ TextureImporter:
       wind_SpriteSheet_288x128_243: 745609513
       wind_SpriteSheet_288x128_257: -1222979098
       wind_SpriteSheet_288x128_67: -1178870973
-      wind_SpriteSheet_288x128_135: -35293636
-      wind_SpriteSheet_288x128_190: 1837978528
       wind_SpriteSheet_288x128_187: 2122304588
+      wind_SpriteSheet_288x128_190: 1837978528
       wind_SpriteSheet_288x128_240: -479632301
-      wind_SpriteSheet_288x128_139: -355679900
       wind_SpriteSheet_288x128_271: -706152363
       wind_SpriteSheet_288x128_213: 881285751
       wind_SpriteSheet_288x128_80: 319134071
-      wind_SpriteSheet_288x128_143: -1031605763
       mummy_run_3: 1929463893
       mummy_idle_2: -1060258663
       transform_2: -1963469369
       wind_SpriteSheet_288x128_76: -347830820
       idle_6: 1763296096
+      die_5: -757760098
       wind_SpriteSheet_288x128_79: 109033011
+      transform_to_human_5: -566334982
       wind_SpriteSheet_288x128_209: 1325410450
       hit_3: 582150222
       wind_SpriteSheet_288x128_239: -859786401
       shield_2: 1349630548
       wind_SpriteSheet_288x128_46: 597339022
-      wind_SpriteSheet_288x128_285: -906396536
       run_6: -1369557041
       dash_flurry_23: -725664945
-      wind_SpriteSheet_288x128_278: 114602899
-      wind_SpriteSheet_288x128_137: -2121305381
+      mummy_spin_5: 1768518569
       mummy_idle_4: 424152215
       basic_attack_2: 559179552
   spritePackingTag: 
