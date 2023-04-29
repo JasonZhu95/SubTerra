@@ -42,7 +42,7 @@ public class TransformToMummyState : State
         base.PhysicsUpdate();
     }
 
-    public virtual void TransformationAnimationFinished()
+    public virtual void TransformationToMummyFinished()
     {
 
     }

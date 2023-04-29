@@ -36,9 +36,9 @@ public class TempleGuardian_TransformToMummyState : TransformToMummyState
         base.PhysicsUpdate();
     }
 
-    public override void TransformationAnimationFinished()
+    public override void TransformationToMummyFinished()
     {
-        base.TransformationAnimationFinished();
+        base.TransformationToMummyFinished();
 
         stateMachine.ChangeState(templeGuardian.mummyMoveState);
     }

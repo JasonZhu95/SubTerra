@@ -6,6 +6,7 @@ public class AnimationToStatemachine : MonoBehaviour
     public AttackState attackState;
     public DeadState deadState;
     public TransformToMummyState transformToMummyState;
+    public TransformToHumanState transformToHumanState;
 
     private void TriggerAttack()
     {
@@ -27,9 +28,14 @@ public class AnimationToStatemachine : MonoBehaviour
         deadState.TriggerDeathParticles();
     }
 
-    private void TransformationAnimationFinished()
+    private void TransformationToMummyFinished()
     {
-        transformToMummyState.TransformationAnimationFinished();
+        transformToMummyState.TransformationToMummyFinished();
+    }
+
+    private void TransformationToHumanFinished()
+    {
+        transformToHumanState.TransformationToHumanFinished();
     }
 
     private void DieAnimationFinished()

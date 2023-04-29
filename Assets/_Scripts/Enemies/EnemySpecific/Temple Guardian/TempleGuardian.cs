@@ -21,6 +21,7 @@ public class TempleGuardian : Entity
     public TempleGuardian_MummyLookForPlayerState mummyLookForPlayerState { get; private set; }
     public TempleGuardian_MummyChargeState mummyChargeState { get; private set; }
     public TempleGuardian_MummyMeleeAttackState mummyMeleeAttackState { get; private set; }
+    public TempleGuardian_TransformToHumanState transformToHumanState { get; private set; }
 
 
     [SerializeField]
@@ -69,6 +70,7 @@ public class TempleGuardian : Entity
         mummyLookForPlayerState = new TempleGuardian_MummyLookForPlayerState(this, stateMachine, "mummyLookForPlayer", lookForPlayerStateData, this);
         mummyChargeState = new TempleGuardian_MummyChargeState(this, stateMachine, "mummyCharge", chargeStateData, this);
         mummyMeleeAttackState = new TempleGuardian_MummyMeleeAttackState(this, stateMachine, "mummyMeleeAttack", meleeAttackPosition, meleeAttackStateData, this);
+        transformToHumanState = new TempleGuardian_TransformToHumanState(this, stateMachine, "transformToHuman", this);
     }
 
     private void Start()
@@ -76,12 +78,14 @@ public class TempleGuardian : Entity
         stateMachine.Initialize(moveState);
 
         Stats.Health.OnCurrentHealthBelow75 += () => stateMachine.ChangeState(transformToMummyState);
+        Stats.Health.OnCurrentValueBelowQuarter += () => stateMachine.ChangeState(transformToHumanState);
         Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
     }
 
     private void OnDestroy()
     {
-        Stats.Health.OnCurrentHealthBelow75 += () => stateMachine.ChangeState(transformToMummyState);
+        Stats.Health.OnCurrentHealthBelow75 -= () => stateMachine.ChangeState(transformToMummyState);
+        Stats.Health.OnCurrentValueBelowQuarter -= () => stateMachine.ChangeState(transformToHumanState);
         Stats.Health.OnCurrentValueZero -= () => stateMachine.ChangeState(deadState);
     }
 
