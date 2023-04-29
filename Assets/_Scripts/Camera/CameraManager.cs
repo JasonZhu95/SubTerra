@@ -152,7 +152,7 @@ public class CameraManager : MonoBehaviour
     #endregion
 
     #region Swap Camera
-    public void SwapCamera(CinemachineVirtualCamera cameraFromLeft, CinemachineVirtualCamera cameraFromRight, Vector2 triggerExitDirection)
+    public void SwapCameraX(CinemachineVirtualCamera cameraFromLeft, CinemachineVirtualCamera cameraFromRight, Vector2 triggerExitDirection)
     {
         if (currentCamera == cameraFromLeft && triggerExitDirection.x < 0f)
         {
@@ -178,6 +178,38 @@ public class CameraManager : MonoBehaviour
 
             // Set New camera as current camera
             currentCamera = cameraFromLeft;
+
+            // Update composer
+            framingTranposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        }
+    }
+
+    public void SwapCameraY(CinemachineVirtualCamera cameraFromTop, CinemachineVirtualCamera cameraFromBottom, Vector2 triggerExitDirection)
+    {
+        if (currentCamera == cameraFromTop && triggerExitDirection.y < 0f)
+        {
+            // Activate new camera
+            cameraFromBottom.enabled = true;
+
+            // Deactivate old camera
+            cameraFromTop.enabled = false;
+
+            // Set New camera as current camera
+            currentCamera = cameraFromBottom;
+
+            // Update composer
+            framingTranposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        }
+        else if (currentCamera == cameraFromBottom && triggerExitDirection.y > 0f)
+        {
+            // Activate new camera
+            cameraFromTop.enabled = true;
+
+            // Deactivate old camera
+            cameraFromBottom.enabled = false;
+
+            // Set New camera as current camera
+            currentCamera = cameraFromTop;
 
             // Update composer
             framingTranposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();

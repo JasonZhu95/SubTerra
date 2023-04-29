@@ -21,10 +21,22 @@ public class CameraControlTrigger : MonoBehaviour
         {
             Vector2 exitDirection = (collision.transform.position - coll.bounds.center).normalized;
 
-            if (customCameraInspectorObjects.swapCameras && customCameraInspectorObjects.cameraOnLeft != null && customCameraInspectorObjects.cameraOnRight != null)
+            if (customCameraInspectorObjects.swapCameras)
             {
-                CameraManager.instance.SwapCamera(customCameraInspectorObjects.cameraOnLeft, customCameraInspectorObjects.cameraOnRight, exitDirection);
+                if (customCameraInspectorObjects.swapCameras && customCameraInspectorObjects.cameraOnLeft != null && customCameraInspectorObjects.cameraOnRight != null)
+                {
+                    CameraManager.instance.SwapCameraX(customCameraInspectorObjects.cameraOnLeft, customCameraInspectorObjects.cameraOnRight, exitDirection);
+                }
             }
+
+            if (customCameraInspectorObjects.swapCamerasVertical)
+            {
+                if (customCameraInspectorObjects.swapCameras && customCameraInspectorObjects.cameraOnTop != null && customCameraInspectorObjects.cameraOnBottom != null)
+                {
+                    CameraManager.instance.SwapCameraY(customCameraInspectorObjects.cameraOnTop, customCameraInspectorObjects.cameraOnBottom, exitDirection);
+                }
+            }
+
             if (customCameraInspectorObjects.panCameraOnTrigger)
             {
                 CameraManager.instance.PanCameraOnTrigger(customCameraInspectorObjects.panDistance, customCameraInspectorObjects.panTime, customCameraInspectorObjects.panDirection, false);
@@ -49,9 +61,12 @@ public class CustomCameraInspectorObjects
 {
     public bool swapCameras = false;
     public bool panCameraOnTrigger = false;
+    public bool swapCamerasVertical = false;
 
     [HideInInspector] public CinemachineVirtualCamera cameraOnLeft;
     [HideInInspector] public CinemachineVirtualCamera cameraOnRight;
+    [HideInInspector] public CinemachineVirtualCamera cameraOnTop;
+    [HideInInspector] public CinemachineVirtualCamera cameraOnBottom;
 
     [HideInInspector] public CameraPanDirection panDirection;
     [HideInInspector] public float panDistance = 3f;
@@ -81,6 +96,17 @@ public class CustomCameraEditor : Editor
 
             cameraControlTrigger.customCameraInspectorObjects.cameraOnRight = EditorGUILayout.ObjectField("Camera on Right",
                 cameraControlTrigger.customCameraInspectorObjects.cameraOnRight,
+                typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
+        }
+
+        if (cameraControlTrigger.customCameraInspectorObjects.swapCamerasVertical)
+        {
+            cameraControlTrigger.customCameraInspectorObjects.cameraOnTop = EditorGUILayout.ObjectField("Camera on Top",
+                cameraControlTrigger.customCameraInspectorObjects.cameraOnTop,
+                typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
+
+            cameraControlTrigger.customCameraInspectorObjects.cameraOnBottom = EditorGUILayout.ObjectField("Camera on Bottom",
+                cameraControlTrigger.customCameraInspectorObjects.cameraOnBottom,
                 typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
         }
 
