@@ -186,7 +186,7 @@ public class CameraManager : MonoBehaviour
 
     public void SwapCameraY(CinemachineVirtualCamera cameraFromTop, CinemachineVirtualCamera cameraFromBottom, Vector2 triggerExitDirection)
     {
-        if (currentCamera == cameraFromTop && triggerExitDirection.y < 0f)
+        if (currentCamera == cameraFromTop && triggerExitDirection.y > 0f)
         {
             // Activate new camera
             cameraFromBottom.enabled = true;
@@ -200,7 +200,7 @@ public class CameraManager : MonoBehaviour
             // Update composer
             framingTranposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         }
-        else if (currentCamera == cameraFromBottom && triggerExitDirection.y > 0f)
+        else if (currentCamera == cameraFromBottom && triggerExitDirection.y < 0f)
         {
             // Activate new camera
             cameraFromTop.enabled = true;

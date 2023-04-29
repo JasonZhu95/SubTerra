@@ -31,7 +31,7 @@ public class CameraControlTrigger : MonoBehaviour
 
             if (customCameraInspectorObjects.swapCamerasVertical)
             {
-                if (customCameraInspectorObjects.swapCameras && customCameraInspectorObjects.cameraOnTop != null && customCameraInspectorObjects.cameraOnBottom != null)
+                if (customCameraInspectorObjects.swapCamerasVertical && customCameraInspectorObjects.cameraOnTop != null && customCameraInspectorObjects.cameraOnBottom != null)
                 {
                     CameraManager.instance.SwapCameraY(customCameraInspectorObjects.cameraOnTop, customCameraInspectorObjects.cameraOnBottom, exitDirection);
                 }
