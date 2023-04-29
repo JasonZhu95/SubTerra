@@ -57,6 +57,8 @@ public class Stat
     public float currentValue;
     [field: SerializeField] public float MaxValue { get; set; }
 
+    private bool trigggered75Life = false;
+
     private bool triggeredHalfLifeAttack = false;
 
     private bool triggeredQuarterLifeAttack = false;
@@ -68,6 +70,12 @@ public class Stat
         {
             currentValue = Mathf.Clamp(value, 0f, MaxValue);
             OnCurrentValueChange?.Invoke(currentValue);
+
+            if (currentValue / MaxValue <= 0.75 && !trigggered75Life)
+            {
+                OnCurrentHealthBelow75?.Invoke();
+                trigggered75Life = true;
+            }
 
             if (currentValue / MaxValue <= 0.5 && !triggeredHalfLifeAttack)
             {
@@ -91,6 +99,8 @@ public class Stat
     public event Action<float> OnCurrentValueChange;
 
     public event Action OnCurrentValueZero;
+
+    public event Action OnCurrentHealthBelow75;
 
     public event Action OnCurrentValueBelowHalf;
 

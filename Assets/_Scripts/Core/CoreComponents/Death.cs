@@ -58,6 +58,10 @@ public class Death : CoreComponent
         {
             Invoke("InstantiateCoins", 1.3f);
         }
+        if (core.Parent.name == "Temple Guardian")
+        {
+            Invoke("InstantiateCoins", 3.0f);
+        }
         else
         {
             InstantiateCoins();

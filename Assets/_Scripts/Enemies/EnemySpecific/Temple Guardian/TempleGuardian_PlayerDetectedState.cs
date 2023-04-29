@@ -34,9 +34,9 @@ public class TempleGuardian_PlayerDetectedState : PlayerDetectedState
         {
             stateMachine.ChangeState(templeGuardian.meleeAttackState);
         }
-        else if (isPlayerInMaxAgroRange)
+        else if (isPlayerInMinAgroRange)
         {
-            stateMachine.ChangeState(templeGuardian.moveState);
+            stateMachine.ChangeState(templeGuardian.chargeState);
         }
         else if (!isPlayerInMaxAgroRange)
         {

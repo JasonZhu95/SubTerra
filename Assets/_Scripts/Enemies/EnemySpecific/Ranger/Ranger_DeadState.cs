@@ -10,6 +10,13 @@ public class Ranger_DeadState : DeadState
         this.ranger = ranger;
     }
 
+    public override void DieAnimationFinished()
+    {
+        base.DieAnimationFinished();
+
+        core.transform.parent.gameObject.SetActive(false);
+    }
+
     public override void DoChecks()
     {
         base.DoChecks();
@@ -38,12 +45,5 @@ public class Ranger_DeadState : DeadState
     public override void TriggerDeathParticles()
     {
         base.TriggerDeathParticles();
-    }
-
-    public override void DieAnimationFinished()
-    {
-        base.DieAnimationFinished();
-
-        core.transform.parent.gameObject.SetActive(false);
     }
 }
