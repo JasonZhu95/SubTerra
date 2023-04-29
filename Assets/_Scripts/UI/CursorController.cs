@@ -20,7 +20,6 @@ public class CursorController : MonoBehaviour
     private void Awake()
     {
         ChangeCursor(cursor);
-        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
     }
 
@@ -31,7 +30,7 @@ public class CursorController : MonoBehaviour
 
     private void Update()
     {
-        if (playerInput != null)
+        if (playerInput != null && playerInput.currentActionMap != null)
         {
             currentActionMap = playerInput.currentActionMap;
             if (currentActionMap != previousActionMap)

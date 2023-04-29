@@ -96,6 +96,7 @@ MonoBehaviour:
             y: 0.25
             width: 2
             height: 2.5
+          isHammer: 0
         <DamageableLayers>k__BackingField:
           serializedVersion: 2
           m_Bits: 512
