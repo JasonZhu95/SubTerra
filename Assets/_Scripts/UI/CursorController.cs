@@ -12,6 +12,10 @@ public class CursorController : MonoBehaviour
 
     [SerializeField]
     private PlayerInput playerInput = null;
+    private InputActionMap previousActionMap;
+    private InputActionMap currentActionMap;
+
+    private bool setCursor = true;
 
     private void Awake()
     {
@@ -29,14 +33,22 @@ public class CursorController : MonoBehaviour
     {
         if (playerInput != null)
         {
+            currentActionMap = playerInput.currentActionMap;
+            if (currentActionMap != previousActionMap)
+            {
+                setCursor = false;
+                previousActionMap = currentActionMap;
+            }
             // If the player is in a UI State, turn the cursor on.
-            if (playerInput.currentActionMap.name == "UI")
+            if (playerInput.currentActionMap.name == "UI" && !setCursor)
             {
                 Cursor.visible = true;
+                setCursor = true;
             }
-            else
+            else if (playerInput.currentActionMap.name == "Gameplay" && !setCursor)
             {
                 Cursor.visible = false;
+                setCursor = true;
             }
         }
 
@@ -44,10 +56,6 @@ public class CursorController : MonoBehaviour
         if (playerInput == null)
         {
             Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.visible = false;
         }
     }
 }
