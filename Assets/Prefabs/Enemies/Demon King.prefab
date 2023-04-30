@@ -254,7 +254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6306351814688513206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.92, y: 1.3, z: 0}
+  m_LocalPosition: {x: 5.56, y: 1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -727,7 +727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6306351816206966346
 Transform:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3.3333333, y: 4.375}
+    oldSize: {x: 4.4444447, y: 5.8333335}
     newSize: {x: 3.3333333, y: 4.375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -894,6 +894,9 @@ MonoBehaviour:
   ledgeCheck: {fileID: 6306351814539764116}
   playerCheck: {fileID: 6306351815379586261}
   groundCheck: {fileID: 6306351815967381759}
+  slimeMoveStateData: {fileID: 11400000, guid: 829758b529b5c7645bc328f0ca0c1b07, type: 2}
+  slimeIdleStateData: {fileID: 11400000, guid: 0187b0aa2f904064581985fcb3b3ddf4, type: 2}
+  transformToDemonKingStateData: {fileID: 11400000, guid: 0c756eee5d56b1944b00cae2a7c364e9, type: 2}
   moveStateData: {fileID: 11400000, guid: 702e62bd5a36df541af2694dba3aca4e, type: 2}
   idleStateData: {fileID: 11400000, guid: 11bdf444b72ed9c4bb7717d2329d460b, type: 2}
   playerDetectedStateData: {fileID: 11400000, guid: 352af4220be4b1d449b26d64c2460bf2, type: 2}

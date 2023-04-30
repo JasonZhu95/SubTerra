@@ -13,6 +13,7 @@ public class TempleGuardian : Entity
     public TempleGuardian_ChargeState chargeState { get; private set; }
     public TempleGuardian_DeadState deadState { get; private set; }
     public TempleGuardian_TransformToMummyState transformToMummyState { get; private set; }
+    public TempleGuardian_DashFlurryState dashFlurryState { get; private set; }
 
     // Mummy States
     public TempleGuardian_MummyMoveState mummyMoveState { get; private set; }
@@ -40,11 +41,13 @@ public class TempleGuardian : Entity
     private D_DeadState deadStateData;
     [SerializeField]
     private D_TransformToMummyState transformToMummyStateData;
+    [SerializeField]
+    private D_DashFlurryState dashFlurryStateData;
 
     [SerializeField]
     private Transform meleeAttackPosition;
     //[SerializeField]
-    //private Transform playerPosition; 
+    //private Transform playerPosition;
 
     private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
     private Stats stats;
@@ -62,6 +65,7 @@ public class TempleGuardian : Entity
         chargeState = new TempleGuardian_ChargeState(this, stateMachine, "charge", chargeStateData, this);
         deadState = new TempleGuardian_DeadState(this, stateMachine, "dead", deadStateData, this);
         transformToMummyState = new TempleGuardian_TransformToMummyState(this, stateMachine, "transformToMummy", transformToMummyStateData, this);
+        dashFlurryState = new TempleGuardian_DashFlurryState(this, stateMachine, "dashFlurry", meleeAttackPosition, dashFlurryStateData, this);
         
         // Mummy States
         mummyMoveState = new TempleGuardian_MummyMoveState(this, stateMachine, "mummyMove", moveStateData, this);
@@ -77,6 +81,7 @@ public class TempleGuardian : Entity
     {
         stateMachine.Initialize(moveState);
 
+        Stats.Health.OnCurrentHealthBelow100 += () => stateMachine.ChangeState(dashFlurryState);
         Stats.Health.OnCurrentHealthBelow75 += () => stateMachine.ChangeState(transformToMummyState);
         Stats.Health.OnCurrentValueBelowQuarter += () => stateMachine.ChangeState(transformToHumanState);
         Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
@@ -84,6 +89,7 @@ public class TempleGuardian : Entity
 
     private void OnDestroy()
     {
+        Stats.Health.OnCurrentHealthBelow100 -= () => stateMachine.ChangeState(dashFlurryState);
         Stats.Health.OnCurrentHealthBelow75 -= () => stateMachine.ChangeState(transformToMummyState);
         Stats.Health.OnCurrentValueBelowQuarter -= () => stateMachine.ChangeState(transformToHumanState);
         Stats.Health.OnCurrentValueZero -= () => stateMachine.ChangeState(deadState);

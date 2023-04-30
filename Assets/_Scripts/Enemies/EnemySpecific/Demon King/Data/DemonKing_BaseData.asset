@@ -22,7 +22,7 @@ MonoBehaviour:
   circleAgroDistance: 10
   stunResistance: 3
   stunRecoveryTime: 2
-  closeRangeActionDistance: 3
+  closeRangeActionDistance: 4.8
   midRangeActionDistance: 0
   hitParticle: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
   whatIsGround:

@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_0
+      name: slime_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,7 +126,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_1
+      name: slime_idle_1
       rect:
         serializedVersion: 2
         x: 288
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_2
+      name: slime_idle_2
       rect:
         serializedVersion: 2
         x: 576
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_3
+      name: slime_idle_3
       rect:
         serializedVersion: 2
         x: 864
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_4
+      name: slime_idle_4
       rect:
         serializedVersion: 2
         x: 1152
@@ -210,7 +210,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_5
+      name: slime_idle_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -231,7 +231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_6
+      name: slime_move_0
       rect:
         serializedVersion: 2
         x: 0
@@ -252,7 +252,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_7
+      name: slime_move_1
       rect:
         serializedVersion: 2
         x: 288
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_8
+      name: slime_move_2
       rect:
         serializedVersion: 2
         x: 576
@@ -294,7 +294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_9
+      name: slime_move_3
       rect:
         serializedVersion: 2
         x: 864
@@ -315,7 +315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_10
+      name: slime_move_4
       rect:
         serializedVersion: 2
         x: 1152
@@ -336,7 +336,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_11
+      name: slime_move_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -357,7 +357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_12
+      name: slime_move_6
       rect:
         serializedVersion: 2
         x: 1728
@@ -378,7 +378,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_13
+      name: slime_move_7
       rect:
         serializedVersion: 2
         x: 2016
@@ -525,7 +525,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_20
+      name: transform_0
       rect:
         serializedVersion: 2
         x: 0
@@ -546,7 +546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_21
+      name: transform_1
       rect:
         serializedVersion: 2
         x: 288
@@ -567,7 +567,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_22
+      name: transform_2
       rect:
         serializedVersion: 2
         x: 576
@@ -588,7 +588,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_23
+      name: transform_3
       rect:
         serializedVersion: 2
         x: 864
@@ -609,7 +609,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_24
+      name: transform_4
       rect:
         serializedVersion: 2
         x: 1152
@@ -630,7 +630,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_25
+      name: transform_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -651,7 +651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_26
+      name: transform_6
       rect:
         serializedVersion: 2
         x: 1728
@@ -672,7 +672,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_27
+      name: transform_7
       rect:
         serializedVersion: 2
         x: 2016
@@ -693,7 +693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_28
+      name: transform_8
       rect:
         serializedVersion: 2
         x: 2304
@@ -714,7 +714,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_29
+      name: transform_9
       rect:
         serializedVersion: 2
         x: 2592
@@ -735,7 +735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_30
+      name: transform_10
       rect:
         serializedVersion: 2
         x: 2880
@@ -756,7 +756,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_31
+      name: transform_11
       rect:
         serializedVersion: 2
         x: 3168
@@ -777,7 +777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_32
+      name: transform_12
       rect:
         serializedVersion: 2
         x: 3456
@@ -798,7 +798,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_33
+      name: transform_13
       rect:
         serializedVersion: 2
         x: 3744
@@ -819,7 +819,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_34
+      name: transform_14
       rect:
         serializedVersion: 2
         x: 4032
@@ -840,7 +840,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_35
+      name: transform_15
       rect:
         serializedVersion: 2
         x: 4320
@@ -861,7 +861,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_36
+      name: transform_16
       rect:
         serializedVersion: 2
         x: 4608
@@ -882,7 +882,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_37
+      name: transform_17
       rect:
         serializedVersion: 2
         x: 4896
@@ -903,7 +903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_38
+      name: transform_18
       rect:
         serializedVersion: 2
         x: 5184
@@ -924,7 +924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_39
+      name: transform_19
       rect:
         serializedVersion: 2
         x: 5472
@@ -945,7 +945,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_40
+      name: transform_20
       rect:
         serializedVersion: 2
         x: 5760
@@ -966,7 +966,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_41
+      name: transform_21
       rect:
         serializedVersion: 2
         x: 6048
@@ -987,7 +987,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_42
+      name: transform_22
       rect:
         serializedVersion: 2
         x: 6336
@@ -1008,7 +1008,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_43
+      name: transform_23
       rect:
         serializedVersion: 2
         x: 6624
@@ -1029,7 +1029,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_44
+      name: transform_24
       rect:
         serializedVersion: 2
         x: 6912
@@ -1050,7 +1050,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_45
+      name: transform_25
       rect:
         serializedVersion: 2
         x: 7200
@@ -1071,7 +1071,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_46
+      name: transform_26
       rect:
         serializedVersion: 2
         x: 7488
@@ -1092,7 +1092,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_47
+      name: transform_27
       rect:
         serializedVersion: 2
         x: 7776
@@ -1113,7 +1113,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_48
+      name: transform_28
       rect:
         serializedVersion: 2
         x: 8064
@@ -1134,7 +1134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_49
+      name: transform_29
       rect:
         serializedVersion: 2
         x: 8352
@@ -1155,7 +1155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_50
+      name: transform_30
       rect:
         serializedVersion: 2
         x: 8640
@@ -1176,7 +1176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon_slime_v1.0-SpriteSheet_288x160_51
+      name: transform_31
       rect:
         serializedVersion: 2
         x: 8928
@@ -3412,120 +3412,122 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      transform_29: -1340556812
+      transform_7: -445082602
+      demon_slime_v1.0-SpriteSheet_288x160_55: 307965063
       demon_slime_v1.0-SpriteSheet_288x160_139: 897572188
       flame_breath13: 448290128
-      demon_slime_v1.0-SpriteSheet_288x160_26: 745614709
+      demon_slime_v1.0-SpriteSheet_288x160_143: 1825783363
       ground_slam12: -1377889079
-      demon_slime_v1.0-SpriteSheet_288x160_51: 322880254
+      demon_slime_v1.0-SpriteSheet_288x160_147: -1840677758
       demon_slime_v1.0-SpriteSheet_288x160_124: -208465322
       demon_slime_v1.0-SpriteSheet_288x160_67: -1816174270
-      demon_slime_v1.0-SpriteSheet_288x160_143: 1825783363
       demon_slime_v1.0-SpriteSheet_288x160_138: 1930090521
       demon_slime_v1.0-SpriteSheet_288x160_60: 1599798097
-      demon_slime_v1.0-SpriteSheet_288x160_42: 1322371009
-      demon_slime_v1.0-SpriteSheet_288x160_147: -1840677758
       demon_slime_v1.0-SpriteSheet_288x160_135: 1508126067
       demon_slime_v1.0-SpriteSheet_288x160_142: -1018063538
-      demon_slime_v1.0-SpriteSheet_288x160_37: -1331695007
       demon_slime_v1.0-SpriteSheet_288x160_84: 564530446
+      transform_18: 1669857089
       demon_slime_v1.0-SpriteSheet_288x160_68: -229188397
-      demon_slime_v1.0-SpriteSheet_288x160_38: 1669857089
-      demon_slime_v1.0-SpriteSheet_288x160_3: 317538638
       demon_slime_v1.0-SpriteSheet_288x160_71: -1704261547
-      demon_slime_v1.0-SpriteSheet_288x160_10: -1182694995
-      demon_slime_v1.0-SpriteSheet_288x160_32: 351485215
+      transform_5: -1364185313
+      slime_move_4: -1182694995
       demon_slime_v1.0-SpriteSheet_288x160_126: 648949570
+      slime_move_3: -100410151
       demon_slime_v1.0-SpriteSheet_288x160_127: -1664203897
       demon_slime_v1.0-SpriteSheet_288x160_154: 2068908895
       flame_breath8: 1426724275
       demon_slime_v1.0-SpriteSheet_288x160_15: 1222953330
-      demon_slime_v1.0-SpriteSheet_288x160_44: 1056670067
       demon_slime_v1.0-SpriteSheet_288x160_17: 936269037
+      transform_8: 738514040
+      transform_19: -991931371
       ground_slam1: 213700417
-      demon_slime_v1.0-SpriteSheet_288x160_49: -1340556812
+      slime_move_1: 345749627
+      slime_idle_5: 94118823
       demon_slime_v1.0-SpriteSheet_288x160_77: -1433203565
-      demon_slime_v1.0-SpriteSheet_288x160_39: -991931371
+      transform_6: 745614709
       ground_slam0: 714309728
-      demon_slime_v1.0-SpriteSheet_288x160_21: -279026979
       flame_breath19: 947470226
+      transform_0: -55694672
       demon_slime_v1.0-SpriteSheet_288x160_52: -1013312339
-      demon_slime_v1.0-SpriteSheet_288x160_66: 335988517
       demon_slime_v1.0-SpriteSheet_288x160_134: -1861472341
-      demon_slime_v1.0-SpriteSheet_288x160_45: 1323922252
+      demon_slime_v1.0-SpriteSheet_288x160_66: 335988517
       demon_slime_v1.0-SpriteSheet_288x160_82: 1615142337
       demon_slime_v1.0-SpriteSheet_288x160_148: -697097101
-      demon_slime_v1.0-SpriteSheet_288x160_8: 1454781034
-      demon_slime_v1.0-SpriteSheet_288x160_33: 1892035884
+      transform_10: 104777324
       flame_breath10: -1713665827
+      transform_23: 1645449834
       ground_slam14: -606412266
       demon_slime_v1.0-SpriteSheet_288x160_153: 1321631080
-      demon_slime_v1.0-SpriteSheet_288x160_50: 29800728
-      demon_slime_v1.0-SpriteSheet_288x160_40: -2031468341
+      transform_11: -1198313051
       demon_slime_v1.0-SpriteSheet_288x160_130: -1881572335
+      slime_idle_1: -155983010
+      slime_move_0: -807923713
+      transform_1: -279026979
       demon_slime_v1.0-SpriteSheet_288x160_74: -1892858600
+      slime_idle_3: 317538638
       ground_slam17: -628282582
       flame_breath0: -678305338
       flame_breath11: 795430732
       demon_slime_v1.0-SpriteSheet_288x160_18: -1694157815
-      demon_slime_v1.0-SpriteSheet_288x160_7: 345749627
-      demon_slime_v1.0-SpriteSheet_288x160_13: -951953979
+      transform_17: -1331695007
       demon_slime_v1.0-SpriteSheet_288x160_63: -436785257
       ground_slam8: -452267206
-      demon_slime_v1.0-SpriteSheet_288x160_31: -1198313051
-      demon_slime_v1.0-SpriteSheet_288x160_35: -269054937
-      demon_slime_v1.0-SpriteSheet_288x160_48: 1104716779
-      demon_slime_v1.0-SpriteSheet_288x160_6: -807923713
       demon_slime_v1.0-SpriteSheet_288x160_72: -1362138088
       ground_slam6: 628943821
       flame_breath16: -930896509
       demon_slime_v1.0-SpriteSheet_288x160_131: -2130919576
       ground_slam2: 163974485
-      demon_slime_v1.0-SpriteSheet_288x160_11: -1004359728
-      demon_slime_v1.0-SpriteSheet_288x160_146: 1766284337
       flame_breath3: -1334215043
-      demon_slime_v1.0-SpriteSheet_288x160_23: 653028525
+      demon_slime_v1.0-SpriteSheet_288x160_146: 1766284337
+      transform_21: -1527768857
       demon_slime_v1.0-SpriteSheet_288x160_129: -1526092116
       demon_slime_v1.0-SpriteSheet_288x160_156: 898143904
       demon_slime_v1.0-SpriteSheet_288x160_125: 321362013
-      flame_breath1: 818914319
+      demon_slime_v1.0-SpriteSheet_288x160_145: 1349604961
       flame_breath2: 1225695782
+      transform_25: 1323922252
       demon_slime_v1.0-SpriteSheet_288x160_54: -1575320683
       demon_slime_v1.0-SpriteSheet_288x160_155: -2135994949
       ground_slam4: -782414489
-      demon_slime_v1.0-SpriteSheet_288x160_145: 1349604961
-      demon_slime_v1.0-SpriteSheet_288x160_22: -2033677136
-      demon_slime_v1.0-SpriteSheet_288x160_27: -445082602
+      transform_13: 1892035884
+      transform_3: 653028525
+      slime_idle_4: 1330106435
+      transform_9: 1470785926
+      flame_breath1: 818914319
       flame_breath20: 733868470
       ground_slam10: 38075513
       demon_slime_v1.0-SpriteSheet_288x160_140: -1806501488
+      transform_16: -1555495523
       flame_breath14: 1319136242
+      transform_26: -1175824460
       demon_slime_v1.0-SpriteSheet_288x160_149: -919810026
       flame_breath6: -603837363
-      demon_slime_v1.0-SpriteSheet_288x160_47: -1378712040
+      transform_15: -269054937
       demon_slime_v1.0-SpriteSheet_288x160_61: -240895005
       flame_breath7: -1543279374
-      demon_slime_v1.0-SpriteSheet_288x160_36: -1555495523
       demon_slime_v1.0-SpriteSheet_288x160_132: 1317021722
-      demon_slime_v1.0-SpriteSheet_288x160_29: 1470785926
-      demon_slime_v1.0-SpriteSheet_288x160_34: -682174411
       demon_slime_v1.0-SpriteSheet_288x160_65: 1856515419
       ground_slam7: 136085851
-      demon_slime_v1.0-SpriteSheet_288x160_28: 738514040
       demon_slime_v1.0-SpriteSheet_288x160_16: -411543347
       demon_slime_v1.0-SpriteSheet_288x160_144: -1083234356
       ground_slam9: 1823139904
-      demon_slime_v1.0-SpriteSheet_288x160_5: 94118823
+      transform_12: 351485215
+      transform_22: 1322371009
       demon_slime_v1.0-SpriteSheet_288x160_62: -1760163669
       demon_slime_v1.0-SpriteSheet_288x160_80: -790696250
       demon_slime_v1.0-SpriteSheet_288x160_133: -899302797
       demon_slime_v1.0-SpriteSheet_288x160_59: 699813034
       demon_slime_v1.0-SpriteSheet_288x160_83: 1652487809
       demon_slime_v1.0-SpriteSheet_288x160_141: -470012933
+      transform_20: -2031468341
       demon_slime_v1.0-SpriteSheet_288x160_58: -1571138040
       flame_breath17: -2058136942
+      transform_27: -1378712040
       demon_slime_v1.0-SpriteSheet_288x160_76: -73350897
       ground_slam3: -767930469
       flame_breath9: 1736158048
+      transform_24: 1056670067
       demon_slime_v1.0-SpriteSheet_288x160_53: 2049671559
       ground_slam13: 560636382
       ground_slam16: 1067780892
@@ -3533,42 +3535,40 @@ TextureImporter:
       demon_slime_v1.0-SpriteSheet_288x160_69: 1254935759
       demon_slime_v1.0-SpriteSheet_288x160_81: 364094523
       demon_slime_v1.0-SpriteSheet_288x160_136: -1303008119
+      transform_28: 1104716779
       demon_slime_v1.0-SpriteSheet_288x160_19: -1347342925
       demon_slime_v1.0-SpriteSheet_288x160_137: -1769735478
+      transform_14: -682174411
       demon_slime_v1.0-SpriteSheet_288x160_151: -560022395
-      demon_slime_v1.0-SpriteSheet_288x160_43: 1645449834
+      slime_idle_2: 1032847206
       flame_breath4: 372006903
-      demon_slime_v1.0-SpriteSheet_288x160_9: -100410151
       flame_breath5: -637655868
-      demon_slime_v1.0-SpriteSheet_288x160_4: 1330106435
-      demon_slime_v1.0-SpriteSheet_288x160_0: 1796408275
-      demon_slime_v1.0-SpriteSheet_288x160_25: -1364185313
-      demon_slime_v1.0-SpriteSheet_288x160_30: 104777324
-      demon_slime_v1.0-SpriteSheet_288x160_57: -1601265986
-      demon_slime_v1.0-SpriteSheet_288x160_1: -155983010
-      demon_slime_v1.0-SpriteSheet_288x160_24: 1246400228
-      demon_slime_v1.0-SpriteSheet_288x160_12: 168257577
-      demon_slime_v1.0-SpriteSheet_288x160_128: -171993322
-      demon_slime_v1.0-SpriteSheet_288x160_70: 604715065
-      demon_slime_v1.0-SpriteSheet_288x160_79: -1632785952
-      flame_breath12: 1463708341
-      demon_slime_v1.0-SpriteSheet_288x160_150: 1646473050
-      ground_slam5: 963503462
       demon_slime_v1.0-SpriteSheet_288x160_64: -1744061455
-      demon_slime_v1.0-SpriteSheet_288x160_2: 1032847206
+      flame_breath12: 1463708341
       flame_breath15: 815280820
-      demon_slime_v1.0-SpriteSheet_288x160_20: -55694672
-      ground_slam11: -777763562
+      flame_breath18: -1386379948
+      demon_slime_v1.0-SpriteSheet_288x160_57: -1601265986
+      slime_idle_0: 1796408275
+      demon_slime_v1.0-SpriteSheet_288x160_70: 604715065
+      transform_2: -2033677136
+      demon_slime_v1.0-SpriteSheet_288x160_128: -171993322
+      demon_slime_v1.0-SpriteSheet_288x160_79: -1632785952
+      demon_slime_v1.0-SpriteSheet_288x160_150: 1646473050
+      slime_move_6: 168257577
+      ground_slam5: 963503462
       demon_slime_v1.0-SpriteSheet_288x160_78: 140429405
-      demon_slime_v1.0-SpriteSheet_288x160_46: -1175824460
+      slime_move_5: -1004359728
+      slime_move_2: 1454781034
+      ground_slam11: -777763562
+      transform_31: 322880254
       ground_slam15: 1489035086
       demon_slime_v1.0-SpriteSheet_288x160_75: -1439089788
-      demon_slime_v1.0-SpriteSheet_288x160_41: -1527768857
-      flame_breath18: -1386379948
+      slime_move_7: -951953979
       demon_slime_v1.0-SpriteSheet_288x160_73: -221862201
+      transform_4: 1246400228
       demon_slime_v1.0-SpriteSheet_288x160_56: -1871191545
       demon_slime_v1.0-SpriteSheet_288x160_14: 1583504196
-      demon_slime_v1.0-SpriteSheet_288x160_55: 307965063
+      transform_30: 29800728
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -73,6 +73,11 @@ public class Movement : CoreComponent
         }
     }
 
+    public void SetLocation(Vector2 position)
+    {
+        RB.transform.position = position;
+    }
+
     public void CheckIfShouldFlip(int xInput)
     {
         if (xInput != 0 && xInput != FacingDirection)

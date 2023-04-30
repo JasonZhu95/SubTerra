@@ -5,6 +5,7 @@ using UnityEngine;
 public class TransformToHumanState : State
 {
     protected D_TransformToHumanState stateData;
+
     private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
     private Movement movement;
 
@@ -15,15 +16,15 @@ public class TransformToHumanState : State
     public override void DoChecks()
     {
         base.DoChecks();
-
-        entity.atsm.transformToHumanState = this;
-
-        Movement?.SetVelocityX(0f);
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        entity.atsm.transformToHumanState = this;
+
+        Movement?.SetVelocityX(0f);
     }
 
     public override void Exit()

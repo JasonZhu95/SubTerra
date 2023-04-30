@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f5aa482e628e2429c6afc331c722f2, type: 3}
   m_Name: DemonKing_MeleeAttackStateData
   m_EditorClassIdentifier: 
-  attackRadius: 1.3
-  attackDamage: 10
+  attackRadius: 1.5
+  attackDamage: 4
   knockbackAngle: {x: 1, y: 1}
   knockbackStrength: 10
   poiseDamage: 0
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 49152

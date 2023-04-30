@@ -16,15 +16,15 @@ public class TransformToMummyState : State
     public override void DoChecks()
     {
         base.DoChecks();
-
-        entity.atsm.transformToMummyState = this;
-
-        Movement?.SetVelocityX(0f);
     }
 
     public override void Enter()
     {
         base.Enter();
+
+        entity.atsm.transformToMummyState = this;
+
+        Movement?.SetVelocityX(0f);
     }
 
     public override void Exit()

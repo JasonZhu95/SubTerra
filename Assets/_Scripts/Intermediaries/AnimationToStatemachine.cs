@@ -7,6 +7,8 @@ public class AnimationToStatemachine : MonoBehaviour
     public DeadState deadState;
     public TransformToMummyState transformToMummyState;
     public TransformToHumanState transformToHumanState;
+    public DashFlurryState dashFlurryState;
+    public TransformToDemonKingState transformToDemonKingState;
 
     private void TriggerAttack()
     {
@@ -36,6 +38,16 @@ public class AnimationToStatemachine : MonoBehaviour
     private void TransformationToHumanFinished()
     {
         transformToHumanState.TransformationToHumanFinished();
+    }
+
+    private void TransformationToDemonKingFinished()
+    {
+        transformToDemonKingState.TransformationToDemonKingFinished();
+    }
+
+    private void TeleportToPlayer()
+    {
+        dashFlurryState.TeleportToPlayer();
     }
 
     private void DieAnimationFinished()

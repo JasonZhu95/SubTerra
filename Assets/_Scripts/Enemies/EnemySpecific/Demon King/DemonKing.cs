@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class DemonKing : Entity
 {
+    // Slime States
+    public DemonKing_SlimeMoveState slimeMoveState { get; private set; }
+    public DemonKing_SlimeIdleState slimeIdleState { get; private set; }
+    public DemonKing_TransformToDemonKingState transformToDemonKingState { get; private set; }
+
+    // Demon King States
     public DemonKing_MoveState moveState { get; private set; }
     public DemonKing_IdleState idleState { get; private set; }
     public DemonKing_PlayerDetectedState playerDetectedState { get; private set; }
@@ -13,6 +19,15 @@ public class DemonKing : Entity
     public DemonKing_DeadState deadState { get; private set; }
     public DemonKing_ChargeState chargeState { get; private set; }
 
+    // Slime Data
+    [SerializeField]
+    private D_MoveState slimeMoveStateData;
+    [SerializeField]
+    private D_IdleState slimeIdleStateData;
+    [SerializeField]
+    private D_TransformToDemonKingState transformToDemonKingStateData;
+
+    // Demon King Data
     [SerializeField]
     private D_MoveState moveStateData;
     [SerializeField]
@@ -40,6 +55,12 @@ public class DemonKing : Entity
     {
         base.Awake();
 
+        // Slime States
+        slimeMoveState = new DemonKing_SlimeMoveState(this, stateMachine, "slimeMove", slimeMoveStateData, this);
+        slimeIdleState = new DemonKing_SlimeIdleState(this, stateMachine, "slimeIdle", slimeIdleStateData, this);
+        transformToDemonKingState = new DemonKing_TransformToDemonKingState(this, stateMachine, "transform", transformToDemonKingStateData, this);
+
+        // Demon King States
         moveState = new DemonKing_MoveState(this, stateMachine, "move", moveStateData, this);
         idleState = new DemonKing_IdleState(this, stateMachine, "idle", idleStateData, this);
         playerDetectedState = new DemonKing_PlayerDetectedState(this, stateMachine, "playerDetected", playerDetectedStateData, this);
@@ -52,13 +73,16 @@ public class DemonKing : Entity
 
     private void Start()
     {
-        stateMachine.Initialize(moveState);
+        stateMachine.Initialize(slimeMoveState);
 
+
+        Stats.Health.OnCurrentHealthBelow100 += () => stateMachine.ChangeState(transformToDemonKingState);
         Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
     }
 
     private void OnDestroy()
     {
+        Stats.Health.OnCurrentHealthBelow100 -= () => stateMachine.ChangeState(transformToDemonKingState);
         Stats.Health.OnCurrentValueZero -= () => stateMachine.ChangeState(deadState);
     }
 

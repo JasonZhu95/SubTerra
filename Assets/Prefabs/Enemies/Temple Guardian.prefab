@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6161326779102512178
 Transform:
   m_ObjectHideFlags: 0
@@ -548,8 +548,9 @@ MonoBehaviour:
   meleeAttackStateData: {fileID: 11400000, guid: 1dca7d2244e9f77449303a203d2de5ce, type: 2}
   lookForPlayerStateData: {fileID: 11400000, guid: 84ba17d9e12aba74ab64060d6d09a755, type: 2}
   chargeStateData: {fileID: 11400000, guid: 1bd0d2430adb2294fb0a56ef6cd8df74, type: 2}
-  deadStateData: {fileID: 0}
-  transformToMummyStateData: {fileID: 0}
+  deadStateData: {fileID: 11400000, guid: 615afcdfdedf79741949ee8e308e1cea, type: 2}
+  transformToMummyStateData: {fileID: 11400000, guid: 1357ee095d8dfb6499e1cc3ec597c725, type: 2}
+  dashFlurryStateData: {fileID: 11400000, guid: e4de43acae5bf0e4995cbe536a9a0dd3, type: 2}
   meleeAttackPosition: {fileID: 6161326779650166237}
 --- !u!114 &6161326779102512181
 MonoBehaviour:
