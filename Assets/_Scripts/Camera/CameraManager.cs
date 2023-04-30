@@ -9,6 +9,8 @@ public class CameraManager : MonoBehaviour
     public static CameraManager instance;
 
     [SerializeField] private CinemachineVirtualCamera[] virtualCameras;
+    [Header("Default Respawn Camera")]
+    [SerializeField] private CinemachineVirtualCamera respawnCamera;
 
     [Header("Lerping the Y Dampining of Player During jumps/falls")]
     [SerializeField] private float fallPanAmount = 0.25f;
@@ -158,6 +160,14 @@ public class CameraManager : MonoBehaviour
     #endregion
 
     #region Swap Camera
+    public void SwapCameraOnRespawn()
+    {
+        currentCamera.enabled = false;
+        respawnCamera.enabled = true;
+        currentCamera = respawnCamera;
+        framingTranposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+    }
+
     public void SwapCameraX(CinemachineVirtualCamera cameraFromLeft, CinemachineVirtualCamera cameraFromRight, Vector2 triggerExitDirection)
     {
         if (currentCamera == cameraFromLeft && triggerExitDirection.x < 0f)

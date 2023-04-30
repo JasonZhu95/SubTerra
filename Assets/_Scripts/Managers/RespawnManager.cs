@@ -24,6 +24,8 @@ namespace Project.Managers
         private SpriteRenderer weapon2baseSR;
         private SpriteRenderer weapon2weaponSR;
 
+        [SerializeField] private CameraManager cameraManager;
+
         private void Awake()
         {
             player = GameObject.Find("Player");
@@ -39,6 +41,7 @@ namespace Project.Managers
 
         public void PlayerDeathSwitchActive(bool fullDeath)
         {
+            cameraManager.SwapCameraOnRespawn();
             StartCoroutine(ResetPlayerOnRespawn(fullDeath));
         }
 
