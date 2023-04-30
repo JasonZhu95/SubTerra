@@ -121,6 +121,12 @@ public class CameraManager : MonoBehaviour
                 case CameraPanDirection.Right:
                     endPos = Vector2.left;
                     break;
+                case CameraPanDirection.DownRight:
+                    endPos = new Vector2(1f, -1f);
+                    break;
+                case CameraPanDirection.DownLeft:
+                    endPos = new Vector2(-1f, -1f);
+                    break;
                 default:
                     break;
             }

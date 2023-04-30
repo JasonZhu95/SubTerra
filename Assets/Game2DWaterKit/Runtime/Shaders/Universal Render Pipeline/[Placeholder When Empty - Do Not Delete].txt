@@ -1,0 +1,2 @@
+This folder is used to store SRP-Specific shaders.
+For the shaders to be properly imported and compiled, please do not delete this folder.

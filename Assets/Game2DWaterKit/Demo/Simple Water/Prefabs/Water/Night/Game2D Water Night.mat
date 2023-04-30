@@ -1,0 +1,263 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Game2D Water Night
+  m_Shader: {fileID: 4800000, guid: ba8d3b622257d1c438eec20608c4e43c, type: 3}
+  m_ShaderKeywords: Water2D_ApplyEmissionColor Water2D_ColorGradient Water2D_Reflection
+    Water2D_ReflectionFadeLinear Water2D_Refraction Water2D_WaterNoise Water2D_WaterTexture
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BodyTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BottomEdgeTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LeftEdgeTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LeftRightEdgesTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 2800000, guid: 9b52eb7dc5c34bc40a3bee4df506ea08, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTexturePartiallySubmergedObjects:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RefractionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RefractionTexturePartiallySubmergedObjects:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RightEdgeTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SurfaceTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopBottomEdgesTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopEdgeTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTexture:
+        m_Texture: {fileID: 2800000, guid: afaf2fef58e660e44b422e0d7709854d, type: 3}
+        m_Scale: {x: 0.4, y: 0.4}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BodyColorGradientOffset: 0
+    - _BodyNoiseSpeed: 0.025
+    - _BodyNoiseStrength: 0.025
+    - _BodyTextureOpacity: 0.5
+    - _BodyTextureScrollingSpeed: 1
+    - _BodyTextureSheetColumns: 1
+    - _BodyTextureSheetFramesCount: 1
+    - _BodyTextureSheetFramesPerSecond: 0
+    - _BodyTextureSheetInverseColumns: 1
+    - _BodyTextureSheetInverseRows: 1
+    - _BodyTextureSheetRows: 1
+    - _BottomEdgeTextureOpacity: 0.75
+    - _BottomEdgeTextureSheetColumns: 1
+    - _BottomEdgeTextureSheetFramesCount: 1
+    - _BottomEdgeTextureSheetFramesPerSecond: 1
+    - _BottomEdgeTextureSheetInverseColumns: 1
+    - _BottomEdgeTextureSheetInverseRows: 1
+    - _BottomEdgeTextureSheetRows: 1
+    - _DstBlend: 10
+    - _EmissionColorIntensity: 1
+    - _Game2DWaterKit_MaterialType: 0
+    - _LeftEdgeTextureOpacity: 0.75
+    - _LeftEdgeTextureScrollingSpeed: 1
+    - _LeftEdgeTextureSheetColumns: 1
+    - _LeftEdgeTextureSheetFramesCount: 1
+    - _LeftEdgeTextureSheetFramesPerSecond: 1
+    - _LeftEdgeTextureSheetInverseColumns: 1
+    - _LeftEdgeTextureSheetInverseRows: 1
+    - _LeftEdgeTextureSheetRows: 1
+    - _LeftRightEdgesNoiseSpeed: 1
+    - _LeftRightEdgesNoiseStrength: 0.025
+    - _LeftRightEdgesTextureOpacity: 0.75
+    - _LeftRightEdgesTextureScrollingSpeed: 1
+    - _LeftRightEdgesTextureSheetColumns: 1
+    - _LeftRightEdgesTextureSheetFramesCount: 1
+    - _LeftRightEdgesTextureSheetFramesPerSecond: 0
+    - _LeftRightEdgesTextureSheetInverseColumns: 1
+    - _LeftRightEdgesTextureSheetInverseRows: 1
+    - _LeftRightEdgesTextureSheetRows: 1
+    - _Mode: 2000
+    - _ReflectionNoiseSpeed: 0.055
+    - _ReflectionNoiseStrength: 0.022
+    - _ReflectionVisibility: 0.65
+    - _RefractionAmountOfBending: 0
+    - _RefractionNoiseSpeed: 0.075
+    - _RefractionNoiseStrength: 0.015
+    - _RightEdgeTextureOpacity: 0.75
+    - _RightEdgeTextureScrollingSpeed: 1
+    - _RightEdgeTextureSheetColumns: 1
+    - _RightEdgeTextureSheetFramesCount: 1
+    - _RightEdgeTextureSheetFramesPerSecond: 1
+    - _RightEdgeTextureSheetInverseColumns: 1
+    - _RightEdgeTextureSheetInverseRows: 1
+    - _RightEdgeTextureSheetRows: 1
+    - _SpriteMaskInteraction: 0
+    - _SpriteMaskInteractionRef: 1
+    - _SrcBlend: 5
+    - _SubmergeLevel: 0.95
+    - _SurfaceColorGradientOffset: 0
+    - _SurfaceLevel: 0.975
+    - _SurfaceNoiseSpeed: 0.025
+    - _SurfaceNoiseStrength: 0.025
+    - _SurfaceTextureOpacity: 0.5
+    - _SurfaceTextureScrollingSpeedX: 0
+    - _SurfaceTextureScrollingSpeedY: 0
+    - _SurfaceTextureSheetColumns: 1
+    - _SurfaceTextureSheetFramesCount: 1
+    - _SurfaceTextureSheetFramesPerSecond: 0
+    - _SurfaceTextureSheetInverseColumns: 1
+    - _SurfaceTextureSheetInverseRows: 1
+    - _SurfaceTextureSheetRows: 1
+    - _TopBottomEdgesNoiseSpeed: 1
+    - _TopBottomEdgesNoiseStrength: 0.025
+    - _TopBottomEdgesTextureOpacity: 0.75
+    - _TopBottomEdgesTextureSheetColumns: 1
+    - _TopBottomEdgesTextureSheetFramesCount: 1
+    - _TopBottomEdgesTextureSheetFramesPerSecond: 1
+    - _TopBottomEdgesTextureSheetInverseColumns: 1
+    - _TopBottomEdgesTextureSheetInverseRows: 1
+    - _TopBottomEdgesTextureSheetRows: 1
+    - _TopEdgeTextureOpacity: 0.75
+    - _TopEdgeTextureSheetColumns: 1
+    - _TopEdgeTextureSheetFramesCount: 1
+    - _TopEdgeTextureSheetFramesPerSecond: 1
+    - _TopEdgeTextureSheetInverseColumns: 1
+    - _TopEdgeTextureSheetInverseRows: 1
+    - _TopEdgeTextureSheetRows: 1
+    - _Water2D_IsApplyTintColorOnTopOfTextureEnabled: 1
+    - _Water2D_IsColorGradientEnabled: 1
+    - _Water2D_IsEmissionColorEnabled: 1
+    - _Water2D_IsFakePerspectiveEnabled: 0
+    - _Water2D_IsReflectionEnabled: 1
+    - _Water2D_IsRefractionEnabled: 1
+    - _Water2D_IsSurfaceColorGradientEnabled: 0
+    - _Water2D_IsSurfaceEnabled: 0
+    - _Water2D_IsSurfaceNoiseEnabled: 0
+    - _Water2D_IsWaterNoiseEnabled: 1
+    - _Water2D_IsWaterSurfaceTextureSheetEnabled: 0
+    - _Water2D_IsWaterSurfaceTextureSheetWithLerpEnabled: 0
+    - _Water2D_IsWaterTextureSheetEnabled: 0
+    - _Water2D_IsWaterTextureSheetWithLerpEnabled: 0
+    - _WaterColorGradientOffset: 0
+    - _WaterEmissionColorIntensity: 0.2
+    - _WaterNoiseSpeed: 0.015
+    - _WaterNoiseStrength: 0.246
+    - _WaterTextureOpacity: 0.1
+    - _WaterTextureScrollingSpeedX: 0
+    - _WaterTextureScrollingSpeedY: 0
+    - _WaterTextureSheetColumns: 1
+    - _WaterTextureSheetFramesCount: 1
+    - _WaterTextureSheetFramesPerSecond: 0
+    - _WaterTextureSheetInverseColumns: 1
+    - _WaterTextureSheetInverseRows: 1
+    - _WaterTextureSheetRows: 1
+    - _Waterfall2D_IsApplyTintColorOnTopOfTextureEnabled: 0
+    - _Waterfall2D_IsBodyNoiseEnabled: 0
+    - _Waterfall2D_IsBodyTextureSheetEnabled: 0
+    - _Waterfall2D_IsBodyTextureSheetWithLerpEnabled: 0
+    - _Waterfall2D_IsBottomEdgeEnabled: 0
+    - _Waterfall2D_IsBottomEdgeTextureSheetEnabled: 0
+    - _Waterfall2D_IsBottomEdgeTextureSheetWithLerpEnabled: 0
+    - _Waterfall2D_IsColorGradientEnabled: 0
+    - _Waterfall2D_IsEmissionColorEnabled: 0
+    - _Waterfall2D_IsLeftEdgeEnabled: 0
+    - _Waterfall2D_IsLeftEdgeTextureSheetEnabled: 0
+    - _Waterfall2D_IsLeftEdgeTextureSheetWithLerpEnabled: 0
+    - _Waterfall2D_IsLeftRightEdgesEnabled: 0
+    - _Waterfall2D_IsLeftRightEdgesNoiseEnabled: 0
+    - _Waterfall2D_IsLeftRightEdgesTextureSheetEnabled: 0
+    - _Waterfall2D_IsLeftRightEdgesTextureSheetWithLerpEnabled: 0
+    - _Waterfall2D_IsLeftRightEdgesUseSameTextureEnabled: 0
+    - _Waterfall2D_IsRefractionEnabled: 0
+    - _Waterfall2D_IsRightEdgeEnabled: 0
+    - _Waterfall2D_IsRightEdgeTextureSheetEnabled: 0
+    - _Waterfall2D_IsRightEdgeTextureSheetWithLerpEnabled: 0
+    - _Waterfall2D_IsTopBottomEdgesEnabled: 0
+    - _Waterfall2D_IsTopBottomEdgesNoiseEnabled: 0
+    - _Waterfall2D_IsTopBottomEdgesTextureSheetEnabled: 0
+    - _Waterfall2D_IsTopBottomEdgesTextureSheetWithLerpEnabled: 0
+    - _Waterfall2D_IsTopBottomEdgesUseSameTextureEnabled: 0
+    - _Waterfall2D_IsTopEdgeEnabled: 0
+    - _Waterfall2D_IsTopEdgeTextureSheetEnabled: 0
+    - _Waterfall2D_IsTopEdgeTextureSheetWithLerpEnabled: 0
+    - _ZWrite: 0
+    m_Colors:
+    - _BodyColor: {r: 0.11, g: 0.64, b: 0.92, a: 0.25}
+    - _BodyColorGradientEnd: {r: 1, g: 1, b: 1, a: 0.25}
+    - _BodyColorGradientStart: {r: 1, g: 1, b: 1, a: 0.25}
+    - _BodyNoiseScaleOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _BodyNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _BodyTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _BottomEdgeTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 0}
+    - _LeftEdgeTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _LeftRightEdgesNoiseScaleOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _LeftRightEdgesNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _LeftRightEdgesTextureFlipParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _LeftRightEdgesTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _LeftRightEdgesThickness: {r: 0.2, g: 5, b: 0.2, a: 5}
+    - _ReflectionFadingParameters: {r: 1, g: 0, b: 0, a: 0}
+    - _ReflectionNoiseScaleOffset: {r: 5, g: 15, b: 0, a: 0}
+    - _ReflectionNoiseTiling: {r: 0.5, g: 1, b: 0, a: 0}
+    - _RefractionNoiseScaleOffset: {r: 5.5, g: 3, b: 0, a: 0}
+    - _RefractionNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _RightEdgeTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _SurfaceColor: {r: 0.14, g: 0.54, b: 0.85, a: 0.25}
+    - _SurfaceColorGradientEnd: {r: 1, g: 1, b: 1, a: 0.25}
+    - _SurfaceColorGradientStart: {r: 1, g: 1, b: 1, a: 0.25}
+    - _SurfaceNoiseScaleOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _SurfaceNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _SurfaceTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _TopBottomEdgesNoiseScaleOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _TopBottomEdgesNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _TopBottomEdgesTextureFlipParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _TopBottomEdgesTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _TopBottomEdgesThickness: {r: 0.2, g: 5, b: 0.2, a: 5}
+    - _TopEdgeTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _WaterColor: {r: 0.11, g: 0.64, b: 0.92, a: 0.25}
+    - _WaterColorGradientEnd: {r: 0.1254902, g: 1, b: 0.05490196, a: 0.1764706}
+    - _WaterColorGradientStart: {r: 0.1254902, g: 1, b: 0.78431374, a: 0.11764706}
+    - _WaterEmissionColor: {r: 1, g: 1, b: 1, a: 0}
+    - _WaterNoiseScaleOffset: {r: 4, g: 15, b: 0, a: 0}
+    - _WaterNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _WaterTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}

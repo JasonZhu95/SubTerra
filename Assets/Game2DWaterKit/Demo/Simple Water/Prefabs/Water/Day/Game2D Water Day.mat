@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Game2D Water Day
+  m_Shader: {fileID: 4800000, guid: e886a16a9b070044382af4ae00cba832, type: 3}
+  m_ShaderKeywords: Water2D_ApplyEmissionColor Water2D_ColorGradient Water2D_Reflection
+    Water2D_ReflectionFadeLinear Water2D_Refraction Water2D_WaterNoise Water2D_WaterTexture
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _NoiseTexture:
+        m_Texture: {fileID: 2800000, guid: 8352fe382042e69448062616a20d9e11, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTexturePartiallySubmergedObjects:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RefractionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RefractionTexturePartiallySubmergedObjects:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SurfaceTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTexture:
+        m_Texture: {fileID: 2800000, guid: afaf2fef58e660e44b422e0d7709854d, type: 3}
+        m_Scale: {x: 0.4, y: 0.4}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _DstBlend: 10
+    - _Game2DWaterKit_MaterialType: 0
+    - _Mode: 2000
+    - _ReflectionNoiseSpeed: 0.055
+    - _ReflectionNoiseStrength: 0.022
+    - _ReflectionVisibility: 0.634
+    - _RefractionAmountOfBending: 0
+    - _RefractionNoiseSpeed: 0.075
+    - _RefractionNoiseStrength: 0.015
+    - _SpriteMaskInteraction: 0
+    - _SpriteMaskInteractionRef: 1
+    - _SrcBlend: 5
+    - _SubmergeLevel: 0.95
+    - _SurfaceColorGradientOffset: 0
+    - _SurfaceLevel: 0.975
+    - _SurfaceNoiseSpeed: 0.025
+    - _SurfaceNoiseStrength: 0.025
+    - _SurfaceTextureOpacity: 0.5
+    - _SurfaceTextureScrollingSpeedX: 0
+    - _SurfaceTextureScrollingSpeedY: 0
+    - _SurfaceTextureSheetColumns: 1
+    - _SurfaceTextureSheetFramesCount: 1
+    - _SurfaceTextureSheetFramesPerSecond: 0
+    - _SurfaceTextureSheetInverseColumns: 1
+    - _SurfaceTextureSheetInverseRows: 1
+    - _SurfaceTextureSheetRows: 1
+    - _Water2D_IsApplyTintColorOnTopOfTextureEnabled: 1
+    - _Water2D_IsColorGradientEnabled: 1
+    - _Water2D_IsEmissionColorEnabled: 1
+    - _Water2D_IsFakePerspectiveEnabled: 0
+    - _Water2D_IsReflectionEnabled: 1
+    - _Water2D_IsRefractionEnabled: 1
+    - _Water2D_IsSurfaceColorGradientEnabled: 0
+    - _Water2D_IsSurfaceEnabled: 0
+    - _Water2D_IsSurfaceNoiseEnabled: 0
+    - _Water2D_IsWaterNoiseEnabled: 1
+    - _Water2D_IsWaterSurfaceTextureSheetEnabled: 0
+    - _Water2D_IsWaterSurfaceTextureSheetWithLerpEnabled: 0
+    - _Water2D_IsWaterTextureSheetEnabled: 0
+    - _Water2D_IsWaterTextureSheetWithLerpEnabled: 0
+    - _WaterColorGradientOffset: 0
+    - _WaterEmissionColorIntensity: 0.175
+    - _WaterNoiseSpeed: 0.015
+    - _WaterNoiseStrength: 0.246
+    - _WaterTextureOpacity: 0.1
+    - _WaterTextureScrollingSpeedX: 0
+    - _WaterTextureScrollingSpeedY: 0
+    - _WaterTextureSheetColumns: 1
+    - _WaterTextureSheetFramesCount: 1
+    - _WaterTextureSheetFramesPerSecond: 0
+    - _WaterTextureSheetInverseColumns: 1
+    - _WaterTextureSheetInverseRows: 1
+    - _WaterTextureSheetRows: 1
+    - _ZWrite: 0
+    m_Colors:
+    - _ReflectionFadingParameters: {r: 1, g: 0, b: 0, a: 0}
+    - _ReflectionNoiseScaleOffset: {r: 5, g: 15, b: 0, a: 0}
+    - _ReflectionNoiseTiling: {r: 0.5, g: 1, b: 0, a: 0}
+    - _RefractionNoiseScaleOffset: {r: 5.5, g: 3, b: 0, a: 0}
+    - _RefractionNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _SurfaceColor: {r: 0.14, g: 0.54, b: 0.85, a: 0.25}
+    - _SurfaceColorGradientEnd: {r: 1, g: 1, b: 1, a: 0.25}
+    - _SurfaceColorGradientStart: {r: 1, g: 1, b: 1, a: 0.25}
+    - _SurfaceNoiseScaleOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _SurfaceNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _SurfaceTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
+    - _WaterColor: {r: 0.11, g: 0.64, b: 0.92, a: 0.25}
+    - _WaterColorGradientEnd: {r: 0.61898947, g: 1, b: 0.58823526, a: 0.1764706}
+    - _WaterColorGradientStart: {r: 0.6397059, g: 1, b: 0.9111382, a: 0.11764706}
+    - _WaterEmissionColor: {r: 0.44852942, g: 1, b: 0.9315415, a: 0}
+    - _WaterNoiseScaleOffset: {r: 4, g: 15, b: 0, a: 0}
+    - _WaterNoiseTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _WaterTextureTilingParameters: {r: 0, g: 0, b: 0, a: 0}
