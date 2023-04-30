@@ -6,6 +6,7 @@ using Project.Managers;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System.Collections;
+using System;
 
 namespace Project.UI
 {
@@ -53,6 +54,8 @@ namespace Project.UI
         private const string LAYOUT_TAG = "layout";
         private const string AUDIO_TAG = "audio";
         #endregion
+
+        public event Action OnDialogueFinish;
 
         #region Unity Callback Functions
         private void Awake()
@@ -132,6 +135,9 @@ namespace Project.UI
             portraitFrame.SetActive(false);
             dialogueText.text = "";
             inputHandler.SwitchToActionMap("Gameplay");
+
+            // Invoke event actions attached to finishing dialogue
+            OnDialogueFinish?.Invoke();
         }
 
         // Check if there are more dialogue to be displayed

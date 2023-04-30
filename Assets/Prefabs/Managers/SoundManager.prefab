@@ -52,7 +52,13 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: DialogueJason1
-    clip: {fileID: 8300000, guid: 1412d8dfc5b2c4349a9a4c99916dcd9c, type: 3}
+    clip: {fileID: 8300000, guid: 64b5f514fc939b348be5efea306123c1, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialougeRanger1
+    clip: {fileID: 8300000, guid: 476259e89feb5d149b770ea59cdb8786, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0

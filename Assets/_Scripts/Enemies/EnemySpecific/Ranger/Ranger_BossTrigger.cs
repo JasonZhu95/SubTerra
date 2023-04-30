@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Project.UI;
 
 public class Ranger_BossTrigger : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Ranger_BossTrigger : MonoBehaviour
     [SerializeField] private GameObject rangerPreFightGO;
     [SerializeField] private BossManager bossManager;
     [SerializeField] private DoorAnimated bossDoors;
+    [SerializeField] private DialogueTriggerOnRange dialogueTrigger;
     private bool startFight;
 
     private void Start()
@@ -16,6 +18,7 @@ public class Ranger_BossTrigger : MonoBehaviour
         {
             rangerFightGO.SetActive(false);
             rangerPreFightGO.SetActive(false);
+            dialogueTrigger.gameObject.SetActive(false);
         }
         else
         {
@@ -27,7 +30,7 @@ public class Ranger_BossTrigger : MonoBehaviour
     {
         if (!bossManager.RangerBossDefeated)
         {
-            if (startFight)
+            if (startFight && dialogueTrigger.DialogueHasBeenPlayed)
             {
                 rangerFightGO.SetActive(true);
                 rangerPreFightGO.SetActive(false);

@@ -2,7 +2,7 @@ Who goes there? #speaker:Ranger #portrait:ranger #audio:DialogueRanger1
 -> main
 
 === main ===
-I am Soren, an explorer seeking to cleanse the corruption from this temple and save its guardians. #speaker:Jason #portrait:main_character
+I am Soren, an explorer seeking to cleanse the corruption from this temple and save its guardians. #speaker:Jason #portrait:main_character #audio:DialogueJason1
 
 Ha! More foolhardy adventurers come to their doom.  You are no match for the power of the demon that has corrupted this temple. #speaker:Ranger #portrait:ranger
 
