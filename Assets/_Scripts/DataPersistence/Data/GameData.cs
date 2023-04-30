@@ -21,6 +21,11 @@ public class GameData
     public bool disableWallSlide;
     public int[] equippedItemsID;
 
+    // Boss Fight Checks;
+    public bool rangerBossDefeated;
+    public bool templeBossDefeated;
+    public bool demonBossDefeated;
+
     public SerializableDictionary<string, bool> itemsCollected;
     public SerializableDictionary<string, bool> abilityCollected;
     public SerializableDictionary<string, bool> doorState;
@@ -37,11 +42,15 @@ public class GameData
         currentHealth = 5f;
         maxHealth = 5f;
 
-        disableDash = false;
-        disableWallJump = false;
-        disableWallClimb = false;
-        disableWallGrab = false;
-        disableWallSlide = false;
+        disableDash = true;
+        disableWallJump = true;
+        disableWallClimb = true;
+        disableWallGrab = true;
+        disableWallSlide = true;
+
+        rangerBossDefeated = false;
+        templeBossDefeated = false;
+        demonBossDefeated = false;
 
         // TODO: Set manually to first checkpoint position. Change later
         checkPointPosition = new Vector3(-18.6f, 7f, 0);

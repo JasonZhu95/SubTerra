@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hammer
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
-  ID: 3
+  ID: 2
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Hammer
   <Description>k__BackingField: Breaks Blocks

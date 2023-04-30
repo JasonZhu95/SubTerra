@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword_2
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
-  ID: 4
+  ID: 5
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: 
   <Description>k__BackingField: 

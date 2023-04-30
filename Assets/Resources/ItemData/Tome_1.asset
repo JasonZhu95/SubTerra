@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tome_1
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
-  ID: 5
+  ID: 6
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Fireball Tome
   <Description>k__BackingField: Shoots Fireballs

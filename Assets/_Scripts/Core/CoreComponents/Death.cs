@@ -9,6 +9,7 @@ public class Death : CoreComponent
     [SerializeField] private GameObject[] deathParticles;
 
     [SerializeField] private GameObject coinObject;
+    private BossManager bossManager;
 
     private Stats Stats;
 
@@ -27,6 +28,7 @@ public class Death : CoreComponent
     {
         respawnManager = GameObject.Find("Managers").transform.Find("RespawnManager").GetComponent<RespawnManager>();
         levelLoaderManager = GameObject.Find("LevelLoader").GetComponent<LevelLoaderManager>();
+        bossManager = GameObject.Find("Managers").transform.Find("GameManager").GetComponent<BossManager>();
     }
 
     public override void Init(Core core)
@@ -54,12 +56,19 @@ public class Death : CoreComponent
             levelLoaderManager.PlayTransition();
             Stats.Health.Increase(Stats.Health.MaxValue);
         }
-        else if (core.Parent.name == "Demon King" || core.Parent.name == "Ranger")
+        else if (core.Parent.name == "Demon King")
         {
+            bossManager.DemonBossDefeated = true;
+            Invoke("InstantiateCoins", 1.3f);
+        }
+        else if (core.Parent.name == "Ranger")
+        {
+            bossManager.RangerBossDefeated = true;
             Invoke("InstantiateCoins", 1.3f);
         }
         else if (core.Parent.name == "Temple Guardian")
         {
+            bossManager.TempleBossDefeated = true;
             Invoke("InstantiateCoins", 3.0f);
         }
         else

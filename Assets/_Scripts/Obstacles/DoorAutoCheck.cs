@@ -22,4 +22,15 @@ public class DoorAutoCheck : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!door.doorOpen)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                door.OpenDoor();
+            }
+        }
+    }
 }
