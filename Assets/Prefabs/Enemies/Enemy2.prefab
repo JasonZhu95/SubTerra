@@ -887,7 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField:
     currentValue: 0
-    <MaxValue>k__BackingField: 30
+    <MaxValue>k__BackingField: 100
   <Poise>k__BackingField:
     currentValue: 0
     <MaxValue>k__BackingField: 100
