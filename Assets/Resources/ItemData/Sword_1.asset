@@ -134,11 +134,11 @@ MonoBehaviour:
         repeatData: 0
         data:
         - AttackName: Attack 1
-          Velocity: 3
+          Velocity: 1
         - AttackName: Attack 2
-          Velocity: 4
+          Velocity: 1
         - AttackName: Attack 3
-          Velocity: 2
+          Velocity: 1
     - rid: 3813184974850359318
       type: {class: PoiseDamageOnHitboxActionData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
