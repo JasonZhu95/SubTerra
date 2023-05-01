@@ -55,6 +55,9 @@ TagManager:
   - name: Minimap
     uniqueID: 2763708163
     locked: 0
+  - name: Parallax Background
+    uniqueID: 2164710397
+    locked: 0
   - name: Background
     uniqueID: 4288144583
     locked: 0
