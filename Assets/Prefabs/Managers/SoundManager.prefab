@@ -51,15 +51,27 @@ MonoBehaviour:
     pitch: 1.25
     loop: 0
     source: {fileID: 0}
-  - name: DialogueJason1
-    clip: {fileID: 8300000, guid: 64b5f514fc939b348be5efea306123c1, type: 3}
-    volume: 0.2
+  - name: DialogueDemon1
+    clip: {fileID: 8300000, guid: d328a4bf71647974a890c39bcb7fa054, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: DialougeRanger1
+  - name: DialogueGuardian1
+    clip: {fileID: 8300000, guid: 70913ff5c516de44ebeab6ae346aa57a, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueJason1
+    clip: {fileID: 8300000, guid: 64b5f514fc939b348be5efea306123c1, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueRanger1
     clip: {fileID: 8300000, guid: 476259e89feb5d149b770ea59cdb8786, type: 3}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
