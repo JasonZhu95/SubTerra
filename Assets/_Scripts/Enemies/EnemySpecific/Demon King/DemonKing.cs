@@ -73,8 +73,7 @@ public class DemonKing : Entity
 
     private void Start()
     {
-        stateMachine.Initialize(slimeMoveState);
-
+        stateMachine.Initialize(slimeIdleState);
 
         Stats.Health.OnCurrentHealthBelow100 += () => stateMachine.ChangeState(transformToDemonKingState);
         Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
