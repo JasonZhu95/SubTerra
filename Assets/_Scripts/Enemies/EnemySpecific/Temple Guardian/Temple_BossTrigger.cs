@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Project.UI;
 
 public class Temple_BossTrigger : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Temple_BossTrigger : MonoBehaviour
     [SerializeField] private GameObject templePreFightGO;
     [SerializeField] private BossManager bossManager;
     [SerializeField] private DoorAnimated bossDoors;
+    [SerializeField] private DialogueTriggerOnRange dialogueTrigger;
     private bool startFight;
 
     private void Start()
@@ -16,6 +18,7 @@ public class Temple_BossTrigger : MonoBehaviour
         {
             templeFightGO.SetActive(false);
             templePreFightGO.SetActive(false);
+            dialogueTrigger.gameObject.SetActive(false);
         }
         else
         {
@@ -27,7 +30,7 @@ public class Temple_BossTrigger : MonoBehaviour
     {
         if (!bossManager.TempleBossDefeated)
         {
-            if (startFight)
+            if (startFight && dialogueTrigger.DialogueHasBeenPlayed)
             {
                 templeFightGO.SetActive(true);
                 templePreFightGO.SetActive(false);
