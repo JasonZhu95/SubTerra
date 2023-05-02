@@ -1,0 +1,649 @@
+fileFormatVersion: 2
+guid: b3b99754121cd9346b5f17d54ae701ed
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Background Ruins_0
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 2038
+        width: 566
+        height: 1085
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0986763e9c7e42844a9f3de1003b331b
+      internalID: 1239159789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_1
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 2047
+        width: 448
+        height: 1079
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c120b90bb2cdc3e4c81df17e54842c70
+      internalID: -912872338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_2
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 3122
+        width: 39
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad043cfcde50098448981290d75eef9b
+      internalID: -1930635402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2043
+        width: 349
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de6277dc13a7f347b28a4cc68cd24ef
+      internalID: 1388991370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_5
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 2024
+        width: 777
+        height: 809
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3feb7e471c9254418ca59f5e361af9f
+      internalID: 291675250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_6
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 1962
+        width: 565
+        height: 775
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6dd2af78944bc948b36dda9cf16fb57
+      internalID: 1396891518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_7
+      rect:
+        serializedVersion: 2
+        x: 3700
+        y: 2410
+        width: 47
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867fa9beeaf96e84cb795c53ea57659a
+      internalID: 182608452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_8
+      rect:
+        serializedVersion: 2
+        x: 4209
+        y: 1947
+        width: 708
+        height: 676
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8841f08842aa5ee4eb325b56d2e4a02e
+      internalID: -887766185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_10
+      rect:
+        serializedVersion: 2
+        x: 2787
+        y: 2035
+        width: 339
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6adcf65f0fafe83469fdf2c9e5250dd4
+      internalID: -487562482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_11
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 2172
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6adf4ece56eab0b4385632c3bf813762
+      internalID: 661369319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_23
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 195
+        width: 1193
+        height: 1700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ceac18c311a6444283778f808e1ae75
+      internalID: 346119668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_26
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 316
+        width: 866
+        height: 971
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a78cac30a511c40a25fb7b6e0fc513
+      internalID: 1672113423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_27
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 1283
+        width: 33
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7cf547d920ea14cb0ddca27be38a6b
+      internalID: -1466648928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_28
+      rect:
+        serializedVersion: 2
+        x: 2692
+        y: 236
+        width: 424
+        height: 1079
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994cad5091d91cb41b4cf9a0e51b0c96
+      internalID: -679083097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_29
+      rect:
+        serializedVersion: 2
+        x: 3651
+        y: 179
+        width: 341
+        height: 1114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5dcb664f258c14aa49ba4748b35023
+      internalID: -1400005949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_34
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 148
+        width: 160
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ec881046ad8ee409bb03f157ce6972
+      internalID: -70901387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_35
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 143
+        width: 164
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd974ddb4c5d6447b55f9cc9bc41948
+      internalID: 1101506655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_36
+      rect:
+        serializedVersion: 2
+        x: 4028
+        y: 113
+        width: 556
+        height: 898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c1e9de148e1ed4aa3607f9bbdfa075
+      internalID: 937930183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_38
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 159
+        width: 87
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20710a8a4892c54888971c8d60f8705
+      internalID: 1271648120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_39
+      rect:
+        serializedVersion: 2
+        x: 2755
+        y: 201
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fcbf508634b1d542b125a1f86ea3bbe
+      internalID: 1894789691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_40
+      rect:
+        serializedVersion: 2
+        x: 3033
+        y: 155
+        width: 99
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29777feefff456f459fcfaeb8a27ea6f
+      internalID: -541454308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_41
+      rect:
+        serializedVersion: 2
+        x: 4027
+        y: 147
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc1f0b319b652c4a9748735257c1ed6
+      internalID: 574067859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background Ruins_42
+      rect:
+        serializedVersion: 2
+        x: 4158
+        y: 108
+        width: 91
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0528f5b44890ba4409f2849b1fd21289
+      internalID: 1612359669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Background Ruins_23: 346119668
+      Background Ruins_28: -679083097
+      Background Ruins_39: 1894789691
+      Background Ruins_15: 1568972158
+      Background Ruins_2: -1930635402
+      Background Ruins_4: -1677095599
+      Background Ruins_9: 1298288444
+      Background Ruins_29: -1400005949
+      Background Ruins_7: 182608452
+      Background Ruins_30: 1583394178
+      Background Ruins_27: -1466648928
+      Background Ruins_41: 574067859
+      Background Ruins_42: 1612359669
+      Background Ruins_16: -1714219029
+      Background Ruins_37: -1607621328
+      Background Ruins_38: 1271648120
+      Background Ruins_0: 1239159789
+      Background Ruins_3: 1388991370
+      Background Ruins_32: -541395658
+      Background Ruins_34: -70901387
+      Background Ruins_36: 937930183
+      Background Ruins_21: 412482952
+      Background Ruins_18: 498162449
+      Background Ruins_31: 1696438153
+      Background Ruins_14: 655447409
+      Background Ruins_11: 661369319
+      Background Ruins_12: -1310230930
+      Background Ruins_19: 354199001
+      Background Ruins_17: -1611361832
+      Background Ruins_26: 1672113423
+      Background Ruins_40: -541454308
+      Background Ruins_20: -1352839068
+      Background Ruins_35: 1101506655
+      Background Ruins_1: -912872338
+      Background Ruins_22: -1137613470
+      Background Ruins_6: 1396891518
+      Background Ruins_25: 1242909366
+      Background Ruins_5: 291675250
+      Background Ruins_10: -487562482
+      Background Ruins_13: 279018737
+      Background Ruins_33: 257802618
+      Background Ruins_8: -887766185
+      Background Ruins_24: -721779835
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
