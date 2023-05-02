@@ -24,7 +24,7 @@ MonoBehaviour:
   wallJumpUpTime: 0.2
   coyoteTime: 0.2
   variableJumpHeightMultiplier: 0.5
-  wallSlideVelocity: 2
+  wallSlideVelocity: 4
   wallClimbVelocity: 3
   wallClimbVelocityDown: 1.5
   startOffset: {x: 0.4, y: 0.9}
