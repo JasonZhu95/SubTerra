@@ -37,7 +37,7 @@ namespace Project.Inventory
         {
             InputHandler = GetComponent<PlayerInputHandler>();
             playerInventory = transform.GetChild(0).GetComponentInChildren<PlayerInventory>();
-            itemsWithNoActions.Add(database.GetItem(2).ItemImage);
+            itemsWithNoActions.Add(database.GetItem(3).ItemImage);
         }
 
         private void OnDestroy()

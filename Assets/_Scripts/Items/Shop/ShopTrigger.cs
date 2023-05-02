@@ -1,79 +1,89 @@
 using UnityEngine;
 using Project.Interfaces;
-using Project.EventChannels;
-using Project.Managers;
 using Project.Inventory;
+using Project.UI;
 
-public class ShopTrigger : MonoBehaviour, IInteractable
+public class ShopTrigger : MonoBehaviour, IDataPersistence
 {
     private bool playerInRange;
-
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
 
     private GameObject playerObject;
     private CollisionSenses playerCollision;
     private PlayerInputHandler inputHandler;
     private IBuyItem customer;
-    [SerializeField]
-    private GameObject shopConfirmMenu;
+    [SerializeField] private GameObject shopConfirmMenu;
+    [SerializeField] private UI_Shop shopUI;
+    [SerializeField] private DialogueTrigger dialogueTrigger;
+    [SerializeField] private TextAsset JSONToChange;
 
-    [SerializeField]
-    private UI_Shop shopUI;
+    private DialogueManager dialogueManagerReference;
 
+    private bool shopDialogueHasBeenPlayed = false;
+    private bool dialogueSetFirstTime = false;
 
     private void Awake()
     {
         playerObject = GameObject.FindWithTag("Player");
         playerCollision = playerObject.GetComponent<Player>().Core.transform.GetChild(1).GetComponent<CollisionSenses>();
         inputHandler = playerObject.GetComponent<PlayerInputHandler>();
-        visualCue.SetActive(false);
         customer = playerObject.GetComponent<InventoryController>().GetComponent<IBuyItem>();
+        dialogueManagerReference = GameObject.FindWithTag("DialogueContainer").GetComponent<DialogueManager>();
+    }
+
+    private void Start()
+    {
+        if (dialogueSetFirstTime)
+        {
+            dialogueTrigger.ChangeDialogueFile(JSONToChange);
+        }
+    }
+
+    private void OnEnable()
+    {
+        dialogueManagerReference.OnDialogueFinish += SetShopDialoguePlayedTrue;
+    }
+
+    private void OnDisable()
+    {
+        dialogueManagerReference.OnDialogueFinish -= SetShopDialoguePlayedTrue;
     }
 
     private void Update()
     {
-        if (playerInRange && playerCollision.Ground)
+        if (shopDialogueHasBeenPlayed && !shopUI.isActiveAndEnabled && dialogueTrigger.playerInRange)
         {
-            visualCue.SetActive(true);
-            if (inputHandler.InteractShopPressed && !shopUI.isActiveAndEnabled)
-            {
-                inputHandler.BlockActionInput = true;
-                shopUI.Show(customer);
-                inputHandler.SwitchToActionMap("UINoPause");
-            }
-            else if(inputHandler.BackActionUIInput && shopUI.isActiveAndEnabled && !shopConfirmMenu.activeSelf)
-            {
-                inputHandler.BlockActionInput = false;
-                inputHandler.BackActionUIInput = false;
-                shopUI.Hide();
-                inputHandler.SwitchToActionMap("Gameplay");
-            }
+            inputHandler.BlockActionInput = true;
+            shopUI.Show(customer);
+            inputHandler.SwitchToActionMap("UINoPause");
+            SetShopDialoguePlayedFalse();
         }
-        else
+        else if(inputHandler.BackActionUIInput && shopUI.isActiveAndEnabled && !shopConfirmMenu.activeSelf)
         {
-            visualCue.SetActive(false);
+            inputHandler.BlockActionInput = false;
+            inputHandler.BackActionUIInput = false;
+            shopUI.Hide();
+            inputHandler.SwitchToActionMap("Gameplay");
         }
     }
 
-    public object GetInteractionContext()
+    private void SetShopDialoguePlayedTrue()
     {
-        return null;
+        shopDialogueHasBeenPlayed = true;
+        if (!dialogueSetFirstTime)
+        {
+            dialogueSetFirstTime = true;
+            dialogueTrigger.ChangeDialogueFile(JSONToChange);
+        }
+    }
+    private void SetShopDialoguePlayedFalse() => shopDialogueHasBeenPlayed = false;
+
+    public void LoadData(GameData data)
+    {
+        dialogueSetFirstTime = data.shopNPCTalkedTo;
     }
 
-    public void SetContext(object obj)
+    public void SaveData(GameData data)
     {
+        data.shopNPCTalkedTo = dialogueSetFirstTime;
     }
-
-    public void EnableInteraction()
-    {
-        playerInRange = true;
-    }
-
-    public void DisableInteraction()
-    {
-        playerInRange = false;
-    }
-
-    public Vector3 GetPosition() => transform.position;
 }

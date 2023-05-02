@@ -21,7 +21,6 @@ namespace Project.UI
         [SerializeField] private TextMeshProUGUI displayNameText;
         [SerializeField] private Animator portraitAnimator;
 
-
         [Header("Choices UI")]
         [SerializeField] private GameObject[] choices;
         [SerializeField] private GameStateEventChannel GameStateEventChannel;
