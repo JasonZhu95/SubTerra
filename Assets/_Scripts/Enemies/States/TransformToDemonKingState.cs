@@ -41,6 +41,8 @@ public class TransformToDemonKingState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        Movement?.SetVelocityX(0f);
     }
 
     public virtual void TransformationToDemonKingFinished()
