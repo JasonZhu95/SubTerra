@@ -95,4 +95,9 @@ public class CollisionSenses : CoreComponent
             Physics2D.Raycast(GroundCheck.position, Vector2.right * Movement.FacingDirection, wallCheckDistance, whatIsGround);
     }
     #endregion
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
 }
