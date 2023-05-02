@@ -30,7 +30,7 @@ public class TempleGuardian_MummyLookForPlayerState : LookForPlayerState
     {
         base.LogicUpdate();
 
-        if (isPlayerInMidAgroRange)
+        if (isPlayerInMinAgroRange)
         {
             stateMachine.ChangeState(templeGuardian.mummyPlayerDetectedState);
         }

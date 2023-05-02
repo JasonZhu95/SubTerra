@@ -79,7 +79,7 @@ public class TempleGuardian : Entity
 
     private void Start()
     {
-        stateMachine.Initialize(moveState);
+        stateMachine.Initialize(idleState);
 
         Stats.Health.OnCurrentHealthBelow100 += () => stateMachine.ChangeState(dashFlurryState);
         Stats.Health.OnCurrentHealthBelow75 += () => stateMachine.ChangeState(transformToMummyState);
