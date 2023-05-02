@@ -62,7 +62,7 @@ public class Death : CoreComponent
         }
         else if (core.Parent.name == "Ranger")
         {
-            StartCoroutine(RangerDefeated(2.0f));
+            StartCoroutine(RangerDefeated(1.8f));
         }
         else if (core.Parent.name == "Temple Guardian")
         {
