@@ -26,6 +26,9 @@ public class GameData
     public bool templeBossDefeated;
     public bool demonBossDefeated;
 
+    // Check If Shop NPC Has been talked to before
+    public bool shopNPCTalkedTo;
+
     public SerializableDictionary<string, bool> itemsCollected;
     public SerializableDictionary<string, bool> abilityCollected;
     public SerializableDictionary<string, bool> doorState;
@@ -51,6 +54,8 @@ public class GameData
         rangerBossDefeated = false;
         templeBossDefeated = false;
         demonBossDefeated = false;
+
+        shopNPCTalkedTo = false;
 
         // TODO: Set manually to first checkpoint position. Change later
         checkPointPosition = new Vector3(-18.6f, 7f, 0);

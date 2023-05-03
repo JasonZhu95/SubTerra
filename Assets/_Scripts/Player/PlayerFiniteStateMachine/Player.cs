@@ -176,7 +176,8 @@ public class Player : MonoBehaviour, IDataPersistence
 
     #region Set Functions
 
-    public void SetWallJumpCheck() => WallJumpUpCheck = true;
+    // DISABLED mechanic of jumping up wall
+    public void SetWallJumpCheck() => WallJumpUpCheck = false;
 
     public void SetWallJumpCheckFalse() => WallJumpUpCheck = false;
 

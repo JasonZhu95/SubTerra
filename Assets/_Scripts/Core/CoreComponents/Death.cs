@@ -58,18 +58,15 @@ public class Death : CoreComponent
         }
         else if (core.Parent.name == "Demon King")
         {
-            bossManager.DemonBossDefeated = true;
-            Invoke("InstantiateCoins", 1.3f);
+            StartCoroutine(DemonDefeated(2.0f));
         }
         else if (core.Parent.name == "Ranger")
         {
-            bossManager.RangerBossDefeated = true;
-            Invoke("InstantiateCoins", 1.3f);
+            StartCoroutine(RangerDefeated(1.8f));
         }
         else if (core.Parent.name == "Temple Guardian")
         {
-            bossManager.TempleBossDefeated = true;
-            Invoke("InstantiateCoins", 3.0f);
+            StartCoroutine(TempleDefeated(3.3f));
         }
         else
         {
@@ -142,5 +139,25 @@ public class Death : CoreComponent
             GameObject instance = Instantiate(coinObject, gameObject.transform.position, Quaternion.identity);
             instance.GetComponent<CoinValueSet>().SetCoinValue(coinValue);
         }
+    }
+
+    // COROUTINES
+    private IEnumerator DemonDefeated(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        bossManager.DemonBossDefeated = true;
+        InstantiateCoins();
+    }
+    private IEnumerator RangerDefeated(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        bossManager.RangerBossDefeated = true;
+        InstantiateCoins();
+    }
+    private IEnumerator TempleDefeated(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        bossManager.TempleBossDefeated = true;
+        InstantiateCoins();
     }
 }

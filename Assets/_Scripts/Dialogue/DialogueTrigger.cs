@@ -21,7 +21,7 @@ namespace Project.UI
         [Header("Ink JSON")]
         [SerializeField] private TextAsset inkJSON;
 
-        private bool playerInRange;
+        public bool playerInRange;
 
         public bool interactInputPressed { get; set; }
     
@@ -74,6 +74,11 @@ namespace Project.UI
         public void DisableInteraction()
         {
             playerInRange = false;
+        }
+
+        public void ChangeDialogueFile(TextAsset inkJSONToChange)
+        {
+            inkJSON = inkJSONToChange;
         }
 
         public Vector3 GetPosition() => transform.position;
