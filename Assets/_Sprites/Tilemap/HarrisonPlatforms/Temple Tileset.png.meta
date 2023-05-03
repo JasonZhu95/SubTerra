@@ -108,10 +108,10 @@ TextureImporter:
       name: Temple Tileset_0
       rect:
         serializedVersion: 2
-        x: 460
-        y: 2336
-        width: 1080
-        height: 328
+        x: 499
+        y: 2371
+        width: 1019
+        height: 257
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,10 +129,10 @@ TextureImporter:
       name: Temple Tileset_2
       rect:
         serializedVersion: 2
-        x: 1547
-        y: 2340
-        width: 1061
-        height: 324
+        x: 1551
+        y: 2367
+        width: 1018
+        height: 264
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: Temple Tileset_8
       rect:
         serializedVersion: 2
-        x: 457
-        y: 1215
-        width: 1066
-        height: 632
+        x: 489
+        y: 1256
+        width: 1022
+        height: 557
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: Temple Tileset_11
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 1216
-        width: 1088
-        height: 628
+        x: 1568
+        y: 1257
+        width: 1013
+        height: 551
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,6 +184,48 @@ TextureImporter:
       bones: []
       spriteID: fb9a44cfd716fa84d8649a70b7ad3011
       internalID: 491348676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1216
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d7a5a0c513608439de77691b9304f6
+      internalID: -496191764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1216
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c13b6c9b45472b40a1ee0b26ddcd8e9
+      internalID: -98189027
       vertices: []
       indices: 
       edges: []
