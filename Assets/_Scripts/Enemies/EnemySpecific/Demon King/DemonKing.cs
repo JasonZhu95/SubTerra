@@ -51,6 +51,9 @@ public class DemonKing : Entity
     private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
     private Stats stats;
 
+    private bool firstSpawn = true;
+
+
     public override void Awake()
     {
         base.Awake();
@@ -79,10 +82,34 @@ public class DemonKing : Entity
         Stats.Health.OnCurrentValueZero += () => stateMachine.ChangeState(deadState);
     }
 
+    private void OnEnable()
+    {
+        Stats.Health.triggeredBelow100Life = false;
+        Stats.Health.trigggered75Life = false;
+        Stats.Health.triggeredHalfLifeAttack = false;
+        Stats.Health.triggeredQuarterLifeAttack = false;
+
+        if (!firstSpawn)
+        {
+            ResetPosition();
+            stateMachine.ChangeState(slimeIdleState);
+        }
+        else
+        {
+            firstSpawn = false;
+        }
+    }
+
     private void OnDestroy()
     {
         Stats.Health.OnCurrentHealthBelow100 -= () => stateMachine.ChangeState(transformToDemonKingState);
         Stats.Health.OnCurrentValueZero -= () => stateMachine.ChangeState(deadState);
+    }
+
+    public void PlayerDeath()
+    {
+        ResetHealth();
+        stateMachine.ChangeState(idleState);
     }
 
     public override void OnDrawGizmos()

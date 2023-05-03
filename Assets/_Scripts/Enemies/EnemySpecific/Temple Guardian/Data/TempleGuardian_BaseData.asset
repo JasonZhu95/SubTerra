@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a969e852db7b841aad80fceccebcbd, type: 3}
   m_Name: TempleGuardian_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 100
   damageHopSpeed: 3
   wallCheckDistance: 0.3
   ledgeCheckDistance: 0.4
@@ -25,6 +24,7 @@ MonoBehaviour:
   closeRangeActionDistance: 2
   midRangeActionDistance: 0
   hitParticle: {fileID: 439312508713261254, guid: b238aa1230b9f0f4a83f8591c70500ef, type: 3}
+  spawnPosition: {x: 569.84, y: -96.42, z: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8

@@ -10,10 +10,17 @@ public class Temple_BossTrigger : MonoBehaviour
     [SerializeField] private BossManager bossManager;
     [SerializeField] private DoorAnimated bossDoors;
     [SerializeField] private DialogueTriggerOnRange dialogueTrigger;
+
     private bool startFight;
+    private bool playerResetNeeded = false;
+
+    public Death playerDeathScript;
 
     private void Start()
     {
+        playerDeathScript = FindObjectOfType<Player>().GetComponentInChildren<Death>();
+        playerDeathScript.OnDeath += () => playerDeath();
+
         if (bossManager.TempleBossDefeated)
         {
             templeFightGO.SetActive(false);
@@ -34,6 +41,12 @@ public class Temple_BossTrigger : MonoBehaviour
             {
                 templeFightGO.SetActive(true);
                 templePreFightGO.SetActive(false);
+
+                if (playerResetNeeded)
+                {
+                    templeFightGO.GetComponentInChildren<TempleGuardian>().PlayerDeath();
+                    playerResetNeeded = false;
+                }
             }
             else
             {
@@ -49,6 +62,11 @@ public class Temple_BossTrigger : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        playerDeathScript.OnDeath -= () => playerDeath();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -56,11 +74,17 @@ public class Temple_BossTrigger : MonoBehaviour
             startFight = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             startFight = false;
         }
+    }
+
+    private void playerDeath()
+    {
+        playerResetNeeded = true;
     }
 }

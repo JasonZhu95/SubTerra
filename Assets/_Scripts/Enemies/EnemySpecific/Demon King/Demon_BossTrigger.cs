@@ -10,10 +10,17 @@ public class Demon_BossTrigger : MonoBehaviour
     [SerializeField] private BossManager bossManager;
     [SerializeField] private DoorAnimated bossDoors;
     [SerializeField] private DialogueTriggerOnRange dialogueTrigger;
+
     private bool startFight;
+    private bool playerResetNeeded = false;
+
+    public Death playerDeathScript;
 
     private void Start()
     {
+        playerDeathScript = FindObjectOfType<Player>().GetComponentInChildren<Death>();
+        playerDeathScript.OnDeath += () => playerDeath();
+
         if (bossManager.DemonBossDefeated)
         {
             demonFightGO.SetActive(false);
@@ -35,6 +42,12 @@ public class Demon_BossTrigger : MonoBehaviour
                 bossDoors.CloseDoor();
                 demonFightGO.SetActive(true);
                 demonPreFightGO.SetActive(false);
+
+                if (playerResetNeeded)
+                {
+                    demonFightGO.GetComponentInChildren<DemonKing>().PlayerDeath();
+                    playerResetNeeded = false;
+                }
             }
             else
             {
@@ -50,6 +63,11 @@ public class Demon_BossTrigger : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        playerDeathScript.OnDeath -= () => playerDeath();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -57,6 +75,7 @@ public class Demon_BossTrigger : MonoBehaviour
             startFight = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -64,5 +83,10 @@ public class Demon_BossTrigger : MonoBehaviour
             bossDoors.OpenDoor();
             startFight = false;
         }
+    }
+
+    private void playerDeath()
+    {
+        playerResetNeeded = true;
     }
 }
