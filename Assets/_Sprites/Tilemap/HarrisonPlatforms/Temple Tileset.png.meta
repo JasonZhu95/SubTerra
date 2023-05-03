@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 256
@@ -226,6 +226,90 @@ TextureImporter:
       bones: []
       spriteID: 7c13b6c9b45472b40a1ee0b26ddcd8e9
       internalID: -98189027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1255
+        width: 508
+        height: 557
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a7ba8a0a914784a83f055e910570df
+      internalID: -754740218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1256
+        width: 513
+        height: 557
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39aaf41b8e7f10b428264948f08aae67
+      internalID: 1716832643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 1257
+        width: 508
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6e68cf9dc08cb43bcbfd23695bb175
+      internalID: -196645068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 1257
+        width: 505
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebb6296e18751344b3d228008b764a5
+      internalID: -820157542
       vertices: []
       indices: 
       edges: []
