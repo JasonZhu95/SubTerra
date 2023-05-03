@@ -57,10 +57,10 @@ public class Stat
     public float currentValue;
     [field: SerializeField] public float MaxValue { get; set; }
 
-    private bool triggeredBelow100Life = false;
-    private bool trigggered75Life = false;
-    private bool triggeredHalfLifeAttack = false;
-    private bool triggeredQuarterLifeAttack = false;
+    public bool triggeredBelow100Life = false;
+    public bool trigggered75Life = false;
+    public bool triggeredHalfLifeAttack = false;
+    public bool triggeredQuarterLifeAttack = false;
 
     public float CurrentValue
     {

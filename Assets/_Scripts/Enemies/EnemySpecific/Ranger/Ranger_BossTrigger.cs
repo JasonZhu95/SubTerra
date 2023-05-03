@@ -10,10 +10,17 @@ public class Ranger_BossTrigger : MonoBehaviour
     [SerializeField] private BossManager bossManager;
     [SerializeField] private DoorAnimated bossDoors;
     [SerializeField] private DialogueTriggerOnRange dialogueTrigger;
+    
     private bool startFight;
+    private bool playerResetNeeded = false;
+
+    public Death playerDeathScript;
 
     private void Start()
     {
+        playerDeathScript = FindObjectOfType<Player>().GetComponentInChildren<Death>();
+        playerDeathScript.OnDeath += () => playerDeath();
+
         if (bossManager.RangerBossDefeated)
         {
             rangerFightGO.SetActive(false);
@@ -34,6 +41,12 @@ public class Ranger_BossTrigger : MonoBehaviour
             {
                 rangerFightGO.SetActive(true);
                 rangerPreFightGO.SetActive(false);
+
+                if (playerResetNeeded)
+                {
+                    rangerFightGO.GetComponentInChildren<Ranger>().PlayerDeath();
+                    playerResetNeeded = false;
+                }
             }
             else
             {
@@ -49,6 +62,11 @@ public class Ranger_BossTrigger : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        playerDeathScript.OnDeath -= () => playerDeath();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -56,6 +74,7 @@ public class Ranger_BossTrigger : MonoBehaviour
             startFight = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -64,4 +83,8 @@ public class Ranger_BossTrigger : MonoBehaviour
         }
     }
 
+    private void playerDeath()
+    {
+        playerResetNeeded = true;
+    }
 }

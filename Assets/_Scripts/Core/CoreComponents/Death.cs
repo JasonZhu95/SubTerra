@@ -3,6 +3,7 @@ using UnityEngine;
 using Cinemachine;
 using Project.Managers;
 using Project.LevelSetup;
+using System;
 
 public class Death : CoreComponent
 {
@@ -23,6 +24,8 @@ public class Death : CoreComponent
     private int coinWorkspaceAmount;
 
     private bool subscribedToEvent = false;
+
+    public event Action OnDeath;
 
     protected override void Awake()
     {
@@ -52,6 +55,7 @@ public class Death : CoreComponent
 
         if (core.Parent.name == "Player")
         {
+            OnDeath?.Invoke();
             respawnManager.PlayerDeathSwitchActive(true);
             levelLoaderManager.PlayTransition();
             Stats.Health.Increase(Stats.Health.MaxValue);

@@ -34,11 +34,14 @@ public class Entity : MonoBehaviour
     protected Movement Movement { get => movement ?? Core.GetCoreComponent(ref movement); }
     protected Movement movement;
 
+    private Stats Stats => stats ? stats : Core.GetCoreComponent(ref stats);
+    private Stats stats;
+
     public virtual void Awake()
     {
         Core = GetComponentInChildren<Core>();
 
-        currentHealth = entityData.maxHealth;
+        currentHealth = Stats.Health.MaxValue;
         currentStunResistance = entityData.stunResistance;
 
         anim = GetComponent<Animator>();
@@ -100,6 +103,16 @@ public class Entity : MonoBehaviour
     {
         isStunned = false;
         currentStunResistance = entityData.stunResistance;
+    }
+
+    public virtual void ResetHealth()
+    {
+        Stats.Health.SetHealth(Stats.Health.MaxValue);
+    }
+
+    public virtual void ResetPosition()
+    {
+        transform.position = entityData.spawnPosition;
     }
 
     public virtual void OnDrawGizmos()

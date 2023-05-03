@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newEntityData", menuName = "Data/Entity Data/Base Data")]
 public class D_Entity : ScriptableObject
 {
-    public float maxHealth = 30f;
-
     public float damageHopSpeed = 3f;
 
     public float wallCheckDistance = 0.2f;
@@ -24,6 +22,8 @@ public class D_Entity : ScriptableObject
     public float midRangeActionDistance = 4f;
 
     public GameObject hitParticle;
+
+    public Vector3 spawnPosition;
 
     public LayerMask whatIsGround;
     public LayerMask whatIsPlayer;
