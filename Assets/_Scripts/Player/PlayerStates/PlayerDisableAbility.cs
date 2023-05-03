@@ -10,13 +10,25 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
     private float duration = 0.3f;
     private bool collected = false;
 
+    [SerializeField] Animator tutorialAnim;
+
     [SerializeField] private string id;
+    private PlayerInputHandler inputHandler;
+    private SpriteRenderer sr;
+
+    private bool canvasIsActive = false;
 
     [ContextMenu("Generate Guid for Item ID")]
 
     private void GenerateGuid()
     {
         id = System.Guid.NewGuid().ToString();
+    }
+
+    private void Awake()
+    {
+        inputHandler = GameObject.FindWithTag("Player").GetComponent<PlayerInputHandler>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -27,6 +39,26 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
         }
     }
 
+    private void Update()
+    {
+        if (canvasIsActive)
+        {
+            if (inputHandler.MainActionUIInput)
+            {
+                tutorialAnim.SetBool("start", false);
+                inputHandler.MainActionUIInput = false;
+                StartCoroutine(ReEnableGameplay());
+                canvasIsActive = false;
+            }
+        }
+    }
+
+    private IEnumerator ReEnableGameplay()
+    {
+        yield return new WaitForSeconds(.5f);
+        inputHandler.SwitchToActionMap("Gameplay");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -35,12 +67,14 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
             {
                 case "Dash":
                     player.DisableDash = false;
+                    startTutorialAnim();
                     break;
                 case "WallAbilities":
                     player.DisableWallJump = false;
                     player.DisableWallClimb = false;
                     player.DisableWallGrab = false;
                     player.DisableWallSlide = false;
+                    startTutorialAnim();
                     break;
                 //case "WallClimb":
                 //    player.DisableWallClimb = false;
@@ -59,6 +93,19 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
             DestroyItem();
 
         }
+    }
+
+    private void startTutorialAnim()
+    {
+        tutorialAnim.SetBool("start", true);
+        StartCoroutine(SetCanvasBoolAfterAnimation());
+        inputHandler.SwitchToActionMap("UINoPause");
+    }
+
+    private IEnumerator SetCanvasBoolAfterAnimation()
+    {
+        yield return new WaitForSeconds(.5f);
+        canvasIsActive = true;
     }
 
     internal void DestroyItem()
@@ -82,7 +129,7 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
             transform.localScale = Vector3.Lerp(startScale, endScale, currentTime / duration);
             yield return null;
         }
-        gameObject.SetActive(false);
+        sr.enabled = false;
     }
 
     public void LoadData(GameData data)

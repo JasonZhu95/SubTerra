@@ -14,6 +14,8 @@ public class GameData
     public float maxHealth;
     public float playTime;
 
+    public bool firstCheckpointTriggered;
+
     public bool disableDash;
     public bool disableWallJump;
     public bool disableWallClimb;
@@ -50,6 +52,8 @@ public class GameData
         disableWallClimb = true;
         disableWallGrab = true;
         disableWallSlide = true;
+
+        firstCheckpointTriggered = false;
 
         rangerBossDefeated = false;
         templeBossDefeated = false;
