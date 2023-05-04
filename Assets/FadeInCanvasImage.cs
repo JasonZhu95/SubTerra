@@ -16,7 +16,6 @@ public class FadeInCanvasImage : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
-        float fadeTime = 1f; // Fade in duration in seconds
         float elapsedTime = 0f;
         while (elapsedTime < fadeTime)
         {
