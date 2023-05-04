@@ -16,8 +16,12 @@ public class Demon_BossTrigger : MonoBehaviour
 
     public Death playerDeathScript;
 
+    private EndCreditsManager endCreditsManager;
+
     private void Start()
     {
+        endCreditsManager = FindObjectOfType<EndCreditsManager>();
+
         playerDeathScript = FindObjectOfType<Player>().GetComponentInChildren<Death>();
         playerDeathScript.OnDeath += () => playerDeath();
 
@@ -60,6 +64,9 @@ public class Demon_BossTrigger : MonoBehaviour
             bossDoors.OpenDoor();
             demonFightGO.SetActive(false);
             demonPreFightGO.SetActive(false);
+
+            // call end credits
+            endCreditsManager.RollCredits();
         }
     }
 
