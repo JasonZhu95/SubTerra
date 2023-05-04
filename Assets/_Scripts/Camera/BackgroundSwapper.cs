@@ -6,7 +6,6 @@ public class BackgroundSwapper : MonoBehaviour
 {
     [SerializeField] private Animator backgroundOnLeft;
     [SerializeField] private Animator backgroundOnRight;
-    [SerializeField] private Animator RuinsBackground;
 
     private Collider2D coll;
 
