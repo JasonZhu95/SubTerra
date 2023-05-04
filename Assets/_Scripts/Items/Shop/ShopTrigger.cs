@@ -38,14 +38,20 @@ public class ShopTrigger : MonoBehaviour, IDataPersistence
         }
     }
 
-    private void OnEnable()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        dialogueManagerReference.OnDialogueFinish += SetShopDialoguePlayedTrue;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            dialogueManagerReference.OnDialogueFinish += SetShopDialoguePlayedTrue;
+        }
     }
 
-    private void OnDisable()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        dialogueManagerReference.OnDialogueFinish -= SetShopDialoguePlayedTrue;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            dialogueManagerReference.OnDialogueFinish -= SetShopDialoguePlayedTrue;
+        }
     }
 
     private void Update()

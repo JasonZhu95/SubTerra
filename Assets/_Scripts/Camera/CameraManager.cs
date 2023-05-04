@@ -172,7 +172,6 @@ public class CameraManager : MonoBehaviour
     {
         if (currentCamera == cameraFromLeft && triggerExitDirection.x < 0f)
         {
-            Debug.Log("swap left");
             // Activate new camera
             cameraFromRight.enabled = true;
 
@@ -187,7 +186,6 @@ public class CameraManager : MonoBehaviour
         }
         else if (currentCamera == cameraFromRight && triggerExitDirection.x > 0f)
         {
-            Debug.Log("swap right");
             // Activate new camera
             cameraFromLeft.enabled = true;
 
