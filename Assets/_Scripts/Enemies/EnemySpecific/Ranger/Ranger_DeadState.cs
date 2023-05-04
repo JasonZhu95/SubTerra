@@ -25,6 +25,8 @@ public class Ranger_DeadState : DeadState
     public override void Enter()
     {
         base.Enter();
+
+        ranger.DisableBoxColliders2D(ranger.gameObject);
     }
 
     public override void Exit()

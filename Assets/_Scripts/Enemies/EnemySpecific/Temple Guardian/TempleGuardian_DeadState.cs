@@ -26,6 +26,8 @@ public class TempleGuardian_DeadState : DeadState
     public override void Enter()
     {
         base.Enter();
+
+        templeGuardian.DisableBoxColliders2D(templeGuardian.gameObject);
     }
 
     public override void Exit()

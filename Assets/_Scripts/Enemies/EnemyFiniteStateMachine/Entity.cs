@@ -115,6 +115,21 @@ public class Entity : MonoBehaviour
         transform.position = entityData.spawnPosition;
     }
 
+    public virtual void DisableBoxColliders2D(GameObject parentObject)
+    {
+        BoxCollider2D parentCollider = parentObject.GetComponent<BoxCollider2D>();
+        if (parentCollider != null)
+        {
+            parentCollider.enabled = false;
+        }
+
+        // Disable BoxCollider2D components in all child objects recursively
+        foreach (Transform child in parentObject.transform)
+        {
+            DisableBoxColliders2D(child.gameObject);
+        }
+    }
+
     public virtual void OnDrawGizmos()
     {
         if (Core != null)

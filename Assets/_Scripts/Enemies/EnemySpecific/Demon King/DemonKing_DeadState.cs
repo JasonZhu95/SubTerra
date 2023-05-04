@@ -19,6 +19,8 @@ public class DemonKing_DeadState : DeadState
     public override void Enter()
     {
         base.Enter();
+
+        demonKing.DisableBoxColliders2D(demonKing.gameObject);
     }
 
     public override void Exit()
