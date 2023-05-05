@@ -18307,18 +18307,6 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7881268680191989653, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7881268680191989653, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7881268680191989653, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7881268680191989653, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -18356,18 +18344,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881268680191989653, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7881268680191989654, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
-      propertyPath: useEncryption
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7881268680191989654, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
-      propertyPath: initializeDataIfNull
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7881268680191989654, guid: c6c71063b99313f469d5a80d90bbe65d, type: 3}
-      propertyPath: disableDataPersistence
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21139,8 +21115,8 @@ Camera:
   m_GameObject: {fileID: 2142851228}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

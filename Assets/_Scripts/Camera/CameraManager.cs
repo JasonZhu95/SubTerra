@@ -31,6 +31,7 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
+        Camera.main.transparencySortMode = TransparencySortMode.Orthographic;
         if (instance == null)
         {
             instance = this;

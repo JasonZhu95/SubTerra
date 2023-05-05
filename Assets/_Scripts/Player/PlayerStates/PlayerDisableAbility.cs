@@ -86,7 +86,6 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
                 //    player.DisableWallGrab = false;
                 //    break;
                 default:
-                    Debug.Log("Invalid Ability State");
                     break;
             }
             // TODO: Add animation

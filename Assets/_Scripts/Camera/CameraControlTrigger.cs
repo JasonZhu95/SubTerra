@@ -74,6 +74,7 @@ public class CustomCameraInspectorObjects
 
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(CameraControlTrigger))]
 public class CustomCameraEditor : Editor
 {
@@ -128,6 +129,7 @@ public class CustomCameraEditor : Editor
         }
     }
 }
+#endif
 
 public enum CameraPanDirection
 {

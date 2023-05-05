@@ -23,7 +23,10 @@ public class AgentWeapon : MonoBehaviour
     {
         if (equipIndex == 0)
         {
-            inventoryData.AddItem(playerInventory.weapons[0], playerInventory.weapons[0].ID, 1, itemCurrentState);
+            if (playerInventory.weapons[0] != null)
+            {
+                inventoryData.AddItem(playerInventory.weapons[0], playerInventory.weapons[0].ID, 1, itemCurrentState);
+            }
             playerInventory.SetWeapon(weaponItemSO as WeaponDataSO, (CombatInputs)0);
             //itemActionPanelObject.Toggle(false);
         }

@@ -96,7 +96,10 @@ public class PlayerInventory : CoreComponent, IDataPersistence
     public void SaveData(GameData data)
     {
         data.coinCount = CoinsHeld;
-        data.equippedItemsID[0] = weapons[0].ID;
+        if (weapons[0] != null)
+        {
+            data.equippedItemsID[0] = weapons[0].ID;
+        }
         if (weapons[1] != null)
         {
             data.equippedItemsID[1] = weapons[1].ID;
