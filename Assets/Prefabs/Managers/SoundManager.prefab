@@ -75,6 +75,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: DialogueShopkeer1
+    clip: {fileID: 8300000, guid: 9c216d1851b877e4c8d00784624c358f, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: Enemy1Walk
     clip: {fileID: 8300000, guid: e7584cc541fc441499ca09d67d305ad2, type: 3}
     volume: 0.05
@@ -227,12 +233,6 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: WeaponSword3
     clip: {fileID: 8300000, guid: 1e0715eec743fcb4883170b37cf16113, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: DialogueShopkeer1
-    clip: {fileID: 8300000, guid: 9c216d1851b877e4c8d00784624c358f, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0

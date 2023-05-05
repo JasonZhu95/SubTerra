@@ -86,7 +86,7 @@ public class PlayerInventory : CoreComponent, IDataPersistence
     public void LoadData(GameData data)
     {
         CoinsHeld = data.coinCount;
-        if (data.equippedItemsID[0] != -1 && data.equippedItemsID[1] != -1)
+        if (data.equippedItemsID[0] != -1 || data.equippedItemsID[1] != -1)
         { 
             weapons[0] = database.GetItem(data.equippedItemsID[0]) as WeaponDataSO;
             weapons[1] = database.GetItem(data.equippedItemsID[1]) as WeaponDataSO;
