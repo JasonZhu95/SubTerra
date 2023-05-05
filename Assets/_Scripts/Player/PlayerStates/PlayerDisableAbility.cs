@@ -57,6 +57,7 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
     {
         yield return new WaitForSeconds(.5f);
         inputHandler.SwitchToActionMap("Gameplay");
+        inputHandler.BlockActionInput = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -99,6 +100,7 @@ public class PlayerDisableAbility : MonoBehaviour, IDataPersistence
         tutorialAnim.SetBool("start", true);
         StartCoroutine(SetCanvasBoolAfterAnimation());
         inputHandler.SwitchToActionMap("UINoPause");
+        inputHandler.BlockActionInput = true;
     }
 
     private IEnumerator SetCanvasBoolAfterAnimation()

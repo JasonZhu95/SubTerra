@@ -37,6 +37,7 @@ public class FirstCheckpointTutorial : MonoBehaviour, IDataPersistence
             tutorialAnim.SetBool("start", true);
             StartCoroutine(SetCanvasBoolAfterAnimation());
             inputHandler.SwitchToActionMap("UINoPause");
+            inputHandler.BlockActionInput = true;
             firstCheckPointActivated = true;
         }
     }
@@ -51,6 +52,7 @@ public class FirstCheckpointTutorial : MonoBehaviour, IDataPersistence
     {
         yield return new WaitForSeconds(.5f);
         inputHandler.SwitchToActionMap("Gameplay");
+        inputHandler.BlockActionInput = false;
     }
 
     public void LoadData(GameData data)

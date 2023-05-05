@@ -33,6 +33,7 @@ public class AttackTutorialTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(.5f);
         inputHandler.SwitchToActionMap("Gameplay");
+        inputHandler.BlockActionInput = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +43,7 @@ public class AttackTutorialTrigger : MonoBehaviour
             tutorialAnim.SetBool("start", true);
             StartCoroutine(SetCanvasBoolAfterAnimation());
             inputHandler.SwitchToActionMap("UINoPause");
+            inputHandler.BlockActionInput = true;
             attackTutorialActivated = true;
         }
     }
