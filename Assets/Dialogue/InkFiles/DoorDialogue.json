@@ -1,0 +1,1 @@
+﻿{"inkVersion":20,"root":[["^Doors locked.  Looks like I might need a key for that. ",{"#":"speaker:Soren"},{"#":"portrait:main_character"},{"#":"audio:DialogueJason1"},"\n",{"->":"main"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"main":["end",{"#f":1}],"#f":1}],"listDefs":{}}

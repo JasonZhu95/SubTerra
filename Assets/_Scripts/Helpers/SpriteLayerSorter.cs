@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-#if UNITY_EDITOR
-[CustomEditor(typeof(Transform))]
-public class SpriteLayerSorterEditor : Editor
-{
+//#if UNITY_EDITOR
+//[CustomEditor(typeof(Transform))]
+//public class SpriteLayerSorterEditor : Editor
+//{
     //public override void OnInspectorGUI()
     //{
     //    base.OnInspectorGUI();
@@ -21,5 +21,5 @@ public class SpriteLayerSorterEditor : Editor
     //    }
 
     //}
-}
-#endif
+//}
+//#endif

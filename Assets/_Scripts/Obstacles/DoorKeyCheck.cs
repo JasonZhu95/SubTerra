@@ -2,6 +2,7 @@ using UnityEngine;
 using Project.Interfaces;
 using Project.Inventory;
 using Project.Inventory.Data;
+using Project.UI;
 
 public class DoorKeyCheck : MonoBehaviour, IInteractable
 {
@@ -12,12 +13,17 @@ public class DoorKeyCheck : MonoBehaviour, IInteractable
 
     [SerializeField] private DoorAnimated door;
 
+    [Header("First Door Checks")]
+    [SerializeField] private bool firstDoor;
+    [SerializeField] private TextAsset inkJSON;
+
     private GameObject player;
     private CollisionSenses playerCollision;
     private PlayerInputHandler inputHandler;
     private bool deactivateUpdate;
     private InventorySO inventoryData;
     private bool playerHasKey;
+    private DialogueManager dialogueManagerReference;
 
     private void Start()
     {
@@ -28,6 +34,7 @@ public class DoorKeyCheck : MonoBehaviour, IInteractable
         visualCue.SetActive(false);
         deactivateUpdate = false;
         inventoryData = player.GetComponent<InventoryController>().inventoryData;
+        dialogueManagerReference = GameObject.FindWithTag("DialogueContainer").GetComponent<DialogueManager>();
     }
 
     private void Update()
@@ -40,7 +47,15 @@ public class DoorKeyCheck : MonoBehaviour, IInteractable
                 if (inputHandler.InteractPressed)
                 {
                     inputHandler.InteractPressed = false;
-                    CheckIfHasKey();
+                    if (firstDoor)
+                    {
+                        firstDoor = false;
+                        dialogueManagerReference.EnterDialogueMode(inkJSON);
+                    }
+                    else
+                    {
+                        CheckIfHasKey();
+                    }
                 }
             }
             else
