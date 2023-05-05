@@ -13,6 +13,10 @@ public class DamageComponent : CoreComponent, IDamageable
 
     [SerializeField] private GameObject damageParticles;
     [SerializeField] private string damageSfxToPlay;
+    [SerializeField] private SpriteRenderer sr = null;
+    [SerializeField] private SpriteRenderer primarySR = null;
+    [SerializeField] private SpriteRenderer secondarySR = null;
+    [SerializeField] private float invincibilityDuration = 1.5f;
 
     public ModifierContainer<DamageModifier, DamageData> DamageModifiers { get; private set; } =
         new ModifierContainer<DamageModifier, DamageData>();
@@ -23,18 +27,10 @@ public class DamageComponent : CoreComponent, IDamageable
     private Stats stats;
     private ParticleManager particleManager;
 
-    private GameObject player;
-    private GameObject enemyCollision;
-    [SerializeField]
-    private SpriteRenderer sr = null;
-    [SerializeField]
-    private SpriteRenderer primarySR = null;
-    [SerializeField]
-    private SpriteRenderer secondarySR = null;
     private Color color;
 
-    [SerializeField] private float invincibilityDuration = 1.5f;
-
+    private GameObject player;
+    private GameObject enemyCollision;
     private GameObject playerCombatComponent;
 
     protected override void Awake()

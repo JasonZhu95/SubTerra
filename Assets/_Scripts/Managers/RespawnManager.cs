@@ -23,6 +23,8 @@ namespace Project.Managers
         private SpriteRenderer weapon1weaponSR;
         private SpriteRenderer weapon2baseSR;
         private SpriteRenderer weapon2weaponSR;
+        private GameObject playerCombatComponent;
+        private GameObject enemyCollisionGO;
 
         [SerializeField] private CameraManager cameraManager;
 
@@ -37,6 +39,8 @@ namespace Project.Managers
             weapon2baseSR = player.transform.GetChild(2).GetChild(0).GetComponent<SpriteRenderer>();
             weapon1weaponSR = player.transform.GetChild(1).GetChild(1).GetComponent<SpriteRenderer>();
             weapon2weaponSR = player.transform.GetChild(2).GetChild(1).GetComponent<SpriteRenderer>();
+            playerCombatComponent = player.transform.GetChild(0).GetChild(2).gameObject;
+            enemyCollisionGO = player.transform.GetChild(0).GetChild(7).gameObject;
         }
 
         public void PlayerDeathSwitchActive(bool fullDeath)
@@ -48,6 +52,9 @@ namespace Project.Managers
         // full death bool determines if respawn or checkpoint position
         private IEnumerator ResetPlayerOnRespawn(bool fullDeath)
         {
+            player.layer = LayerMask.NameToLayer("PlayerInvincible");
+            enemyCollisionGO.layer = LayerMask.NameToLayer("PlayerInvincible");
+            playerCombatComponent.layer = LayerMask.NameToLayer("PlayerInvincible");
             color.a = 1f;
             playerSR.material.color = color;
             player.GetComponent<PlayerInput>().enabled = false;
@@ -68,6 +75,9 @@ namespace Project.Managers
             {
                 player.transform.position = RespawnPoints.position;
             }
+            player.layer = LayerMask.NameToLayer("Player");
+            enemyCollisionGO.layer = LayerMask.NameToLayer("Default");
+            playerCombatComponent.layer = LayerMask.NameToLayer("PlayerDamageable");
             enemyCollision.CanSetDeathZoneCollision = true;
             player.GetComponent<PlayerInput>().enabled = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
