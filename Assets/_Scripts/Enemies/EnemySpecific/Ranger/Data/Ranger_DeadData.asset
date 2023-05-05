@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathChunkParticle: {fileID: 3078264612223352877, guid: 138998b53f1ff0c4c9f8043a15c217a3, type: 3}
   deathBloodParticle: {fileID: 8529164440084401556, guid: 10ad51835f1120643a2157eba066f88f, type: 3}
+  itemSpawn: {fileID: 585098608263988609, guid: df9d4b704a7ea4948ab9ef5a4c60146f, type: 3}
+  itemSpawnHeightOffset: 1

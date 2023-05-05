@@ -40,4 +40,9 @@ public class DeadState : State
     {
 
     }
+
+    public virtual void SpawnItem()
+    {
+        
+    }
 }

@@ -120,8 +120,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.9230769
-    functionName: DieAnimationFinished
+  - time: 1.2307693
+    functionName: SpawnItem
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

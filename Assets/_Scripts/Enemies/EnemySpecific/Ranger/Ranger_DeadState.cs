@@ -34,6 +34,17 @@ public class Ranger_DeadState : DeadState
         base.Exit();
     }
 
+    public override void SpawnItem()
+    {
+        base.SpawnItem();
+
+        GameObject.Instantiate(
+            stateData.itemSpawn,
+            ranger.transform.position + new Vector3(0f, stateData.itemSpawnHeightOffset, 0f),
+            ranger.transform.rotation
+        );
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();

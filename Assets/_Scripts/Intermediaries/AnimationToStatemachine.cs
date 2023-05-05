@@ -25,6 +25,11 @@ public class AnimationToStatemachine : MonoBehaviour
         attackState.FinishAttack();
     }
 
+    private void SpawnItem()
+    {
+        deadState.SpawnItem();
+    }
+
     private void TriggerDeathParticles()
     {
         deadState.TriggerDeathParticles();

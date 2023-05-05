@@ -7,4 +7,7 @@ public class D_DeadState : ScriptableObject
 {
     public GameObject deathChunkParticle;
     public GameObject deathBloodParticle;
+    public GameObject itemSpawn;
+
+    public float itemSpawnHeightOffset = 0f;
 }
