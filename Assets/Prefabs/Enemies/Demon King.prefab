@@ -68,7 +68,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6306351814379037650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.161, y: 0.317, z: 0}
+  m_LocalPosition: {x: 1.67, y: 0.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6306351814539764119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.182, y: 0.093, z: 0}
+  m_LocalPosition: {x: 1.94, y: 0.093, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -621,10 +621,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField:
     currentValue: 0
-    <MaxValue>k__BackingField: 30
+    <MaxValue>k__BackingField: 100
+    triggeredBelow100Life: 0
+    trigggered75Life: 0
+    triggeredHalfLifeAttack: 0
+    triggeredQuarterLifeAttack: 0
   <Poise>k__BackingField:
     currentValue: 0
     <MaxValue>k__BackingField: 100
+    triggeredBelow100Life: 0
+    trigggered75Life: 0
+    triggeredHalfLifeAttack: 0
+    triggeredQuarterLifeAttack: 0
   <CoinDeathValue>k__BackingField: 26
   PoiseRecoveryPerSecond: 20
 --- !u!1 &6306351815801341634
@@ -721,9 +729,9 @@ GameObject:
   - component: {fileID: 6306351816206966342}
   - component: {fileID: 6306351816206966337}
   - component: {fileID: 6306351816206966336}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Demon King
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -785,9 +793,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 221026571
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1244205070, guid: 732767940e2ed70479d6da8ef9ccce5b, type: 3}
+  m_Sprite: {fileID: 1796408275, guid: 606b300d8fe86d140b7891105f2a1be9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -856,7 +864,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 4.4444447, y: 5.8333335}
+    oldSize: {x: 16, y: 8.888889}
     newSize: {x: 3.3333333, y: 4.375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
