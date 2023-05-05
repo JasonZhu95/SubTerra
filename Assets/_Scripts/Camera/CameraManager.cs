@@ -232,5 +232,14 @@ public class CameraManager : MonoBehaviour
             framingTranposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         }
     }
+
+    public void SwapCameraOnBossDeath(CinemachineVirtualCamera currentCamera, CinemachineVirtualCamera cameraToSwap)
+    {
+        cameraToSwap.enabled = true;
+        currentCamera.enabled = false;
+        currentCamera = cameraToSwap;
+        framingTranposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+
+    }
     #endregion
 }
