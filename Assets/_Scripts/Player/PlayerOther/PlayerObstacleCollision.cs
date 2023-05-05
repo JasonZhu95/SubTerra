@@ -29,8 +29,9 @@ public class PlayerObstacleCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Item item = collision.GetComponent<Item>();
-        if (item != null)
+        if (item != null && !item.collectOnlyOnce)
         {
+            item.collectOnlyOnce = true;
             int reminder = inventoryData.AddItem(item.InventoryItem, item.InventoryItem.ID, item.Quantity);
             if (reminder == 0)
                 item.DestroyItem();
