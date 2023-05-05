@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,17 +7,25 @@ public class FadeInCanvasImage : MonoBehaviour
 {
     [SerializeField] float fadeTime = 2f;
 
-    [SerializeField] Transform cameraTarget;
-    
-    private CanvasGroup canvasGroup;
-    private Camera mainCamera;
+    [SerializeField] CinemachineVirtualCamera currentCamera;
+    [SerializeField] CinemachineVirtualCamera cameraToSwap;
 
+    [SerializeField] Transform rangerSpawnPoint;
+    [SerializeField] Transform templeGuardianSpawnPoint;
+    [SerializeField] Transform playerSpawnPoint;
+
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject ranger;
+    [SerializeField] GameObject templeGuardian;
+
+    private CanvasGroup canvasGroup;
+
+    private CameraManager cameraManager;
 
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-
-        mainCamera = Camera.main;
+        cameraManager = FindObjectOfType<CameraManager>();
 
         StartCoroutine(FadeIn());
     }
@@ -33,11 +42,17 @@ public class FadeInCanvasImage : MonoBehaviour
         }
         canvasGroup.alpha = 1f; // Ensure alpha is set to 1 when coroutine is done
 
-        // MOVE CAMERA
-        mainCamera.transform.position = cameraTarget.position;
+        // MOVE PLAYER
+        player.transform.position = playerSpawnPoint.transform.position;
+        // INSTANTIATE BOSSES
+        Instantiate(ranger, rangerSpawnPoint.position, rangerSpawnPoint.rotation);
+        Instantiate(templeGuardian, templeGuardianSpawnPoint.position, templeGuardianSpawnPoint.rotation);
 
-        // Wait 1 second
-        yield return new WaitForSeconds(1f);
+        // MOVE CAMERA
+        cameraManager.SwapCameraOnBossDeath(currentCamera, cameraToSwap);
+
+        // Wait
+        yield return new WaitForSeconds(2f);
 
         // FADE OUT
         elapsedTime = 0f;
