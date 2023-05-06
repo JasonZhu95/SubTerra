@@ -34,7 +34,7 @@ public class DemonKing_MoveState : MoveState
         {
             stateMachine.ChangeState(demonKing.playerDetectedState);
         }
-        else if (!isDetectingLedge || isDetectingWall)
+        else if (!isDetectingLedge || isDetectingWall || !isPlayerInMaxAgroRange)
         {
             demonKing.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(demonKing.idleState);

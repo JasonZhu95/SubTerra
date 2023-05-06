@@ -53,7 +53,6 @@ public class DemonKing : Entity
 
     private bool firstSpawn = true;
 
-
     public override void Awake()
     {
         base.Awake();

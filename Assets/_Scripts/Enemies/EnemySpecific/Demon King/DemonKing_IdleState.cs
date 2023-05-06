@@ -6,6 +6,8 @@ public class DemonKing_IdleState : IdleState
 {
     private DemonKing demonKing;
 
+    private bool isPlayerInBossRange;
+
     public DemonKing_IdleState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_IdleState stateData, DemonKing demonKing) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.demonKing = demonKing;

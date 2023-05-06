@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: DemonKing_BaseData
   m_EditorClassIdentifier: 
   damageHopSpeed: 3
-  wallCheckDistance: 0.2
-  ledgeCheckDistance: 0.8
-  groundCheckRadius: 0.3
+  wallCheckDistance: 1
+  ledgeCheckDistance: 1
+  groundCheckRadius: 0.5
   minAgroDistance: 12
-  maxAgroDistance: 18
-  circleAgroDistance: 10
+  maxAgroDistance: 20
+  circleAgroDistance: 20
   stunResistance: 3
   stunRecoveryTime: 2
   closeRangeActionDistance: 4.8

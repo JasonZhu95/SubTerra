@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0561b2a940b621648b3e33bd82e2ef46, type: 3}
   m_Name: DemonKing_IdleStateData
   m_EditorClassIdentifier: 
-  minIdleTime: 1
-  maxIdleTime: 2
+  minIdleTime: 0
+  maxIdleTime: 0
