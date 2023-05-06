@@ -15,8 +15,10 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   ID: 4
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: Basic Sword
-  <Description>k__BackingField: Its a Sword.
+  <Name>k__BackingField: Soren's Sword
+  <Description>k__BackingField: A sleek and elegant weapon, crafted from a mysterious
+    and durable metal alloy that is said to have been unearthed in the ruins of an
+    ancient civilization.
   <ItemImage>k__BackingField: {fileID: 255617269, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
   <DefaultParametersList>k__BackingField: []
   <ItemCost>k__BackingField: 200

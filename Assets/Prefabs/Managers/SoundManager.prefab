@@ -105,7 +105,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: DialogueShopkeer1
+  - name: DialogueShopkeeper1
     clip: {fileID: 8300000, guid: 9c216d1851b877e4c8d00784624c358f, type: 3}
     volume: 0.1
     pitch: 1

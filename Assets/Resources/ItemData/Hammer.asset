@@ -15,8 +15,10 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   ID: 2
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: Hammer
-  <Description>k__BackingField: Breaks Blocks
+  <Name>k__BackingField: Iron Hammer
+  <Description>k__BackingField: A heavy and sturdy hammer made of solid iron, designed
+    for breaking through tough and stubborn blocks that stand in the way of the adventurer's
+    path.
   <ItemImage>k__BackingField: {fileID: 255617269, guid: 56a3cffd4d3f2844b87e3ddb923e7415, type: 3}
   <DefaultParametersList>k__BackingField: []
   <ItemCost>k__BackingField: 200

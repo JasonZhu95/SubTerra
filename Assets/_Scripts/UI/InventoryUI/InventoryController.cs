@@ -350,7 +350,7 @@ namespace Project.Inventory
             ItemSO item = inventoryItem.item;
             string description = PrepareDescription(inventoryItem);
             inventoryUI.UpdateDescription(itemIndex, item.ItemImage,
-                item.name, description);
+                item.Name, description);
         }
 
         // Add Item Description to the appropriate format for the UI.
