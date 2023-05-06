@@ -432,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 6734029370350367508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.22, y: -5.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6734029370261864119}
@@ -482,7 +482,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 221026571
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -1130592987, guid: b0f61d2d3bdbe4c46a6161090f5a3ace, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -962,9 +962,17 @@ MonoBehaviour:
   <Health>k__BackingField:
     currentValue: 0
     <MaxValue>k__BackingField: 100
+    triggeredBelow100Life: 0
+    trigggered75Life: 0
+    triggeredHalfLifeAttack: 0
+    triggeredQuarterLifeAttack: 0
   <Poise>k__BackingField:
     currentValue: 0
     <MaxValue>k__BackingField: 100
+    triggeredBelow100Life: 0
+    trigggered75Life: 0
+    triggeredHalfLifeAttack: 0
+    triggeredQuarterLifeAttack: 0
   <CoinDeathValue>k__BackingField: 26
   PoiseRecoveryPerSecond: 20
 --- !u!1 &6734029371563049954
@@ -1011,3 +1019,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b12aef2c1fef14492872384b2b48f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dust: {fileID: 0}
