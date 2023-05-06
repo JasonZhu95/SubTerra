@@ -34,7 +34,7 @@ public class Ranger_MoveState : MoveState
         {
             stateMachine.ChangeState(ranger.playerDetectedState);
         }
-        else if (!isDetectingLedge || isDetectingWall)
+        else if (!isDetectingLedge || isDetectingWall || !isPlayerInMaxAgroRange)
         {
             ranger.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(ranger.idleState);
