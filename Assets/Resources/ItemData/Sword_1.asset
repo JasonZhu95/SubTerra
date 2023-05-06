@@ -23,7 +23,7 @@ MonoBehaviour:
   <DefaultParametersList>k__BackingField: []
   <ItemCost>k__BackingField: 200
   <actionSFX>k__BackingField: {fileID: 0}
-  <NumberOfAttacks>k__BackingField: 3
+  <NumberOfAttacks>k__BackingField: 1
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: a5a7a724be910bc46bffa559c191a0b6, type: 2}
   componentDatas:
   - rid: 3813184956623486981
@@ -44,10 +44,6 @@ MonoBehaviour:
         data:
         - AttackName: 
           <AudioFileToPlay>k__BackingField: WeaponSword1
-        - AttackName: 
-          <AudioFileToPlay>k__BackingField: WeaponSword2
-        - AttackName: 
-          <AudioFileToPlay>k__BackingField: WeaponSword3
     - rid: 3813184956623486976
       type: {class: WeaponSpriteData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
@@ -59,31 +55,12 @@ MonoBehaviour:
           - Name: Action
             Phase: 2
             Sprites:
-            - {fileID: 377857714, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -320620226, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 15382981, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -1281347056, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 803068858, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-        - AttackName: Attack 2
-          AttackPhases:
-          - Name: Action
-            Phase: 2
-            Sprites:
-            - {fileID: 799822455, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 1075094489, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -723921074, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -644988936, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -535413183, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-        - AttackName: Attack 3
-          AttackPhases:
-          - Name: Action
-            Phase: 2
-            Sprites:
-            - {fileID: -612201153, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 1613604179, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 545961280, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -1279137428, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 1268753829, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
+            - {fileID: 1819037279, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: 1756071721, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: 1410957071, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -1824922372, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -681509828, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: 344433820, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
     - rid: 3813184956623486978
       type: {class: WeaponHitboxData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
@@ -91,7 +68,7 @@ MonoBehaviour:
         repeatData: 1
         data:
         - AttackName: Attack 1
-          debug: 0
+          debug: 1
           <Hitbox>k__BackingField:
             serializedVersion: 2
             x: 1
@@ -111,12 +88,6 @@ MonoBehaviour:
         - attackName: Attack 1
           <KnockbackAngle>k__BackingField: {x: 1, y: 1}
           <KnockbackStrength>k__BackingField: 10
-        - attackName: Attack 2
-          <KnockbackAngle>k__BackingField: {x: 1, y: 1}
-          <KnockbackStrength>k__BackingField: 15
-        - attackName: Attack 3
-          <KnockbackAngle>k__BackingField: {x: 1, y: 5}
-          <KnockbackStrength>k__BackingField: 20
     - rid: 3813184956623486980
       type: {class: DamageOnHitboxActionData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
@@ -124,10 +95,6 @@ MonoBehaviour:
         repeatData: 0
         data:
         - AttackName: Attack 1
-          <DamageAmount>k__BackingField: 10
-        - AttackName: Attack 2
-          <DamageAmount>k__BackingField: 15
-        - AttackName: Attack 3
           <DamageAmount>k__BackingField: 20
     - rid: 3813184956623486981
       type: {class: AttackMovementData, ns: Project.Weapons, asm: Assembly-CSharp}
@@ -137,10 +104,6 @@ MonoBehaviour:
         data:
         - AttackName: Attack 1
           Velocity: 1
-        - AttackName: Attack 2
-          Velocity: 1
-        - AttackName: Attack 3
-          Velocity: 1
     - rid: 3813184974850359318
       type: {class: PoiseDamageOnHitboxActionData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
@@ -149,7 +112,3 @@ MonoBehaviour:
         data:
         - attackName: 
           <PoiseDamageAmount>k__BackingField: 12.5
-        - attackName: 
-          <PoiseDamageAmount>k__BackingField: 25
-        - attackName: 
-          <PoiseDamageAmount>k__BackingField: 50
