@@ -45,13 +45,17 @@ public class Ranger_PlayerDetectedState : PlayerDetectedState
         {
             stateMachine.ChangeState(ranger.beamAttackState);
         }
-        else if (performLongRangeAction)
+        //else if (performLongRangeAction)
+        //{
+        //    stateMachine.ChangeState(ranger.rangedAttackState);
+        //}
+        //else if (!isPlayerInMaxAgroRange)
+        //{
+        //    stateMachine.ChangeState(ranger.lookForPlayerState);
+        //}
+        else
         {
             stateMachine.ChangeState(ranger.rangedAttackState);
-        }
-        else if (!isPlayerInMaxAgroRange)
-        {
-            stateMachine.ChangeState(ranger.lookForPlayerState);
         }
     }
 

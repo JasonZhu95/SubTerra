@@ -30,13 +30,14 @@ public class Ranger_LookForPlayerState : LookForPlayerState
     {
         base.LogicUpdate();
 
-        if (isPlayerInMidAgroRange)
+        if (isPlayerInMinAgroRange)
         {
             stateMachine.ChangeState(ranger.playerDetectedState);
         }
         else if (isAllTurnsTimeDone)
         {
-            stateMachine.ChangeState(ranger.moveState);
+            //stateMachine.ChangeState(ranger.moveState);
+            stateMachine.ChangeState(ranger.arrowRainState);
         }
     }
 

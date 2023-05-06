@@ -16,8 +16,8 @@ MonoBehaviour:
   wallCheckDistance: 2
   ledgeCheckDistance: 0.4
   groundCheckRadius: 0.3
-  minAgroDistance: 14
-  maxAgroDistance: 18
+  minAgroDistance: 18
+  maxAgroDistance: 22
   circleAgroDistance: 20
   stunResistance: 3
   stunRecoveryTime: 2
@@ -30,4 +30,4 @@ MonoBehaviour:
     m_Bits: 8
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 49152
+    m_Bits: 49216

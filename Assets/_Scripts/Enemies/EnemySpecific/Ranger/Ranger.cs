@@ -73,7 +73,7 @@ public class Ranger : Entity
 
     private void Start()
     {
-        stateMachine.Initialize(moveState);
+        stateMachine.Initialize(rangedAttackState);
 
         Stats.Health.OnCurrentValueBelowHalf += () => stateMachine.ChangeState(arrowRainState);
         Stats.Health.OnCurrentValueBelowQuarter += () => stateMachine.ChangeState(arrowRainState);

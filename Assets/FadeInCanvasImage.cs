@@ -76,7 +76,7 @@ public class FadeInCanvasImage : MonoBehaviour
         }
         canvasGroup.alpha = 0.5f; // Ensure alpha is set to 0.5 when coroutine is done
 
-        yield return new WaitForSeconds(26f);
+        yield return new WaitForSeconds(20f);
 
         soundManager.StopPlay("BossDemonDefeated");
         SceneManager.LoadScene("MainMenu");
