@@ -55,16 +55,17 @@ MonoBehaviour:
           - Name: Action
             Phase: 2
             Sprites:
-            - {fileID: 377857714, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -320620226, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 15382981, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: -1281347056, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
-            - {fileID: 803068858, guid: 2e6b896386f4d1749910e1a28fb19c66, type: 3}
+            - {fileID: -1298158315, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -509661250, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -1337383993, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -575837166, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -87603190, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: 380229649, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
     - rid: 3813184956623486978
       type: {class: WeaponHitboxData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
         <ComponentName>k__BackingField: WeaponHitboxData
-        repeatData: 1
+        repeatData: 0
         data:
         - AttackName: Attack 1
           debug: 0
