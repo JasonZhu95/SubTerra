@@ -136,8 +136,8 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: MusicTheme3
-    clip: {fileID: 8300000, guid: b28f23d6e3feea649a1d91f953141d88, type: 3}
-    volume: 0.1
+    clip: {fileID: 8300000, guid: 2dfe973846876324598c85c6404bb66d, type: 3}
+    volume: 0.07
     pitch: 1
     loop: 1
     source: {fileID: 0}
