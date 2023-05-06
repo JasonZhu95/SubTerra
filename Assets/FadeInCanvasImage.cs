@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FadeInCanvasImage : MonoBehaviour
 {
@@ -22,16 +23,27 @@ public class FadeInCanvasImage : MonoBehaviour
 
     private CameraManager cameraManager;
 
+    private PlayerInputHandler inputHandler;
+
+    private SoundManager soundManager;
+
+
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         cameraManager = FindObjectOfType<CameraManager>();
+        inputHandler = GameObject.FindWithTag("Player").GetComponent<PlayerInputHandler>();
+        soundManager = FindObjectOfType<SoundManager>();
 
         StartCoroutine(FadeIn());
     }
 
     private IEnumerator FadeIn()
     {
+        // lock controls
+        inputHandler.SwitchToActionMap("UINoPause");
+        inputHandler.BlockActionInput = true;
+
         // FADE IN
         float elapsedTime = 0f;
         while (elapsedTime < fadeTime)
@@ -63,5 +75,10 @@ public class FadeInCanvasImage : MonoBehaviour
             yield return null;
         }
         canvasGroup.alpha = 0.5f; // Ensure alpha is set to 0.5 when coroutine is done
+
+        yield return new WaitForSeconds(26f);
+
+        soundManager.StopPlay("BossDemonDefeated");
+        SceneManager.LoadScene("MainMenu");
     }
 }
