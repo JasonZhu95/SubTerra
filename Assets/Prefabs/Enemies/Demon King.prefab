@@ -407,7 +407,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6306351815753964098}
   - component: {fileID: 6306351815753964102}
-  - component: {fileID: 6306351815753964097}
   - component: {fileID: 6306351815753964096}
   - component: {fileID: 6306351815753964099}
   m_Layer: 9
@@ -458,19 +457,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.3650846, y: 3.6924725}
   m_EdgeRadius: 0
---- !u!114 &6306351815753964097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6306351815753964125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3bc3b5fab6df2e4aa6f83b964004eaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxKnockbackTime: 0.2
 --- !u!114 &6306351815753964096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Health>k__BackingField:
     currentValue: 0
-    <MaxValue>k__BackingField: 100
+    <MaxValue>k__BackingField: 150
     triggeredBelow100Life: 0
     trigggered75Life: 0
     triggeredHalfLifeAttack: 0

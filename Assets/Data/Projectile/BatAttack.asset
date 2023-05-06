@@ -23,6 +23,7 @@ MonoBehaviour:
   - rid: 5884576516520017927
   - rid: 5884576516520017928
   - rid: 5884576516520017929
+  - rid: 8652370501399740416
   references:
     version: 2
     RefIds:
@@ -72,3 +73,11 @@ MonoBehaviour:
         LayerMask:
           serializedVersion: 2
           m_Bits: 16384
+    - rid: 8652370501399740416
+      type: {class: HitLineData, ns: Project.Projectiles, asm: Assembly-CSharp}
+      data:
+        name: HitLineData
+        LayerMask:
+          serializedVersion: 2
+          m_Bits: 8
+        DoInitialCheck: 1
