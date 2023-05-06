@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Game2DWaterKit/Demo/For Builtin Render Pipeline.unitypackage.meta
+Assets/Game2DWaterKit/Demo/For Universal Render Pipeline.unitypackage.meta
+Assets/Game2DWaterKit/Editor/Resources/Packages/Universal Render Pipeline Compatible Shaders.unitypackage.meta
+Assets/StreamingAssets/build_info
+Assets/StreamingAssets/build_info

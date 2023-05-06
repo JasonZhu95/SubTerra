@@ -55,26 +55,26 @@ MonoBehaviour:
           - Name: Action
             Phase: 2
             Sprites:
-            - {fileID: 1819037279, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
-            - {fileID: 1756071721, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
-            - {fileID: 1410957071, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
-            - {fileID: -1824922372, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
-            - {fileID: -681509828, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
-            - {fileID: 344433820, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -1298158315, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -509661250, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -1337383993, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -575837166, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: -87603190, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
+            - {fileID: 380229649, guid: 0fb679d2a2837114e954f1dbb0cc9347, type: 3}
     - rid: 3813184956623486978
       type: {class: WeaponHitboxData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
         <ComponentName>k__BackingField: WeaponHitboxData
-        repeatData: 1
+        repeatData: 0
         data:
         - AttackName: Attack 1
-          debug: 1
+          debug: 0
           <Hitbox>k__BackingField:
             serializedVersion: 2
             x: 1
-            y: 0.25
-            width: 2
-            height: 2.5
+            y: 0.4
+            width: 2.7
+            height: 3.2
           isHammer: 0
         <DamageableLayers>k__BackingField:
           serializedVersion: 2

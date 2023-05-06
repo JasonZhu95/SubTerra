@@ -19,12 +19,18 @@ public class DetectBackgroundOnDeath : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        respawnManager.OnFullDeath += SetBackground;
+        if (collision.CompareTag("Player"))
+        {
+            respawnManager.OnFullDeath += SetBackground;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        respawnManager.OnFullDeath -= SetBackground;
+        if (collision.CompareTag("Player"))
+        {
+            respawnManager.OnFullDeath -= SetBackground;
+        }
     }
 
     private void SetBackground()
