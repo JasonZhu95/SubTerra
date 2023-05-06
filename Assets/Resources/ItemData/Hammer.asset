@@ -65,16 +65,16 @@ MonoBehaviour:
       type: {class: WeaponHitboxData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
         <ComponentName>k__BackingField: WeaponHitboxData
-        repeatData: 0
+        repeatData: 1
         data:
         - AttackName: Attack 1
           debug: 0
           <Hitbox>k__BackingField:
             serializedVersion: 2
             x: 1
-            y: 0.25
-            width: 2
-            height: 2.5
+            y: 0.4
+            width: 2.7
+            height: 3.2
           isHammer: 1
         <DamageableLayers>k__BackingField:
           serializedVersion: 2

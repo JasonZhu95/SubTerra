@@ -19,7 +19,7 @@ MonoBehaviour:
   <Description>k__BackingField: 'A magical elixir that, when consumed, has powerful
     healing properties
 
-    Heals 10 HP'
+    Heals 1 Heart.'
   <ItemImage>k__BackingField: {fileID: 21300000, guid: 9ec085fde36841240b9357071508a69c, type: 3}
   <DefaultParametersList>k__BackingField: []
   <ItemCost>k__BackingField: 50

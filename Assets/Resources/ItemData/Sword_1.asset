@@ -42,7 +42,7 @@ MonoBehaviour:
         <ComponentName>k__BackingField: PlayWeaponSfxData
         repeatData: 0
         data:
-        - AttackName: 
+        - AttackName: Attack 1
           <AudioFileToPlay>k__BackingField: WeaponSword1
     - rid: 3813184956623486976
       type: {class: WeaponSpriteData, ns: Project.Weapons, asm: Assembly-CSharp}
@@ -65,7 +65,7 @@ MonoBehaviour:
       type: {class: WeaponHitboxData, ns: Project.Weapons, asm: Assembly-CSharp}
       data:
         <ComponentName>k__BackingField: WeaponHitboxData
-        repeatData: 0
+        repeatData: 1
         data:
         - AttackName: Attack 1
           debug: 0
@@ -110,5 +110,5 @@ MonoBehaviour:
         <ComponentName>k__BackingField: PoiseDamageOnHitboxActionData
         repeatData: 0
         data:
-        - attackName: 
+        - attackName: Attack 1
           <PoiseDamageAmount>k__BackingField: 12.5
