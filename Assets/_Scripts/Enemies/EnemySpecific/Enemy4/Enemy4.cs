@@ -14,6 +14,11 @@ public class Enemy4 : MonoBehaviour
     private Transform playerTransform;
 
     [SerializeField]
+    private GameObject bloodParticles;
+    [SerializeField]
+    private GameObject hitParticles;
+
+    [SerializeField]
     private D_RangedAttackState stateData;
 
     [SerializeField]
@@ -48,6 +53,7 @@ public class Enemy4 : MonoBehaviour
         animator.SetBool("idle", true);
         animator.SetBool("isFlying", false);
         animator.SetBool("ceilingOut", false);
+        animator.SetBool("dead", false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -66,10 +72,11 @@ public class Enemy4 : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
-            Destroy(gameObject);
+            isFlying = false;
+            animator.SetBool("isFlying", false);
+            animator.SetBool("dead", true);
         }
-
-        if (isFlying)
+        else if (isFlying)
         {
             distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
@@ -100,6 +107,13 @@ public class Enemy4 : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
+        Instantiate(hitParticles, transform.position, transform.rotation);
+    }
+
+    public void DestroySelf()
+    {
+        Instantiate(bloodParticles, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmos()

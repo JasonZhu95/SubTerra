@@ -5,9 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public FiniteStateMachine stateMachine;
-
     public D_Entity entityData;
-
     public Animator anim { get; private set; }
     public AnimationToStatemachine atsm { get; private set; }
     public int lastDamageDirection { get; private set; }
@@ -68,6 +66,7 @@ public class Entity : MonoBehaviour
         stateMachine.currentState.PhysicsUpdate();
     }
 
+    #region check methods
     public virtual bool CheckPlayerInMinAggroRange()
     {
         return Physics2D.Raycast(playerCheck.position, transform.right, entityData.minAgroDistance, entityData.whatIsPlayer);
@@ -92,6 +91,7 @@ public class Entity : MonoBehaviour
     {
         return Physics2D.OverlapCircle(playerCheck.position, entityData.circleAgroDistance);
     }
+    #endregion
 
     public virtual void DamageHop(float velocity)
     {
@@ -144,3 +144,4 @@ public class Entity : MonoBehaviour
         }
     }
 }
+
