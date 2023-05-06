@@ -28,11 +28,6 @@ public class E4_IdleState : IdleState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        if (isIdleTimeOver)
-        {
-            stateMachine.ChangeState(enemy.moveState);
-        }
     }
 
     public override void PhysicsUpdate()

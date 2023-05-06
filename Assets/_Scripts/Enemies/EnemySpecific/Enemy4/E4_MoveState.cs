@@ -29,12 +29,6 @@ public class E4_MoveState : MoveState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        if (isDetectingWall || !isDetectingLedge)
-        {
-            enemy.idleState.SetFlipAfterIdle(true);
-            stateMachine.ChangeState(enemy.idleState);
-        }
     }
 
     public override void PhysicsUpdate()
