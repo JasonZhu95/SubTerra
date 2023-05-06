@@ -12,6 +12,7 @@ TagManager:
   - DeathZone
   - RespawnZones
   - Collectible
+  - Ground
   layers:
   - Default
   - TransparentFX

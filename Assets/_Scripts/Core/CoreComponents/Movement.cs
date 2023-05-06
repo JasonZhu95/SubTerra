@@ -12,6 +12,8 @@ public class Movement : CoreComponent
 
     public Vector2 CurrentVelocity { get; private set; }
 
+    public ParticleSystem dust;
+
     private Vector2 workspace;
 
     private CameraFollowObject cameraFollowObject;
@@ -91,6 +93,15 @@ public class Movement : CoreComponent
     {
         FacingDirection *= -1;
         RB.transform.Rotate(0.0f, 180.0f, 0.0f);
+        if(core.Parent.name == "Player")
+        {
+            CreateDust();
+        }
+    }
+
+    void CreateDust() 
+    {
+        dust.Play();
     }
 
     #endregion
