@@ -16,7 +16,9 @@ MonoBehaviour:
   ID: 3
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Key
-  <Description>k__BackingField: What do you think it does... It's a key my dude.
+  <Description>k__BackingField: A sturdy and well-crafted, designed to unlock the
+    heavy doors and gates that bar the way to the deepest and most dangerous areas
+    of the explorer's world.
   <ItemImage>k__BackingField: {fileID: -198002775, guid: 0e5a2f55c0b8a5a4b97ca83dca548525, type: 3}
   <DefaultParametersList>k__BackingField: []
   <ItemCost>k__BackingField: 50

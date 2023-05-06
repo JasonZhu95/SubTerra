@@ -46,7 +46,7 @@ public class SoundManager : MonoBehaviour
 
     public void OnSceneLoadChangeMusic(Scene scene, LoadSceneMode mode)
     {
-        StopPlay("MusicTheme" + scene.buildIndex);
+        StopPlay("MusicTheme" + (scene.buildIndex - 1));
         StopPlay("UIGameStart");
         switch(scene.buildIndex)
         {

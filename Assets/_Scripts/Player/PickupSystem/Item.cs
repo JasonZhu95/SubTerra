@@ -19,6 +19,7 @@ public class Item : MonoBehaviour, IDataPersistence
     private float duration = 0.3f;
 
     private bool collected = false;
+    public bool collectOnlyOnce = false;
 
     [SerializeField] private string id;
 

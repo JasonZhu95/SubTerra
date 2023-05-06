@@ -149,6 +149,8 @@ public class Death : CoreComponent
     private IEnumerator DemonDefeated(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
+        FindObjectOfType<SoundManager>().StopPlay("BossDemonTheme");
+        FindObjectOfType<SoundManager>().Play("BossDemonDefeated");
         bossManager.DemonBossDefeated = true;
         InstantiateCoins();
     }
@@ -156,12 +158,16 @@ public class Death : CoreComponent
     {
         yield return new WaitForSeconds(delayTime);
         bossManager.RangerBossDefeated = true;
+        FindObjectOfType<SoundManager>().StopPlay("BossRangerTheme");
+        FindObjectOfType<SoundManager>().Play("MusicTheme1");
         InstantiateCoins();
     }
     private IEnumerator TempleDefeated(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
         bossManager.TempleBossDefeated = true;
+        FindObjectOfType<SoundManager>().StopPlay("BossGuardianTheme");
+        FindObjectOfType<SoundManager>().Play("MusicTheme2");
         InstantiateCoins();
     }
 }

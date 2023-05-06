@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.InputSystem;
 
 // Script Responsible for handling Respawn on Player Death.
@@ -25,6 +26,8 @@ namespace Project.Managers
         private SpriteRenderer weapon2weaponSR;
         private GameObject playerCombatComponent;
         private GameObject enemyCollisionGO;
+
+        public event Action OnFullDeath;
 
         [SerializeField] private CameraManager cameraManager;
 
@@ -52,6 +55,7 @@ namespace Project.Managers
         // full death bool determines if respawn or checkpoint position
         private IEnumerator ResetPlayerOnRespawn(bool fullDeath)
         {
+            OnFullDeath?.Invoke();
             player.layer = LayerMask.NameToLayer("PlayerInvincible");
             enemyCollisionGO.layer = LayerMask.NameToLayer("PlayerInvincible");
             playerCombatComponent.layer = LayerMask.NameToLayer("PlayerInvincible");

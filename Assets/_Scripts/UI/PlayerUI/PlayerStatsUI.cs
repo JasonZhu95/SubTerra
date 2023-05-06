@@ -27,6 +27,16 @@ public class PlayerStatsUI : MonoBehaviour
         numHeartContainers = (int)playerStats.Health.MaxValue;
     }
 
+    private void OnEnable()
+    {
+        playerStats.Health.OnMaxHPIncrease += ChangeHealthUIOnIncrease;
+    }
+
+    private void OnDisable()
+    {
+        playerStats.Health.OnMaxHPIncrease -= ChangeHealthUIOnIncrease;
+    }
+
     private void Update()
     {
         // Update Coin Text
@@ -53,5 +63,10 @@ public class PlayerStatsUI : MonoBehaviour
                 heartContainers[i].enabled = false;
             }
         }
+    }
+
+    private void ChangeHealthUIOnIncrease()
+    {
+        numHeartContainers = (int)playerStats.Health.MaxValue;
     }
 }

@@ -48,6 +48,7 @@ public class Stats : CoreComponent, IDataPersistence
             data.currentHealth = Health.currentValue;
         }
     }
+
 }
 
 [System.Serializable]
@@ -113,6 +114,8 @@ public class Stat
 
     public event Action OnCurrentValueBelowQuarter;
 
+    public event Action OnMaxHPIncrease;
+
     public void Init() => CurrentValue = MaxValue;
 
     public void Increase(float amount) => CurrentValue += amount;
@@ -120,4 +123,11 @@ public class Stat
     public void Decrease(float amount) => CurrentValue -= amount;
 
     public void SetHealth(float amount) => CurrentValue = amount;
+
+    public void IncreaseMaxHealth(float amount)
+    {
+        MaxValue += amount;
+        currentValue += amount;
+        OnMaxHPIncrease?.Invoke();
+    }
 }

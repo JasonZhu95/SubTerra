@@ -45,6 +45,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: BossDemonDefeated
+    clip: {fileID: 8300000, guid: 90253c7df7609aa42bbfe67d89bc1aa7, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossDemonTheme
+    clip: {fileID: 8300000, guid: 7ace3f4c5f4e8514cb37571bbacfd041, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BossGuardianTheme
+    clip: {fileID: 8300000, guid: 7ace3f4c5f4e8514cb37571bbacfd041, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BossRangerTheme
+    clip: {fileID: 8300000, guid: 5935353a776dea84382a52cd27ad5f5a, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: Damage
     clip: {fileID: 8300000, guid: 6a3b921d76633f74781bc8037f59ceff, type: 3}
     volume: 0.25
@@ -69,13 +93,19 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: DialogueMentor1
+    clip: {fileID: 8300000, guid: 4822aeacb1e47f14c872f6e8a4460a3d, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: DialogueRanger1
     clip: {fileID: 8300000, guid: 476259e89feb5d149b770ea59cdb8786, type: 3}
     volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: DialogueShopkeer1
+  - name: DialogueShopkeeper1
     clip: {fileID: 8300000, guid: 9c216d1851b877e4c8d00784624c358f, type: 3}
     volume: 0.1
     pitch: 1
@@ -88,14 +118,26 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: MusicTheme0
-    clip: {fileID: 8300000, guid: 667faf6fa2e139048a2da11f4c5a6d02, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 4f8706b4ef57ebb428ad96e1e41ff498, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MusicTheme1
-    clip: {fileID: 8300000, guid: b2efe8897b509564fba96a6325e6aa4b, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: e96ab441cae175e47bfbfb1e3cb1467a, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicTheme2
+    clip: {fileID: 8300000, guid: 6e6abcab9d841a541a46d650a3b33e65, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicTheme3
+    clip: {fileID: 8300000, guid: b28f23d6e3feea649a1d91f953141d88, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -186,6 +228,12 @@ MonoBehaviour:
   - name: PlayerWallSlide
     clip: {fileID: 8300000, guid: c34796a5a0fe618449e22d284e15507f, type: 3}
     volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: RestStopTheme
+    clip: {fileID: 8300000, guid: 67ea913895a77e34997c1f3f51f0885d, type: 3}
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}

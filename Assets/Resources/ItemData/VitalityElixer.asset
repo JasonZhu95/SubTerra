@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4553f7210ae4bd44ada5104a4662d2b, type: 3}
+  m_Name: VitalityElixer
+  m_EditorClassIdentifier: 
+  <IsStackable>k__BackingField: 1
+  ID: 7
+  <MaxStackSize>k__BackingField: 99
+  <Name>k__BackingField: Vitality Elixir
+  <Description>k__BackingField: 'A powerful potion that, when consumed, increases
+    the drinker''s maximum HP.
+
+
+    Increase Max HP by 1.'
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: f7baac89a72b5e94eb3d30d1bb14ed4b, type: 3}
+  <DefaultParametersList>k__BackingField: []
+  <ItemCost>k__BackingField: 500
+  modifiersData:
+  - statModifier: {fileID: 11400000, guid: ff691a97f6cc4d048be1e44717b7fce1, type: 2}
+    value: 1
+  <actionSFX>k__BackingField: {fileID: 0}
