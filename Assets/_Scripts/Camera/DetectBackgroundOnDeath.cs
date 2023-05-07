@@ -6,38 +6,32 @@ using Project.Managers;
 public class DetectBackgroundOnDeath : MonoBehaviour
 {
     private RespawnManager respawnManager;
+    private CheckPointManager checkPointManager;
     [SerializeField] private Animator forestBackground;
     [SerializeField] private Animator ruinsBackground;
     [SerializeField] private Animator templeBackground;
 
     [SerializeField] private Animator backgroundToPlay;
 
+    private Collider2D coll;
+
     private void Awake()
     {
         respawnManager = GameObject.Find("Managers").transform.Find("RespawnManager").GetComponent<RespawnManager>();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            respawnManager.OnFullDeath += SetBackground;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            respawnManager.OnFullDeath -= SetBackground;
-        }
+        checkPointManager = GameObject.Find("Managers").transform.Find("CheckPointManager").GetComponent<CheckPointManager>();
+        coll = gameObject.GetComponent<Collider2D>();
+        respawnManager.OnFullDeath += SetBackground;
     }
 
     private void SetBackground()
     {
-        forestBackground.SetBool("start", false);
-        ruinsBackground.SetBool("start", false);
-        templeBackground.SetBool("start", false);
-        backgroundToPlay.SetBool("start", true);
+        bool isWithinBounds = coll.OverlapPoint(checkPointManager.GoToLastCheckPoint());
+        if (isWithinBounds)
+        {            
+            forestBackground.SetBool("start", false);
+            ruinsBackground.SetBool("start", false);
+            templeBackground.SetBool("start", false);
+            backgroundToPlay.SetBool("start", true);
+        }
     }
 }
