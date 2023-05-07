@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BackgroundSwapper : MonoBehaviour
 {
-    [SerializeField] private Animator backgroundOnLeft;
-    [SerializeField] private Animator backgroundOnRight;
+    [SerializeField] private Animator forestBackground;
+    [SerializeField] private Animator ruinsBackground;
+    [SerializeField] private Animator templeBackground;
+    [SerializeField] private Animator backgroundToChange;
 
     private Collider2D coll;
 
@@ -18,18 +20,10 @@ public class BackgroundSwapper : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Vector2 exitDirection = (collision.transform.position - coll.bounds.center).normalized;
-
-            if (exitDirection.x < 0f)
-            {
-                backgroundOnLeft.SetBool("start", false);
-                backgroundOnRight.SetBool("start", true);
-            }
-            else if (exitDirection.x > 0f)
-            {
-                backgroundOnLeft.SetBool("start", true);
-                backgroundOnRight.SetBool("start", false);
-            }
+            forestBackground.SetBool("start", false);
+            ruinsBackground.SetBool("start", false);
+            templeBackground.SetBool("start", false);
+            backgroundToChange.SetBool("start", true);
         }
     }
 }

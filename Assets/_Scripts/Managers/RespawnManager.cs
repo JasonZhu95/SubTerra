@@ -55,6 +55,7 @@ namespace Project.Managers
         // full death bool determines if respawn or checkpoint position
         private IEnumerator ResetPlayerOnRespawn(bool fullDeath)
         {
+            OnFullDeath?.Invoke();
             player.layer = LayerMask.NameToLayer("PlayerInvincible");
             enemyCollisionGO.layer = LayerMask.NameToLayer("PlayerInvincible");
             playerCombatComponent.layer = LayerMask.NameToLayer("PlayerInvincible");
@@ -66,10 +67,8 @@ namespace Project.Managers
             weapon2baseSR.enabled = false;
             weapon1weaponSR.enabled = false;
             weapon2weaponSR.enabled = false;
-            
 
             yield return new WaitForSeconds(2.0f);
-            OnFullDeath?.Invoke();
             if (fullDeath)
             {
                 player.transform.position = checkPointManager.GoToLastCheckPoint();

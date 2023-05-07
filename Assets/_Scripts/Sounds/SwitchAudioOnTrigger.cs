@@ -25,7 +25,6 @@ public class SwitchAudioOnTrigger : MonoBehaviour
         {
             Vector2 exitDirection = (collision.transform.position - coll.bounds.center).normalized;
 
-            Debug.Log(exitDirection.x);
             if (exitDirection.x > 0f)
             {
                 soundManager.Play(audioFileLeft);
