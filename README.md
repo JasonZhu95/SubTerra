@@ -11,7 +11,7 @@ https://jzhu.itch.io/subterra
 
 # Gameplay Showcase [Click For Youtube Link]
 
-[![Youtube Video](https://img.itch.zone/aW1hZ2UvMjA1NDc3My8xMjA5MDYwOS5qcGc=/original/B7wmjF.jpg)]([https://www.youtube.com/watch?v=4LV0fjtzvIc](https://www.youtube.com/watch?v=8v-usKs7G7k&))
+[![Youtube Video](https://img.itch.zone/aW1nLzEyMDgzOTM2LnBuZw==/original/FDYnSQ.png)](https://www.youtube.com/watch?v=8v-usKs7G7k)
 
 # Team
 Jason Zhu - Programmer
