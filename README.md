@@ -13,6 +13,10 @@ https://jzhu.itch.io/subterra
 
 [![Youtube Video](https://img.itch.zone/aW1nLzEyMDgzOTM2LnBuZw==/original/FDYnSQ.png)](https://www.youtube.com/watch?v=8v-usKs7G7k)
 
+# Development Documentation
+
+View development and design documentation in the SubterraDocumentation file
+
 # Team
 Jason Zhu - Programmer
 
