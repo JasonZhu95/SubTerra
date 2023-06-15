@@ -1,30 +1,44 @@
 # SubTerra
-Warfront Tactics is a small isometric turn-based tactics game made as a technical demo.
+Subterra is a small metroidvania created as a semester learning project.
 
-Defeat your enemies and make your way through the castle.
+Collect various weapons to take out enemies.
 
-Control your small group of soldiers and take them to the Warfront!
+Fight bosses and defeat the demon to stop his reign of terror.
 
 # Try The Game Here
 
-[https://jzhu.itch.io/subterra](https://jzhu.itch.io/warfront-tactics)
+https://jzhu.itch.io/subterra
 
 # Gameplay Showcase [Click For Youtube Link]
 
-[![Youtube Video](https://img.itch.zone/aW1nLzEyNDU1MTUyLnBuZw==/315x250%23c/z9uu2Y.png)](https://www.youtube.com/watch?v=hKKeacqhdwM)
+[![Youtube Video](https://img.itch.zone/aW1nLzEyMDgzOTM2LnBuZw==/original/FDYnSQ.png)](https://www.youtube.com/watch?v=8v-usKs7G7k)
+
+# Development Documentation
+
+View development and design documentation in the SubterraDocumentation file
+
+# Team
+Jason Zhu - Programmer
+
+Matthew Iverson - Programmer
+
+Andrew Ghaly - Programmer
+
+James Pham - Programmer
+
+Harrison Tu - Art
 
 # Acknowledgements
+[Lornn - Main Menu Backgrounds](https://lornn.itch.io/backgrounds-dungeons-ruins-caves)
 
-Grid-Based Movement - LawlessGames
+[Jesse Munguia - Parallax Forest Background](https://jesse-m.itch.io/jungle-pack)
 
-Cryo's Mini GUI - PaperHatLizard
+[Admurin - Parallax Caves Background](https://admurin.itch.io/parallax-backgrounds-caves)
 
-[Isometric Asset Pack - Gustavo Vituri](https://gvituri.itch.io/isometric-trpg)
+[Dream Mix - Keyboard Button Images](https://dreammix.itch.io/keyboard-keys-for-ui)
 
-[Gui Buttons - Fantasy Tower Defense Game Kit](https://free-game-assets.itch.io/fantasy-tower-defense-game-kit)
+[Escalonamusic - Main Audio Themes](https://assetstore.unity.com/packages/audio/music/action-rpg-music-free-85434)
 
-[Grid-Based Movement - LawlessGames](https://www.youtube.com/watch?v=riLtglHwoYw)
+[Bardent - Player Controller Tutorial](https://www.youtube.com/watch?v=Pux1GlFwKPs&list=PLy78FINcVmjA0zDBhLuLNL1Jo6xNMMq-W)
 
-[Cryo's Mini GUI - PaperHatLizard](https://paperhatlizard.itch.io/cryos-mini-gui)
-
-[Pippin the Hunchback by Kevin MacLeod is licensed under a Attribution 3.0 International License.](https://freemusicarchive.org/music/Kevin_MacLeod/Thatched_Villagers/Pippin_the_Hunchback/)
+[Kevin MacLeod (incompetech.com) Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/](https://incompetech.com/music/royalty-free/music.html">"Malicious)
